@@ -1,9 +1,7 @@
-# KeepSake 0.36
+# KeepSake 0.36.1
 
-- Added themed About and Support windows, accessible from the app and Help menus.
-- Added manual and daily automatic checks for published GitHub updates, with a preference to disable them. Downloads open in the browser.
-- Added dated journal, team, basic appearance and original-save backups to a chosen folder, including iCloud Drive.
-- Removed release-tester and preview messaging from the welcome and coverage screens.
-- Kept a single save workspace to protect shared editor state; About and Support may remain open alongside it.
+- More Filters in Encounters now opens a dedicated scrolling panel, keeping the result table accessible at smaller window sizes. Filters persist when the panel closes.
+- Fixed Auto-Legality losing the requested Alpha status. Searches now require an Alpha encounter and reject any non-Alpha result without changing your Pokémon.
+- Added Alpha-only and non-Alpha encounter filters, with Alpha indicators in results.
 
-Distribution builds require Developer ID signing and notarization. Source builds are locally ad-hoc signed. This release does not add automatic app installation or independent simultaneous save workspaces.
+Alpha encounters can impose their own levels, moves and IV requirements. If your requested details cannot form a legal Alpha, KeepSake reports the failure and preserves the draft.

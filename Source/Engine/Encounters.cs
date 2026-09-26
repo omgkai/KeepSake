@@ -23,6 +23,8 @@ sealed partial class EditorSession
             : Enum.TryParse<EncounterTypeGroup>(categoryText,out var category) && Enum.IsDefined(category) && category!=0 ? [category] : throw new Exception("Choose a valid encounter type.");
         var shiny = S(r,"shiny","Any");
         if (shiny is not ("Any" or "Always" or "Never")) throw new Exception("Choose a valid shiny restriction.");
+        var alpha=S(r,"alpha","Any");
+        if(alpha is not ("Any" or "Alpha" or "NotAlpha")) throw new Exception("Choose a valid Alpha restriction.");
         var moves = r.TryGetProperty("moves",out var moveList) ? moveList.EnumerateArray().Select(x=>x.GetInt32()).Where(x=>x!=0).Distinct().ToArray() : [];
         if (moves.Length > 4 || moves.Any(x=>x<0 || x>sav.MaxMoveID)) throw new Exception("Choose up to four valid moves.");
         var instructions=SearchInstructions(S(r,"filters"));
@@ -40,6 +42,8 @@ sealed partial class EditorSession
                 EncounterMovesetGenerator.OptimizeCriteria(pk,sav);
                 foreach (var enc in EncounterMovesetGenerator.GenerateEncounters(pk,moves.Select(x=>(ushort)x).ToArray(),versions)) {
                     if (shiny == "Always" && !enc.IsShiny || shiny == "Never" && enc.Shiny != Shiny.Never) continue;
+                    bool isAlpha=enc is IAlphaReadOnly {IsAlpha:true};
+                    if(alpha=="Alpha" && !isAlpha || alpha=="NotAlpha" && isAlpha) continue;
                     if (!BatchEditingUtil.IsFilterMatch(instructions,enc) || !seen.Add(enc)) continue;
                     if (found.Count == this.settings.EncounterResultLimit) {truncated=true;break;}
                     found.Add(enc);
@@ -50,7 +54,7 @@ sealed partial class EditorSession
         return new {token=encounterToken,truncated,entries=encounterResults.Select((e,i)=>new {
             id=i,name=Species(e.Species),form=(int)e.Form,formName=EncounterFormName(e),game=GameInfo.GetVersionName(e.Version),kind=e.LongName,
             level=e.LevelMin==e.LevelMax ? e.LevelMin.ToString() : $"{e.LevelMin}–{e.LevelMax}",
-            location=e.GetEncounterLocation(e.Generation,e.Version),shiny=e.Shiny.ToString(),egg=e.IsEgg,
+            alpha=e is IAlphaReadOnly {IsAlpha:true},location=e.GetEncounterLocation(e.Generation,e.Version),shiny=e.Shiny.ToString(),egg=e.IsEgg,
             details=string.Join("\n",e.GetTextLines()),sprite=SpriteFor(e.Species,e.Form,0,0,e.Context),portrait=$"{e.Context}:{e.Species}:{e.Form}:0:0:0"
         }).ToArray()};
     }

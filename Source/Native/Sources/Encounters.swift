@@ -2,6 +2,7 @@ import SwiftUI
 
 struct EncounterEntry:Codable,Identifiable {
     var portrait:String?=nil
+    let alpha:Bool
     let id:Int, name:String, form:Int, formName:String, game:String, kind:String, level:String, location:String, shiny:String, egg:Bool, details:String, sprite:String
 }
 struct EncounterData:Codable {let token:String, truncated:Bool, entries:[EncounterEntry]}
@@ -22,6 +23,7 @@ struct EncountersView:View {
     @State private var version="Any"
     @State private var category="Any"
     @State private var shiny="Any"
+    @State private var alpha="Any"
     @State private var moves=["0","0","0","0"]
     @State private var form="-1"
     @State private var instructions=""
@@ -45,25 +47,18 @@ struct EncountersView:View {
                 HStack {
                     CatalogChoiceButton(title:"Pokémon",options:(model.catalogs["species"] ?? []).filter{$0.value != "0"},value:$species)
                     CatalogChoiceButton(title:"Origin",options:[Choice(value:"Any",label:"Any compatible origin")]+(model.catalogs["games"] ?? []),value:$version)
-                    Button("Search") {selection=nil;Task{await model.searchEncounters(species:species,version:version,category:category,shiny:shiny,moves:moves,form:form,filters:instructions)}}.buttonStyle(.borderedProminent)
+                    Button("Search") {selection=nil;Task{await model.searchEncounters(species:species,version:version,category:category,shiny:shiny,alpha:alpha,moves:moves,form:form,filters:instructions)}}.buttonStyle(.borderedProminent)
                 }
-                DisclosureGroup("More filters",isExpanded:$advanced) {
-                    HStack {
-                        Picker("Encounter",selection:$category){Text("All types").tag("Any");Text("Wild Pokémon").tag("Slot");Text("Eggs").tag("Egg");Text("In-game gifts & fixed encounters").tag("Static");Text("NPC trades").tag("Trade");Text("Mystery Gifts").tag("Mystery")}
-                        Picker("Shiny rule",selection:$shiny){Text("Any").tag("Any");Text("Guaranteed shiny").tag("Always");Text("Shiny locked").tag("Never")}
-                        TextField("Form (−1 = all)",text:$form).frame(width:120)
-                    }.padding(.top,8)
-                    LazyVGrid(columns:[GridItem(.flexible()),GridItem(.flexible())]){ForEach(0..<4,id:\.self){i in CatalogChoiceButton(title:"Move \(i+1)",options:[Choice(value:"0",label:"Any move")]+(model.catalogs["moves"] ?? []).filter{$0.value != "0"},value:$moves[i])}}
-                    HStack { TextField("Advanced filters, e.g. =LevelMin=5",text:$instructions).textFieldStyle(.roundedBorder); Button("Add Rule…"){buildRule=true} }.sheet(isPresented:$buildRule){SearchRuleBuilder(instructions:$instructions,encounter:true)}
-                    Toggle("Prepare using the editor’s nature, gender, ability and IV criteria",isOn:$useEditorCriteria).disabled(customCriteria).toggleStyle(.checkbox).help("Requires the same species. PKHeX may relax impossible criteria; review the prepared Pokémon and legality report.")
-                    HStack {Toggle("Use custom generation preferences",isOn:$customCriteria).toggleStyle(.checkbox);Button("Edit Preferences…"){criteriaSheet=true}.disabled(!customCriteria)}
-
+                HStack {
+                    Button { advanced=true } label: { Label("More Filters",systemImage:"line.3.horizontal.decrease.circle") }
+                    Text(alpha == "Alpha" ? "Alpha encounters only" : alpha == "NotAlpha" ? "Non-Alpha encounters only" : "Encounter rules, moves & generation preferences").font(.caption).foregroundStyle(.secondary)
+                    Spacer()
                 }
                 EncounterTrainerPicker(selected:$trainer)
                 if let data=model.encounters {
                     TextField("Filter results by location, game, or encounter…",text:$filter).textFieldStyle(.roundedBorder)
                     Table(rows,selection:$selection) {
-                        TableColumn("Pokémon"){entry in HStack {PokemonSprite(name:entry.sprite,portrait:entry.portrait).frame(width:26,height:26);Text(entry.name)}}.width(min:110,ideal:145)
+                        TableColumn("Pokémon"){entry in HStack {PokemonSprite(name:entry.sprite,portrait:entry.portrait).frame(width:26,height:26);Text(entry.name);if entry.alpha {Image(systemName:"bolt.fill").foregroundStyle(.orange).help("Alpha encounter")}}}.width(min:110,ideal:145)
                         TableColumn("Form",value:\.formName).width(min:65,ideal:90)
                         TableColumn("Origin",value:\.game).width(min:100,ideal:155)
                         TableColumn("Encounter",value:\.kind)
@@ -79,14 +74,38 @@ struct EncountersView:View {
                     Text("Results can include earlier evolutions. Move filters find possible learning paths; preparation keeps the encounter’s starting moves and form.").font(.caption).foregroundStyle(.secondary)
                 } else {WorkspaceEmptyState(title:"A new adventure awaits",icon:"binoculars",message:"Choose a Pokémon above and search for its story. Your current Pokémon and save stay unchanged until you prepare a result.")}
             }.padding(24).frame(maxWidth:.infinity,maxHeight:.infinity,alignment:.topLeading)
-                .sheet(isPresented:$criteriaSheet){EncounterPreferencesView(preferences:$preferences)}
+                .sheet(isPresented:$advanced) { filtersSheet }
         }
+    }
+    private var filtersSheet:some View {
+        VStack(alignment:.leading,spacing:0) {
+            HStack { Label("Encounter filters",systemImage:"line.3.horizontal.decrease.circle").font(.title2.bold());Spacer();Button("Done"){advanced=false}.keyboardShortcut(.cancelAction) }.padding(24)
+            Divider()
+            ScrollView {
+                VStack(alignment:.leading,spacing:20) {
+                    HStack {
+                        Picker("Encounter",selection:$category){Text("All types").tag("Any");Text("Wild Pokémon").tag("Slot");Text("Eggs").tag("Egg");Text("In-game gifts & fixed encounters").tag("Static");Text("NPC trades").tag("Trade");Text("Mystery Gifts").tag("Mystery")}
+                        Picker("Shiny rule",selection:$shiny){Text("Any").tag("Any");Text("Guaranteed shiny").tag("Always");Text("Shiny locked").tag("Never")}
+                        TextField("Form (−1 = all)",text:$form).frame(width:120)
+                    }.padding(.top,8)
+                    Picker("Alpha",selection:$alpha) { Text("Any encounter").tag("Any");Text("Alpha encounters only").tag("Alpha");Text("Non-Alpha encounters only").tag("NotAlpha") }
+                    LazyVGrid(columns:[GridItem(.flexible()),GridItem(.flexible())]){ForEach(0..<4,id:\.self){i in CatalogChoiceButton(title:"Move \(i+1)",options:[Choice(value:"0",label:"Any move")]+(model.catalogs["moves"] ?? []).filter{$0.value != "0"},value:$moves[i])}}
+                    HStack { TextField("Advanced filters, e.g. =LevelMin=5",text:$instructions).textFieldStyle(.roundedBorder); Button("Add Rule…"){buildRule=true} }.sheet(isPresented:$buildRule){SearchRuleBuilder(instructions:$instructions,encounter:true)}
+                    Toggle("Prepare using the editor’s nature, gender, ability and IV criteria",isOn:$useEditorCriteria).disabled(customCriteria).toggleStyle(.checkbox).help("Requires the same species. PKHeX may relax impossible criteria; review the prepared Pokémon and legality report.")
+                    HStack {Toggle("Use custom generation preferences",isOn:$customCriteria).toggleStyle(.checkbox);Button("Edit Preferences…"){criteriaSheet=true}.disabled(!customCriteria)}
+
+                }.padding(24)
+            }
+            Divider()
+            Text("Filters stay selected when you close this panel. Choose Search to refresh your results.").font(.caption).foregroundStyle(.secondary).padding(20)
+        }.frame(width:720,height:560)
+            .sheet(isPresented:$criteriaSheet){EncounterPreferencesView(preferences:$preferences)}
     }
 }
 extension EditorModel {
-    func searchEncounters(species:String,version:String,category:String,shiny:String,moves:[String],form:String,filters:String) async {
+    func searchEncounters(species:String,version:String,category:String,shiny:String,alpha:String,moves:[String],form:String,filters:String) async {
         guard !busy else{return};busy=true;defer{busy=false}
-        do {encounters=try await bridge.send(["op":"encounterSearch","species":Int(species) ?? 0,"version":version,"category":category,"shiny":shiny,"moves":moves.map{Int($0) ?? 0},"form":Int(form) ?? -1,"filters":filters.replacingOccurrences(of:"|",with:"\n")],as:EncounterData.self);status="Encounter search complete"}
+        do {encounters=try await bridge.send(["op":"encounterSearch","species":Int(species) ?? 0,"version":version,"category":category,"shiny":shiny,"alpha":alpha,"moves":moves.map{Int($0) ?? 0},"form":Int(form) ?? -1,"filters":filters.replacingOccurrences(of:"|",with:"\n")],as:EncounterData.self);status="Encounter search complete"}
         catch{self.error=error.localizedDescription}
     }
     func prepareEncounter(_ entry:EncounterEntry,token:String,useEditorCriteria:Bool=false,criteria:EncounterPreferences?=nil,trainer:EncounterTrainer?=nil) {

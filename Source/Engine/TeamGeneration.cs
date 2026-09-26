@@ -23,7 +23,15 @@ static class LegalityWorker
             TrainerSettings.Register(trainer);
             var set=request.Set is null ? new ShowdownSet(pk):new ShowdownSet(request.Set);
             if(set.InvalidLines.Count>0) throw new Exception("The battle set contains unsupported lines.");
-            var candidate=trainer.GetLegalFromTemplate(pk,new RegenTemplate(set,trainer.Generation),out var status);
+            // Showdown has no Alpha field. Carry it through ALM's extended settings,
+            // rather than allowing legalization to silently choose a non-Alpha encounter.
+            bool requestedAlpha=pk is IAlphaReadOnly {IsAlpha:true};
+            if(requestedAlpha) set=new ShowdownSet(set.Text+"\nAlpha: Yes");
+            var template=new RegenTemplate(set,trainer.Generation);
+            if(set.InvalidLines.Count>0) throw new Exception("The battle set contains unsupported lines.");
+            var candidate=trainer.GetLegalFromTemplate(pk,template,out var status);
+            if(requestedAlpha && candidate is not IAlphaReadOnly {IsAlpha:true})
+                throw new Exception("No legal Alpha encounter satisfies these details. Your Pokémon has not been changed. Try a higher level or less restrictive moves and IVs.");
             var analysis=new LegalityAnalysis(candidate);
             if(status!=LegalizationResult.Regenerated || !analysis.Valid) throw new Exception(status==LegalizationResult.Timeout ? "The encounter search timed out. Try a less restrictive set." : "No legal encounter satisfies these details. " + analysis.Report());
             Console.WriteLine(JsonSerializer.Serialize(new {ok=true,data=EditorSession.PokemonBytes(candidate)}));
@@ -60,6 +68,7 @@ sealed partial class EditorSession
         using var result=JsonDocument.Parse(line);
         if(!B(result.RootElement,"ok")) throw new Exception(S(result.RootElement,"error","Auto-Legality could not find a result."));
         var pk=ReadJournalPokemon(S(result.RootElement,"data"),template.Extension);
+        if(template is IAlphaReadOnly {IsAlpha:true} && pk is not IAlphaReadOnly {IsAlpha:true}) throw new Exception("Auto-Legality did not preserve the requested Alpha status. Your Pokémon has not been changed.");
         if(pk.GetType()!=template.GetType() || !new LegalityAnalysis(pk).Valid) throw new Exception("Auto-Legality returned an incompatible result.");
         return pk;
     }
