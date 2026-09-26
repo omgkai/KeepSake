@@ -1,0 +1,595 @@
+{
+  "source": "User-supplied hisui items folder",
+  "files": [
+    {
+      "file": "PLUMPBEANS.png",
+      "sha256": "20ae37d8bb2b4de09eabad7dec0aa31664f801e76450f026ad80cbcf9f0c72b6"
+    },
+    {
+      "file": "POKESHIDOLL.png",
+      "sha256": "6cee68b0f101b7aca1ba09a62236db30084f45d8f581420438476a7db3b5385e"
+    },
+    {
+      "file": "LUREBALL.png",
+      "sha256": "36615b05785af1e5f14d6d13b885313479beda446c70e3d47a542322f530c5ff"
+    },
+    {
+      "file": "OLDVERSE.png",
+      "sha256": "da5b76f7db5487367206cee3151511effaadbe58c4ac3929c26d38f677fd4b20"
+    },
+    {
+      "file": "FULLHEAL.png",
+      "sha256": "82617b8790656402cdabc7ed3a2dcea8dbfdce47ee5dd557c1f52c78ea569600"
+    },
+    {
+      "file": "HEARTYGRAINS.png",
+      "sha256": "cf5b43ff824376bbb40c38a5efe1a80ede277f3006c503700ddd9117ed82f2aa"
+    },
+    {
+      "file": "APRICORN.png",
+      "sha256": "db2ccd660797c4bb8c69f35f03823baf76ca31e40de66db0b8f83e0968b30996"
+    },
+    {
+      "file": "SANDRADISH.png",
+      "sha256": "4268449d967db8dbb4a67d6aaa1d1340818fc97d39ca45034a24978eb0d57b97"
+    },
+    {
+      "file": "AUXPOWERGUARD.png",
+      "sha256": "1950e0ab7310b731923ac958201245cf2c190238f2d20fffdd48dcb52a61c351"
+    },
+    {
+      "file": "BLACKTUMBLESTONE.png",
+      "sha256": "8509f67a8a871552f2c942da66d0ac7a6e7c053a067605f4fcfa98e4f7fab879"
+    },
+    {
+      "file": "ULTRABALL.png",
+      "sha256": "fde0fe1c4dee68a4b88bddd16332ad905bc35ec5ca7ec2bed658147ed33a6678"
+    },
+    {
+      "file": "BEANCAKE.png",
+      "sha256": "29736635962925990bab5b4135be5235e790535aff408368703a857803b70366"
+    },
+    {
+      "file": "LEVELBALL.png",
+      "sha256": "4425bb08cb5780b7ad3c94187ee1dd67e1754ce3a2f4863aaf1dd18b62861459"
+    },
+    {
+      "file": "BUGWORT.png",
+      "sha256": "c105c066eaa534da6ba37848d23b31eaa9ef8484b147a7f3995f7b484ceaf865"
+    },
+    {
+      "file": "TUMBLESTONE.png",
+      "sha256": "b3b9325ccb6516e5537f83cd965129d6f60a84fc9af30e6b892f9e76f7e8236d"
+    },
+    {
+      "file": "IRONBARKTONGUE.png",
+      "sha256": "3cafa17a956261944e60ce5575c1a11cc5762f77bd911166b6b237af007c5325"
+    },
+    {
+      "file": "AUXEVASION.png",
+      "sha256": "47b5cd2ae2fc7df5bfaed7b9ea933570c9c4a30260b2bfac44cdc92ea0b2f54b"
+    },
+    {
+      "file": "HEALBALL.png",
+      "sha256": "45f6baff65379941b25e891c3ca10ab2580896c44f8dd4f846c3cd38d83f571d"
+    },
+    {
+      "file": "HOPOBERRY.png",
+      "sha256": "4403d251d0af21f54cf563ada77843ea212e02622bb02ec8c46e024a03a3cf97"
+    },
+    {
+      "file": "SALTCAKE.png",
+      "sha256": "4bc947b3085111b6491c8f06f784746dccd137cf0e2058817eeae95dcd5c6a17"
+    },
+    {
+      "file": "ADAMANTCRYSTAL.png",
+      "sha256": "60eff7b9f7ee97a918efaa27b9104da6bbb03e34df392ee64be4a3f45c8e918a"
+    },
+    {
+      "file": "OLDGATEAU.png",
+      "sha256": "826c26cee68a6ee7ba805e63d07a328696d8bed152398856b063545eb7e5e947"
+    },
+    {
+      "file": "SUPERBREMEDY.png",
+      "sha256": "96db8ac0defaef05fd8d4c4929130921f645faf5754795a0b29c11fa7a3e9173"
+    },
+    {
+      "file": "REDCHAIN.png",
+      "sha256": "cf738f7a7ad8100ca8d5004ddec8207f5d25a8c6d4b65cc2744cd186f256b2f4"
+    },
+    {
+      "file": "SKYTUMBLESTONE.png",
+      "sha256": "67f0facb2a723e29acd4bf442e61a6665f15c45bfe0ea7b7a29773eab11e093f"
+    },
+    {
+      "file": "KINGSLEAF.png",
+      "sha256": "3e83a04bed488e7ee3625d845797a9f9766a98eec4d6b63cff2019188ce463c4"
+    },
+    {
+      "file": "LOVEBALL.png",
+      "sha256": "4a640db1687993571f222c107d5dbbc3cde173c12c232e57e3eb36364e9f4a13"
+    },
+    {
+      "file": "AUXPOWER.png",
+      "sha256": "fe21e5fc66fd2ec0377e7fced77b4c660f844e455d60d6385c741bc7bc87316d"
+    },
+    {
+      "file": "STICKYGLOB.png",
+      "sha256": "bde82e2055cdaa7761aad1cadb8eaee97ed4906099b8fc5feb639fdf219ec64a"
+    },
+    {
+      "file": "VIVICHOKE.png",
+      "sha256": "56202063cc3b244e3e0e398989cd070eea461db1dd139f2eca4ba9bfbc3735cd"
+    },
+    {
+      "file": "BALLOFMUD.png",
+      "sha256": "27f922cdb50f5002ce81f1f88f22f24edf71977a8710fdce67acc580cf2a72c9"
+    },
+    {
+      "file": "OLDJOURNAL.png",
+      "sha256": "293cb923de7d45cd7632ef97b4def6c92a5e5c8964d307284ceb7b54c77ae949"
+    },
+    {
+      "file": "DIVEBALL.png",
+      "sha256": "5fe0d7f44d77535c4f0ee31517a6c751491076bd1ba7cbc126a941ea7059f0dc"
+    },
+    {
+      "file": "DIREHIT.png",
+      "sha256": "239200676715c2df45b52274108fb7c59ee7b6741dadf7ae5791e4d9dbbdaed0"
+    },
+    {
+      "file": "WALLFRAGMENT.png",
+      "sha256": "ee7a1227d34ba4c90a9fccb81a91e4220e4016fbfd5896c74c79f9e6246b9d1c"
+    },
+    {
+      "file": "STRANGEBALL.png",
+      "sha256": "9e89208d3d0016e5dbe535f43814e59f739e04b1db7cf6825b43a21c20baf23f"
+    },
+    {
+      "file": "SUPERPOTION.png",
+      "sha256": "e17ffa8421a14ee2b2408b7efa5df26a39e6c44c02b6aac37883f9418985b85b"
+    },
+    {
+      "file": "IRONCHUNK.png",
+      "sha256": "919bd25caba5e5672851e2cbcd565b058bf7680ed7913c142376fb994d7917b3"
+    },
+    {
+      "file": "HEAVYBALL.png",
+      "sha256": "0810dd9514c887b17924f15839b518017440ee79d88a384ef20c726e55da7ef9"
+    },
+    {
+      "file": "GRITGRAVEL.png",
+      "sha256": "4600d4e377fd49455a4cdf2724504f2a49616c4c6e49aeca642ef0f957f17202"
+    },
+    {
+      "file": "MUSHROOMCAKE.png",
+      "sha256": "2a9be3539ee987adc965f658b38afc5b17e7aab1265c844fce03da1f7efe822d"
+    },
+    {
+      "file": "HYPERPOTION.png",
+      "sha256": "a9ac7975a8da22add2698b19a60ea00f8d5d3e32b31671dc3a12e96fc947f47a"
+    },
+    {
+      "file": "UXIESCLAW.png",
+      "sha256": "f39205ad0f8fb18a21f89b35589fde42aae3365cae49a824c0ba0b1ad3c01ed6"
+    },
+    {
+      "file": "SCATTERBANG.png",
+      "sha256": "bcd8dad24c958d8698be7df4214d5edfd32f73d61a3ce594edb352ad8b743043"
+    },
+    {
+      "file": "GREATBALL.png",
+      "sha256": "22f2c892ba031445fd2bd00edb4bbc2fa158b9eeb2b07520632f386d3d6c6299"
+    },
+    {
+      "file": "ETERNALICE.png",
+      "sha256": "9159ede553154cec50c2b66ab651f543323dcf8ba7ee5f6fca477b1386191145"
+    },
+    {
+      "file": "WOOD.png",
+      "sha256": "c4447eb22f17a1d85e98b82e9e21dcb8a8c9759af1ae277a5ae77396eaff9a91"
+    },
+    {
+      "file": "CASTERFERN.png",
+      "sha256": "daeeaa4fce0f063a66720f4c991b8a9f40d6004b11a880f71898c89f610c4f75"
+    },
+    {
+      "file": "BLACKAUGURITE.png",
+      "sha256": "b5e39752eb3956ebccec961a3d3eb1be0f5ad00921549a9f6baf5691954ef77c"
+    },
+    {
+      "file": "SWORDCAP.png",
+      "sha256": "d52d617670c92e0cc5480ccebb21d008213099070d497ceaeff2613e67a2a239"
+    },
+    {
+      "file": "LOSTSATCHEL.png",
+      "sha256": "ab77618ccdcc45b329b9855d118ab52c7817926e1b691533401e84ba99d33d1b"
+    },
+    {
+      "file": "AUXGUARD.png",
+      "sha256": "fdf4e9c58a38a3d30cdfc77456b1c76620fd34f22ebf070d9b99e30f1f2a9548"
+    },
+    {
+      "file": "PEPUPPLANT.png",
+      "sha256": "d73626ef79a2fb22c772f0560c511dccded67004215cd09242f45e94c31b6e22"
+    },
+    {
+      "file": "SPRINGYMUSHROOM.png",
+      "sha256": "d35771eacbb677c758c3f74bdd96a92d48ade5dc87afc246f87601b4f9908f7e"
+    },
+    {
+      "file": "MAXPOTION.png",
+      "sha256": "5b3bdf5183cefc618d687e1efac364e129d8ada1dbc4f024fe506ce0b37a7b7d"
+    },
+    {
+      "file": "PEATBLOCK.png",
+      "sha256": "e1a411c8b78aa2fa7edab8bc087d10096c305e7a6d079e0d84c40578e43cfc51"
+    },
+    {
+      "file": "ORIGINORE.png",
+      "sha256": "7caea1d5155ac484ff31b66c0817089b509101cbb4ff3c560dd6911195177c01"
+    },
+    {
+      "file": "POKEBALL.png",
+      "sha256": "fce28884648294bf21bf11b058294c8b2efad4998498beebcf0059fd97ff6e22"
+    },
+    {
+      "file": "POPPOD.png",
+      "sha256": "c7ef52d3d4182a86fcefefc33a75733394b7d6a70b52007ee52434f549a8dfa3"
+    },
+    {
+      "file": "SWAPSNACK.png",
+      "sha256": "6bf0ad8b4530e2e869e6bfc28cf98d525523adf9580f0291f20839309cdc66e2"
+    },
+    {
+      "file": "SMOKEBOMB.png",
+      "sha256": "ccc48c1aa817e8e004c592921861a3cb81137577097798e584fdababbc287d80"
+    },
+    {
+      "file": "POKEDEX.png",
+      "sha256": "742754ab0cef679eaa8435368018076bd3a159a257132be2163ff5a1e7879be2"
+    },
+    {
+      "file": "CRAFTINGKIT.png",
+      "sha256": "74eaae9f48f86ca60f470d3c6b11c43340b6aba7d017aa299faff662338e4842"
+    },
+    {
+      "file": "BLANKPLATE.png",
+      "sha256": "075bddfc0dc895a87e6f6e4de11a7c4c98e8ab0a7f7da1c4903dcf5bd673c073"
+    },
+    {
+      "file": "RARECANDY.png",
+      "sha256": "6e8441ee7cf29c0b96c81b98c4330ae1f195b692f127e2e36ea92a3fbb8183ea"
+    },
+    {
+      "file": "SPOILEDAPRICORN.png",
+      "sha256": "1909379c5c9c8b363fb7f1fb04a33184242c712a51ce4f933e18d3cbcc70ca6f"
+    },
+    {
+      "file": "QUICKBALL.png",
+      "sha256": "201103e7717624b0e5cef3ff94ae73623d43df57172547360e1d024f7af2d8d1"
+    },
+    {
+      "file": "DUSKBALL.png",
+      "sha256": "871150619ef8801f693bfe5d0e98b64f17c362af1a3ea3d60321dac162eb6993"
+    },
+    {
+      "file": "DIRESHROOM.png",
+      "sha256": "410b90f39d22aaca2b0ffe89a74670655990b30beb4842ebfd782d80581ff710"
+    },
+    {
+      "file": "CAKELUREBASE.png",
+      "sha256": "13700d3399a076e5534c3fed8dc63531fdf79e333bc1d6c25bfcf10435a42572"
+    },
+    {
+      "file": "HOMETOWNMUFFIN.png",
+      "sha256": "9af9c5c7be501facdfb20d46b90f2c1653b9e0ab3d365ad51b024be6081f4de0"
+    },
+    {
+      "file": "FINEREMEDY.png",
+      "sha256": "f4adb834c30708da7dbdbb8d731c61ebc3fd3208c93d7ba3ccd1878c1aec888a"
+    },
+    {
+      "file": "LINKINGCORD.png",
+      "sha256": "38c18db5ba7eee33953918608180e5e11c4e449553253c64398440e249915422"
+    },
+    {
+      "file": "LUSTROUSGLOBE.png",
+      "sha256": "d6af6b16b134981edfdb367f06cf2f9d3e698ba6a8dc8e58c5d2763c69f21362"
+    },
+    {
+      "file": "GRISEOUSCORE.png",
+      "sha256": "e2f37862ea6aac6e4b1e5c0bb9337eda5591d941e5d2a391406ca1ee8c6e7d06"
+    },
+    {
+      "file": "JUBILIFEMUFFIN.png",
+      "sha256": "9af9c5c7be501facdfb20d46b90f2c1653b9e0ab3d365ad51b024be6081f4de0"
+    },
+    {
+      "file": "GRITDUST.png",
+      "sha256": "0ea4544cf11d262154dd6d6b405480aa443fa87e5a48dbe2aa4535777b5626e4"
+    },
+    {
+      "file": "CANDYTRUFFLE.png",
+      "sha256": "91d6f5e043bb3a0ecbf576774d8677983ec4d3457c315d0e3c15d85bc2c223af"
+    },
+    {
+      "file": "MEDICINALLEEK.png",
+      "sha256": "43bc35e8fe5f34eac7a6130b4cda65ed59c443eb4b940a39d79f25e15224affe"
+    },
+    {
+      "file": "REMEDY.png",
+      "sha256": "ca304b77e5a622631da42299fa0213e35cc2ad5965819c63c97b255d1b5f1e87"
+    },
+    {
+      "file": "MOONBALL.png",
+      "sha256": "a6bb41bcb879e12e18f65e5227fbbd3c607d983e09fc92d25258a4a9b2c0e4a7"
+    },
+    {
+      "file": "GRITROCK.png",
+      "sha256": "49c86c85a38bf70a09bc53a1016a7443cbb811b8af4c237072d7c0b1ccdf53a9"
+    },
+    {
+      "file": "HONEYCAKE.png",
+      "sha256": "c1a1de7968adb624f68de723bd19e532590ff3cb9b9f68dcdc46826934205716"
+    },
+    {
+      "file": "CHOICEDUMPLING.png",
+      "sha256": "7398186fcd5f43314637da44182355ca85e765febd33dced43bb9581fc2a8112"
+    },
+    {
+      "file": "SEEDOFMASTERY.png",
+      "sha256": "3dc973a7c693689b73bddb01d7315d1fab9e66e4af465b72d4ef30d1ee720556"
+    },
+    {
+      "file": "TWICESPICEDRADISH.png",
+      "sha256": "79e6e9e60a554a9e7deaabeb6b15f7eb64404642362a6b645b557c9b9038da24"
+    },
+    {
+      "file": "GRAINCAKE.png",
+      "sha256": "65685a8ed2696d40bc22d03b14f3906baedec6a36d0111d046c691cdacdaf725"
+    },
+    {
+      "file": "PREMIERBALL.png",
+      "sha256": "4cf275cebf5e9d2ccd545cd06b3aa271123ebcbbc4d8ca93e3a7096d84c970d1"
+    },
+    {
+      "file": "AZELFSFANG.png",
+      "sha256": "fbdb1ccbcb6fc0de9b101323e508be394e75830872cc9e220abc88a800a6d749"
+    },
+    {
+      "file": "ORIGINBALL.png",
+      "sha256": "9b07ab83cebf23bfe48322ac903ef9248ab5945ce5815a824087eeb7e655b3bb"
+    },
+    {
+      "file": "RECIPE.png",
+      "sha256": "140b8c2bec47df85233bf5f41f1544d8887a525b15d8d6ef17b0b181b3092b35"
+    },
+    {
+      "file": "BASCULEGIONFOOD.png",
+      "sha256": "af5de9bdde8a007f57619c3d6a32ea8dbd0e3a0f3b70293df0b2af69e3634dd8"
+    },
+    {
+      "file": "STEALTHSPRAY.png",
+      "sha256": "ab5700f1e4dd67f571196773b4ff9773d5369173e554ec69e0616fe8cde9688b"
+    },
+    {
+      "file": "FASTBALL.png",
+      "sha256": "c6912b6cdc828192f07195a71279369d8721d0c59e186c1bc35830c7642672d9"
+    },
+    {
+      "file": "SOOTFOOTROOT.png",
+      "sha256": "93798d5d38fb92d624648f6850c591fffc1bdcf9b1d4bb01d7eed5809dfab8ab"
+    },
+    {
+      "file": "DAZZLINGHONEY.png",
+      "sha256": "6100dc471445cbcef3228e1b61e635970e0853f85383d6a7e193b63a8d0075d2"
+    },
+    {
+      "file": "CELESTICAFLUTE.png",
+      "sha256": "36ffc7e9e2cf8f8a09f7871b6a3844b5a91d11dc3efd0ff5c50c899c0d08e605"
+    },
+    {
+      "file": "CRUNCHYSALT.png",
+      "sha256": "be8487473ce8d9f429d615fe422fe310c6f4fa743f3b984ac264327da894cbac"
+    },
+    {
+      "file": "FULLRESTORE.png",
+      "sha256": "f6a3b7be722a2b2e8bd2f4f63dfa9810ea85644434b82195cc19e12b2a42d40d"
+    },
+    {
+      "file": "GRITPEBBLE.png",
+      "sha256": "14279fd5798e22ef641f5d9424c00a9455cafc78e3770bfb583b8b63195ddb4e"
+    },
+    {
+      "file": "MESPRITSPLUME.png",
+      "sha256": "09365d11c9becba70029014e49be624e472acd97323f14a31bead6667873c685"
+    },
+    {
+      "file": "FRIENDBALL.png",
+      "sha256": "330a7c9adc34038c68c1251ab8459d134a6471ffe864369759ad0a85da7a1f32"
+    },
+    {
+      "file": "DOPPELBONNETS.png",
+      "sha256": "eb6d17b96ef880d4756bcf0c15756feebdc45519ae155767b35c451bfb6072c4"
+    },
+    {
+      "file": "FEATHERBALL.png",
+      "sha256": "04c4d07f89e4bee3e066df5414e7935f689fc15566b88f1048e718556433c5ac"
+    }
+  ],
+  "items": {
+    "23": "FULLRESTORE.png",
+    "24": "MAXPOTION.png",
+    "25": "HYPERPOTION.png",
+    "26": "SUPERPOTION.png",
+    "27": "FULLHEAL.png",
+    "50": "RARECANDY.png",
+    "54": "OLDGATEAU.png",
+    "441": "REDCHAIN.png",
+    "1611": "LINKINGCORD.png",
+    "1612": "HOMETOWNMUFFIN.png",
+    "1613": "APRICORN.png",
+    "1614": "JUBILIFEMUFFIN.png",
+    "1615": "AUXPOWERGUARD.png",
+    "1616": "DIREHIT.png",
+    "1617": "CHOICEDUMPLING.png",
+    "1618": "TWICESPICEDRADISH.png",
+    "1619": "SWAPSNACK.png",
+    "1620": "CASTERFERN.png",
+    "1621": "SEEDOFMASTERY.png",
+    "1622": "POKEBALL.png",
+    "1624": "ETERNALICE.png",
+    "1625": "UXIESCLAW.png",
+    "1626": "AZELFSFANG.png",
+    "1627": "MESPRITSPLUME.png",
+    "1628": "TUMBLESTONE.png",
+    "1629": "CELESTICAFLUTE.png",
+    "1630": "REMEDY.png",
+    "1631": "FINEREMEDY.png",
+    "1632": "DAZZLINGHONEY.png",
+    "1633": "HEARTYGRAINS.png",
+    "1634": "PLUMPBEANS.png",
+    "1635": "SPRINGYMUSHROOM.png",
+    "1636": "CRUNCHYSALT.png",
+    "1637": "WOOD.png",
+    "1638": "KINGSLEAF.png",
+    "1640": "POKEBALL.png",
+    "1641": "GREATBALL.png",
+    "1642": "ULTRABALL.png",
+    "1643": "FEATHERBALL.png",
+    "1644": "POKESHIDOLL.png",
+    "1646": "SMOKEBOMB.png",
+    "1647": "SCATTERBANG.png",
+    "1648": "STICKYGLOB.png",
+    "1650": "MUSHROOMCAKE.png",
+    "1651": "BUGWORT.png",
+    "1652": "HONEYCAKE.png",
+    "1653": "GRAINCAKE.png",
+    "1654": "BEANCAKE.png",
+    "1655": "SALTCAKE.png",
+    "1657": "SUPERPOTION.png",
+    "1658": "HYPERPOTION.png",
+    "1659": "MAXPOTION.png",
+    "1660": "FULLRESTORE.png",
+    "1661": "REMEDY.png",
+    "1662": "FINEREMEDY.png",
+    "1663": "SUPERBREMEDY.png",
+    "1664": "OLDGATEAU.png",
+    "1665": "JUBILIFEMUFFIN.png",
+    "1666": "FULLHEAL.png",
+    "1671": "STEALTHSPRAY.png",
+    "1673": "AUXPOWER.png",
+    "1674": "AUXGUARD.png",
+    "1675": "DIREHIT.png",
+    "1676": "AUXEVASION.png",
+    "1677": "AUXPOWERGUARD.png",
+    "1679": "IRONCHUNK.png",
+    "1681": "BLACKTUMBLESTONE.png",
+    "1682": "SKYTUMBLESTONE.png",
+    "1684": "BALLOFMUD.png",
+    "1686": "POPPOD.png",
+    "1687": "SOOTFOOTROOT.png",
+    "1688": "SPOILEDAPRICORN.png",
+    "1690": "STICKYGLOB.png",
+    "1691": "BLACKAUGURITE.png",
+    "1692": "PEATBLOCK.png",
+    "1693": "STEALTHSPRAY.png",
+    "1694": "MEDICINALLEEK.png",
+    "1695": "VIVICHOKE.png",
+    "1696": "PEPUPPLANT.png",
+    "1701": "SWORDCAP.png",
+    "1702": "IRONBARKTONGUE.png",
+    "1703": "DOPPELBONNETS.png",
+    "1704": "DIRESHROOM.png",
+    "1705": "SANDRADISH.png",
+    "1708": "CANDYTRUFFLE.png",
+    "1709": "CAKELUREBASE.png",
+    "1710": "POKEBALL.png",
+    "1711": "GREATBALL.png",
+    "1712": "ULTRABALL.png",
+    "1713": "FEATHERBALL.png",
+    "1716": "SCATTERBANG.png",
+    "1717": "SMOKEBOMB.png",
+    "1720": "POKESHIDOLL.png",
+    "1724": "HONEYCAKE.png",
+    "1725": "GRAINCAKE.png",
+    "1726": "BEANCAKE.png",
+    "1727": "MUSHROOMCAKE.png",
+    "1728": "SALTCAKE.png",
+    "1729": "SWAPSNACK.png",
+    "1730": "CHOICEDUMPLING.png",
+    "1731": "TWICESPICEDRADISH.png",
+    "1743": "WALLFRAGMENT.png",
+    "1744": "BASCULEGIONFOOD.png",
+    "1745": "OLDJOURNAL.png",
+    "1748": "HEAVYBALL.png",
+    "1753": "HEAVYBALL.png",
+    "1754": "HOPOBERRY.png",
+    "1755": "SUPERBREMEDY.png",
+    "1756": "AUXPOWER.png",
+    "1757": "AUXGUARD.png",
+    "1758": "AUXEVASION.png",
+    "1759": "GRITDUST.png",
+    "1760": "GRITGRAVEL.png",
+    "1761": "GRITPEBBLE.png",
+    "1762": "GRITROCK.png",
+    "1765": "LOSTSATCHEL.png",
+    "1766": "LOSTSATCHEL.png",
+    "1767": "LOSTSATCHEL.png",
+    "1768": "LOSTSATCHEL.png",
+    "1769": "LOSTSATCHEL.png",
+    "1771": "ORIGINBALL.png",
+    "1776": "ORIGINORE.png",
+    "1777": "ADAMANTCRYSTAL.png",
+    "1778": "LUSTROUSGLOBE.png",
+    "1779": "GRISEOUSCORE.png",
+    "1780": "BLANKPLATE.png",
+    "1782": "CRAFTINGKIT.png",
+    "1785": "STRANGEBALL.png",
+    "1786": "POKEDEX.png",
+    "1787": "OLDVERSE.png",
+    "1788": "OLDVERSE.png",
+    "1789": "OLDVERSE.png",
+    "1790": "OLDVERSE.png",
+    "1792": "OLDVERSE.png",
+    "1793": "OLDVERSE.png",
+    "1794": "OLDVERSE.png",
+    "1795": "OLDVERSE.png",
+    "1796": "OLDVERSE.png",
+    "1797": "OLDVERSE.png",
+    "1798": "OLDVERSE.png",
+    "1799": "OLDVERSE.png",
+    "1800": "OLDVERSE.png",
+    "1801": "OLDVERSE.png",
+    "1802": "OLDVERSE.png",
+    "1803": "OLDVERSE.png",
+    "1804": "OLDVERSE.png",
+    "1805": "OLDVERSE.png",
+    "1806": "OLDVERSE.png",
+    "1807": "OLDVERSE.png"
+  },
+  "balls": {
+    "27": "STRANGEBALL.png",
+    "28": "POKEBALL.png",
+    "29": "GREATBALL.png",
+    "30": "ULTRABALL.png",
+    "31": "FEATHERBALL.png",
+    "34": "HEAVYBALL.png",
+    "37": "ORIGINBALL.png"
+  },
+  "unmapped": [
+    "DIVEBALL",
+    "DUSKBALL",
+    "FASTBALL",
+    "FRIENDBALL",
+    "HEALBALL",
+    "LEVELBALL",
+    "LOVEBALL",
+    "LUREBALL",
+    "MOONBALL",
+    "PREMIERBALL",
+    "QUICKBALL",
+    "RECIPE"
+  ]
+}

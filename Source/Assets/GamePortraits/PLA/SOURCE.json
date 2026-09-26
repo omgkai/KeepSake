@@ -1,0 +1,3166 @@
+{
+  "repository": "https://github.com/kwsch/PKHeX",
+  "commit": "08c27668d28a83ad4b04140436a384d4155ed134",
+  "assets": [
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-22.png",
+      "file": "c_201-22.png",
+      "sha256": "0962469f3842d1556f6f7cb1d6479ca9a2cbeb494677c275867d2dfc7dab7be6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-9.png",
+      "file": "c_493-9.png",
+      "sha256": "467275f9f3e500024f2a276945c83408d05005520316d5d2dde99aca73967bed"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_265.png",
+      "file": "c_265.png",
+      "sha256": "c8ab6eda0a1e02a576a44ab3f0ed331489119c286b9fd98c734d957277c7983c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_488.png",
+      "file": "c_488.png",
+      "sha256": "d07a49eed07a857e4c650d9aa9344134d7c1e155c0b6886b3c84ac9c1bf22da3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_72.png",
+      "file": "c_72.png",
+      "sha256": "7bcc0d17b67fbb667c0ccb0fee8469abe271a8139cca91f6b58ea1182b90a1b1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_339.png",
+      "file": "c_339.png",
+      "sha256": "b66c9c5036faec9eff12ff389b9e0a64ffe0d46691121e142d4149ec4ab90503"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_66.png",
+      "file": "c_66.png",
+      "sha256": "c4ee0a5bb300b2ed7822266949bf2ea46221a0c28f67f244798143aa9ea1ea93"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_477.png",
+      "file": "c_477.png",
+      "sha256": "4309777741d95b893ee1f06c799f5b29cd5734e32f22798019e230bc482ddb03"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_463.png",
+      "file": "c_463.png",
+      "sha256": "6e3eaa4a18db8bf065c3805ca6c975a045f51b9bdf570fb1a572777853714dce"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_706-1.png",
+      "file": "c_706-1.png",
+      "sha256": "3591f889aff369c3a70e397290c232ab9cd4d5bd3aa0eb1e7d08961d4a646dd7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_113.png",
+      "file": "c_113.png",
+      "sha256": "8cf00b6bb93e812663eb39919818421e471f6c6e322b5733859d09186ca8a95e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_112.png",
+      "file": "c_112.png",
+      "sha256": "00440684a6ddc882879d6cfa5e4c1b1b60451a800520568d7d0e3ae97aa62b7f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_157-1.png",
+      "file": "c_157-1.png",
+      "sha256": "55c3d070688045a6356699fc687a11e54fdc85b3f53c41c88cc1828c832fa3ed"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_462.png",
+      "file": "c_462.png",
+      "sha256": "d076d86f733c2e7d95e522666f236153093b2e90f79d0005f9d6f184fe2b1582"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_476.png",
+      "file": "c_476.png",
+      "sha256": "ec3742fe33224b768f8e9cb914686078eb782e003a6c4059879d5e6e6370b0fe"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_67.png",
+      "file": "c_67.png",
+      "sha256": "50bd394506225d355c6f0017a9812b443bca8b7e5d583d25b5e218a2aeb2c33d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_73.png",
+      "file": "c_73.png",
+      "sha256": "c52b2fae9b0d2ca459897bf456f09a9469df5b322b23d39075dc1dd9ec37cf0d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_423-1.png",
+      "file": "c_423-1.png",
+      "sha256": "d51d15d4cb7e82993bcc864aa6e21c5231e4e7dad77b9aa1cf453f2b792e34b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_489.png",
+      "file": "c_489.png",
+      "sha256": "4481b09c9f68c229a144d321af12378ace78471bf49ba8ce40fc79209feb155d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_502.png",
+      "file": "c_502.png",
+      "sha256": "db9ef651a85b255ce12423d690f93b2d2d50f788812264d58feb400de721fe48"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-8.png",
+      "file": "c_493-8.png",
+      "sha256": "605f139143c687e5fa6bfa736ac111999e51b309372625dccf28e0a529d9d9d3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-23.png",
+      "file": "c_201-23.png",
+      "sha256": "ab44b575594d1c2bde57676314d7b6002df582a34c6fee5aa910a37a5f32d350"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_700.png",
+      "file": "c_700.png",
+      "sha256": "763451f301c1a602194078ce6bdb04bd5303fb5eac9611c498e5f85ece2d5ac7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_503-1.png",
+      "file": "c_503-1.png",
+      "sha256": "5e126542c504ea59cfc93b5ec150f9cb96cbe6995dbaf3a31dd8a0701af6dda3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-21.png",
+      "file": "c_201-21.png",
+      "sha256": "8674486f64b9ec636f3ab1230a650f6680d8ab33c64b04ad2ff64d3092e8fc3a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_299.png",
+      "file": "c_299.png",
+      "sha256": "0514b96e54333eb8010d9ce08a0e7d0b0d46a661a334d4ac77ed77cb4c5f4e1b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_645-1.png",
+      "file": "c_645-1.png",
+      "sha256": "7b2bcca08606f8269a0f95b42e2179c63531babcbbf18012b65d900436d99257"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_266.png",
+      "file": "c_266.png",
+      "sha256": "6f019458044d0ba78903c9f1e9f9d6def14b2e47fc1c24f075dd5a18f9c7bc1c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_65.png",
+      "file": "c_65.png",
+      "sha256": "f1a1d9d844872f78fabb5af669233b94724d16a37f87936fab639b62e0de0d19"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_448.png",
+      "file": "c_448.png",
+      "sha256": "4e28dd167e951bd592ce364d8c1e1c80b9f696a9f1523773960ccd19ca402370"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_211-1.png",
+      "file": "c_211-1.png",
+      "sha256": "c6056abef1911b1b8e05cd694aa3dd3bb8868d35cad4a0894007f5018b4b02b5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_460.png",
+      "file": "c_460.png",
+      "sha256": "8c9234086a572213753e55ecdb9a8527f359183602d10922e7d5b958f61ec0ac"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_474.png",
+      "file": "c_474.png",
+      "sha256": "31c93110ce43b5bd41235fab10d76e7eb969421df301892453ff36c85f5d6d96"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_421-1.png",
+      "file": "c_421-1.png",
+      "sha256": "2953053084870a33e5265bc60a7d19a7d7ab3e0506f346d0bde006a52375430b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479-4.png",
+      "file": "c_479-4.png",
+      "sha256": "ed650a5ee84960595f503d588de1adaf72f306c2d7f90019660806c21dd228bd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_111.png",
+      "file": "c_111.png",
+      "sha256": "2378ab1f0342775717dddd3a3036443f3005bb0f399a1ad1097e8b8b7f309af8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479-5.png",
+      "file": "c_479-5.png",
+      "sha256": "943a5cf71f627de478825a748cda7a41af994ca40a4fc4d87d0da3c7c0e4a33d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_475.png",
+      "file": "c_475.png",
+      "sha256": "4ec19ec65c336da2a99fdc459b7b48f232c40842a8ba5c3ef36febf645623f35"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_461.png",
+      "file": "c_461.png",
+      "sha256": "b992aa7210a1f1a5e2181712de85ae0c959b49173cfc1839ef9dbfbaa8fdd634"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_449.png",
+      "file": "c_449.png",
+      "sha256": "7e8c0cea5c9bec684b9e7327d25a10a52b1e5c6b621e1470b321f7dad5524ad6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_64.png",
+      "file": "c_64.png",
+      "sha256": "fb10ece68d27351ee51bb1019bf39ce4a3463785c4afaa269244d2e9f6d775a3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_267.png",
+      "file": "c_267.png",
+      "sha256": "dec8e4c768783f1f079351369af9f9e50a416e0d50bd96c0c24f768dd6cbfb14"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_501.png",
+      "file": "c_501.png",
+      "sha256": "53000508e113a0fdaf70d29211d3c2f893111fd97f422b9441f32833c5504bf7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-20.png",
+      "file": "c_201-20.png",
+      "sha256": "ca52108cba389836cd130622719abf4ec64d0d5349f189d19293e25794b0497c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-24.png",
+      "file": "c_201-24.png",
+      "sha256": "d17bf6813451a6d626a5f8427e5b26e75c24c8937b713f8cabffa5dda04272c2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-18.png",
+      "file": "c_201-18.png",
+      "sha256": "c3ad542314aff2c2c0dc67e5ff6e5ed8f9962190f6c3f9b998e4977902600b5d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_465.png",
+      "file": "c_465.png",
+      "sha256": "337f8e4fdc61d08aeb75faa1b69a0fb7282e1c20de117a3d327a519dd113a429"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_471.png",
+      "file": "c_471.png",
+      "sha256": "bfc49ee9fc43bbb3fa64c14a7bd088f2120cd5bb755e6dbd253a4caf17a7f2d1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_459.png",
+      "file": "c_459.png",
+      "sha256": "90007153d36b4ccd250ee697967704fcddc940b2e6847f5787c3119c31847478"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_74.png",
+      "file": "c_74.png",
+      "sha256": "71018023c1037300d6c3e780ac97f63ec69c77461324435d7fff2e1041323974"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_484-1.png",
+      "file": "c_484-1.png",
+      "sha256": "be7bfe43ae3164aa1812e529bf5a1d156c87d73f328533cc60b26a5e77bed485"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479-1.png",
+      "file": "c_479-1.png",
+      "sha256": "30be0aeff030e4e7c4ccb26b676eb889597c684c67a8536cb5de4ca6f5068e2d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_129.png",
+      "file": "c_129.png",
+      "sha256": "7695105d436d8186ce9d109acc1b794897be79df4f4193910b93f4bff5c19261"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_641-1.png",
+      "file": "c_641-1.png",
+      "sha256": "1525b961489ce41e030d5f396861abc00348c4ab156c69435479a506a0459e8e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_114.png",
+      "file": "c_114.png",
+      "sha256": "cc3991a8e53cae278c1755b23db78d6521772d89f1027c78b281603fce317710"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_75.png",
+      "file": "c_75.png",
+      "sha256": "36350056ebac452c9baa976df8808ae60b2d149dffae9655aa519bfbb164bf26"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_458.png",
+      "file": "c_458.png",
+      "sha256": "24f69699f9cccdac1a6cdb55a602b4ebbe7eee1a18ab11b778a36beaf4489a35"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_470.png",
+      "file": "c_470.png",
+      "sha256": "ddb6252569656c225db6aaa8d78af06c16f458846a60f2c5a92ee081ed932e36"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_464.png",
+      "file": "c_464.png",
+      "sha256": "9ec2d4a0a3b20bcd3edd1f47e1fd04c7bf3732f5059bee57562b4329ea2d61a8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_724-1.png",
+      "file": "c_724-1.png",
+      "sha256": "c4d6ea2b29f2fbbdd76554ebe6493a65727772c626a29bec9168956dcb6471e9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-19.png",
+      "file": "c_201-19.png",
+      "sha256": "72f5e0c43af0c957f01bfb2e3a6f3aa0149307e3ee6048847008ded3ef3c9c62"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_215-1.png",
+      "file": "c_215-1.png",
+      "sha256": "7a5e2c6f718d7c68c6955f0afc38dc7023d767f2b530150801c7e933fe1bd05c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_712.png",
+      "file": "c_712.png",
+      "sha256": "1fa2c93d44bf0dfc0c7ce85e422feb0d013cb61b7f87ffd0b483f5ba315d3cb5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-25.png",
+      "file": "c_201-25.png",
+      "sha256": "3e0ba4295bda6806e507c998f95da406dbdcdc3acd93348e1964aac95f8e8fc5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_704.png",
+      "file": "c_704.png",
+      "sha256": "6935e47ade6a51b2752f62754c774621f3eb6da85943ce0cf9dd255b6658b2cd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-27.png",
+      "file": "c_201-27.png",
+      "sha256": "34536d4b7c33eac8cdedfc056a98b32ba5443a86447c9bd8b879c384c579f539"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_450f.png",
+      "file": "c_450f.png",
+      "sha256": "8670055ff9c1c2b831f8df7d82bd4670e59377d1d992fca012707c7cb0f4b55f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_472.png",
+      "file": "c_472.png",
+      "sha256": "38be1ceb6ba57acb394bb2407b27411cf8b16e112e39b326601f427e70907308"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_466.png",
+      "file": "c_466.png",
+      "sha256": "6a4349c4fb3fdf5f1995daf6350d173d46149cb3b37129a07635d2a9bde57910"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_77.png",
+      "file": "c_77.png",
+      "sha256": "910660c3f3e722abed375744a5c7fa35139353185f22b3f08c2aaca733393946"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_63.png",
+      "file": "c_63.png",
+      "sha256": "cb9484d4f65ef74f8e8a279e3d9b574622d65af2bf20e22751062aeca96b2062"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479-2.png",
+      "file": "c_479-2.png",
+      "sha256": "d2a81c166d09ec02fa536162f9e3e7e5b7463973d24948a07aff0e02e2f25d94"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479-3.png",
+      "file": "c_479-3.png",
+      "sha256": "f630836c41475ac4d9fd1d415197e077ce0a57ca4daf607d90ceaa2e95d73db0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_76.png",
+      "file": "c_76.png",
+      "sha256": "d331b0b8dbc5a22be714a268d5f20b59dba94fdbbc390d9320bb992bef5bcbb6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_467.png",
+      "file": "c_467.png",
+      "sha256": "297e6ebc9c0ab489e1c8b148fe50678643203c20fb3fa0fcb47f9383a5242040"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_315.png",
+      "file": "c_315.png",
+      "sha256": "01bc1b5f13b5aa7fb1cc5d745ae67c630508f570157b73c0312e67520ba43a4b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_473.png",
+      "file": "c_473.png",
+      "sha256": "4721edf84b019d211fa5c6622f200a40b9307a81a10604b3697876b760c1ec8d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-26.png",
+      "file": "c_201-26.png",
+      "sha256": "6ad66c9205a2de4d3291783f74d482aa67dec9b05e2bc6b1247d55b7ca98513c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-9.png",
+      "file": "c_201-9.png",
+      "sha256": "be77844a600611d7075f7ab5511034e3c5a25e1ff0a0535856c6e98f103f66e0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_548.png",
+      "file": "c_548.png",
+      "sha256": "38836c74e39b70fc0b462899dd1b804fd7f330852a5b2f4afa32017ca3df2c4b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_212.png",
+      "file": "c_212.png",
+      "sha256": "dc779f7759b838b6fd631092f2debff51ebb520e0a9a87da220ee2ae2300a9fc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_399.png",
+      "file": "c_399.png",
+      "sha256": "c1d091e99b35dd0698844ae9cc2b4590b342f62d69d06fdb8e562ed11626bc1c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_428.png",
+      "file": "c_428.png",
+      "sha256": "64c0e48bac636c68769767457e23acc07671e67c6900229a34bec59ae3bc4691"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_414.png",
+      "file": "c_414.png",
+      "sha256": "010f7dadfff90a3115d2cfdc4a8388cbe1d1386a94cfa23e0a6924eca74a9509"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_400.png",
+      "file": "c_400.png",
+      "sha256": "8f68115ec775f5a967fad86c27b3ff92bc98b3dd15d94c2de18301c8e635d2c3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_38.png",
+      "file": "c_38.png",
+      "sha256": "22e9b175c09dc2fcb78f8439243a225a8ce44f93fa1d95f782821c5bd69b8123"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_401.png",
+      "file": "c_401.png",
+      "sha256": "2ee24cd14cedbd188b0424c80b7a7249f2846231ab9a7622e9c46e1211087be4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_415.png",
+      "file": "c_415.png",
+      "sha256": "90e6fc6d536876c224cf01f800dd632c43c6cd92bf3859e53b57a604e22256dd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_429.png",
+      "file": "c_429.png",
+      "sha256": "9f409267f6d6aa35df424b5fa2f468fd429b7a3a400795f1d2a43b7771004089"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_398.png",
+      "file": "c_398.png",
+      "sha256": "a5e6f363e0f8991334ebf9ebe778685845d304ccc79b553482a9bab4e38a2426"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_207.png",
+      "file": "c_207.png",
+      "sha256": "37e4987330176093cd14252e62018a63c98d399cb71fdd1dc9cc7531ea0445a7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_705-1.png",
+      "file": "c_705-1.png",
+      "sha256": "8fa602accba2e16608b9a537e50e9b7d168b8d1c60be4ebb39389044ca776d6f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-8.png",
+      "file": "c_201-8.png",
+      "sha256": "dfb7e797bb6b347ec5a8a6c13b02fbd5e080fc1c307fc8324b92b894d8169f0d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_239.png",
+      "file": "c_239.png",
+      "sha256": "5b3439be39df55f63d57a7e37834ab59733a38dcdc82c201eee82284afe256ba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_365.png",
+      "file": "c_365.png",
+      "sha256": "77bc550b8634baf3f667338e5e18f94e59065059fd7f19a89ea97ec4e4a27ab9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_403.png",
+      "file": "c_403.png",
+      "sha256": "df70eb597bad4000c429414804e64b7fa3f1d5dfee49c080c5d986b029c6158f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_417.png",
+      "file": "c_417.png",
+      "sha256": "1f859534b2234623a774b7afd2b4598606692193317289ebc1f710ca1de62a07"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_198.png",
+      "file": "c_198.png",
+      "sha256": "d15349a7484949bf2f62978d5de4a4a4950e7873d6137e484a2300dcfd8f9d02"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_483-1.png",
+      "file": "c_483-1.png",
+      "sha256": "f539cfcccb2297895c123cfff7817c43b2aed734d93d485fbc0ec7ad8b205115"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_173.png",
+      "file": "c_173.png",
+      "sha256": "683711ff24bf23533d5a6a59e493a41925b52e95927c40195e431a9af727f77f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_172.png",
+      "file": "c_172.png",
+      "sha256": "7aea7dba31b90a201ae1d3ee42f4f3ffd291ef3d6efddebcdea22ba535e4905d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_416.png",
+      "file": "c_416.png",
+      "sha256": "12a735414c67593d10c66bcb56c78f18f17a67fed1edf910497f6f732eed0a5f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_364.png",
+      "file": "c_364.png",
+      "sha256": "0a6313c6a3a4f9e17f6ed791ea6ead8f765f087935cfe14bf8690947f09c4a8d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_402.png",
+      "file": "c_402.png",
+      "sha256": "2e64e01266ad0215cb77840090dcbd49021c6242a74980f640e328cacda007d0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_358.png",
+      "file": "c_358.png",
+      "sha256": "73e8e342069026ff4dfda6fe551396524470cd0ff2cfa5b85cbdce46c7ce5690"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_422-1.png",
+      "file": "c_422-1.png",
+      "sha256": "ffff838ed8872ea0d878d0b70ec0ccde48538a35bb806f90de99350e7e1817d5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-18.png",
+      "file": "c_493-18.png",
+      "sha256": "9e4d9d423b5f2e65b9510587f7b4bcd602ff8d71ff446bff421d79f549b49017"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_37-1.png",
+      "file": "c_37-1.png",
+      "sha256": "0eba660274b1496fc7819c6d11fee6dbbfa10af5d2243aab45b33126594fbdd0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_214.png",
+      "file": "c_214.png",
+      "sha256": "dc16b127997fb3599cad32e1e6f64e27b00baa131c24ffac2e6efb3ea98737f3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_200.png",
+      "file": "c_200.png",
+      "sha256": "38a0d64dd016789f834c894226968fe622824e4d282119cb162ba6c32874477a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_642-1.png",
+      "file": "c_642-1.png",
+      "sha256": "0e888ca90795cfd5d92fd72af59ba122428b132c71ef571b82e710644d29db2b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_406.png",
+      "file": "c_406.png",
+      "sha256": "5fdd5785d23115c3b7dcd139ebaf064485c85df92727757976109256222d6f26"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_412.png",
+      "file": "c_412.png",
+      "sha256": "2725c69dc25dbf7103cc21c5fe54bc52d079a97f6ff512670259f49bc3599339"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_176.png",
+      "file": "c_176.png",
+      "sha256": "40df4b58c024f7df633ae1b1a101c98714e69773e8e85addbc12203c66d60550"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_413.png",
+      "file": "c_413.png",
+      "sha256": "09f03d5ec55447cd37dec0047ec89744b6bf608999e8ae17e03b9cc7d21bb1eb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_407.png",
+      "file": "c_407.png",
+      "sha256": "8748338a44c6d9eee2b74cef0629899ed82a2a0fb8de8edf7bfb49cbe4b77265"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_361.png",
+      "file": "c_361.png",
+      "sha256": "f785092e3acac1575b55c62562be9a6136e67eb54e9ba0312aff81541faee695"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201.png",
+      "file": "c_201.png",
+      "sha256": "dc343ba376caee1a25dbdcf2d7a54ede6e2f321f5f355d597e78a30567df864e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_215.png",
+      "file": "c_215.png",
+      "sha256": "55d6e55860008b0eb4c2c6b110bebd13496df78392bf8c6de739e21fc48468c9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_487-1.png",
+      "file": "c_487-1.png",
+      "sha256": "0d904e12c688353fd52289d18f0072d479edb6f9da26cc681f20771110ed73eb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_217.png",
+      "file": "c_217.png",
+      "sha256": "3f7345e5c268235d6fd416b37d1275859aa0588235f4e328fc0a290c85f34326"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_388.png",
+      "file": "c_388.png",
+      "sha256": "53f60c9453ea0618343ab54237247a7f50c54b60b97252232357446e90e015eb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_411.png",
+      "file": "c_411.png",
+      "sha256": "3614fafd3354bf0973fec7e0cd6428d0339414d9cf379d552ae25b86da6695a8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_363.png",
+      "file": "c_363.png",
+      "sha256": "e683c474d1cd7ee3caab440098f58eefc5a2b46b59b5941512dbbb2c961df575"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_405.png",
+      "file": "c_405.png",
+      "sha256": "774ff3a047facc92eb8bcdbb22f0b25082b247c1ef70eb5a46c4283403ba6be0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_439.png",
+      "file": "c_439.png",
+      "sha256": "902a5c6b1c8af0061cc1397876af8b6b58fb6ea7add8b659a7660c56fcbecda5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_175.png",
+      "file": "c_175.png",
+      "sha256": "6172a416dc73c358acb74036cc7b8181221223c06ed27ba772fc4df2d36bd57e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_438.png",
+      "file": "c_438.png",
+      "sha256": "e933b8e8371f1bc6ddb5c9ddb62bd7fe994c957e11f2d51aecc3537194014c74"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_362.png",
+      "file": "c_362.png",
+      "sha256": "b83ec70d659eccb3101123a1d26a07eb7287184d1043c43dc5f4a7bcf1cb3cc2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_404.png",
+      "file": "c_404.png",
+      "sha256": "7a29720636bbf98a8f26007313c424db563dfa185637be5c65678ab61e4882ae"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_410.png",
+      "file": "c_410.png",
+      "sha256": "8f9214c45e8e7c263ad2cf1d0600c5f935f290de9b41e80607d8e510e291de44"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_389.png",
+      "file": "c_389.png",
+      "sha256": "07acffeca8729b2c8f627e3133c8651b3929f27ee195bf86d3b07f475cdbe96f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_216.png",
+      "file": "c_216.png",
+      "sha256": "f1961e778f9c253f1e795d0c1ffa2eba83db964d3dc48bca8c7db4a0a39a3613"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-17.png",
+      "file": "c_493-17.png",
+      "sha256": "b86e2943e8734168f9db55575db432c254114a91df7cc11c71cc9bb3abe7c617"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_233.png",
+      "file": "c_233.png",
+      "sha256": "7b89fb9f21bac9ebd79425e3444e1939a37b13e841a6ab6d32dde6f72aa61d8f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_390.png",
+      "file": "c_390.png",
+      "sha256": "217aa5c348bbe136d650462ec33b334dc38b7a3a7250e26f510bcb4e0c32c926"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_570-1.png",
+      "file": "c_570-1.png",
+      "sha256": "8ba9d40e32d4253fc8d5f8ebf125c79e9530c47d135c54be1289cd0ce075b4c9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_409.png",
+      "file": "c_409.png",
+      "sha256": "becff2dc437697af076b3adf93103f1fbaa4d029125755d7ca8706e5854e781d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_435.png",
+      "file": "c_435.png",
+      "sha256": "22cabd5fee0d24f2acb760fad92c0f0887e447679be0a2bfb589121dc8a973d5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_421.png",
+      "file": "c_421.png",
+      "sha256": "7868ed0d1cede845e6e383b160287b4d0bf5d7926658a5a5fffeda56adc3056e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_193.png",
+      "file": "c_193.png",
+      "sha256": "41d8f03aaa3b9152fc86af560d415a4fe3b94384eaef7548333739a2870b94e9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_420.png",
+      "file": "c_420.png",
+      "sha256": "ca1a5e9724ecf8f457f39901c1313164adba4f87c24bcaeb9ecae8ac7891ecf5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_434.png",
+      "file": "c_434.png",
+      "sha256": "48b2e450039150385cc70d6a35aa2eb59363b6304b83eace6a151fe0b2e07da7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_25.png",
+      "file": "c_25.png",
+      "sha256": "a3c7b883df2ef2097ea9b60350ea3f29f00543aeec04586a4ec8f217b882f554"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_408.png",
+      "file": "c_408.png",
+      "sha256": "12e543fce2e2c60a74db03cf54ec8b06efbf8b9aed502ba579f53318227b9856"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_391.png",
+      "file": "c_391.png",
+      "sha256": "98669e6831bf50105d4711957a6e116470709d285a1aa9c2974bce3b87c0a893"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_226.png",
+      "file": "c_226.png",
+      "sha256": "c09b0a531be18697c378a1233f60dbf390295f1f0db5685239255eaefab3c98b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_58-1.png",
+      "file": "c_58-1.png",
+      "sha256": "dc5b030f9b6492ccb68e048287d9d5d98ad6ae24e01949ae47e0469c84a6e4a2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-1.png",
+      "file": "c_201-1.png",
+      "sha256": "8d82e062f0d1a4105a638147c3d6faa90cb2ed981019600cc9d36e4f65a26a06"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-16.png",
+      "file": "c_493-16.png",
+      "sha256": "48bfcdf69cadcd917bad0d27d254bdc7363526a99a104748cc346ae32a867ee3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_100-1.png",
+      "file": "c_100-1.png",
+      "sha256": "85518c45150846e8dcc0be2af477155b88fbdb0877ddbb4c2bd4ef88f3e4589e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-14.png",
+      "file": "c_493-14.png",
+      "sha256": "9e2cd7d2568f51e4cdedcbf96a0063c7d0631ddc93d91af2da3ded6d1cfd4552"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-3.png",
+      "file": "c_201-3.png",
+      "sha256": "44637e78b9e0b96fd63f7e41f410c64c69c89a127ea64ffd99fb0c99a9d4204a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_224.png",
+      "file": "c_224.png",
+      "sha256": "7e26d439d886b7c76f0cb808a33ef3cbc89b75e31256f3c893f9beaeb5f59a05"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_387.png",
+      "file": "c_387.png",
+      "sha256": "c3ea63e897eab6323302b1c44732964fd657c6131d710453f978bc36261f37d0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_393.png",
+      "file": "c_393.png",
+      "sha256": "7c5b10320b97a79c2ff98b0293c2137f85d3792123f54165aacee181b66490ad"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_422.png",
+      "file": "c_422.png",
+      "sha256": "ab2641bb74a6b576506d9f1cb26371f9d14b4c15d86f6dfb8b2984b37acc22c1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_436.png",
+      "file": "c_436.png",
+      "sha256": "a13b6b3152feafc0767aa31c915f8859f44d9f9f4319726575cef9b6e5e46ba6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_185.png",
+      "file": "c_185.png",
+      "sha256": "af1f39a308b5beb9ab2788fc5f95c799dbd9c6e98f375d64cb635ce0b9e5aa47"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_190.png",
+      "file": "c_190.png",
+      "sha256": "7ebcf8a8b702c7d5aadcd6cf3921dc0ea8350f4419398de16fb68bf6c878fc2e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_437.png",
+      "file": "c_437.png",
+      "sha256": "818c2c7fbd355461f47c783822f656511f8a52a9bb23b4d7c680dae834ac18f4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_423.png",
+      "file": "c_423.png",
+      "sha256": "35fc74fe5e30f7de69df936d27bb7446c9c15076721041d25349abb91ead7374"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_26.png",
+      "file": "c_26.png",
+      "sha256": "88a88a562e1fc168f89d2682fd5ab98305f800e92210004408c79e2d26a06f57"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_392.png",
+      "file": "c_392.png",
+      "sha256": "ca6791413148dcee5b40ad4523a05bd75a7de21ac2ede7e880bd2dea2706530c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_492-1.png",
+      "file": "c_492-1.png",
+      "sha256": "0fb918fee3b105c65d7b41432aed720e1bb6ce47c816d043d4156ae9eaa5b42f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-2.png",
+      "file": "c_201-2.png",
+      "sha256": "5ac84430ce2dad9c5ad1f8f7bd5400b92fd76ac0bb9cfb512a8c788a8f56c8b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-15.png",
+      "file": "c_493-15.png",
+      "sha256": "3f4b003f4a00524fdc68354827aa482c56400089f8042d943c56a9eabf8bb2ff"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-11.png",
+      "file": "c_493-11.png",
+      "sha256": "d822974662833ea5013cee5c29ae243f1b518c54417792e90d27eb1cd30e4dc9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-6.png",
+      "file": "c_201-6.png",
+      "sha256": "ab7e28fe792daf85bd537eb1fce51a2c1197091c70063571510f86e92c9f967b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_550-2.png",
+      "file": "c_550-2.png",
+      "sha256": "e5878092831562f7ba3cf25b487207bf580c6a28341da6b6aee89b836e9ece5c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_221.png",
+      "file": "c_221.png",
+      "sha256": "8fcd0a44abdb997723d92db61e92cc35391f4574828ea5d979543e01eb7fa0c9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_396.png",
+      "file": "c_396.png",
+      "sha256": "46529ba634d3f881261253b1fed7cc62eaead4ed100aacfffbcf567d97f9b110"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_427.png",
+      "file": "c_427.png",
+      "sha256": "de8039c09df4cb9b80193e3ac0e13adcdbc659c895d95cd66618096ba0843315"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_355.png",
+      "file": "c_355.png",
+      "sha256": "985ae691f802b97d06782b264be02d186a96e9231d194354ae49342efb0448a8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_433.png",
+      "file": "c_433.png",
+      "sha256": "fc78d3e407a5c55eb858a3cf825da7e43d58f3b9ee591b4fa2f859382853f30e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_36.png",
+      "file": "c_36.png",
+      "sha256": "6371d06bcdc87f005e1569651741a359e803f056b7bbe439400647b6ba583ea7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_413-1.png",
+      "file": "c_413-1.png",
+      "sha256": "6d9ad3d23786c99af6f33847e82d2e22fe70832302356e7211d475c677784cbf"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_143.png",
+      "file": "c_143.png",
+      "sha256": "44c9ab1f50ad6f18eb3b00445212d8e6cc060a30d52ef4aca1ba2fe0d283c83b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_156.png",
+      "file": "c_156.png",
+      "sha256": "042cbc1384b46c4d1efee88fc0066da75ac73c7bc5342a3a18b42e35401adbb4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_549-2.png",
+      "file": "c_549-2.png",
+      "sha256": "fbd31fda44fca737c1cd7166a56d54f5987ff2e144e318612ab9b2b659892aef"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_900-1.png",
+      "file": "c_900-1.png",
+      "sha256": "00528da852caba5311ee5076ecb94a697407dae271efb500b418ad6424e8b33d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_37.png",
+      "file": "c_37.png",
+      "sha256": "c39cdce7ecd7a351392949cc6946b064197a63d2ce26efb7e958ee9cb2a17a8f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_432.png",
+      "file": "c_432.png",
+      "sha256": "c425af0fe83aba94b81e10435ced839d16810bb8b977489156b9fed14cb06053"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_426.png",
+      "file": "c_426.png",
+      "sha256": "aea0a38f0eef1759f608cfb68aafdbf46727d1fbad74c1a991a8b659971507b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_340.png",
+      "file": "c_340.png",
+      "sha256": "d337dccc26ebe5b1cecd7a515f41ddd0fb49f306523a8ba423e28fa8c79372f7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_397.png",
+      "file": "c_397.png",
+      "sha256": "e7a8b0e3d16212c2fb6f6e48bc6361082a01ea9e1ddb25b7a3cf91ca350d8833"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_208.png",
+      "file": "c_208.png",
+      "sha256": "42081011787d3d0a6abee4413d39e649b00147a8fab2a76435efbce461686301"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_220.png",
+      "file": "c_220.png",
+      "sha256": "59ae07bb16b0922d05c2e50940e9b33796ee9806c6ee841bcd4c7898aa3ed518"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_234.png",
+      "file": "c_234.png",
+      "sha256": "8a3774b7afc8fdfd5107517d6b30f490ed6dc7e5bb0afb3579462040949e293f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-7.png",
+      "file": "c_201-7.png",
+      "sha256": "ab5e2ce81a7c4fecbd7bb3b57a47013135b49dee2254952c3dff118200b08d2d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-10.png",
+      "file": "c_493-10.png",
+      "sha256": "33e365f53f751d2ebffd6ef242c9143b12763a530d0cffb902c0052f559beeba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-12.png",
+      "file": "c_493-12.png",
+      "sha256": "75c7545560d92818add2d5e115375a9b1f731c27638656f4f8ea34c456821242"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-5.png",
+      "file": "c_201-5.png",
+      "sha256": "19b1ce95d61b03acd844253dc5fb5d908692eee90081256c99fdf3195c513c14"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_395.png",
+      "file": "c_395.png",
+      "sha256": "9e5c20e86b21b294c29fc3d9792a9c70e94d82940c7f4e1b2308dc1f3d7a5969"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_902-1.png",
+      "file": "c_902-1.png",
+      "sha256": "7473828155e008a5a1d73a1536f420286d9362d9d1d5a093730a9d3bf02d1ae8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_430.png",
+      "file": "c_430.png",
+      "sha256": "00ca1bfcee07ba7cfd53d41c8a4245007fd98513fdb9838f7553d2e6c0e7c9a4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_356.png",
+      "file": "c_356.png",
+      "sha256": "fc827394869fd2e0e0e69a14c0de1cded50a618819b2014edb773b66d1bfac08"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_424.png",
+      "file": "c_424.png",
+      "sha256": "13873f290d07ab806895636f75f5e98aa2fb07dd5f6733900c3fb9a41085acce"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_35.png",
+      "file": "c_35.png",
+      "sha256": "363cb4b64da7e430dba3037180ee32428807253b684f50a7fd4f5ef20c9161c5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_418.png",
+      "file": "c_418.png",
+      "sha256": "43c14f9e549e5637a369d3228c15c13e69aace63a52222ed2790043d10bad9d3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_413-2.png",
+      "file": "c_413-2.png",
+      "sha256": "99ab5d70de72d1940c33509b6e9153b72b365a04956ea20b0c4711094cd12349"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_197.png",
+      "file": "c_197.png",
+      "sha256": "3e09ccc1d48d97c9695e28d3b486c06989448251a4f115d7fd866af2b409b030"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_169.png",
+      "file": "c_169.png",
+      "sha256": "3b334746351d7e1c20ee36995b8e689696ef1de12a0ec7920034f8ea20cceca8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_627.png",
+      "file": "c_627.png",
+      "sha256": "5a1f0128972aa25b8bc67cf508050b18ae81c873fac036faca8d171789470488"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_549-1.png",
+      "file": "c_549-1.png",
+      "sha256": "cc0d6a83d3581d09ac461f676eb96d39940a42fcbee8ace416c745eb2f3d6aba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_155.png",
+      "file": "c_155.png",
+      "sha256": "6d9db1850bb216e7ec452c2d8a9b3e307c7abc837947b65a83310d62bb608734"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_196.png",
+      "file": "c_196.png",
+      "sha256": "80f07f17e854ff825680971b080e3fc9036a5687081be3df0017e54402dd670a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_419.png",
+      "file": "c_419.png",
+      "sha256": "28360f78d3e7b39a3ceb429a55038ceec262da375390d98e9a5327f70001a456"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_425.png",
+      "file": "c_425.png",
+      "sha256": "1ea8cb818955c4fe040db24e2905d5d969f0c6dcbe857180d18f4a81b04256d6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_431.png",
+      "file": "c_431.png",
+      "sha256": "cc512b93ba4fdc4ebfe32e34581220c1bfb2203def2cb6ab337f3b7bd644b225"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_394.png",
+      "file": "c_394.png",
+      "sha256": "30ad456580c9275ce2478b3099022757470c8a5f5664d9a3efe7cd93079b90e9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_223.png",
+      "file": "c_223.png",
+      "sha256": "e2ffae85cf72161bf7a43e39233196211317b1476709fa066073bb763ddca04f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_egg.png",
+      "file": "c_egg.png",
+      "sha256": "946d8ecc907833216e200b6d50e9ba1d3140f74698e03720900dd111d87efb79"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-4.png",
+      "file": "c_201-4.png",
+      "sha256": "7b64f3da1278af114adedff7d31847daa19fb3373ef13da4dd504c226f01e2c1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-13.png",
+      "file": "c_493-13.png",
+      "sha256": "d52e58900ba171f653643e7a8fabb28a4c652e9841016af5f7437d46b67fc347"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-17.png",
+      "file": "c_201-17.png",
+      "sha256": "b6a742c44ce7d53ad5ee35f6d421c41528afc13479e2f493ed9cb178a151f5da"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_905-1.png",
+      "file": "c_905-1.png",
+      "sha256": "34d673dc79c6164a8aa4b631789cf4c602a64acc0a7b3fc3447e5b42c7cbb1d8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_481.png",
+      "file": "c_481.png",
+      "sha256": "6076dae12186a7f0ec1bafbfd5fd1bd647f13ad29e74c2d61af951d6f3a4adf8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_47.png",
+      "file": "c_47.png",
+      "sha256": "60d18505e633b4f7fc7f4fa4b38495fa190d04f345c8dcba482bd55c33d5083b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_456.png",
+      "file": "c_456.png",
+      "sha256": "65a53559578244016601f713ef4d8b6bd750e372b693146ff509e0303ab702ab"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_442.png",
+      "file": "c_442.png",
+      "sha256": "6964e4f7f7f82d5204bc9b8c6be47f91880673474f28e6cf5010836673a1c7af"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_126.png",
+      "file": "c_126.png",
+      "sha256": "fbc2bde6ee1ab8eb8ab4df286f223b1bcd5bb5897eb66645a838f495bf4b4f59"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_641.png",
+      "file": "c_641.png",
+      "sha256": "ef3d6fd7b08241e634f36967c7ab52e7a76dbb3e71bb7d85d7038cf325b380c7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_899.png",
+      "file": "c_899.png",
+      "sha256": "8eb1472de2814fef7289189c5445514d810faecdd69980ca78e5f25840ad16f5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_133.png",
+      "file": "c_133.png",
+      "sha256": "5f3c6b73e9ab8b8ad3db96e499b8b26a1549798a35f6f1d764ccdee6caf14c7d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_101-2.png",
+      "file": "c_101-2.png",
+      "sha256": "ad0afcd8c78f722f6de87309661761841c663d83e939dedbc29f38b8db287b8a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_443.png",
+      "file": "c_443.png",
+      "sha256": "8c15bee3f80511759e2c01cf37b793dab9d7db22cffe62ede5b7bc8c3e62f318"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_457.png",
+      "file": "c_457.png",
+      "sha256": "4930a3ea9895768bcdf3d322a1ae0a31a4c1bad39341b343b76e401c77503f56"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_46.png",
+      "file": "c_46.png",
+      "sha256": "3e24844d5d172dc27d73af8a973f999273add525c5173f9804f6cc912766f8ad"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_480.png",
+      "file": "c_480.png",
+      "sha256": "8b1e749b129971709bdbe84e06079d81afee9073d7ba7809f146443cf64008a4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_59-2.png",
+      "file": "c_59-2.png",
+      "sha256": "a1ce806b91612490f9a927dd0876fc9b65ceb39ac582e9c32d7d3fd570645de9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-1.png",
+      "file": "c_493-1.png",
+      "sha256": "be0f6a3bfce5ee3e001940822211b9df9a9350269c26da7102cd50d69bbb9df7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-16.png",
+      "file": "c_201-16.png",
+      "sha256": "a4abd1363cea304a72827363351395f6ee8fdcc402318024b603bf1019ca8449"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_904.png",
+      "file": "c_904.png",
+      "sha256": "2ae574221d1cd3b29409e86c75f65d5ac699f7fdc0343474a1e04790622d5846"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_723.png",
+      "file": "c_723.png",
+      "sha256": "9d5349ef6e23e88a5e0c36c4116874dbc397b1f68d9b717e32b3e74f3e01234e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-14.png",
+      "file": "c_201-14.png",
+      "sha256": "b22c7b661e6cf02e4fbeeeb495ecb6145229d15e85d97f881da43db5507c0d7b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-3.png",
+      "file": "c_493-3.png",
+      "sha256": "674cbd34cb159dbe5c923d2b5e16e2e641d3151dad17c2ec09b7eace7cb132ae"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_571-1.png",
+      "file": "c_571-1.png",
+      "sha256": "a618c84748b903274bcf861d38dcf838c47efffec56d1be9bedaa403e4231e6b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_93.png",
+      "file": "c_93.png",
+      "sha256": "73133ea9b38f3d7d1504b8ecbbe5e05415ca6b79acc47f079e38a7e56a1edbe5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_482.png",
+      "file": "c_482.png",
+      "sha256": "b987b9d2993b3f2f2c062def01a363ce99c378101d031c52797eee5005c4a0e2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_469.png",
+      "file": "c_469.png",
+      "sha256": "6397c531224e54135cf10b5c3cdc6a1e4e5024c27703b013c94a5431e005fcdd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_441.png",
+      "file": "c_441.png",
+      "sha256": "e3eb54870b15644570f181c6ab98ff9be4bf79996e13aa5c2d42387ea697661a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_78.png",
+      "file": "c_78.png",
+      "sha256": "431e42986e21f317efc105c7d2e00ff0f825e15df4ef8265a5c7947ed6086401"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_455.png",
+      "file": "c_455.png",
+      "sha256": "f5e164a9f92a4609706e7e4e918855023815c9ad04dbc17d746b154a895d1f65"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_449f.png",
+      "file": "c_449f.png",
+      "sha256": "9eeaf23f10530c851e9a00768b846e64d58df0e7e27e800f2d1083d110823376"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_38-1.png",
+      "file": "c_38-1.png",
+      "sha256": "71fa4f4a4e0e439eed7e12548540dd6577cad69894bdb76dd027b7f7455d07b5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_125.png",
+      "file": "c_125.png",
+      "sha256": "e1f1b04674c2a7704d752de613885b77e198f21872307a4c42dea69828b47650"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_130.png",
+      "file": "c_130.png",
+      "sha256": "d4cfa790dd2c05cd2056e2a06d3647cab591543e07088bb98a7f9ca15bbf8bc1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_642.png",
+      "file": "c_642.png",
+      "sha256": "4a70a1c140c7b035ffc5a8fda5c17282d4c5ff0deb6eae0c0f03a74d9e769767"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_101-1.png",
+      "file": "c_101-1.png",
+      "sha256": "c52279c3f598dc9b6c829db969a93c96302430ae9165cd895618e1e0d0afd340"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_454.png",
+      "file": "c_454.png",
+      "sha256": "875f85dbde5f69916c7063953c3faa12888f86e0e3e07aceecb53924f194a170"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_440.png",
+      "file": "c_440.png",
+      "sha256": "a49dd3a4c6677f07e0876f38338b75177eeb155e357ca79071a2c999e94705ba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_468.png",
+      "file": "c_468.png",
+      "sha256": "8976c4fdb9ffc1d3206de9eace73f12609a6ae88791fcbbaaa14f6173c331fd9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_59-1.png",
+      "file": "c_59-1.png",
+      "sha256": "c22ecce534604d70919e1bc205796303f3cd1bb87b68c9e53dd3d5420af36657"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_483.png",
+      "file": "c_483.png",
+      "sha256": "c6103507be3587236b970e4c157b07e57450301dbc71163aef0983fb921a0b3e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_92.png",
+      "file": "c_92.png",
+      "sha256": "bfa20db90b89e14f6cc587755fdb5701fedf408b51150cc0db26b78d05388d37"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-2.png",
+      "file": "c_493-2.png",
+      "sha256": "0fcbd14011b31d8729fd3153074e6c6cc5d913cb091cc1b28e04c5b2d1c16c9a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_722.png",
+      "file": "c_722.png",
+      "sha256": "bd8b59f40dc280e191e13d6cafd3297f90a6251e4173a95972e948f40b8cd520"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-15.png",
+      "file": "c_201-15.png",
+      "sha256": "61eff7c4de33f6e192860823e35625bf21ea9cb3824d419e89ca4bf48131eff6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_905.png",
+      "file": "c_905.png",
+      "sha256": "c37948a14b8759efb10bdc78df66ebbde4b0e03801e221f3d31a765ebf2b5558"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_412-2.png",
+      "file": "c_412-2.png",
+      "sha256": "46b8ea35b6da154d80a7188fe90295484feea6f771bee68264b72083a02226e9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_901.png",
+      "file": "c_901.png",
+      "sha256": "87cda2c0de2d34630f51037cd35971c4da9477f3454a8a6e93ae1e3266c531a8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_713-2.png",
+      "file": "c_713-2.png",
+      "sha256": "6cf8e2bf7cf53844968982ca6092ee5c3c6944ff56ebf8d594ef69652c4d8e77"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-11.png",
+      "file": "c_201-11.png",
+      "sha256": "0433899e14f19ea03794babdecd37a3c620afb300cdb85b0679c38f56980f4ca"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_628-1.png",
+      "file": "c_628-1.png",
+      "sha256": "d66210d9bf8cd1c60fbabe49e0ea2d1e311397849a661c73608790a0eec45661"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_281.png",
+      "file": "c_281.png",
+      "sha256": "edc133240661b93a562ed383e1fb69a9b7fbe328be75205ba7a1d0ed633c8d19"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-6.png",
+      "file": "c_493-6.png",
+      "sha256": "9d6a0987b3ba348cd08265373c5ab4d8547c2bbc3245fa0e5a1ac3b0cddcf246"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_242.png",
+      "file": "c_242.png",
+      "sha256": "c97b4dd5afe45eec7a871a43eb057226b1f1546890ec6dba8e0c3a92094f0d52"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_487.png",
+      "file": "c_487.png",
+      "sha256": "faf5b91c34593c0a05289d7a0bf49df80673343b71541c173575fdb405d25294"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493.png",
+      "file": "c_493.png",
+      "sha256": "9e4d9d423b5f2e65b9510587f7b4bcd602ff8d71ff446bff421d79f549b49017"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_82.png",
+      "file": "c_82.png",
+      "sha256": "51ba06684280b3ffd34718b70c9b6278c73b1be409470d104566d587c23bd317"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_444.png",
+      "file": "c_444.png",
+      "sha256": "47e6cba4af806f0b378a68345f81b0ae5f53bd5bbfd7a53bd4bb7b25ba25d23b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_450.png",
+      "file": "c_450.png",
+      "sha256": "52348f1f3f9b0298dcbb9c9393852ca5bdae3c7d7e21ff7b0b32411cc85f082a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_41.png",
+      "file": "c_41.png",
+      "sha256": "4e0ed1f58d8c19fa77b60c1e46181a2fee2b22f076be4cf4c2f1f9a4387caaff"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_478.png",
+      "file": "c_478.png",
+      "sha256": "55b1bbf75e1b4b43183d183f55bc03f4b51a152364cea9429060591c63f14108"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_55.png",
+      "file": "c_55.png",
+      "sha256": "311ebb2ffd47eb1c80ff56eae4db17a4824588a307242d320baa854d5157fce7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_134.png",
+      "file": "c_134.png",
+      "sha256": "c85ec6079a0502619be58dc549a5a06e7b3ca246c610f51ffd6dce3e266b90a0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_108.png",
+      "file": "c_108.png",
+      "sha256": "5bc43ba9eed55dc76f84d72c3353c52bdf1bb611bbad95f2c4ed36d8b11c79f0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_135.png",
+      "file": "c_135.png",
+      "sha256": "c3eb8468f169cc15478612686eba1539bea41065deb217283fe48a8c65113871"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_54.png",
+      "file": "c_54.png",
+      "sha256": "e4d36c89890ed478ac4b12212097c4a19aec11c04a007d09cc11791d38277721"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_479.png",
+      "file": "c_479.png",
+      "sha256": "5fc6f425230bfb1851f893396f8e09d05b8e284ca7de4b7649f76ea703fb1a7a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_451.png",
+      "file": "c_451.png",
+      "sha256": "52ab7b0f67b297e6df7ec8ce41bb5d03cd3bc826339cfdf21b3f6cf14e588e33"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_68.png",
+      "file": "c_68.png",
+      "sha256": "31d0638ef61825952f210d0cc10fc0b10f5b858bfb18fabd75d08918b311befe"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_445.png",
+      "file": "c_445.png",
+      "sha256": "574a5eda6a7f3d1827ab0041daafe3e9798b033a45d0b82d160ae4eceefa18d6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_492.png",
+      "file": "c_492.png",
+      "sha256": "e8162dc0a8151d8bd46fc88e9c70d7cf339204be2dbc6a4bbedf5229dacee8bc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_486.png",
+      "file": "c_486.png",
+      "sha256": "1241555a990fd5522fdaa429a9c3916f2a7098615ef739441ada30ddabb158b7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-7.png",
+      "file": "c_493-7.png",
+      "sha256": "3973912e9987f4821c62a7c8ad789bbe5f851295396b7bd1892d24d14bbb501a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_280.png",
+      "file": "c_280.png",
+      "sha256": "ed7fd15f990ef87f5ad4a19322ca3d072b236e96d5a7843b60c94b165712bd14"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-10.png",
+      "file": "c_201-10.png",
+      "sha256": "45b8b3cacf7d567883be084448d9e8d6377fa9bd3f468093e34af60373802348"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_900.png",
+      "file": "c_900.png",
+      "sha256": "e5142cb0e933b777808e15be50cd13003614e697edf2f33a41855fc7da8b3951"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_412-1.png",
+      "file": "c_412-1.png",
+      "sha256": "12f8072e42082e9f2e624e7a1afee0f97d9145051429d8b3d015141d4a1ba32a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_902.png",
+      "file": "c_902.png",
+      "sha256": "fd1355ac8ad5dcb59f45d5d576f30d414bd5a6b17e948a685d91903e1fe25f4a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-12.png",
+      "file": "c_201-12.png",
+      "sha256": "51cc8692abc915ae7ea600c0ece39aeedca6cf5aaff6b3aca9ed3c5e97f80f34"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_713-1.png",
+      "file": "c_713-1.png",
+      "sha256": "ae651c0058243016e08c7c53d1a5520598d956f1125cf9093f7a3dbb1fd97dbd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_282.png",
+      "file": "c_282.png",
+      "sha256": "9b4d9e2b8b6c687b8ce9ce7442cb7bbad6bee2d6f98010e327702ef62ad28804"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-5.png",
+      "file": "c_493-5.png",
+      "sha256": "a98efa6f6b4e5343d58f565aeb0692ad720164401d72df6d698586bdf4147e45"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_269.png",
+      "file": "c_269.png",
+      "sha256": "86206674a18077d8609925e187bad0dc7135fc3a2b03bf563d154007ba68bc64"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_490.png",
+      "file": "c_490.png",
+      "sha256": "b959d5c185b475e6b974849d0b10154ebc69bb8174412f5dffa0b64c905f08be"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_484.png",
+      "file": "c_484.png",
+      "sha256": "a88a8cd7dcba4a188bd21cbb52429689ba0d9ef0b4b83defd3b08ac756b2ae06"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_95.png",
+      "file": "c_95.png",
+      "sha256": "13254cc173f8fe2dff3c7d02bdf66d430bd19ea741e05020a1510809fa8013c8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_81.png",
+      "file": "c_81.png",
+      "sha256": "88fa6105d9d0f0c843ff71055b70df10cc761782a884d82ad51aab8d7a683133"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_453.png",
+      "file": "c_453.png",
+      "sha256": "e09fa7791f8b30fbdd379f1483fac0056e0957b897963f2c5f39789d19e25ded"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_447.png",
+      "file": "c_447.png",
+      "sha256": "051ee5a4752b7e123ea28aafbb1ff96582f0da55cfa904d3512db8a42f0821ec"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_42.png",
+      "file": "c_42.png",
+      "sha256": "53b37ed0933539de725a0f795232b2eb5b9caf1ea7f3b39e349a9f1a25ffc342"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_137.png",
+      "file": "c_137.png",
+      "sha256": "d728e8fc8cd17e27ae2b641c9f4353f04f281a42093db7f89574149ea3c3a2f0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_123.png",
+      "file": "c_123.png",
+      "sha256": "f534d8c02d93c3352d67916b44c274cbe9aa6bdd5b3482fb38e3a0aa7486264d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_645.png",
+      "file": "c_645.png",
+      "sha256": "ae24cb83de9f84c223e20087a33f76c10b6b0fecdc8f865d2cc905e5d4d9305b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_122.png",
+      "file": "c_122.png",
+      "sha256": "369f9a009e29070b173c5e263beb31722af9809c267033cae069bf2a1b487056"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_136.png",
+      "file": "c_136.png",
+      "sha256": "ef7f8d14adc17ff2a873863fd069dd629934329006108761823a0689fd0a43c1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_446.png",
+      "file": "c_446.png",
+      "sha256": "480964d018238f781cac35d72d54abcfb0d9aa5fb843426f59c43b04513f14e9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_452.png",
+      "file": "c_452.png",
+      "sha256": "3ca165e8bf3023dcd8454df14bedebb148a2c2600611d55a36a5b9ba4a4c76fb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_94.png",
+      "file": "c_94.png",
+      "sha256": "5939da2896d70c80344356f3f526fd23a07abb090f9beb9be86c0aa94a78d773"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_485.png",
+      "file": "c_485.png",
+      "sha256": "7d4d6ec968b77d2688af4752c843eac2f66d4b5dcdaa5f1b27f52ff8ac580aa0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_491.png",
+      "file": "c_491.png",
+      "sha256": "3c27ac120b519763639172fbb8446f0d1eabda4361aad151a6f43f7ce570244b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_268.png",
+      "file": "c_268.png",
+      "sha256": "6d9eadc809429e7d6e30233cd7a28909fece6c250fe9c2923b87baa0ccfe9449"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_240.png",
+      "file": "c_240.png",
+      "sha256": "bfa3c6582694affe22c99aded3ad88d15a67089ae8d55622957f267aafc57add"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_493-4.png",
+      "file": "c_493-4.png",
+      "sha256": "0d56dcd858b180775ff4fa45572e44d279550c692da2d04d65da860ffd9d8cf3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_201-13.png",
+      "file": "c_201-13.png",
+      "sha256": "10b2d55f5329c8d9a3e5f20a43ce56b09610ecf5feb512926c9b5811d33612ec"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Sprites/c_903.png",
+      "file": "c_903.png",
+      "sha256": "5ddeb9396a83aa200e97e63fa846d6de0ad926026013c5ec65088f133bb1b029"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-8s.png",
+      "file": "c_493-8s.png",
+      "sha256": "d10841192f5f0061ffc43f6b495f14653c169e8dfb1ecd0c6a354a12732fe4cc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_93s.png",
+      "file": "c_93s.png",
+      "sha256": "c7c4feeaad2abd670bc200a248062c3eff399fe258178181d57eed1accb5f29f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-2s.png",
+      "file": "c_201-2s.png",
+      "sha256": "7c40eaa13ba8d35beef15c83b75738af90335ab359cb5d252e6a7eeb0a504cab"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_550-2s.png",
+      "file": "c_550-2s.png",
+      "sha256": "d5fb85fdea63e25bd80dd06d80bd7e5de3fd1f01ba0992ec99d80ae3c0175dda"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_723s.png",
+      "file": "c_723s.png",
+      "sha256": "51895297e278d792aaa36fd333f00e11a6b1bc5bf6a0dfccf3f4d61869192a6b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_365s.png",
+      "file": "c_365s.png",
+      "sha256": "62434a2e6a27754f19bd640e223e0f3ad47a18539840292bc2b94ae428076480"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-16s.png",
+      "file": "c_493-16s.png",
+      "sha256": "97faf0c83b68d49660ac1f55fe5683787cf5356a0aa3c1fdd8d25a8d67cbd1b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_220s.png",
+      "file": "c_220s.png",
+      "sha256": "886cfdcb75e9fdc9bcc2b968c470ca69e299b0d09b6237b872ca0b60058e10a1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-23s.png",
+      "file": "c_201-23s.png",
+      "sha256": "03808f147a812646c82b73d0c70a157b8f396cf9c85fdb4f0840c432b3fb2423"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_627s.png",
+      "file": "c_627s.png",
+      "sha256": "5612d0491a6c54556998d795faaf1fa5e1f412a7a38c64f4fe1f209fc443245e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_430s.png",
+      "file": "c_430s.png",
+      "sha256": "9456711688b0f417dfef072bf37c28336fbb81b61034620568d0302a4e1c9283"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_125s.png",
+      "file": "c_125s.png",
+      "sha256": "6e660508e7f3a74e93d94c39eb7350b965421966a05a8c59f022e89d56dd9f55"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_38-1s.png",
+      "file": "c_38-1s.png",
+      "sha256": "87d26876a55152c8045a085c912b94358a532802d9ba82679faebaf76423c5a4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_46s.png",
+      "file": "c_46s.png",
+      "sha256": "3f6fe35f1dfdf8a939012ebce5668c748331f55480a397d5bbc949495fe4339e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_467s.png",
+      "file": "c_467s.png",
+      "sha256": "d5e56ff80d8d62e8003c8040c244ba9d4a9ae0920530360e0a8d4d97bcef1afc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_172s.png",
+      "file": "c_172s.png",
+      "sha256": "40e8f1c537d79ddfcc2a0c996cccb42b6036ab3a445c394bc8a173733974abdd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_488s.png",
+      "file": "c_488s.png",
+      "sha256": "2d41d4cb03acdec3491f9e7d8ec9ed141afdf4ec3120f69af6ce95bb5616c7a3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_471s.png",
+      "file": "c_471s.png",
+      "sha256": "a7b748a321db8ed274c686988f6d5689b6f585780ecc299e3c172e36090bff5d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_412-1s.png",
+      "file": "c_412-1s.png",
+      "sha256": "a660ee00c0df7c1fc8f6beba85fe62d044b9d7bde657bbb1daca2c6e607b3370"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-19s.png",
+      "file": "c_201-19s.png",
+      "sha256": "310a0fdd73bee24514e4fc409eaaead783912778ed3506f4efd17e4fe8658188"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_426s.png",
+      "file": "c_426s.png",
+      "sha256": "c6cc0680c2678fff6d7efb97b6eb412fa7fe2e0c356c1fb5b31a861bd06b5469"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_133s.png",
+      "file": "c_133s.png",
+      "sha256": "f256b872979c919e9b815e2d757c42315cecc1ccf3619b541ec70e02fd22d211"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_571-1s.png",
+      "file": "c_571-1s.png",
+      "sha256": "722c7eabea2d0e6df95d4944b5d5a999e86dc3018c16b8b12f1a484a36ba61a5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_282s.png",
+      "file": "c_282s.png",
+      "sha256": "b28190e34db61a83fbd2934a3ba23dae38500516452d2971afa3f9e654809d22"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-4s.png",
+      "file": "c_493-4s.png",
+      "sha256": "9054b2410b71ecdb4a8aa202f199374c9b3c0fcc211545ff2b68e84faf495c74"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_451s.png",
+      "file": "c_451s.png",
+      "sha256": "ecbc29acae71af56f57113da52e9b34e6683bc8746d48ced3065f8796f0e2fc3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_902s.png",
+      "file": "c_902s.png",
+      "sha256": "5e3645b60b10c70ed327f4db091deb135901d9264d7c0a890af739b7797054d2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_390s.png",
+      "file": "c_390s.png",
+      "sha256": "ca2f6fbbd56682ca30f1c5fc8b06505c35ea35536a643bb3ce18d46b877c2295"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_113s.png",
+      "file": "c_113s.png",
+      "sha256": "07106aedbafd8d09777b791b50160c2c0b0abb6aa10aabc5da464fff7790230e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_406s.png",
+      "file": "c_406s.png",
+      "sha256": "08844c38b33490243da4c48b1b02ff157317d3d649e7239b76d1782a7cd86d8f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_410s.png",
+      "file": "c_410s.png",
+      "sha256": "f8b7b3fe30e7c53644e7b13179c6802e19fc0cc552c7a244121e08649d54c1bc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_502s.png",
+      "file": "c_502s.png",
+      "sha256": "1e45bf4589e6876d3b55729b82e679064418d1c8f5a0c36cfaf35f7589ceb044"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_66s.png",
+      "file": "c_66s.png",
+      "sha256": "c05cdd68d20b94fbbdf7ca928e1b291b499de171662bcc8c4fd1a2cadbdcd4f8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_447s.png",
+      "file": "c_447s.png",
+      "sha256": "342ae2c0a0c2c68dc28ba2bac7ca6ae58a73690c9edcb3c854ae86233af9a368"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_200s.png",
+      "file": "c_200s.png",
+      "sha256": "99a4d1523db63163abdbeaa0291a453618a27c100aa00ba9298666ddaee15c62"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_129s.png",
+      "file": "c_129s.png",
+      "sha256": "b26324fca05ebc4fa4da6d01faffd7424f7e9756e9e375c277e4d2efccf05f8c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_484s.png",
+      "file": "c_484s.png",
+      "sha256": "3e062c0d9f6768fc7b1ad7576823419aa662a3d2a00df856d956dce208c89ef6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-15s.png",
+      "file": "c_201-15s.png",
+      "sha256": "9ac65861831d9d7df123cffc414c924460084c74571bf054a0eccafbb513159a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_492s.png",
+      "file": "c_492s.png",
+      "sha256": "c7b2bdebfb417bd05b84027336558436a1bc065314c62bbfe0523911c683515b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_216s.png",
+      "file": "c_216s.png",
+      "sha256": "ed417082e320521541c11bfe2ab7bd98dead070c6b090bb38100368fa85623cf"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_217s.png",
+      "file": "c_217s.png",
+      "sha256": "98bd85c19a8ce0bf85f324cb526a394b90cbb7acf5893e48eb534de1d8e9790a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_169s.png",
+      "file": "c_169s.png",
+      "sha256": "299d8f03b967b2ef334f8de9a175e592dfe3e5a2626048814bfd1daeadcc75eb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493s.png",
+      "file": "c_493s.png",
+      "sha256": "082d4d8628a927b8546ae3025a39d9cd5b017a15c0c48b18ee27db242f86f0f4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_240s.png",
+      "file": "c_240s.png",
+      "sha256": "3e5017382bf334881813b0bb362cf308e9cd0dc5a7a0ff3f425042e180474eda"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-14s.png",
+      "file": "c_201-14s.png",
+      "sha256": "18bd9d7fe46ce2464d4f3792b71917731afdeffdcb77c0150ca4227a0c2fb469"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_190s.png",
+      "file": "c_190s.png",
+      "sha256": "78621d0b4fb853dafd3888a1e3581297e35084e34a71103f09d7d05a969978bd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_485s.png",
+      "file": "c_485s.png",
+      "sha256": "0b240ddca99c17d0bb805e8409c7cbc66213b15ca66dd8bd78d8ff028a209fba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_713-1s.png",
+      "file": "c_713-1s.png",
+      "sha256": "377ad5b89109fceebbbcc51ff378d7b6230ccd29824b7bb520a5c96bb290d133"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201s.png",
+      "file": "c_201s.png",
+      "sha256": "923bf1276ddc72cd49274ab711a77e89539a3043a7495e08f2ec776c28076503"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_67s.png",
+      "file": "c_67s.png",
+      "sha256": "6dbfe1bd87c233fa4eab7010fb6b054d998dbacf72642541308e252c50928796"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_446s.png",
+      "file": "c_446s.png",
+      "sha256": "4f7330533c11ceac8e5504843352bbb9121901e65b1494b97cbe9a89082c8f92"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_411s.png",
+      "file": "c_411s.png",
+      "sha256": "8cdf582b1c4b4e3eb1fd7286c3183501e3e0507d524f8cd48b61cf084364b683"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_492-1s.png",
+      "file": "c_492-1s.png",
+      "sha256": "d3de8fc4767ee38e56b14eb58b5b41c6a48523b8b0bbbdf1be4a53e7159a1294"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_387s.png",
+      "file": "c_387s.png",
+      "sha256": "6468e965f1cd0ac6be80aec9f4ba1cdf5dd19ad88e394a3e184890edfc5378df"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_112s.png",
+      "file": "c_112s.png",
+      "sha256": "b9fd6c5ea624634a3e9345ea7de739888ac9bd6c58cf3792bcf4a18b6d373f60"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_26s.png",
+      "file": "c_26s.png",
+      "sha256": "f82c00c14a500050fd42e9555daf02804773e3a6e9e151f2e9b491e0c9cd8441"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_407s.png",
+      "file": "c_407s.png",
+      "sha256": "1d240b8933aa5d3d7e3fbae47bc176d3f5795ff295044775a934b64273ee8f2f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_391s.png",
+      "file": "c_391s.png",
+      "sha256": "c38990d2b0defba43762e4351413e4c7183cbecf24927830f9ab3765390aa8b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-5s.png",
+      "file": "c_493-5s.png",
+      "sha256": "1b79c08b8418d0ba4a62d6be5db77461bd055beaa8c198537c43366ff773133a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_450s.png",
+      "file": "c_450s.png",
+      "sha256": "013d8423dbaf20b7e6b98e658608bcd6394dc10c5181d3691f5beccd97872034"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_903s.png",
+      "file": "c_903s.png",
+      "sha256": "cbaa86ed79083d783051becb48648c38b68d435c3490677bb57413273ed2dcd9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_427s.png",
+      "file": "c_427s.png",
+      "sha256": "c310c7fc97e7639e2672eefc6bffd9c8136f731bb27c0ca8a8890242a0470b66"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-18s.png",
+      "file": "c_201-18s.png",
+      "sha256": "22cd4a37a8d3dc7a4e0b5971a67ae62899ce6e55c0d5d964a27400e736bfb21e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_470s.png",
+      "file": "c_470s.png",
+      "sha256": "63a76c8f3dceeaad4b385669b4e2ba92c71987e1322703925ac4fe2431790631"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_549-1s.png",
+      "file": "c_549-1s.png",
+      "sha256": "4728996f467665f3ef9f3da9664a5775bdc47d95fa8432d10c2ad54ac482b78b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_47s.png",
+      "file": "c_47s.png",
+      "sha256": "3867a271ceb7e5a2a0ada1358fc06bffc5fec10b6ac9c6640ae7a079d1ca9ee2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_466s.png",
+      "file": "c_466s.png",
+      "sha256": "e143e2e3e82f7270e519f749f0102e5400bad71de576672414a99c06c80e0fee"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_173s.png",
+      "file": "c_173s.png",
+      "sha256": "7a7037dd224277c8b6bec1a0ad7f9902c74e889be4a1c151beac73feb1edda5e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_489s.png",
+      "file": "c_489s.png",
+      "sha256": "afd06c3d7602b48e4d3df99225b1f41687e23cfd073ea5409bf67f5e335331dd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_431s.png",
+      "file": "c_431s.png",
+      "sha256": "61b4a15b1697f2ae93ee7dca3fd62fed6f97bd30f3f0f6a225751385a73267b8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_449fs.png",
+      "file": "c_449fs.png",
+      "sha256": "31b02b1715565127cbb0f34fcf9bb8b03228cced2947047235930827ee94b7a9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_299s.png",
+      "file": "c_299s.png",
+      "sha256": "763cb9f0139d805ecc1fd28c4aa134c13417938a2a6ae91a9364cfcbe1a21792"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-22s.png",
+      "file": "c_201-22s.png",
+      "sha256": "bcfd7343c403c9a52d524d895c334135b300438af5e526a36b45da1789641012"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_364s.png",
+      "file": "c_364s.png",
+      "sha256": "70ab8ba1062d6acb49d265ccd500f92538abf98619eae3ae84c352f8c25df980"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-17s.png",
+      "file": "c_493-17s.png",
+      "sha256": "e4f189e5993b58d2486cfae5db2013396d5af220466f3bd42413ae16db3c59d7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_221s.png",
+      "file": "c_221s.png",
+      "sha256": "96732c9978524fe6de99083f31fb890968d89a2fc8e2df2037f345794eef69e7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_108s.png",
+      "file": "c_108s.png",
+      "sha256": "9e2318ed3fb52a80e1191b90232d5f94e16464d685ea9b580e8b24669566dfa1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_722s.png",
+      "file": "c_722s.png",
+      "sha256": "4676cc7f83c6ac06c4d7925dada8fa25ff7c189985b6e315f919a49c55e65b06"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_59-1s.png",
+      "file": "c_59-1s.png",
+      "sha256": "115bca6f80a0cc157b6ed57601afaf4f2d82bd9b94526a0c705250e9ae5abf2e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_450fs.png",
+      "file": "c_450fs.png",
+      "sha256": "fa357f55aee3de5fe525a0fe4046f7ed02afed6bec547fcfe4f1471d7eb7f372"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-3s.png",
+      "file": "c_201-3s.png",
+      "sha256": "a52422118410556db3653d55b17f6fd009cf85997944f91fa82ae4ae5ec04f99"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_92s.png",
+      "file": "c_92s.png",
+      "sha256": "664db4e5fbc4eb3261566e63c8c534c996ac65e6d922d9eca5e7239e454eaf1e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-9s.png",
+      "file": "c_493-9s.png",
+      "sha256": "05094ee77dcbda2baab20547327ea16f659d6bb332bbf1c0b38d007b947069c5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_101-1s.png",
+      "file": "c_101-1s.png",
+      "sha256": "95482921dbd9c6226dc20fb63a4c76c6ae647001d79c539242052aa41330feb7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-8s.png",
+      "file": "c_201-8s.png",
+      "sha256": "6a68484252893257fa460ce56db06e6fc3a64118878109897c8731612ae37471"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-2s.png",
+      "file": "c_493-2s.png",
+      "sha256": "8e56e01c0ae6f8d26aee69ea7348f23041587de14ba4ad281dc01cb8b3d4e8f0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_76s.png",
+      "file": "c_76s.png",
+      "sha256": "551ecab307409722aae8f874ef7009047a2e5e19e5db47e2e502609834063b18"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_904s.png",
+      "file": "c_904s.png",
+      "sha256": "97cbecc581efe5baaf8c29864b6adccd3d559a86db6d3f41327aeb094e4a5a3f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_457s.png",
+      "file": "c_457s.png",
+      "sha256": "05932fab739d45123c7e2f9a409e536ec9353d124eb35495d8f70fe0dd36dbf4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_396s.png",
+      "file": "c_396s.png",
+      "sha256": "2af88ec29067442a5cb103b58e34939c1db53754f5097280933f0f7f1f1d6e4d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_400s.png",
+      "file": "c_400s.png",
+      "sha256": "23de4cce840e24392ee1344980dd092649cc08769341153b9aca3a6da23e0af5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_484-1s.png",
+      "file": "c_484-1s.png",
+      "sha256": "59fb5e86d90046ddeb799f9fdb96fa27166a8377ed1ad14d5a210336b9cbfe3d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_642-1s.png",
+      "file": "c_642-1s.png",
+      "sha256": "ac5471587eec62d8c7f7e25726fdcde46899aa39d096e867e9c16bb2715dc5ff"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_37s.png",
+      "file": "c_37s.png",
+      "sha256": "20714a02941040b711f32dd9ee5efa6e8a5567b5334734be809034a522200170"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_416s.png",
+      "file": "c_416s.png",
+      "sha256": "b2330e97d7f39a72a2799ddf7db0f0d0cce28996d956dd9aaa9b11dc4fd2d1d9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_441s.png",
+      "file": "c_441s.png",
+      "sha256": "e7ef8cb4ffc529f925c57fb31944e44f3cc9ea0c7f68a14557e929c650f24394"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_197s.png",
+      "file": "c_197s.png",
+      "sha256": "c942b35ec19e74258f79fc760506ac4149679b16817689974b95aa79b3396454"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_482s.png",
+      "file": "c_482s.png",
+      "sha256": "e77fb7fd7eb9a133d10789a6191e74d949aea7c370ba5ac29491cfb5a99a6db9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_902-1s.png",
+      "file": "c_902-1s.png",
+      "sha256": "c0445dee969b746478e003ff87499584afc5a8d7b2f930e2aff261c96af31cff"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-13s.png",
+      "file": "c_201-13s.png",
+      "sha256": "4c981645103018ae7e83d0f2ab321abef2ee3938bb384c4d12f451f1e9b0e08b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_355s.png",
+      "file": "c_355s.png",
+      "sha256": "d1762699e8002d65719b42601f6522db0d248d2e0571866da95cb50f57e9ced9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_705-1s.png",
+      "file": "c_705-1s.png",
+      "sha256": "dc7750c539bcba8c171e8e8b7b648cd5e47b2e84abb9afbb293ce4ae558f3020"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_95s.png",
+      "file": "c_95s.png",
+      "sha256": "ee3caa9ec95a1be7fe10743b681895150d1e0b236d7db4d482d4cf60d41f7ace"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-4s.png",
+      "file": "c_201-4s.png",
+      "sha256": "6c1ce2ae5fcc6967cc870b9bcc892fac408b29e838551a93de097663333e8f26"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_267s.png",
+      "file": "c_267s.png",
+      "sha256": "30e24c81ed16004e2286f813122088cb28bd879a0e0bb5b2e00bb993939c2273"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_363s.png",
+      "file": "c_363s.png",
+      "sha256": "d2ed86c150a9f63ce8c2cf946e15b58252fcbb7ba6ffd3c760e3ed67292be0ab"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-10s.png",
+      "file": "c_493-10s.png",
+      "sha256": "77050609d6e24bcbde1e789a03d547b97d83fd77ebc43c7a91ec88df64a87b24"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_226s.png",
+      "file": "c_226s.png",
+      "sha256": "a55f183a6c71975c862287d378735dcdba56128411de386e15f311a22c1e8912"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-25s.png",
+      "file": "c_201-25s.png",
+      "sha256": "30c1eca0e07d8a2ac10c5aca8a1fc8ab7ee3cd2d25ab9a202056d44b384de36f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_436s.png",
+      "file": "c_436s.png",
+      "sha256": "356bf327c2c781a28d8229450719b91c5cf8da5231cc0c42ddd0c5512b09df72"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_123s.png",
+      "file": "c_123s.png",
+      "sha256": "637aa405be48f5bb265c0981e107b0ff7de8ea1951f42bffcf000d926e7180be"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_461s.png",
+      "file": "c_461s.png",
+      "sha256": "3b75a3aeb7d67185b3255c39b75f04491daf1992468a0a8250f7906040c28837"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_422-1s.png",
+      "file": "c_422-1s.png",
+      "sha256": "def6f95cc642e15b22ecdf544ef99f3d415b5d438fdc11f260783ad24ffa56c7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_477s.png",
+      "file": "c_477s.png",
+      "sha256": "6d53513047dca4a1863d90d1e869dfc9abe9289fadb9d31d46e2679747eb6660"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_420s.png",
+      "file": "c_420s.png",
+      "sha256": "0c452bdd4c8ac4a10b53d976152f1cd22751aaa946d06ba82b38418d2b581f81"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_135s.png",
+      "file": "c_135s.png",
+      "sha256": "c25da738c0e5a2df6af02a80c3c49445555f496f9304d93ee22152d4ac25cc6a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_358s.png",
+      "file": "c_358s.png",
+      "sha256": "dcbe4ee5e35046542cf5e52305708389ee631edd426853a51e6d3c5346847afd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_421s.png",
+      "file": "c_421s.png",
+      "sha256": "80fdeab0011faea587fd9617e01945e05ee0cc8e00bcabe8d79dbdf1a45fcf1b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_134s.png",
+      "file": "c_134s.png",
+      "sha256": "3813163580b264ffc06a2ad3e1bccfce6336cde58cf9c0003d131decabb18ad7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_476s.png",
+      "file": "c_476s.png",
+      "sha256": "0367d1cd0705b10ad269f7a85bb22f0b0c86b3e21656e447e7299e6fb04f0214"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479-1s.png",
+      "file": "c_479-1s.png",
+      "sha256": "7abd2da2e8e099b3dac51d22d77b3184919214e82a939b710a060f110d26985e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_460s.png",
+      "file": "c_460s.png",
+      "sha256": "876f2b077044db003b1afaf78b11f8c7f5cf1faeb0c57cd2d3ffbfd8d2740fd5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_899s.png",
+      "file": "c_899s.png",
+      "sha256": "7b2601ae614ad41b4ec8d0cca06754a58741f0cec51a317eaaf090e52ccf340b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_41s.png",
+      "file": "c_41s.png",
+      "sha256": "77ea4b4ba0f312fd91e3995c1f2d6febb5a9f35e6681d7a5ec1ee5071117c4a1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_175s.png",
+      "file": "c_175s.png",
+      "sha256": "02d72207f7f0b3718f329a01e45f2cc7b654833f80f955e879f84f8f4e452b04"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_437s.png",
+      "file": "c_437s.png",
+      "sha256": "5e20126f6ae38dc535341c038cc7981013e72cacb6df8fb351f40af0dc8f3b6b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_122s.png",
+      "file": "c_122s.png",
+      "sha256": "f22546e3ddde386be80cf3d42ea0b2a80f1b9a753407849f6cd6a13d6dd4c1a3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_413-2s.png",
+      "file": "c_413-2s.png",
+      "sha256": "5b80d70e6236f80bfd905b94357907b3625090e16d7941a346b7968f6f04fdf8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-24s.png",
+      "file": "c_201-24s.png",
+      "sha256": "32c4a4ea0d0fec1c8d7fe0b0a64f4d507e4235fe74df414d882d957bfa3dba1e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_82s.png",
+      "file": "c_82s.png",
+      "sha256": "c3deb9e8cd8778809ecfe4c3460b102da79e1d8fa58d6255ae84a5d49c37e43f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_362s.png",
+      "file": "c_362s.png",
+      "sha256": "62adc57efcb136917c026ec67d43031c302cc881b39b03c4ed43e29e7059dbba"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-11s.png",
+      "file": "c_493-11s.png",
+      "sha256": "c88abe848a9b06fd22a30be9b65ff2ca8dcf569f998062830d368aa649220c33"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_548s.png",
+      "file": "c_548s.png",
+      "sha256": "e281ed71a326595e5dd0b4cc4f6d92250efb75b21afd38759bd40a412df36b5d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-5s.png",
+      "file": "c_201-5s.png",
+      "sha256": "dad3a98cca32ef422b89f3a89b8d435a2a49de9fcb97843ef6ff9591967bafd6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_266s.png",
+      "file": "c_266s.png",
+      "sha256": "26e6efdd3042755b8b81c8244030bc6bb7eb45a88b7fcad843c214a892b74348"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_94s.png",
+      "file": "c_94s.png",
+      "sha256": "9a971205896880ef173df82acfc97d2df87e99caeeef1b373d26bf638dfec6a8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_641s.png",
+      "file": "c_641s.png",
+      "sha256": "ea2cf9b0b5e380f15d0b6b687ebf51a9c68869be1b1ee86efa391d7744600f6b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_704s.png",
+      "file": "c_704s.png",
+      "sha256": "6ac94f052069a04dac9c1d6383e019a03344f1383d11f518b1852bce25ed1848"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-12s.png",
+      "file": "c_201-12s.png",
+      "sha256": "3b92743f3cc24e9a4ca331f9109d122839a31fcb3f6db97ebf60d84305a69ba1"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_196s.png",
+      "file": "c_196s.png",
+      "sha256": "6c9391b28d28d1eb0b8e53428e1d693ac71d8dd7b0767f88e06c891178fa4635"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_483s.png",
+      "file": "c_483s.png",
+      "sha256": "7ccd9d5ce6e3072c3a79027b2da80213d92b46b66755e790e3601a03fdb913d6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_315s.png",
+      "file": "c_315s.png",
+      "sha256": "29735eb3f36b618f5b9b23491056e92c1de557fb1368a17183f8a422332c3042"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_207s.png",
+      "file": "c_207s.png",
+      "sha256": "7e066b60023bd182db705fce423164f30e7daa0df0a8f0111a2f9b79b1df0322"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_712s.png",
+      "file": "c_712s.png",
+      "sha256": "5b3db33f7d27ff284e1a79013eb409f5d5fa941178a8c63f8df0a8e0171a710e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_155s.png",
+      "file": "c_155s.png",
+      "sha256": "1faafbbff868c8798074f02bf46cd5b4f7063ba40f94b0c2f401069695cc4409"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_440s.png",
+      "file": "c_440s.png",
+      "sha256": "90a662072e812db0742e94ee3af291bfe7bac2a06a9c95479c690fdeb44787bc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_339s.png",
+      "file": "c_339s.png",
+      "sha256": "a6b2297a4a9160817815d65420f3c24935a1df2b5726688b2439c21b181ace12"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_36s.png",
+      "file": "c_36s.png",
+      "sha256": "5fb6f372649173664dd350822534f53686f4ef2a3f84f565bc5bbeddb879dabc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_417s.png",
+      "file": "c_417s.png",
+      "sha256": "b3b1d367c4a2923c8fb504a4d0768fed1161e80b722f90d5eb5bed37978a74a3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_114s.png",
+      "file": "c_114s.png",
+      "sha256": "97905699c3ecbdb6d502d2029b186de2c76317f3e6c87d6f990f2a03cc006673"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_401s.png",
+      "file": "c_401s.png",
+      "sha256": "de36368543c3083cc9d85770fd9144d27ced391ead32613929f79a7a3fc6999d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_397s.png",
+      "file": "c_397s.png",
+      "sha256": "7bb3bb5d1791abc6e9ccc5728e50329f4447ed2c7ccfe942f908e9fb96f69b32"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_143s.png",
+      "file": "c_143s.png",
+      "sha256": "681ed8427cf4528e3b988b44eff5abfec75e716e1fbc81042cc094e4aa733a86"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-3s.png",
+      "file": "c_493-3s.png",
+      "sha256": "d81bc916a8420baee0be36c00b9081f813972c20233b4692d2c45938240511d8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_77s.png",
+      "file": "c_77s.png",
+      "sha256": "8873cdfaf88448b92a2b839de700bfb3678660f13e6218352452e02726d45e20"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_905s.png",
+      "file": "c_905s.png",
+      "sha256": "d17033511896fe5a0f75ae17a23f864839f395edba4622572d38779dbcaea832"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_456s.png",
+      "file": "c_456s.png",
+      "sha256": "2a95c0f592450f2990ec323444e575506f456a2934b4578454c23cad030f0e02"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-9s.png",
+      "file": "c_201-9s.png",
+      "sha256": "c84c85e451575507d30206cc12d2f4c4e76a089e2695b93c8974e0b2eba1646a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_642s.png",
+      "file": "c_642s.png",
+      "sha256": "70cdf843ca6daa65cb422c6fa8f2db8aa1709401a95b6778ec5b4df3acb58c2d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_212s.png",
+      "file": "c_212s.png",
+      "sha256": "53c166a63e48e3e9dde6c5618b7bf1350f03102bc903b8ce4055af412b66a193"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479s.png",
+      "file": "c_479s.png",
+      "sha256": "1d232c37be635f96a48f91faa4a1bfdaec1acb541882358a938e581d0ae5f8b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_483-1s.png",
+      "file": "c_483-1s.png",
+      "sha256": "c02e3e680b9a8d0bdb3a0b5e8eb6c4c9e6d586e10020863edf042bef7e36ea71"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-11s.png",
+      "file": "c_201-11s.png",
+      "sha256": "d64de381e2d9af47aaf41241698c36e72c41728e3e7d234de412b1f68ed97fed"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_480s.png",
+      "file": "c_480s.png",
+      "sha256": "100f8bb55b08af60368e30698b3c232faef7b02fef20019b86ebe49ca35dc2b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_645-1s.png",
+      "file": "c_645-1s.png",
+      "sha256": "6f06576feb20a0fba35355f357423ea7aa857f0460530d2bfc1afae0b1403e70"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_438s.png",
+      "file": "c_438s.png",
+      "sha256": "fbd7e24ce191fa2359243f19a116d0a56d76466a2ced761bcd7a655978a16762"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_443s.png",
+      "file": "c_443s.png",
+      "sha256": "575279be0a43475dd560804f2e122eb1c95a106d6f9d4462af7b5fea69dd0dfb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_156s.png",
+      "file": "c_156s.png",
+      "sha256": "68f1cc630050fb67e9f63a0f8e353cfb931cf70ca38cf7d205cc380948cb0cf8"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_414s.png",
+      "file": "c_414s.png",
+      "sha256": "77b7878edbcf85c531ffca6e09d6b8679dbf4a2fe9569a2c004c83eed9b70896"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_35s.png",
+      "file": "c_35s.png",
+      "sha256": "2cb7d2a943868641d1f3bc8e606f9394ae555f01cc9b8e031a7af3b21eab0c60"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_905-1s.png",
+      "file": "c_905-1s.png",
+      "sha256": "547e7760356016efbc8c0e4e6a3d81da85a0e3c1af191b88321defce0fda7347"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_402s.png",
+      "file": "c_402s.png",
+      "sha256": "1817a930e0bac0eb479bda9a5fd054d201f006541ddf61b7afa6ae1b54924315"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_394s.png",
+      "file": "c_394s.png",
+      "sha256": "5781210ec07b6b777008c137ac051500e9392f8d5c861e9edc8e6e29a01b62a0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_455s.png",
+      "file": "c_455s.png",
+      "sha256": "b9959ff5b8dcf9ec36c1ceae92a256996894a31972ec567cf410f39564b83940"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_74s.png",
+      "file": "c_74s.png",
+      "sha256": "12ca8a6206639916f868d9e33aa4699e4f4a924ce74f0696b2c01c4747bfa00b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_269s.png",
+      "file": "c_269s.png",
+      "sha256": "e9497f93f82dd1b0faa57ef135ff302cb0bd7f940f2b6427aadee94b59d3b3ea"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_137s.png",
+      "file": "c_137s.png",
+      "sha256": "a7fbcf7629256b626de965971da7f890d073de175b0266a232da5f9f08d2cc0f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_422s.png",
+      "file": "c_422s.png",
+      "sha256": "c3cba6777ad3bc4205678e389e149f751af79cb12b44476146347910ea661b30"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_475s.png",
+      "file": "c_475s.png",
+      "sha256": "8749f8d71676975d0821bdf3618f7d4c0fe2a85d6d37031b48ced39f4d789e84"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_54s.png",
+      "file": "c_54s.png",
+      "sha256": "5fcb40030ae31ea9635ed44c9d1db6c38a02d300138e57da927cc8ac1822f86e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479-2s.png",
+      "file": "c_479-2s.png",
+      "sha256": "6076b14bbf5a9f474b4e54f4247a6ad08da0f8e5820c1698afa18477aed2c0b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_570-1s.png",
+      "file": "c_570-1s.png",
+      "sha256": "6e08f4a07840f770d9e59bb1b5a0ec85b9f6871ab96dd28c8a425937f9a23040"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_176s.png",
+      "file": "c_176s.png",
+      "sha256": "d862c342cd4c5555b58b70077661be5f2f77bf55d19bdfacc6009599c549cf19"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_42s.png",
+      "file": "c_42s.png",
+      "sha256": "305d94e5fbe800ada7451ef5d09049b76705a78c16a64d23132a4694e396bcdf"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_463s.png",
+      "file": "c_463s.png",
+      "sha256": "9720f137dde9b0619f3aff648222c2ba8b1a825e6ba29b612c581f59d0c4c330"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_208s.png",
+      "file": "c_208s.png",
+      "sha256": "fbe07e7f97ec5d97ed9d9aab8e1f47ff561044ee18973b9e3a6c5d97b854bc25"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_413-1s.png",
+      "file": "c_413-1s.png",
+      "sha256": "df8196283f7e705ebbe6781087f0b145e2f203aab1b48d05bd397830567739ea"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_434s.png",
+      "file": "c_434s.png",
+      "sha256": "37b90bcd1f3eddb72f4dd53b938d42dcbefee062a4de862a765458947feb6cfd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-27s.png",
+      "file": "c_201-27s.png",
+      "sha256": "eb0642b88ff4533ecdc5c3587b67f891deae9017d559f0d3596ba79c8462518e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_81s.png",
+      "file": "c_81s.png",
+      "sha256": "1a81bcdb6371130de905e3f0fc0a62975e361ee9c9d3009d72ea8532f5349fab"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_224s.png",
+      "file": "c_224s.png",
+      "sha256": "73c746f61f51425ec39063aa8e3d41b96bb9258e3eaba7ce900e71347c7463c9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_361s.png",
+      "file": "c_361s.png",
+      "sha256": "db94d5c201b730cfa95336efc92d48f1fbe6ce5ee43770adb6d51390fcb6f128"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-12s.png",
+      "file": "c_493-12s.png",
+      "sha256": "fe5bb1ea3106b04ac69a698353eb7eec0f9b0b8213d371882065c7561ef08fb0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_418s.png",
+      "file": "c_418s.png",
+      "sha256": "2f02b95e353337c9dd6f5d8d00c164735d25f933dcbabf65e13249067fab4e4c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_398s.png",
+      "file": "c_398s.png",
+      "sha256": "a5d7f2a9cc99803ee31bc80423d855be80ff8e1c46052757524921c8e063b01c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_265s.png",
+      "file": "c_265s.png",
+      "sha256": "302f3cff349d5308768633b5f59c6070e89fe4a2619613188060cb544b63a8cf"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-6s.png",
+      "file": "c_201-6s.png",
+      "sha256": "e624bfebcdc3cdbf895d00f75cb76c861f38e1a237cca5682cbe012360c573cb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_78s.png",
+      "file": "c_78s.png",
+      "sha256": "aba634bb40026ed5cf6a578766842bd571896bede88d93e210d254d8c5320a5e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_459s.png",
+      "file": "c_459s.png",
+      "sha256": "349c4ef82ee239a13436f94040fd0081efc5a45c7a4bc9fb126a3ed2c025e437"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_458s.png",
+      "file": "c_458s.png",
+      "sha256": "88c2613c7027f893505162363bdbbd017d436d440f47d851ed1b8d059d82a44e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-7s.png",
+      "file": "c_201-7s.png",
+      "sha256": "823d4e1e70a657fa67618fbfbec529f6791a71d1e445d193807916f3e209e4df"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_37-1s.png",
+      "file": "c_37-1s.png",
+      "sha256": "b2fdaf3d40e5c3931037d3248de5199a5abdc12aefb04847300af7b9dd7f74db"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_399s.png",
+      "file": "c_399s.png",
+      "sha256": "d208a5e1e366c1ecfe4719da7932d1f1457fdade89125dc93547ca655fd64995"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_233s.png",
+      "file": "c_233s.png",
+      "sha256": "5a01d85bab37921f1432c57205bde684ef03d4bb9b29819415c6fa161b4330d5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_38s.png",
+      "file": "c_38s.png",
+      "sha256": "451b169cd653c6bbff568d7c69594f00937aa458c80abf63e5ceeefab43193ee"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_419s.png",
+      "file": "c_419s.png",
+      "sha256": "3d23056e4c169231283dabd4cd7d3cbc778e66caec83266918ede77a835ec237"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_503-1s.png",
+      "file": "c_503-1s.png",
+      "sha256": "6f142b6b67b206b1592cd0b9f807e75d9366e00d55c864ff89ecf6d7f9f30a37"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-13s.png",
+      "file": "c_493-13s.png",
+      "sha256": "c4e5b1c8f3438b71da60e848b03fae8b79b2902a4c5b16d4eedb821d8103ba77"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-26s.png",
+      "file": "c_201-26s.png",
+      "sha256": "79b405897670f8663f44305d39a04257ce5f81aff6e97b5b606c24b8580b767d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_58-1s.png",
+      "file": "c_58-1s.png",
+      "sha256": "0cc4f7f7e4d5d9cdddb476be7532cf2de73f2e015dd8a96eaca1a884df33483e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_435s.png",
+      "file": "c_435s.png",
+      "sha256": "324122b5d50d18777f9caa43faba627d4645f7481e45fb1d5e3e38e4d397988e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_462s.png",
+      "file": "c_462s.png",
+      "sha256": "c86e1fd44e4b0f2a43bf79bbc29ec3183be7d5b2782efe201a30b2e365392343"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_198s.png",
+      "file": "c_198s.png",
+      "sha256": "de2ffa0a4a53426e4b7ee4f7b175c22471bbcf54b45fded84388e80730e515bd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479-3s.png",
+      "file": "c_479-3s.png",
+      "sha256": "638547f4659a5c9e9314bed6034f13abb82d201c31c1c6466ce02f77653f09a3"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_474s.png",
+      "file": "c_474s.png",
+      "sha256": "216776e0a7b5b53463c858bf4fe36962f64722c7245e90f8342db7f902a79563"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_55s.png",
+      "file": "c_55s.png",
+      "sha256": "bed7b62d5d473b2c1397c48abe25bbaee7d6c53f361634fa2dba54e35ef0046e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_136s.png",
+      "file": "c_136s.png",
+      "sha256": "2f087b759f0ea35091c4238b698822121d76d0f54b433c813ae2e56d5ed472e4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_215-1s.png",
+      "file": "c_215-1s.png",
+      "sha256": "4ad030fa8bd9ce28313e0172e0e7814a85f24f3db1868c292e3fde4458a6856e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_423s.png",
+      "file": "c_423s.png",
+      "sha256": "b80a6a51095ebc08c971847fbf75b39ea02f0ed2d372eed3b2f4376b355dddc9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_268s.png",
+      "file": "c_268s.png",
+      "sha256": "4830b3e11d061934028a03f595548b61a5b1e0258ac62b94d574f7f90d45a5ea"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_454s.png",
+      "file": "c_454s.png",
+      "sha256": "b32858f62ddf6015661639dc9351e140673d03153c6ad863c368268cf156dc3e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_75s.png",
+      "file": "c_75s.png",
+      "sha256": "57246deebe90df1680fa43ec0ba55acecf0d34ece533ff9932015772f5856781"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-1s.png",
+      "file": "c_493-1s.png",
+      "sha256": "31a95667b1f64978c995b6e0839608264d0dbc9e6f241d77934b3f2869af5be5"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_724-1s.png",
+      "file": "c_724-1s.png",
+      "sha256": "2cebca0463cfe103cef9400b29d8b6801c057568cdab2dd0b81ce296b1662b10"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_395s.png",
+      "file": "c_395s.png",
+      "sha256": "26babe848ab76f27d28c19b708674e07ef57ecf0b1c539227e4fb170b4666952"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_403s.png",
+      "file": "c_403s.png",
+      "sha256": "af88f86a3e1434841461617b68bc74bdced0af7d5467e7e1236bcd98fc1a2212"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_415s.png",
+      "file": "c_415s.png",
+      "sha256": "6258cf7c45f326b058bcd4c766dfacd0365549fc5d79ec47003bee324224a84e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_63s.png",
+      "file": "c_63s.png",
+      "sha256": "651c8e90a9fa1f615761f9d245f0f16621b05119a424427a2a3606bc13d4aa9f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_628-1s.png",
+      "file": "c_628-1s.png",
+      "sha256": "3b1d15102c3471771f05035187e5c971bc1a620238b7f11f81af555c5abada83"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_442s.png",
+      "file": "c_442s.png",
+      "sha256": "835af84caa2fec005e356e234d107d8d264d5fe50924af3b56679b4a83996730"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_340s.png",
+      "file": "c_340s.png",
+      "sha256": "de584bc8cd098e89b78cb9837fe3e2b91efcb2d531a1dbbdcfd646716e54e974"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_439s.png",
+      "file": "c_439s.png",
+      "sha256": "052816c02c5b21fefff38301b3dbbe03c59318312471ab3c0bcff86fcc0100aa"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_481s.png",
+      "file": "c_481s.png",
+      "sha256": "310c8ec7756b10bb70e8df44e47a63b0c763982d57ab3a1a409af0552ccb065c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-10s.png",
+      "file": "c_201-10s.png",
+      "sha256": "85fe3e0ab1d3c6411347fea8803c00317ef3d6d74afecd65101d483ede47f87a"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_478s.png",
+      "file": "c_478s.png",
+      "sha256": "927d9ae6615b799407211280062b203e5511e195382b1f885c7615336e910526"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_356s.png",
+      "file": "c_356s.png",
+      "sha256": "6837a0552241efc2db79be349e0f919c73001a6c31ac8452a3e3fef2b4d13216"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_423-1s.png",
+      "file": "c_423-1s.png",
+      "sha256": "b47dd3904d417af3bcf3947d266d11935b5b9b4ebdac28e05353974b6a0ad448"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_424s.png",
+      "file": "c_424s.png",
+      "sha256": "3431f65b4f86d407626b014c2d0295742b914a5583fdf75192bd1c07a5965a83"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_211-1s.png",
+      "file": "c_211-1s.png",
+      "sha256": "bbb9fa636165b02e587ffcfe110831f4a439ca71764f43aabcd3af3257d7fa51"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_473s.png",
+      "file": "c_473s.png",
+      "sha256": "daa28e43e8804988f30d760ff2433c77a39c0dd71b4969c79650b86812e26842"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479-4s.png",
+      "file": "c_479-4s.png",
+      "sha256": "1dcbc9c07c34637f063dc842b0d0d789f6e69dee81b956308cadcf29983f70aa"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_465s.png",
+      "file": "c_465s.png",
+      "sha256": "04783b2c172a90ae6908e4678f09b3cf6351f5b0764412ba5cff60a31df748ce"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_432s.png",
+      "file": "c_432s.png",
+      "sha256": "a6f14e34a713b5b1fd4f3db584c778411977245bece3201112e551add631e097"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-21s.png",
+      "file": "c_201-21s.png",
+      "sha256": "d7372f04b83a1b2a2914018564bcf212d7968af215f9061ddcfb1224939fa6d9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_68s.png",
+      "file": "c_68s.png",
+      "sha256": "ab47ba58bce82249b7247a26047956832883706d23935daf0ef997aecba7d1f7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_449s.png",
+      "file": "c_449s.png",
+      "sha256": "a6b2c038710b8bcd15390547cd7517eb2672753f107f48358f94f4c7dd47e0c0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_388s.png",
+      "file": "c_388s.png",
+      "sha256": "09834527acfa2e6460719f0e27d9ef651a7b036f495a7be15384597b413bd265"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-14s.png",
+      "file": "c_493-14s.png",
+      "sha256": "25122aaf5bdca9940fd875a504b254f1d4533f42a4333efd737170738e4f6046"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_234s.png",
+      "file": "c_234s.png",
+      "sha256": "c053813023dd666bb4d422e831412f32ace5ee73d2ae8729170134f2db488cef"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_408s.png",
+      "file": "c_408s.png",
+      "sha256": "772b4191ac3abf73d663ae282ded48c575a7e1c81fd2b37b287ef6a7d0dcfd1c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_428s.png",
+      "file": "c_428s.png",
+      "sha256": "7935b3a0a2d2fb79edf083cf1d4588720eb051f279ea67dc708fda20b28a9a9e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_214s.png",
+      "file": "c_214s.png",
+      "sha256": "b72159c89ee412b66d8c1048923649e67c57d199b1f1fc60575e3172a54537ee"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_490s.png",
+      "file": "c_490s.png",
+      "sha256": "1cdb49481818ed5e88c3ddd0767b113dea3bf96ca07ff9ad6d82a4d50c8f6c89"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_185s.png",
+      "file": "c_185s.png",
+      "sha256": "c8198d1f116e03cc480e9074da733bd610a7defddeecc2600fd9a84cd34c2363"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-17s.png",
+      "file": "c_201-17s.png",
+      "sha256": "401ae386dd8ba219a4839e21e27f65986b54bc0e084008ae1956d6760921cbc9"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_486s.png",
+      "file": "c_486s.png",
+      "sha256": "d73bd40a288064c3ea9826d0b6e16f3ab779316987b2823f1c8246d0ecf4b594"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_469s.png",
+      "file": "c_469s.png",
+      "sha256": "c5f7249bb758a2f571e3c724def705de88de9296a4e161fc296c42f58b4eb801"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_193s.png",
+      "file": "c_193s.png",
+      "sha256": "4ad9bd63f5a2a06b3dcf0c9bd9c3a0ac16f3b3d7cdc459f984ea94adde345633"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_445s.png",
+      "file": "c_445s.png",
+      "sha256": "7b7ce20cffe5e2de83edd0e005b52214cfbdb7151dc09ff44f5c27f4fa82a052"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_64s.png",
+      "file": "c_64s.png",
+      "sha256": "c67e21c7e33ece89386f65be8bf06f60556b66d9e30725e784e9392570332e50"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_412s.png",
+      "file": "c_412s.png",
+      "sha256": "b399c8d2d54a40f72d27a8aff7e7459960995cf0191d38919729d170acf3411f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_100-1s.png",
+      "file": "c_100-1s.png",
+      "sha256": "6d08045fb5696bfc97890b1dea5c251c69ff63e893a5f0a2d3b2e1936447aafc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-18s.png",
+      "file": "c_493-18s.png",
+      "sha256": "082d4d8628a927b8546ae3025a39d9cd5b017a15c0c48b18ee27db242f86f0f4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_404s.png",
+      "file": "c_404s.png",
+      "sha256": "e4e682d89e2011e7b70f508bbef7ac85b0b2b58c66da2707072293274fa3d65c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_25s.png",
+      "file": "c_25s.png",
+      "sha256": "f5ebaa00077373f759ca349cd7a7c1d85d21e0f0ab32707a60fb937b3d360697"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_111s.png",
+      "file": "c_111s.png",
+      "sha256": "d4785c7823ef6c67c204ebaef784ca03e6ba8e6208d8dc5404eac58ed59af20f"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_392s.png",
+      "file": "c_392s.png",
+      "sha256": "b6808670eb0fc971122b708e0a40aca88442d1cf61cb924e7e98d18cee2da50e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_900s.png",
+      "file": "c_900s.png",
+      "sha256": "f6dd60a25f124878a9f0c83e8fb0c2b809319c67e0bd0da6aca10dcd641caaee"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_72s.png",
+      "file": "c_72s.png",
+      "sha256": "939628aaf63cfb48d51a16fbfe39dc6bacca8498a5299fc330dd43f3ccd01160"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_453s.png",
+      "file": "c_453s.png",
+      "sha256": "aa76ca0d92cd7870765cbad3213028e3799a611559e92ca2f4fe53c5dc716a62"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-6s.png",
+      "file": "c_493-6s.png",
+      "sha256": "837ba1903e79f7502ce3a29a49afb0ee210e4f2d0f878bbc6c21d904700f9ef4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_280s.png",
+      "file": "c_280s.png",
+      "sha256": "8299bcec01ed2aa71f6c719cf5da8de49c5886a186de7b72d5bf15660f1e763e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_281s.png",
+      "file": "c_281s.png",
+      "sha256": "01182ed0afcd6a944781659b0cf1c7f1c33865aea4b5774e45758b7d92713392"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_901s.png",
+      "file": "c_901s.png",
+      "sha256": "c702c8262c0eb645fcdba0863670bf359be85cf87427db7574c3e50ada2e5d61"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_73s.png",
+      "file": "c_73s.png",
+      "sha256": "31768b8b7cee0cf2bafb3bb55da3a24c6abe35bb45bf22c3764ac0a7cfed13bb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_452s.png",
+      "file": "c_452s.png",
+      "sha256": "96af474acc262067849d7d725cab06577797819992547294394e3a0743ac17b2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-7s.png",
+      "file": "c_493-7s.png",
+      "sha256": "53f3ebf09c1655f04540c3f18c83192bbcfb1e9989c797ba3aeef5546e4700f4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_239s.png",
+      "file": "c_239s.png",
+      "sha256": "5945243c496a606e0f4849c60c6658565347a499e6feccae9a323f6ad0f292bc"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_393s.png",
+      "file": "c_393s.png",
+      "sha256": "ae116e22dc4dae635e95a8670c574e2bbcdb267614493c4da4387448e9854b17"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_706-1s.png",
+      "file": "c_706-1s.png",
+      "sha256": "2a426085e9d70288678a4fac832d659e167a9c86820f52ed8a728c4f80099ed7"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_157-1s.png",
+      "file": "c_157-1s.png",
+      "sha256": "eb0ee0a364a2de9bb6f127dc001156876aafc998760338cf58aa4b5696c66426"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_405s.png",
+      "file": "c_405s.png",
+      "sha256": "55c8f4ed787c5063c97f29c236ccf76fe35c8acae4188c44a2c8fa3915732fbb"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_413s.png",
+      "file": "c_413s.png",
+      "sha256": "5c8d7ce444fd4a7fdb3fc7987d4e5ec026d40f28ee0bc0d7bc6a190aff40527d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_444s.png",
+      "file": "c_444s.png",
+      "sha256": "9f244807a8ecc3b72964a7f5fa3d3fdd436305a839e70065ed239d70701b765b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_65s.png",
+      "file": "c_65s.png",
+      "sha256": "be06669ae73600862502368f2f5e92ecae00865768c26aff55248b56614a9b1d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_501s.png",
+      "file": "c_501s.png",
+      "sha256": "1faa1a45fbfed21b874059a4dee5fb76512fa103fc53c9474755a07923553b14"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_641-1s.png",
+      "file": "c_641-1s.png",
+      "sha256": "451da05b3dc44ea8bb2861873883925db1fb99a7c1669f27a893fbc5035257e2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_487s.png",
+      "file": "c_487s.png",
+      "sha256": "0d4dbba0c7b55e40f38b9e91039175766aea351b03801fb46b771599c79806f4"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_468s.png",
+      "file": "c_468s.png",
+      "sha256": "e5217bceecfda424075bbb3770a2e833c6ae90f94719791ef0ac230ef927096c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-16s.png",
+      "file": "c_201-16s.png",
+      "sha256": "99d77efa54a08147542494b021da4ada38695bfb93556a873b709cc23d85ece6"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_242s.png",
+      "file": "c_242s.png",
+      "sha256": "9c7df6bc48cc022af4fb989be0fce292e1f9eb89637c51c4d63df3a59673556b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_491s.png",
+      "file": "c_491s.png",
+      "sha256": "63f28f3e2f35518598554b65f77bd181f1b4b5b06bff1cf615bce9203d22443e"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_700s.png",
+      "file": "c_700s.png",
+      "sha256": "644558cdff116b7c1312661a2ace06ceb9827fed362dc63424d42e8189964c4b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_487-1s.png",
+      "file": "c_487-1s.png",
+      "sha256": "e806bf061ed4ae09107929c2c7f86cedd5ff722fb922977240d3d7f988264eaf"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_645s.png",
+      "file": "c_645s.png",
+      "sha256": "cc961003fa3027a8e13a46f58456381a7d803449b1c08ece4010d4a62c57bd61"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_215s.png",
+      "file": "c_215s.png",
+      "sha256": "5c65f1b8c1e5510c120839e96fba03c3fa7d9ba2449250e9284e68bca560ac8c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_429s.png",
+      "file": "c_429s.png",
+      "sha256": "0594937b2a3b6927dedc3c16f1b5d7c77a00c3fee527683388bfff71ced59002"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-1s.png",
+      "file": "c_201-1s.png",
+      "sha256": "6e044145e99c864e00212dabf8d6631da3197ece9db5eede07334423980ede8c"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_409s.png",
+      "file": "c_409s.png",
+      "sha256": "65e5a1c3fe9370fe46448d78633d11502e30582500416753f83f6f69d09caa4d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_223s.png",
+      "file": "c_223s.png",
+      "sha256": "ea03777ae61eed0a171e16242bbed59da41766f8bd9b24b06886443ca35490e2"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_389s.png",
+      "file": "c_389s.png",
+      "sha256": "ee15fbd2dcf06524c4161b14375c46031e6942f230da2067035c8a6fec96cdfd"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_493-15s.png",
+      "file": "c_493-15s.png",
+      "sha256": "d0e20a2f605339f6b5aa1dd9650d27b28fc3a2515b14b6b142d0d65840830622"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_448s.png",
+      "file": "c_448s.png",
+      "sha256": "0e586cd94936372db42759bd273bb67a8c29776fec3346b40f8afb24359a5f81"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_421-1s.png",
+      "file": "c_421-1s.png",
+      "sha256": "7b0b4f2b5676536ef52504fe0ff416b50c20cb7e8574c15b05999c588f2d3d18"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_201-20s.png",
+      "file": "c_201-20s.png",
+      "sha256": "b29148482b52e34feaa0cb81cf79382cb6603703618c3bb4873ebc2429fa307b"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_126s.png",
+      "file": "c_126s.png",
+      "sha256": "937e8259ce5fe38c991f271e40cf0fd30d7712cee3820b577b16d88aa2dc3735"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_433s.png",
+      "file": "c_433s.png",
+      "sha256": "148fd5b582c45b38655e93e44dd671c3c0e6a17c01c6e1492b192ba5960c230d"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_464s.png",
+      "file": "c_464s.png",
+      "sha256": "2341ce8c37cacb3e82b16eac6a19fc2f2b5ad7fa1e29c77b27f8505efa78a6ec"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_479-5s.png",
+      "file": "c_479-5s.png",
+      "sha256": "d1af99b0ad3d6f44f3336baa1fc1aa6eb32f7899bf0374dd1634e69ee4ac95ed"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_412-2s.png",
+      "file": "c_412-2s.png",
+      "sha256": "655e79230f39727e4e3f7e55342e01e6b81fc456ae175e5405389b1fb3d38078"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_472s.png",
+      "file": "c_472s.png",
+      "sha256": "693e66a87b2a892130fc7e95e451c020f082339453906dccc4c54c38121dd7e0"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_130s.png",
+      "file": "c_130s.png",
+      "sha256": "a2d55fdcd037e01461eb83c8f01c3f79e891b256509f7ce370d7fe290f9b4180"
+    },
+    {
+      "source": "PKHeX.Drawing.PokeSprite/Resources/img/Legends Arceus Shiny Sprites/c_425s.png",
+      "file": "c_425s.png",
+      "sha256": "7b273e0304b386b1045fd94556a12f78b30ec7fadf69c0aa04ac2248550c1f88"
+    }
+  ]
+}

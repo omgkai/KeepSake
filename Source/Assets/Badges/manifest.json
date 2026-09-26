@@ -1,0 +1,478 @@
+{
+  "kanto-boulder": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-cascade": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-thunder": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-rainbow": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-soul": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-marsh": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-volcano": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "kanto-earth": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "johto-zephyr": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-hive": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-plain": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-fog": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-storm": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-mineral": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-glacier": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "johto-rising": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 68,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-stone": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-knuckle": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-dynamo": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-heat": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-balance": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-feather": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-mind": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "hoenn-rain": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 136,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-coal": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-forest": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-cobble": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-fen": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-relic": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-mine": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-icicle": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "sinnoh-beacon": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 204,
+    "width": 64,
+    "height": 64
+  },
+  "unova-trio": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-basic": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-insect": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-bolt": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-quake": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-jet": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-freeze": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "unova-legend": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 340,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-bug": {
+    "sheet": "classic",
+    "x": 140,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-cliff": {
+    "sheet": "classic",
+    "x": 208,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-rumble": {
+    "sheet": "classic",
+    "x": 276,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-plant": {
+    "sheet": "classic",
+    "x": 344,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-voltage": {
+    "sheet": "classic",
+    "x": 412,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-fairy": {
+    "sheet": "classic",
+    "x": 480,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-psychic": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "kalos-iceberg": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 408,
+    "width": 64,
+    "height": 64
+  },
+  "unova-toxic": {
+    "sheet": "classic",
+    "x": 548,
+    "y": 272,
+    "width": 64,
+    "height": 64
+  },
+  "unova-wave": {
+    "sheet": "classic",
+    "x": 616,
+    "y": 272,
+    "width": 64,
+    "height": 64
+  },
+  "paldea-titan-dragon": {
+    "sheet": "paldea",
+    "x": 0,
+    "y": 0,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-titan-rock": {
+    "sheet": "paldea",
+    "x": 200,
+    "y": 0,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-titan-flying": {
+    "sheet": "paldea",
+    "x": 400,
+    "y": 0,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-titan-steel": {
+    "sheet": "paldea",
+    "x": 600,
+    "y": 0,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-titan-ground": {
+    "sheet": "paldea",
+    "x": 800,
+    "y": 0,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-bug": {
+    "sheet": "paldea",
+    "x": 100,
+    "y": 190,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-grass": {
+    "sheet": "paldea",
+    "x": 300,
+    "y": 190,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-electric": {
+    "sheet": "paldea",
+    "x": 500,
+    "y": 190,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-water": {
+    "sheet": "paldea",
+    "x": 700,
+    "y": 190,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-normal": {
+    "sheet": "paldea",
+    "x": 100,
+    "y": 380,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-ghost": {
+    "sheet": "paldea",
+    "x": 300,
+    "y": 380,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-psychic": {
+    "sheet": "paldea",
+    "x": 500,
+    "y": 380,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-gym-ice": {
+    "sheet": "paldea",
+    "x": 700,
+    "y": 380,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-star-fire": {
+    "sheet": "paldea",
+    "x": 0,
+    "y": 570,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-star-dark": {
+    "sheet": "paldea",
+    "x": 200,
+    "y": 570,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-star-fairy": {
+    "sheet": "paldea",
+    "x": 400,
+    "y": 570,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-star-fighting": {
+    "sheet": "paldea",
+    "x": 600,
+    "y": 570,
+    "width": 150,
+    "height": 150
+  },
+  "paldea-star-poison": {
+    "sheet": "paldea",
+    "x": 800,
+    "y": 570,
+    "width": 150,
+    "height": 150
+  }
+}

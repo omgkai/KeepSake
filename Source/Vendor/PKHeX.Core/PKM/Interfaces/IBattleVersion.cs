@@ -1,0 +1,65 @@
+using System;
+
+namespace PKHeX.Core;
+
+/// <summary>
+/// Interface that exposes a <see cref="BattleVersion"/> for allowing a Pokémon into ranked battles if it originated from a prior game.
+/// </summary>
+public interface IBattleVersion
+{
+    /// <summary>
+    /// Indicates which <see cref="GameVersion"/> the Pokémon's moves were reset on.
+    /// </summary>
+    GameVersion BattleVersion { get; set; }
+}
+
+public static class BattleVersionExtensions
+{
+    /// <summary>
+    /// Checks if the applied Battle Version value is valid based on visitation.
+    /// </summary>
+    public static bool IsBattleVersionValid<T>(this T pk, EvolutionHistory h) where T : PKM, IBattleVersion => pk.BattleVersion switch
+    {
+        0 => true,
+        GameVersion.SW or GameVersion.SH => h.HasVisitedSWSH && LocationsHOME.GetVersionSWSH(pk.Version) is not (GameVersion.SW or GameVersion.SH),
+        _ => false,
+    };
+
+    extension(IBattleVersion v)
+    {
+        /// <summary>
+        /// Resets the <see cref="PKM"/>'s moves and sets the requested version.
+        /// </summary>
+        /// <param name="pk">Reference to the same object that gets moves reset</param>
+        /// <param name="version">Version to apply</param>
+        public void AdaptToBattleVersion(PKM pk, GameVersion version)
+        {
+            // Wipe current moves.
+            Span<ushort> moves = stackalloc ushort[4];
+            pk.SetMoves(moves);
+            pk.SetRelearnMoves(moves);
+
+            var source = GameData.GetLearnSource(version);
+            source.SetEncounterMoves(pk.Species, pk.Form, pk.CurrentLevel, moves);
+            pk.SetMoves(moves);
+            pk.FixMoves();
+            v.BattleVersion = version;
+        }
+
+        /// <summary>
+        /// Gets the minimum Generation ID that it was last reset in.
+        /// </summary>
+        public int GetMinGeneration()
+        {
+            var version = v.BattleVersion;
+            if (version == 0)
+                return 1;
+            if (!version.IsValidSavedVersion())
+                return -1;
+            var gen = version.Generation;
+            if (gen >= 8)
+                return gen;
+            return -1;
+        }
+    }
+}

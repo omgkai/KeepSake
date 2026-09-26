@@ -1,0 +1,141 @@
+using System;
+using static System.Buffers.Binary.BinaryPrimitives;
+
+namespace PKHeX.Core;
+
+/// <summary>
+/// Side game data for <see cref="PB8"/> data transferred into HOME.
+/// </summary>
+public sealed class GameDataPB8 : HomeOptional1, IGameDataSide<PB8>, IGameDataSplitAbility, IPokerusStatus, IGameDataSidePP
+{
+    private const HomeGameDataFormat ExpectFormat = HomeGameDataFormat.PB8;
+    private const int SIZE = HomeCrypto.SIZE_2GAME_PB8;
+    protected override HomeGameDataFormat Format => ExpectFormat;
+
+    public GameDataPB8() : base(SIZE) { }
+    public GameDataPB8(Memory<byte> data) : base(data) => EnsureSize(SIZE);
+    public GameDataPB8 Clone() => new(ToArray());
+    public int WriteTo(Span<byte> result) => WriteWithHeader(result);
+
+    #region Structure
+
+    public ushort Move1 { get => ReadUInt16LittleEndian(Data); set => WriteUInt16LittleEndian(Data, value); }
+    public ushort Move2 { get => ReadUInt16LittleEndian(Data[0x02..]); set => WriteUInt16LittleEndian(Data[0x02..], value); }
+    public ushort Move3 { get => ReadUInt16LittleEndian(Data[0x04..]); set => WriteUInt16LittleEndian(Data[0x04..], value); }
+    public ushort Move4 { get => ReadUInt16LittleEndian(Data[0x06..]); set => WriteUInt16LittleEndian(Data[0x06..], value); }
+
+    public byte Move1_PP { get => Data[0x08]; set => Data[0x08] = value; }
+    public byte Move2_PP { get => Data[0x09]; set => Data[0x09] = value; }
+    public byte Move3_PP { get => Data[0x0A]; set => Data[0x0A] = value; }
+    public byte Move4_PP { get => Data[0x0B]; set => Data[0x0B] = value; }
+    public byte Move1_PPUps { get => Data[0x0C]; set => Data[0x0C] = value; }
+    public byte Move2_PPUps { get => Data[0x0D]; set => Data[0x0D] = value; }
+    public byte Move3_PPUps { get => Data[0x0E]; set => Data[0x0E] = value; }
+    public byte Move4_PPUps { get => Data[0x0F]; set => Data[0x0F] = value; }
+
+    public ushort RelearnMove1 { get => ReadUInt16LittleEndian(Data[0x10..]); set => WriteUInt16LittleEndian(Data[0x10..], value); }
+    public ushort RelearnMove2 { get => ReadUInt16LittleEndian(Data[0x12..]); set => WriteUInt16LittleEndian(Data[0x12..], value); }
+    public ushort RelearnMove3 { get => ReadUInt16LittleEndian(Data[0x14..]); set => WriteUInt16LittleEndian(Data[0x14..], value); }
+    public ushort RelearnMove4 { get => ReadUInt16LittleEndian(Data[0x16..]); set => WriteUInt16LittleEndian(Data[0x16..], value); }
+
+    private Span<byte> RecordFlag => Data.Slice(0x18, 14);
+    public bool GetMoveRecordFlag(int index) => FlagUtil.GetFlag(RecordFlag, index >> 3, index & 7);
+    public void SetMoveRecordFlag(int index, bool value) => FlagUtil.SetFlag(RecordFlag, index >> 3, index & 7, value);
+    public bool GetMoveRecordFlagAny() => RecordFlag.ContainsAnyExcept<byte>(0);
+    public void ClearMoveRecordFlags() => RecordFlag.Clear();
+
+    public byte Ball { get => Data[0x26]; set => Data[0x26] = value; }
+    public ushort EggLocation { get => ReadUInt16LittleEndian(Data[0x27..]); set => WriteUInt16LittleEndian(Data[0x27..], value); }
+    public ushort MetLocation { get => ReadUInt16LittleEndian(Data[0x29..]); set => WriteUInt16LittleEndian(Data[0x29..], value); }
+
+    // Rev2 Additions
+    public byte PokerusState { get => Data[0x2B]; set => Data[0x2B] = value; }
+    public ushort Ability { get => ReadUInt16LittleEndian(Data[0x2C..]); set => WriteUInt16LittleEndian(Data[0x2C..], value); }
+    public byte AbilityNumber { get => Data[0x2E]; set => Data[0x2E] = value; }
+
+    #endregion
+
+    #region Conversion
+
+    public PersonalInfo GetPersonalInfo(ushort species, byte form) => PersonalTable.BDSP.GetFormEntry(species, form);
+
+    public void CopyTo(PB8 pk, PKH pkh)
+    {
+        this.CopyTo(pk);
+        // Move Records are not settable in PB8; do not copy even if nonzero (illegal).
+        pk.PokerusState = PokerusState;
+        pk.AbilityNumber = AbilityNumber;
+        pk.Ability = Ability;
+
+        pk.EggLocation = Locations8b.GetLocationLocal(EggLocation);
+        pk.MetLocation = Locations8b.GetLocationLocal(MetLocation);
+    }
+
+    public void CopyFrom(PB8 pk, PKH pkh)
+    {
+        this.CopyFrom(pk);
+        // Move Records are not settable in PB8; do not copy even if nonzero (illegal).
+        PokerusState = pk.PokerusState;
+        AbilityNumber = (byte)pk.AbilityNumber;
+        Ability = (ushort)pk.Ability;
+
+        EggLocation = Locations8b.GetLocationMainline(pk.EggLocation);
+        MetLocation = Locations8b.GetLocationMainline(pk.MetLocation);
+    }
+
+    public PB8 ConvertToPKM(PKH pkh)
+    {
+        var pk = new PB8();
+        pkh.CopyTo(pk);
+        CopyTo(pk, pkh);
+
+        pk.ResetPartyStats();
+        pk.RefreshChecksum();
+        return pk;
+    }
+
+    #endregion
+
+    /// <summary> Reconstructive logic to best apply suggested values. </summary>
+    public static GameDataPB8? TryCreate(PKH pkh)
+    {
+        var side = GetNearestNeighbor(pkh);
+        if (side is null)
+            return null;
+
+        var result = new GameDataPB8();
+        result.InitializeFrom(side, pkh);
+        return result;
+    }
+
+    private static IGameDataSide? GetNearestNeighbor(PKH pkh)
+        => pkh.DataPA9 ?? pkh.DataPK9 ?? pkh.DataPK8 ?? pkh.DataPB7 ?? pkh.DataPA8 as IGameDataSide;
+
+    public void InitializeFrom(IGameDataSide side, PKH pkh)
+    {
+        Ball = side.Ball;
+        MetLocation = side.MetLocation;
+        EggLocation = side.EggLocation;
+
+        if (side is IPokerusStatus p)
+            PokerusState = p.PokerusState;
+        if (side is IGameDataSplitAbility a)
+            AbilityNumber = a.AbilityNumber;
+        else
+            AbilityNumber = 1;
+
+        PopulateFromCore(pkh);
+    }
+
+    private void PopulateFromCore(PKH pkh)
+    {
+        var pi = PersonalTable.BDSP.GetFormEntry(pkh.Species, pkh.Form);
+        var index = AbilityNumber >> 1;
+        if (index >= pi.AbilityCount)
+            index = 0;
+        Ability = (ushort)pi.GetAbilityAtIndex(index);
+
+        var level = Experience.GetLevel(pkh.EXP, pi.EXPGrowth);
+        this.ResetMoves(pkh.Species, pkh.Form, level, LearnSource8BDSP.Instance, EntityContext.Gen8b);
+    }
+}

@@ -1,0 +1,237 @@
+[
+  {
+    "code": "PLA",
+    "source": "https://legends.arceus.pokemon.com/en-us/assets/arceus-logo.png",
+    "image": "https://legends.arceus.pokemon.com/en-us/assets/arceus-logo.png"
+  },
+  {
+    "code": "BD",
+    "source": "https://diamondpearl.pokemon.com/en-us/assets/logo_bd.png",
+    "image": "https://diamondpearl.pokemon.com/en-us/assets/logo_bd.png"
+  },
+  {
+    "code": "SP",
+    "source": "https://diamondpearl.pokemon.com/en-us/assets/logo_sp.png",
+    "image": "https://diamondpearl.pokemon.com/en-us/assets/logo_sp.png"
+  },
+  {
+    "code": "SW",
+    "source": "https://swordshield.pokemon.com/assets/img/common/logo/en-us/logo-pokemon-sword_2x.png",
+    "image": "https://swordshield.pokemon.com/assets/img/common/logo/en-us/logo-pokemon-sword_2x.png"
+  },
+  {
+    "code": "SH",
+    "source": "https://swordshield.pokemon.com/assets/img/common/logo/en-us/logo-pokemon-shield_2x.png",
+    "image": "https://swordshield.pokemon.com/assets/img/common/logo/en-us/logo-pokemon-shield_2x.png"
+  },
+  {
+    "code": "ZA",
+    "source": "https://legends.pokemon.com/images/global/en/pokemon-za-logo-2x.png",
+    "image": "https://legends.pokemon.com/images/global/en/pokemon-za-logo-2x.png"
+  },
+  {
+    "code": "SL",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Scarlet_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/6/6d/Pok%C3%A9mon_Scarlet_logo.png"
+  },
+  {
+    "code": "VL",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Violet_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/7/7f/Pok%C3%A9mon_Violet_logo.png"
+  },
+  {
+    "code": "X",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_X_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/9/9c/Pok%C3%A9mon_X_logo.png"
+  },
+  {
+    "code": "Y",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Y_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/8/8f/Pok%C3%A9mon_Y_logo.png"
+  },
+  {
+    "code": "SN",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Sun_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/5/58/Pok%C3%A9mon_Sun_logo.png"
+  },
+  {
+    "code": "MN",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Moon_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/c/cc/Pok%C3%A9mon_Moon_logo.png"
+  },
+  {
+    "code": "US",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Ultra_Sun_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/6/62/Pok%C3%A9mon_Ultra_Sun_logo.png"
+  },
+  {
+    "code": "UM",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Ultra_Moon_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/c/c1/Pok%C3%A9mon_Ultra_Moon_logo.png"
+  },
+  {
+    "code": "B2",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Black_2_logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/5/50/Pok%C3%A9mon_Black_2_logo_EN.png"
+  },
+  {
+    "code": "W2",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_White_2_logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/5/57/Pok%C3%A9mon_White_2_logo_EN.png"
+  },
+  {
+    "code": "RD",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Red_JP_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/b/b9/Pokemon_Red_JP_Logo.png"
+  },
+  {
+    "code": "GN",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Green_JP_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/e/e9/Pokemon_Green_JP_Logo.png"
+  },
+  {
+    "code": "BU",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Blue_JP_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/8/88/Pokemon_Blue_JP_Logo.png"
+  },
+  {
+    "code": "YW",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Yellow_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/b/bc/Pokemon_Yellow_Logo_EN.png"
+  },
+  {
+    "code": "GD",
+    "source": "https://archives.bulbagarden.net/wiki/File:1999_Pokemon_Gold_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/7/79/1999_Pokemon_Gold_Logo.png"
+  },
+  {
+    "code": "SI",
+    "source": "https://archives.bulbagarden.net/wiki/File:1999_Pokemon_Silver_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/1/19/1999_Pokemon_Silver_Logo.png"
+  },
+  {
+    "code": "R",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Ruby_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/2/21/Pokemon_Ruby_Logo_EN.png"
+  },
+  {
+    "code": "S",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Sapphire_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/8/8b/Pokemon_Sapphire_Logo_EN.png"
+  },
+  {
+    "code": "E",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_Emerald_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/8/83/Pokemon_Emerald_Logo_EN.png"
+  },
+  {
+    "code": "FR",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_FireRed_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/3/39/Pokemon_FireRed_Logo_EN.png"
+  },
+  {
+    "code": "LG",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pokemon_LeafGreen_Logo_EN.png",
+    "image": "https://archives.bulbagarden.net/media/upload/e/e0/Pokemon_LeafGreen_Logo_EN.png"
+  },
+  {
+    "code": "D",
+    "source": "https://archives.bulbagarden.net/wiki/File:Diamond_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/6/67/Diamond_logo.png"
+  },
+  {
+    "code": "P",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pearl_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/3/35/Pearl_logo.png"
+  },
+  {
+    "code": "HG",
+    "source": "https://archives.bulbagarden.net/wiki/File:HeartGoldEnglish.png",
+    "image": "https://archives.bulbagarden.net/media/upload/e/ea/HeartGoldEnglish.png"
+  },
+  {
+    "code": "SS",
+    "source": "https://archives.bulbagarden.net/wiki/File:SoulSilverEnglish.png",
+    "image": "https://archives.bulbagarden.net/media/upload/5/52/SoulSilverEnglish.png"
+  },
+  {
+    "code": "B",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Black_EN_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/a/ae/Pok%C3%A9mon_Black_EN_logo.png"
+  },
+  {
+    "code": "W",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_White_EN_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/3/3e/Pok%C3%A9mon_White_EN_logo.png"
+  },
+  {
+    "code": "OR",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Omega_Ruby_EN_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/9/98/Pok%C3%A9mon_Omega_Ruby_EN_logo.png"
+  },
+  {
+    "code": "AS",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Alpha_Sapphire_EN_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/0/07/Pok%C3%A9mon_Alpha_Sapphire_EN_logo.png"
+  },
+  {
+    "code": "GP",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Lets_Go_Pikachu_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/2/22/Pok%C3%A9mon_Lets_Go_Pikachu_Logo.png"
+  },
+  {
+    "code": "GE",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Lets_Go_Eevee_Logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/8/8b/Pok%C3%A9mon_Lets_Go_Eevee_Logo.png"
+  },
+  {
+    "code": "COLO",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Colosseum_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/1/18/Pok%C3%A9mon_Colosseum_logo.png"
+  },
+  {
+    "code": "XD",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_XD_logo_English.png",
+    "image": "https://archives.bulbagarden.net/media/upload/c/cb/Pok%C3%A9mon_XD_logo_English.png"
+  },
+  {
+    "code": "BATREV",
+    "source": "https://archives.bulbagarden.net/wiki/File:PBR_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/2/2d/PBR_logo.png"
+  },
+  {
+    "code": "Stadium",
+    "source": "https://archives.bulbagarden.net/wiki/File:Stadium_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/5/5a/Stadium_logo.png"
+  },
+  {
+    "code": "GO",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_GO_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/f/f6/Pok%C3%A9mon_GO_logo.png"
+  },
+  {
+    "code": "C",
+    "source": "https://archives.bulbagarden.net/wiki/File:Crystal_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/1/1a/Crystal_logo.png"
+  },
+  {
+    "code": "Pt",
+    "source": "https://archives.bulbagarden.net/wiki/File:Platinum-logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/9/9f/Platinum-logo.png"
+  },
+  {
+    "code": "RANCH",
+    "source": "https://archives.bulbagarden.net/wiki/File:MPR-EN_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/0/00/MPR-EN_logo.png"
+  },
+  {
+    "code": "CP",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_Champions_logo.png",
+    "image": "https://archives.bulbagarden.net/media/upload/f/ff/Pok%C3%A9mon_Champions_logo.png"
+  },
+  {
+    "code": "Pokemon",
+    "source": "https://archives.bulbagarden.net/wiki/File:Pok%C3%A9mon_logo_English.png",
+    "image": "https://archives.bulbagarden.net/media/upload/d/d2/Pok%C3%A9mon_logo_English.png"
+  }
+]

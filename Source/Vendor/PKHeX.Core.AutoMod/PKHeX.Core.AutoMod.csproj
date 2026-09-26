@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework><Version>26.8.27</Version><LangVersion>14</LangVersion><Nullable>enable</Nullable><NeutralLanguage>en</NeutralLanguage></PropertyGroup><ItemGroup><ProjectReference Include="../PKHeX.Core/PKHeX.Core.csproj" /></ItemGroup></Project>

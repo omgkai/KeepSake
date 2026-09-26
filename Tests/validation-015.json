@@ -1,0 +1,17 @@
+{
+  "version": "0.15",
+  "protocol_suites": {
+    "existing_regressions": 1826,
+    "rc_tools": 628,
+    "keepsake": 157,
+    "direct_adapter_operations": 50
+  },
+  "journal_store": "persistence, validation, merge, corrupt-file preservation passed",
+  "ui": "journal preview; PLA ownership/Give All/Undo; species guide; blocks; BDSP Poffin editor",
+  "limits": [
+    "Synthetic coverage across generations is not real-save coverage of all titles",
+    "Full Windows dialog parity unfinished",
+    "Wardrobe art is category/color illustration, not exact garment thumbnails",
+    "Final small accessibility/checkbox/sort refinements compiled; no full repeated gesture QA"
+  ]
+}

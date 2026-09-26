@@ -1,0 +1,633 @@
+{
+  "source": "User-supplied paldea items folder",
+  "files": [
+    {
+      "file": "GIMMIGHOULCOIN.png",
+      "sha256": "8b14f6a18139c624770f6f656f5ec09d0676067a42653c3ac78affe5d9689187"
+    },
+    {
+      "file": "FLYINGTERASHARD.png",
+      "sha256": "4154c2da429d7f572be99dcd429232c90848448857fd8c6fea7b049f6550e14d"
+    },
+    {
+      "file": "TERAORB.png",
+      "sha256": "a8e5f654c15a6514afe7a5bb2bf58bbdc601373d2f378d631a961c824275cbc4"
+    },
+    {
+      "file": "NORMALTERASHARD.png",
+      "sha256": "2dade11f07b8ca62a401ba8d1410a8ac9f9c3ee3ba2f7cc8643d785b59d367db"
+    },
+    {
+      "file": "ROCKTERASHARD.png",
+      "sha256": "b06aca6173c607c61d979cbae9c2b96dde634550aba6be8861884c8dd7ad2e93"
+    },
+    {
+      "file": "SCARLETBOOK.png",
+      "sha256": "435087f515e8d4b5f367915127946fe6dbd06f4b8ab1efec9c2d058284545170"
+    },
+    {
+      "file": "ROTOSTICK.png",
+      "sha256": "de3a4eed967f68c4558d15b3e6c0cf24355168b1b1c2c2cdee96eb8487611f2b"
+    },
+    {
+      "file": "FIGHTINGTERASHARD.png",
+      "sha256": "f320f5d0915e7d4fe27a966b4e521980f0c6d3db9284fbb1281e98db14d4c291"
+    },
+    {
+      "file": "BOOSTERENERGY.png",
+      "sha256": "93b42db2af5e2a25943690cd40b2cc4a289541c892d2b219396c3e42a6766b48"
+    },
+    {
+      "file": "PSYCHICTERASHARD.png",
+      "sha256": "4cb283f6b900762ec4e0324c6227329b06b74d281f8f7f686bc4b0778c95a9b5"
+    },
+    {
+      "file": "SCROLLOFDARKNESS.png",
+      "sha256": "0e97a52471b75d2f62075dc651f08bad89e6177f6f9a3d95a12e99da1a06fd01"
+    },
+    {
+      "file": "MIRRORHERB.png",
+      "sha256": "f64de2e489241c0f39914cf7261d046d46379ec1853a62980b5ed6c59a1d06c5"
+    },
+    {
+      "file": "SPICYHERBAMYSTICA.png",
+      "sha256": "04530afde82e5f69e58b6d0c9d7a136f2c48aeb7bb0c63e384953cc135ccf208"
+    },
+    {
+      "file": "ELECTRICTERASHARD.png",
+      "sha256": "fc670167615e4a10af810d3d43e3e100cd946b1ec2d4c50106617caa94514e83"
+    },
+    {
+      "file": "MUSCLEMOCHI.png",
+      "sha256": "c4c9fd4127317b33795a2652d93ea15f2252fb9dd84827e591ed7e65ed15b115"
+    },
+    {
+      "file": "AUSPICIOUSARMOR.png",
+      "sha256": "db13ba08b8ab2f9430f4cdcb0837109502be284ea1fcff8da3e2554f0316fd70"
+    },
+    {
+      "file": "RESISTMOCHI.png",
+      "sha256": "1a7dea958cad0a46b4456da6a88906962cf76f8e7ecdccdd4a7f912facfe349a"
+    },
+    {
+      "file": "SWEETHERBAMYSTICA.png",
+      "sha256": "498e98185c9fe58a407d5937cc6a01d06bc3dd10c648703852a73a2ca859bf1d"
+    },
+    {
+      "file": "TINYBAMBOOSHOOT.png",
+      "sha256": "48acecef6fcf368fe4daf9ec82a128cd42fc355cca9ee46e003c7c67c39a78be"
+    },
+    {
+      "file": "METEORITE.png",
+      "sha256": "3c020d9cae9baf3daa0c0e89916ecb3709ebc1cd6106efe27532e2f0bb4a7dc3"
+    },
+    {
+      "file": "VIOLETBOOK.png",
+      "sha256": "80271ace64efecc6db51a5254112f04ba40ae4f2b076339b07760f2167a22175"
+    },
+    {
+      "file": "GLIMMERINGCHARM.png",
+      "sha256": "89e67bccabe920e70f448b7e6352ecfee4f8c21715cb946e65f9f3abb3a1f266"
+    },
+    {
+      "file": "BRIARSBOOK.png",
+      "sha256": "a95963cd90322e1d64f999eb107dc7be12e211e613ea4e3bec65b34ab4207357"
+    },
+    {
+      "file": "CRYSTALCLUSTER.png",
+      "sha256": "6749d89b68e090365adc81d05978a0ea2f79e4511cb397cbd42707d7386e59ef"
+    },
+    {
+      "file": "BITTERHERBAMYSTICA.png",
+      "sha256": "2b334d3267158c98d51617d057feab6f0d95a3fb023606652fed326cab82793c"
+    },
+    {
+      "file": "FRESHSTARTMOCHI.png",
+      "sha256": "414fb539752943af83330e5c9d41f786eb986c493e0d403627b631eb32983263"
+    },
+    {
+      "file": "FAIRYTERASHARD.png",
+      "sha256": "4ac9d424602a6f3dd7da3e545e44b98bcebdce46d38adf88780d68c3548348d1"
+    },
+    {
+      "file": "LEADERSCREST.png",
+      "sha256": "fbde0adb439cffce5e9a54505c43343de8f5f9b29187b65d7ac2a1ed2b8afb8b"
+    },
+    {
+      "file": "BUGTERASHARD.png",
+      "sha256": "e662f7a6d3958eb8eb838bf53577c18b64da15c0cfa2b4cea394da442e510b84"
+    },
+    {
+      "file": "KOFUSWALLET.png",
+      "sha256": "e26facb4bdaae213944a78d6b23307e470ea93d09736e3060c7fd561295f44bc"
+    },
+    {
+      "file": "SCROLLOFWATERS.png",
+      "sha256": "5870cc842b4e058b390d14fd77d6e8c890f1d1e9d42bb60b1f2695bb371f8e50"
+    },
+    {
+      "file": "FAIRYFEATHER.png",
+      "sha256": "08080b2065f582177ecad2405b7d85dd8f542e64e7bdd40e891cce4be4aab7b9"
+    },
+    {
+      "file": "WATERTERASHARD.png",
+      "sha256": "fb5ddf8e38672f72a4355cc6b0c76269748b0dbbdd7756b4873162d2ffd79bc4"
+    },
+    {
+      "file": "INDIGODISK.png",
+      "sha256": "46fb035b24ea96602465a71d2f437d088cd3d49a0743c4f1e2b4420ea5551018"
+    },
+    {
+      "file": "METALALLOY.png",
+      "sha256": "06a36af4ddc9efac1a100e26bc951e39222ee825f89d526d46a6635645d3246b"
+    },
+    {
+      "file": "POISONTERASHARD.png",
+      "sha256": "9279332cdabc2934398ef97b5f10379cb796a49c7dccf618b1c28da8fd5e828d"
+    },
+    {
+      "file": "LEGENDARYTREAT.png",
+      "sha256": "f621dc8fe9ef3474ad90796a642e4aa776c9c557fd82e0c6c389844954e50d78"
+    },
+    {
+      "file": "SALTYHERBAMYSTICA.png",
+      "sha256": "466c256c2cb19ced7ea717484bf42461580e378aa089be44aad4c6d0d65ef401"
+    },
+    {
+      "file": "SOURHERBAMYSTICA.png",
+      "sha256": "1591ce469e15bc04413978b89563e2dc6184ed1ae77b395a6ac9e1d51140b699"
+    },
+    {
+      "file": "DARKTERASHARD.png",
+      "sha256": "c20d0cd304bcbaa2463abc35a2a63a60cecaafd945bb8dda229aa03c41d20941"
+    },
+    {
+      "file": "CLEVERMOCHI.png",
+      "sha256": "5e73023c0b59bdfc6445383096bd757df4dd5f0f44d4b544adfe1ff175190c58"
+    },
+    {
+      "file": "LOADEDDICE.png",
+      "sha256": "dffc3087bd0262f913814d63413210c3b5078ea7f652cfe98f249184e70aa2a3"
+    },
+    {
+      "file": "INDIGOSTYLECARD.png",
+      "sha256": "a7faa3744fd00c8d1fe1d139ea8084a87a0e3e45dc2f31f5ba00715094bb491c"
+    },
+    {
+      "file": "TEALSTYLECARD.png",
+      "sha256": "0c1b9625614173168b34a29ff5fa4aba3dec81eef932f5c5abbc34c20941533d"
+    },
+    {
+      "file": "GENIUSMOCHI.png",
+      "sha256": "699bda7ad235e7f4df21f823417f4683d11abcb8c65b7c3c5824b43b3646160d"
+    },
+    {
+      "file": "SWIFTMOCHI.png",
+      "sha256": "9fa1f9aca2adb231fb6ccb52a40148c172e05e575e5695b8090614610ca1c080"
+    },
+    {
+      "file": "CLEARAMULET.png",
+      "sha256": "9e9ccf0120f3d6e26a181813022414e0413fd76f0c25f8eb7428fdba32491b95"
+    },
+    {
+      "file": "DRAGONTERASHARD.png",
+      "sha256": "bac5e51b241af88773d3879502e9fead8aeef5f2ad8c9f0830b314f714fe6a67"
+    },
+    {
+      "file": "MYTHICALPECHABERRY.png",
+      "sha256": "e6dc3f89aa5b2d7a0f1fb52b8aa1c9b9bc5baa87d6ca1819f535d2d65cd9e885"
+    },
+    {
+      "file": "SYNCHROMACHINE.png",
+      "sha256": "b5a4df3f4b8aa73b2461e32d7ef289b18b7c223f01d8b1658f6f0dd017adcce8"
+    },
+    {
+      "file": "SYRUPYAPPLE.png",
+      "sha256": "c0e0d66965861bcafbb105504b6e28f78d0f8bb67d47705641d857616747f8dd"
+    },
+    {
+      "file": "BIGBAMBOOSHOOT.png",
+      "sha256": "2deb35c0d06bf6f286ee976aaf94fea5cbef5a141fef848f6596d4119d651d63"
+    },
+    {
+      "file": "ICETERASHARD.png",
+      "sha256": "39b16520612832f3b6ead8aa3441cb56270224094c9e80339776805cd5e1900f"
+    },
+    {
+      "file": "SANDWICH.png",
+      "sha256": "7642a11b07c1dc2ba8a23ab1c44513555936f03e17928fcf927a77706dc337f0"
+    },
+    {
+      "file": "GRASSTERASHARD.png",
+      "sha256": "bc9c74d339f6953cbc83b316b07e5f9d484512f151c8a197d7b7ef41794c580e"
+    },
+    {
+      "file": "ROTOMPHONE.png",
+      "sha256": "b118c1b51f4a50f64ff18e22d6ccfd726b610ca4376e5246d1cf1ec5ed305396"
+    },
+    {
+      "file": "STELLARTERASHARD.png",
+      "sha256": "9bcad5ffe90de1ad9643861f972566c2dc040a1c0a6b45c5394fbbf4d311f651"
+    },
+    {
+      "file": "COVERTCLOAK.png",
+      "sha256": "d94b15d8abbdd2417d3072213aa654e51e8d6b5bbd06921d08a9e3fd398c61d1"
+    },
+    {
+      "file": "GHOSTTERASHARD.png",
+      "sha256": "a1c6b2b43e5b6e2241427bdbc1deb34aa938c5c2675191ab3d266114ddc67c61"
+    },
+    {
+      "file": "STEELTERASHARD.png",
+      "sha256": "f12cdf9a757d15143736ea0c763f815e9814105f66c117af2fa3b03bc74d4214"
+    },
+    {
+      "file": "GROUNDTERASHARD.png",
+      "sha256": "ea0f704b2e63651567b210413fb5da80e787ecca6f001e3e921d160113015703"
+    },
+    {
+      "file": "ABILITYSHIELD.png",
+      "sha256": "ecd015fb116a0f51da7883e7dd0fef383df11bc89502dbf04c5f0e409b693ae5"
+    },
+    {
+      "file": "MALICIOUSARMOR.png",
+      "sha256": "302f7ec456fe23b80951b5e2e79fbe3835c488cd6166160e36ab4309487bde45"
+    },
+    {
+      "file": "PUNCHINGGLOVE.png",
+      "sha256": "3e6642ef9f862d7ef19bd996c3fcebc1ef204ce1fbd91a10c88d4561bcfdbfb7"
+    },
+    {
+      "file": "TMMATERIAL.png",
+      "sha256": "7b6c1f7ffc1931736698bf6ef48a1782756f0755fea5ca335c9f15aaed6e64a3"
+    },
+    {
+      "file": "FIRETERASHARD.png",
+      "sha256": "1f2c4a0d6d51dc0a6bab058adbace05820bbb8a1bd78c17cbcbc1fb5e78be1fd"
+    },
+    {
+      "file": "HEALTHMOCHI.png",
+      "sha256": "18df153ca75525ac4eaf675b10fa9df7f4191b20564be7ce7fa40bdb9eb145a9"
+    },
+    {
+      "file": "CLEARAMULET w reduced colors.png",
+      "sha256": "3edefacedc5a79bfc7d5a2e35c865ecea0209f873b6993c339942073c80c1f33"
+    }
+  ],
+  "items": {
+    "1829": "ROTOMPHONE.png",
+    "1830": "SANDWICH.png",
+    "1833": "TERAORB.png",
+    "1834": "SCARLETBOOK.png",
+    "1835": "VIOLETBOOK.png",
+    "1836": "KOFUSWALLET.png",
+    "1842": "TINYBAMBOOSHOOT.png",
+    "1843": "BIGBAMBOOSHOOT.png",
+    "1857": "SCROLLOFDARKNESS.png",
+    "1858": "SCROLLOFWATERS.png",
+    "1861": "MALICIOUSARMOR.png",
+    "1862": "NORMALTERASHARD.png",
+    "1863": "FIRETERASHARD.png",
+    "1864": "WATERTERASHARD.png",
+    "1865": "ELECTRICTERASHARD.png",
+    "1866": "GRASSTERASHARD.png",
+    "1867": "ICETERASHARD.png",
+    "1868": "FIGHTINGTERASHARD.png",
+    "1869": "POISONTERASHARD.png",
+    "1870": "GROUNDTERASHARD.png",
+    "1871": "FLYINGTERASHARD.png",
+    "1872": "PSYCHICTERASHARD.png",
+    "1873": "BUGTERASHARD.png",
+    "1874": "ROCKTERASHARD.png",
+    "1875": "GHOSTTERASHARD.png",
+    "1876": "DRAGONTERASHARD.png",
+    "1877": "DARKTERASHARD.png",
+    "1878": "STEELTERASHARD.png",
+    "1879": "FAIRYTERASHARD.png",
+    "1880": "BOOSTERENERGY.png",
+    "1881": "ABILITYSHIELD.png",
+    "1882": "CLEARAMULET.png",
+    "1883": "MIRRORHERB.png",
+    "1884": "PUNCHINGGLOVE.png",
+    "1885": "COVERTCLOAK.png",
+    "1886": "LOADEDDICE.png",
+    "1904": "SWEETHERBAMYSTICA.png",
+    "1905": "SALTYHERBAMYSTICA.png",
+    "1906": "SOURHERBAMYSTICA.png",
+    "1907": "BITTERHERBAMYSTICA.png",
+    "1908": "SPICYHERBAMYSTICA.png",
+    "1956": "TMMATERIAL.png",
+    "1957": "TMMATERIAL.png",
+    "1958": "TMMATERIAL.png",
+    "1959": "TMMATERIAL.png",
+    "1960": "TMMATERIAL.png",
+    "1961": "TMMATERIAL.png",
+    "1962": "TMMATERIAL.png",
+    "1963": "TMMATERIAL.png",
+    "1964": "TMMATERIAL.png",
+    "1965": "TMMATERIAL.png",
+    "1966": "TMMATERIAL.png",
+    "1967": "TMMATERIAL.png",
+    "1968": "TMMATERIAL.png",
+    "1969": "TMMATERIAL.png",
+    "1970": "TMMATERIAL.png",
+    "1971": "TMMATERIAL.png",
+    "1972": "TMMATERIAL.png",
+    "1973": "TMMATERIAL.png",
+    "1974": "TMMATERIAL.png",
+    "1975": "TMMATERIAL.png",
+    "1976": "TMMATERIAL.png",
+    "1977": "TMMATERIAL.png",
+    "1978": "TMMATERIAL.png",
+    "1979": "TMMATERIAL.png",
+    "1980": "TMMATERIAL.png",
+    "1981": "TMMATERIAL.png",
+    "1982": "TMMATERIAL.png",
+    "1983": "TMMATERIAL.png",
+    "1984": "TMMATERIAL.png",
+    "1985": "TMMATERIAL.png",
+    "1986": "TMMATERIAL.png",
+    "1987": "TMMATERIAL.png",
+    "1988": "TMMATERIAL.png",
+    "1989": "TMMATERIAL.png",
+    "1990": "TMMATERIAL.png",
+    "1991": "TMMATERIAL.png",
+    "1992": "TMMATERIAL.png",
+    "1993": "TMMATERIAL.png",
+    "1994": "TMMATERIAL.png",
+    "1995": "TMMATERIAL.png",
+    "1996": "TMMATERIAL.png",
+    "1997": "TMMATERIAL.png",
+    "1998": "TMMATERIAL.png",
+    "1999": "TMMATERIAL.png",
+    "2000": "TMMATERIAL.png",
+    "2001": "TMMATERIAL.png",
+    "2002": "TMMATERIAL.png",
+    "2003": "TMMATERIAL.png",
+    "2004": "TMMATERIAL.png",
+    "2005": "TMMATERIAL.png",
+    "2006": "TMMATERIAL.png",
+    "2007": "TMMATERIAL.png",
+    "2008": "TMMATERIAL.png",
+    "2009": "TMMATERIAL.png",
+    "2010": "TMMATERIAL.png",
+    "2011": "TMMATERIAL.png",
+    "2012": "TMMATERIAL.png",
+    "2013": "TMMATERIAL.png",
+    "2014": "TMMATERIAL.png",
+    "2015": "TMMATERIAL.png",
+    "2016": "TMMATERIAL.png",
+    "2017": "TMMATERIAL.png",
+    "2018": "TMMATERIAL.png",
+    "2019": "TMMATERIAL.png",
+    "2020": "TMMATERIAL.png",
+    "2021": "TMMATERIAL.png",
+    "2022": "TMMATERIAL.png",
+    "2023": "TMMATERIAL.png",
+    "2024": "TMMATERIAL.png",
+    "2025": "TMMATERIAL.png",
+    "2026": "TMMATERIAL.png",
+    "2027": "TMMATERIAL.png",
+    "2028": "TMMATERIAL.png",
+    "2029": "TMMATERIAL.png",
+    "2030": "TMMATERIAL.png",
+    "2031": "TMMATERIAL.png",
+    "2032": "TMMATERIAL.png",
+    "2033": "TMMATERIAL.png",
+    "2034": "TMMATERIAL.png",
+    "2035": "TMMATERIAL.png",
+    "2036": "TMMATERIAL.png",
+    "2037": "TMMATERIAL.png",
+    "2038": "TMMATERIAL.png",
+    "2039": "TMMATERIAL.png",
+    "2040": "TMMATERIAL.png",
+    "2041": "TMMATERIAL.png",
+    "2042": "TMMATERIAL.png",
+    "2043": "TMMATERIAL.png",
+    "2044": "TMMATERIAL.png",
+    "2045": "TMMATERIAL.png",
+    "2046": "TMMATERIAL.png",
+    "2047": "TMMATERIAL.png",
+    "2048": "TMMATERIAL.png",
+    "2049": "TMMATERIAL.png",
+    "2050": "TMMATERIAL.png",
+    "2051": "TMMATERIAL.png",
+    "2052": "TMMATERIAL.png",
+    "2053": "TMMATERIAL.png",
+    "2054": "TMMATERIAL.png",
+    "2055": "TMMATERIAL.png",
+    "2056": "TMMATERIAL.png",
+    "2057": "TMMATERIAL.png",
+    "2058": "TMMATERIAL.png",
+    "2059": "TMMATERIAL.png",
+    "2060": "TMMATERIAL.png",
+    "2061": "TMMATERIAL.png",
+    "2062": "TMMATERIAL.png",
+    "2063": "TMMATERIAL.png",
+    "2064": "TMMATERIAL.png",
+    "2065": "TMMATERIAL.png",
+    "2066": "TMMATERIAL.png",
+    "2067": "TMMATERIAL.png",
+    "2068": "TMMATERIAL.png",
+    "2069": "TMMATERIAL.png",
+    "2070": "TMMATERIAL.png",
+    "2071": "TMMATERIAL.png",
+    "2072": "TMMATERIAL.png",
+    "2073": "TMMATERIAL.png",
+    "2074": "TMMATERIAL.png",
+    "2075": "TMMATERIAL.png",
+    "2076": "TMMATERIAL.png",
+    "2077": "TMMATERIAL.png",
+    "2078": "TMMATERIAL.png",
+    "2079": "TMMATERIAL.png",
+    "2080": "TMMATERIAL.png",
+    "2081": "TMMATERIAL.png",
+    "2082": "TMMATERIAL.png",
+    "2083": "TMMATERIAL.png",
+    "2084": "TMMATERIAL.png",
+    "2085": "TMMATERIAL.png",
+    "2086": "TMMATERIAL.png",
+    "2087": "TMMATERIAL.png",
+    "2088": "TMMATERIAL.png",
+    "2089": "TMMATERIAL.png",
+    "2090": "TMMATERIAL.png",
+    "2091": "TMMATERIAL.png",
+    "2092": "TMMATERIAL.png",
+    "2093": "TMMATERIAL.png",
+    "2094": "TMMATERIAL.png",
+    "2095": "TMMATERIAL.png",
+    "2096": "TMMATERIAL.png",
+    "2097": "TMMATERIAL.png",
+    "2098": "TMMATERIAL.png",
+    "2099": "TMMATERIAL.png",
+    "2103": "TMMATERIAL.png",
+    "2104": "TMMATERIAL.png",
+    "2105": "TMMATERIAL.png",
+    "2106": "TMMATERIAL.png",
+    "2107": "TMMATERIAL.png",
+    "2108": "TMMATERIAL.png",
+    "2109": "TMMATERIAL.png",
+    "2110": "TMMATERIAL.png",
+    "2111": "TMMATERIAL.png",
+    "2112": "TMMATERIAL.png",
+    "2113": "TMMATERIAL.png",
+    "2114": "TMMATERIAL.png",
+    "2115": "TMMATERIAL.png",
+    "2116": "TMMATERIAL.png",
+    "2117": "TMMATERIAL.png",
+    "2118": "TMMATERIAL.png",
+    "2119": "TMMATERIAL.png",
+    "2120": "TMMATERIAL.png",
+    "2121": "TMMATERIAL.png",
+    "2122": "TMMATERIAL.png",
+    "2123": "TMMATERIAL.png",
+    "2126": "TMMATERIAL.png",
+    "2127": "TMMATERIAL.png",
+    "2128": "TMMATERIAL.png",
+    "2129": "TMMATERIAL.png",
+    "2130": "TMMATERIAL.png",
+    "2131": "TMMATERIAL.png",
+    "2132": "TMMATERIAL.png",
+    "2133": "TMMATERIAL.png",
+    "2134": "TMMATERIAL.png",
+    "2135": "TMMATERIAL.png",
+    "2136": "TMMATERIAL.png",
+    "2137": "GIMMIGHOULCOIN.png",
+    "2156": "TMMATERIAL.png",
+    "2157": "TMMATERIAL.png",
+    "2158": "TMMATERIAL.png",
+    "2159": "TMMATERIAL.png",
+    "2344": "AUSPICIOUSARMOR.png",
+    "2345": "LEADERSCREST.png",
+    "2401": "FAIRYFEATHER.png",
+    "2402": "SYRUPYAPPLE.png",
+    "2409": "TEALSTYLECARD.png",
+    "2410": "CRYSTALCLUSTER.png",
+    "2411": "HEALTHMOCHI.png",
+    "2412": "MUSCLEMOCHI.png",
+    "2413": "RESISTMOCHI.png",
+    "2414": "GENIUSMOCHI.png",
+    "2415": "CLEVERMOCHI.png",
+    "2416": "SWIFTMOCHI.png",
+    "2438": "TMMATERIAL.png",
+    "2439": "TMMATERIAL.png",
+    "2440": "TMMATERIAL.png",
+    "2441": "TMMATERIAL.png",
+    "2442": "TMMATERIAL.png",
+    "2443": "TMMATERIAL.png",
+    "2444": "TMMATERIAL.png",
+    "2445": "TMMATERIAL.png",
+    "2446": "TMMATERIAL.png",
+    "2447": "TMMATERIAL.png",
+    "2448": "TMMATERIAL.png",
+    "2449": "TMMATERIAL.png",
+    "2450": "TMMATERIAL.png",
+    "2451": "TMMATERIAL.png",
+    "2452": "TMMATERIAL.png",
+    "2453": "TMMATERIAL.png",
+    "2454": "TMMATERIAL.png",
+    "2455": "TMMATERIAL.png",
+    "2456": "TMMATERIAL.png",
+    "2457": "TMMATERIAL.png",
+    "2458": "TMMATERIAL.png",
+    "2459": "TMMATERIAL.png",
+    "2460": "TMMATERIAL.png",
+    "2461": "TMMATERIAL.png",
+    "2462": "TMMATERIAL.png",
+    "2463": "TMMATERIAL.png",
+    "2464": "TMMATERIAL.png",
+    "2465": "TMMATERIAL.png",
+    "2466": "TMMATERIAL.png",
+    "2467": "TMMATERIAL.png",
+    "2468": "TMMATERIAL.png",
+    "2469": "TMMATERIAL.png",
+    "2470": "TMMATERIAL.png",
+    "2471": "TMMATERIAL.png",
+    "2472": "TMMATERIAL.png",
+    "2473": "TMMATERIAL.png",
+    "2474": "TMMATERIAL.png",
+    "2475": "TMMATERIAL.png",
+    "2476": "TMMATERIAL.png",
+    "2477": "TMMATERIAL.png",
+    "2478": "TMMATERIAL.png",
+    "2479": "FRESHSTARTMOCHI.png",
+    "2480": "ROTOSTICK.png",
+    "2481": "GLIMMERINGCHARM.png",
+    "2482": "METALALLOY.png",
+    "2483": "INDIGOSTYLECARD.png",
+    "2484": "TMMATERIAL.png",
+    "2485": "TMMATERIAL.png",
+    "2486": "TMMATERIAL.png",
+    "2487": "TMMATERIAL.png",
+    "2488": "TMMATERIAL.png",
+    "2489": "TMMATERIAL.png",
+    "2490": "TMMATERIAL.png",
+    "2491": "TMMATERIAL.png",
+    "2492": "TMMATERIAL.png",
+    "2493": "TMMATERIAL.png",
+    "2494": "TMMATERIAL.png",
+    "2495": "TMMATERIAL.png",
+    "2496": "TMMATERIAL.png",
+    "2497": "TMMATERIAL.png",
+    "2498": "TMMATERIAL.png",
+    "2499": "TMMATERIAL.png",
+    "2500": "TMMATERIAL.png",
+    "2501": "TMMATERIAL.png",
+    "2502": "TMMATERIAL.png",
+    "2503": "TMMATERIAL.png",
+    "2504": "TMMATERIAL.png",
+    "2505": "TMMATERIAL.png",
+    "2506": "TMMATERIAL.png",
+    "2507": "TMMATERIAL.png",
+    "2508": "TMMATERIAL.png",
+    "2509": "TMMATERIAL.png",
+    "2510": "TMMATERIAL.png",
+    "2511": "TMMATERIAL.png",
+    "2512": "TMMATERIAL.png",
+    "2513": "TMMATERIAL.png",
+    "2514": "TMMATERIAL.png",
+    "2515": "TMMATERIAL.png",
+    "2516": "TMMATERIAL.png",
+    "2517": "TMMATERIAL.png",
+    "2518": "TMMATERIAL.png",
+    "2519": "TMMATERIAL.png",
+    "2520": "TMMATERIAL.png",
+    "2521": "TMMATERIAL.png",
+    "2522": "LEGENDARYTREAT.png",
+    "2523": "LEGENDARYTREAT.png",
+    "2524": "LEGENDARYTREAT.png",
+    "2525": "LEGENDARYTREAT.png",
+    "2526": "LEGENDARYTREAT.png",
+    "2527": "LEGENDARYTREAT.png",
+    "2528": "LEGENDARYTREAT.png",
+    "2529": "LEGENDARYTREAT.png",
+    "2530": "LEGENDARYTREAT.png",
+    "2531": "LEGENDARYTREAT.png",
+    "2532": "LEGENDARYTREAT.png",
+    "2533": "LEGENDARYTREAT.png",
+    "2534": "LEGENDARYTREAT.png",
+    "2535": "LEGENDARYTREAT.png",
+    "2536": "LEGENDARYTREAT.png",
+    "2537": "LEGENDARYTREAT.png",
+    "2538": "LEGENDARYTREAT.png",
+    "2539": "LEGENDARYTREAT.png",
+    "2540": "LEGENDARYTREAT.png",
+    "2541": "LEGENDARYTREAT.png",
+    "2542": "LEGENDARYTREAT.png",
+    "2543": "LEGENDARYTREAT.png",
+    "2544": "LEGENDARYTREAT.png",
+    "2545": "LEGENDARYTREAT.png",
+    "2546": "LEGENDARYTREAT.png",
+    "2547": "INDIGODISK.png",
+    "2549": "STELLARTERASHARD.png",
+    "2550": "MYTHICALPECHABERRY.png",
+    "2553": "SYNCHROMACHINE.png",
+    "2554": "METEORITE.png",
+    "2555": "SCARLETBOOK.png",
+    "2556": "VIOLETBOOK.png",
+    "2557": "BRIARSBOOK.png"
+  },
+  "unmapped": [
+    "CLEARAMULET w reduced colors"
+  ]
+}

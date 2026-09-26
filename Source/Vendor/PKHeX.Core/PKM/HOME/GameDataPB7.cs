@@ -1,0 +1,221 @@
+using System;
+using static System.Buffers.Binary.BinaryPrimitives;
+
+namespace PKHeX.Core;
+
+/// <summary>
+/// Side game data for <see cref="PB7"/> data transferred into HOME.
+/// </summary>
+public sealed class GameDataPB7 : HomeOptional1, IGameDataSide<PB7>, IScaledSizeAbsolute, IGameDataSplitAbility, IGameDataSidePP
+{
+    private const HomeGameDataFormat ExpectFormat = HomeGameDataFormat.PB7;
+    private const int SIZE = HomeCrypto.SIZE_2GAME_PB7;
+    protected override HomeGameDataFormat Format => ExpectFormat;
+
+    public GameDataPB7() : base(SIZE) { }
+    public GameDataPB7(Memory<byte> data) : base(data) => EnsureSize(SIZE);
+    public GameDataPB7 Clone() => new(ToArray());
+    public int WriteTo(Span<byte> result) => WriteWithHeader(result);
+
+    #region Structure
+
+    public byte AV_HP  { get => Data[0x00]; set => Data[0x00] = value; }
+    public byte AV_ATK { get => Data[0x01]; set => Data[0x01] = value; }
+    public byte AV_DEF { get => Data[0x02]; set => Data[0x02] = value; }
+    public byte AV_SPE { get => Data[0x03]; set => Data[0x03] = value; }
+    public byte AV_SPA { get => Data[0x04]; set => Data[0x04] = value; }
+    public byte AV_SPD { get => Data[0x05]; set => Data[0x05] = value; }
+    public byte ResortEventState { get => Data[0x06]; set => Data[0x06] = value; }
+
+    public ushort Move1 { get => ReadUInt16LittleEndian(Data[0x07..]); set => WriteUInt16LittleEndian(Data[0x07..], value); }
+    public ushort Move2 { get => ReadUInt16LittleEndian(Data[0x09..]); set => WriteUInt16LittleEndian(Data[0x09..], value); }
+    public ushort Move3 { get => ReadUInt16LittleEndian(Data[0x0B..]); set => WriteUInt16LittleEndian(Data[0x0B..], value); }
+    public ushort Move4 { get => ReadUInt16LittleEndian(Data[0x0D..]); set => WriteUInt16LittleEndian(Data[0x0D..], value); }
+
+    public byte Move1_PP { get => Data[0x0F]; set => Data[0x0F] = value; }
+    public byte Move2_PP { get => Data[0x10]; set => Data[0x10] = value; }
+    public byte Move3_PP { get => Data[0x11]; set => Data[0x11] = value; }
+    public byte Move4_PP { get => Data[0x12]; set => Data[0x12] = value; }
+    public byte Move1_PPUps { get => Data[0x13]; set => Data[0x13] = value; }
+    public byte Move2_PPUps { get => Data[0x14]; set => Data[0x14] = value; }
+    public byte Move3_PPUps { get => Data[0x15]; set => Data[0x15] = value; }
+    public byte Move4_PPUps { get => Data[0x16]; set => Data[0x16] = value; }
+
+    public ushort RelearnMove1  { get => ReadUInt16LittleEndian(Data[0x17..]); set => WriteUInt16LittleEndian(Data[0x17..], value); }
+    public ushort RelearnMove2  { get => ReadUInt16LittleEndian(Data[0x19..]); set => WriteUInt16LittleEndian(Data[0x19..], value); }
+    public ushort RelearnMove3  { get => ReadUInt16LittleEndian(Data[0x1B..]); set => WriteUInt16LittleEndian(Data[0x1B..], value); }
+    public ushort RelearnMove4  { get => ReadUInt16LittleEndian(Data[0x1D..]); set => WriteUInt16LittleEndian(Data[0x1D..], value); }
+    public float HeightAbsolute { get => ReadSingleLittleEndian(Data[0x1F..]); set => WriteSingleLittleEndian(Data[0x1F..], value); }
+    public float WeightAbsolute { get => ReadSingleLittleEndian(Data[0x23..]); set => WriteSingleLittleEndian(Data[0x23..], value); }
+
+    public byte Spirit { get => Data[0x27]; set => Data[0x27] = value; }
+    public byte Mood { get => Data[0x28]; set => Data[0x28] = value; }
+    public byte Fullness { get => Data[0x29]; set => Data[0x29] = value; }
+    public byte Rank { get => Data[0x2A]; set => Data[0x2A] = value; }
+
+    public byte ReceivedYear { get => Data[0x2B]; set => Data[0x2B] = value; }
+    public byte ReceivedMonth { get => Data[0x2C]; set => Data[0x2C] = value; }
+    public byte ReceivedDay { get => Data[0x2D]; set => Data[0x2D] = value; }
+    public byte ReceivedHour { get => Data[0x2E]; set => Data[0x2E] = value; }
+    public byte ReceivedMinute { get => Data[0x2F]; set => Data[0x2F] = value; }
+    public byte ReceivedSecond { get => Data[0x30]; set => Data[0x30] = value; }
+
+    public byte Enjoyment { get => Data[0x31]; set => Data[0x31] = value; }
+    public uint GeoPadding { get => ReadUInt32LittleEndian(Data[0x32..]); set => WriteUInt32LittleEndian(Data[0x32..], value); }
+    public byte Ball { get => Data[0x36]; set => Data[0x36] = value; }
+    public ushort EggLocation { get => ReadUInt16LittleEndian(Data[0x37..]); set => WriteUInt16LittleEndian(Data[0x37..], value); }
+    public ushort MetLocation { get => ReadUInt16LittleEndian(Data[0x39..]); set => WriteUInt16LittleEndian(Data[0x39..], value); }
+
+    public byte PokerusState { get => Data[0x3B]; set => Data[0x3B] = value; }
+    public ushort Ability { get => ReadUInt16LittleEndian(Data[0x3C..]); set => WriteUInt16LittleEndian(Data[0x3C..], value); }
+    public byte AbilityNumber { get => Data[0x3E]; set => Data[0x3E] = value; }
+
+    #endregion
+
+    #region Conversion
+
+    public PersonalInfo GetPersonalInfo(ushort species, byte form) => PersonalTable.GG.GetFormEntry(species, form);
+
+    public void CopyTo(PB7 pk, PKH pkh)
+    {
+        this.CopyTo(pk);
+        pk.AV_HP = AV_HP;
+        pk.AV_ATK = AV_ATK;
+        pk.AV_DEF = AV_DEF;
+        pk.AV_SPE = AV_SPE;
+        pk.AV_SPA = AV_SPA;
+        pk.AV_SPD = AV_SPD;
+        pk.ResortEventStatus = (ResortEventState)ResortEventState;
+        pk.HeightAbsolute = pk.HeightAbsolute; // Don't recalculate; some event gifts are "wrong" but it is "right" to retain.
+        pk.WeightAbsolute = pk.WeightAbsolute; // Don't recalculate; some event gifts are "wrong" but it is "right" to retain.
+
+        // Some fields are unused as PB7, don't bother copying.
+        pk.Spirit = Spirit;
+        pk.Mood = Mood;
+        pk.Fullness = Fullness;
+        // pk.Rank = Rank;
+        pk.ReceivedYear = ReceivedYear;
+        pk.ReceivedMonth = ReceivedMonth;
+        pk.ReceivedDay = ReceivedDay;
+        pk.ReceivedHour = ReceivedHour;
+        pk.ReceivedMinute = ReceivedMinute;
+        pk.ReceivedSecond = ReceivedSecond;
+        pk.Enjoyment = Enjoyment;
+        // pk.GeoPadding = GeoPadding;
+        pk.AbilityNumber = AbilityNumber;
+        pk.Ability = Ability;
+    }
+
+    public void CopyFrom(PB7 pk, PKH pkh)
+    {
+        this.CopyFrom(pk);
+        AV_HP = pk.AV_HP;
+        AV_ATK = pk.AV_ATK;
+        AV_DEF = pk.AV_DEF;
+        AV_SPE = pk.AV_SPE;
+        AV_SPA = pk.AV_SPA;
+        AV_SPD = pk.AV_SPD;
+        ResortEventState = (byte)pk.ResortEventStatus;
+        HeightAbsolute = pk.HeightAbsolute; // Don't recalculate; some event gifts are "wrong" but it is "right" to retain.
+        WeightAbsolute = pk.WeightAbsolute; // Don't recalculate; some event gifts are "wrong" but it is "right" to retain.
+
+        // Some fields are unused as PB7, don't bother copying.
+        Spirit = pk.Spirit;
+        Mood = pk.Mood;
+        Fullness = pk.Fullness;
+        // Rank = pk.Rank;
+        ReceivedYear = pk.ReceivedYear;
+        ReceivedMonth = pk.ReceivedMonth;
+        ReceivedDay = pk.ReceivedDay;
+        ReceivedHour = pk.ReceivedHour;
+        ReceivedMinute = pk.ReceivedMinute;
+        ReceivedSecond = pk.ReceivedSecond;
+        Enjoyment = pk.Enjoyment;
+        // GeoPadding = pk.GeoPadding;
+        AbilityNumber = (byte)pk.AbilityNumber;
+        Ability = (ushort)pk.Ability;
+
+        // All other side formats have HT Language. Just fake a value.
+        if (pkh is { HandlingTrainerLanguage: 0, IsUntraded: false })
+            pkh.HandlingTrainerLanguage = (byte)pk.Language;
+    }
+
+    public PB7 ConvertToPKM(PKH pkh)
+    {
+        var pk = new PB7();
+        pkh.CopyTo(pk);
+        CopyTo(pk, pkh);
+
+        pk.ResetCalculatedValues();
+        pk.ResetPartyStats();
+        pk.RefreshChecksum();
+        return pk;
+    }
+
+    #endregion
+
+    /// <summary> Reconstructive logic to best apply suggested values. </summary>
+    public static GameDataPB7? TryCreate(PKH pkh)
+    {
+        if (!PersonalTable.GG.IsPresentInGame(pkh.Species, pkh.Form))
+            return null;
+
+        // There isn't an actual preference since this format cannot naturally backwards transfer.
+        // Just pick out the first one.
+        var result = CreateInternal(pkh);
+        if (result is null)
+            return null;
+
+        result.PopulateFromCore(pkh);
+        return result;
+    }
+
+    private static GameDataPB7? CreateInternal(PKH pkh)
+    {
+        var side = GetNearestNeighbor(pkh);
+        if (side is null)
+            return null;
+
+        var ball = side.Ball;
+        if (pkh.Version is GameVersion.GO)
+            return new GameDataPB7 { Ball = ball, MetLocation = Locations.GO7 };
+        if (pkh.Version is GameVersion.GP or GameVersion.GE)
+            return new GameDataPB7 { Ball = ball, MetLocation = side.MetLocation };
+
+        var result = new GameDataPB7();
+        result.InitializeFrom(side, pkh);
+        return result;
+    }
+
+    public void InitializeFrom(IGameDataSide side, PKH pkh)
+    {
+        MetLocation = side.MetLocation;
+        EggLocation = side.EggLocation;
+
+        if (side is IGameDataSplitAbility a)
+            AbilityNumber = a.AbilityNumber;
+        else
+            AbilityNumber = 1;
+    }
+
+    private void PopulateFromCore(PKH pkh)
+    {
+        var pi = PersonalTable.GG.GetFormEntry(pkh.Species, pkh.Form);
+        HeightAbsolute = PB7.GetHeightAbsolute(pi, pkh.HeightScalar);
+        WeightAbsolute = PB7.GetWeightAbsolute(pi, pkh.HeightScalar, pkh.WeightScalar);
+        var index = AbilityNumber >> 1;
+        if (index >= pi.AbilityCount)
+            index = 0;
+        Ability = (ushort)pi.GetAbilityAtIndex(index);
+    }
+
+    private static IGameDataSide? GetNearestNeighbor(PKH pkh)
+        => pkh.DataPA9 ?? pkh.DataPK9 ?? pkh.DataPB8 ?? pkh.DataPK8 ?? pkh.DataPB7 as IGameDataSide;
+
+    public static T Create<T>(GameDataPB7 data) where T : IGameDataSide, new() => new()
+    {
+        Ball = data.Ball,
+        MetLocation = data.MetLocation,
+        EggLocation = data.EggLocation,
+    };
+}

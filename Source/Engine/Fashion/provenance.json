@@ -1,0 +1,156 @@
+{
+  "pluginReferenceCommit": "fb76c3c52c6386e21ec75d9c5f702c6d38a27477",
+  "coreCommit": "08c27668d28a83ad4b04140436a384d4155ed134",
+  "files": [
+    {
+      "file": "fashion_f_sm",
+      "sha256": "dc767e1b9f661f25e36054f79ad2655e7f0bf9084f087786ba9bf3d5a6aa9757",
+      "source": "PKHeX.WinForms/Resources/byte/fashion_f_sm"
+    },
+    {
+      "file": "fashion_f_uu",
+      "sha256": "1c9e0a5f8f2ed9778936b7a47ab09a3e838716e47baadfb9fbc9d7c1cf43fc1a",
+      "source": "PKHeX.WinForms/Resources/byte/fashion_f_uu"
+    },
+    {
+      "file": "fashion_m_sm",
+      "sha256": "ce029c7e6f9ff50cffb854b6c19d9932e5fc77c192bcbeaf0439c991367758f3",
+      "source": "PKHeX.WinForms/Resources/byte/fashion_m_sm"
+    },
+    {
+      "file": "fashion_m_uu",
+      "sha256": "7636d8a51e033d069551c95c83c28b23295f1044f6e32a9929920310fe52948d",
+      "source": "PKHeX.WinForms/Resources/byte/fashion_m_uu"
+    },
+    {
+      "file": "la_bottoms_en.txt",
+      "sha256": "09a01011f1aba7c62c109a86d3e11444e3b55b49222fc4773b753fd4adc8a325",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_bottoms_en.txt"
+    },
+    {
+      "file": "la_glasses_en.txt",
+      "sha256": "679996a103728b91aee1b5dd03ce7abcc04bd198719a8c51512e342e558d479f",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_glasses_en.txt"
+    },
+    {
+      "file": "la_hats_female_en.txt",
+      "sha256": "1b861e348bc2761881911088c18fc42009528e13c742b06c8e028a6f52ff2fec",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_hats_female_en.txt"
+    },
+    {
+      "file": "la_hats_male_en.txt",
+      "sha256": "7ba4b8dbb97c216ac925db22a32d78f963b8c6c5f91db4e40099ac76e58c5eac",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_hats_male_en.txt"
+    },
+    {
+      "file": "la_shoes_en.txt",
+      "sha256": "1db8efdde50619d1ee3ccd195cd25182cda94887f00b542ec0bb431a0cc3480c",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_shoes_en.txt"
+    },
+    {
+      "file": "la_tops_en.txt",
+      "sha256": "f143d5f25ab03aa13b21288aad8faac20ee028e9498a94aced77b9087ae4b4b3",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_tops_en.txt"
+    },
+    {
+      "file": "la_uniforms_en.txt",
+      "sha256": "60d242ee25217871fc35ce84852148a7b0906af5708650d9f3bae641562b0a1c",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/la_uniforms_en.txt"
+    },
+    {
+      "file": "sv_names.json",
+      "sha256": "9a64fcc2f70ad36f3206bc1957e75933e6051df1a5379aa1af06f3e924cc0d31",
+      "source": "FrostGiratina SV fashion guide, factual item-name mapping"
+    },
+    {
+      "file": "swsh_bags_female_en.txt",
+      "sha256": "d0d28d83f857868c0a0688bcb453b0621422fa72f4d39f6cb2874ab9793631cf",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_bags_female_en.txt"
+    },
+    {
+      "file": "swsh_bags_male_en.txt",
+      "sha256": "14ea3d2dd2af370ab7332d8a1f9cb4886579a93b487b0278113d04c67d29e6a1",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_bags_male_en.txt"
+    },
+    {
+      "file": "swsh_bottoms_female_en.txt",
+      "sha256": "e969d77cc78ae02f0518d23159ecb27f502dd29c14a8c6ee2b140423b242e7ac",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_bottoms_female_en.txt"
+    },
+    {
+      "file": "swsh_bottoms_male_en.txt",
+      "sha256": "915af506e4706b028056d1aaf003e02d0310893c191e346ee89c6aa97bab68fe",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_bottoms_male_en.txt"
+    },
+    {
+      "file": "swsh_glasses_female_en.txt",
+      "sha256": "0bdf974196bf6f0dbd2e6dab552e9d9a378301d6b844a43ea77b1c94cbf41e3a",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_glasses_female_en.txt"
+    },
+    {
+      "file": "swsh_glasses_male_en.txt",
+      "sha256": "0a922f187272536cd5a6e2d8cb20434ea86c856dfbfcaaae0a2484de26facebe",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_glasses_male_en.txt"
+    },
+    {
+      "file": "swsh_gloves_female_en.txt",
+      "sha256": "d51939c0521ee4c49e291efc5868e7018a66e01c3571a3eb612b08aa14863377",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_gloves_female_en.txt"
+    },
+    {
+      "file": "swsh_gloves_male_en.txt",
+      "sha256": "4a40388cca0c8f7f3960e07d7279755cfc3044ac67d80b193dbe1593e47ce627",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_gloves_male_en.txt"
+    },
+    {
+      "file": "swsh_hats_female_en.txt",
+      "sha256": "d436cef21885ea0477aad767da6410864a769a33e64b8cb1f554d4d6c68c2071",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_hats_female_en.txt"
+    },
+    {
+      "file": "swsh_hats_male_en.txt",
+      "sha256": "25841ff2f1ee3f415f9ce254e54284e4e696c234db90cfd9c539e0aa3f226c30",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_hats_male_en.txt"
+    },
+    {
+      "file": "swsh_jackets_female_en.txt",
+      "sha256": "7461334853492bfe18431eedca4e72455e85ac73c75f5bf058a5e56cba64c8da",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_jackets_female_en.txt"
+    },
+    {
+      "file": "swsh_jackets_male_en.txt",
+      "sha256": "d8968ac6fc4e79d0d726ec6d571279de5477008a92a7db257912327c0cd533d2",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_jackets_male_en.txt"
+    },
+    {
+      "file": "swsh_shoes_female_en.txt",
+      "sha256": "e3e3f74283cdf5200053fffa82112e4c8ae21984cb9b45e15e156d379b83447d",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_shoes_female_en.txt"
+    },
+    {
+      "file": "swsh_shoes_male_en.txt",
+      "sha256": "d8ac2a50cf78e1e1ca0f6c9861c3fb686b3307c644b617e9935103e247b438bb",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_shoes_male_en.txt"
+    },
+    {
+      "file": "swsh_socks_female_en.txt",
+      "sha256": "12371830f2073c658243e17639f0e9d6ca1edfd03db6e7fa2eb88d2948849ec3",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_socks_female_en.txt"
+    },
+    {
+      "file": "swsh_socks_male_en.txt",
+      "sha256": "14785c7d6096daf0004585f177b8690424949115e118719a188a47898302a579",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_socks_male_en.txt"
+    },
+    {
+      "file": "swsh_tops_female_en.txt",
+      "sha256": "49e4e830c602b9be10af016a5324a780f06311deec749930f0671bd8f60a9aa6",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_tops_female_en.txt"
+    },
+    {
+      "file": "swsh_tops_male_en.txt",
+      "sha256": "21983006e35ab23f7ee72a4d9e7575e5634a530797841ad194ef83e662448bd0",
+      "source": "PKHeXPluginPile/PluginPile.FashionEditor/Resources/swsh_tops_male_en.txt"
+    }
+  ]
+}

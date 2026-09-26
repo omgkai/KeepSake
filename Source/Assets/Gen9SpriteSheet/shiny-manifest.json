@@ -1,0 +1,1145 @@
+{
+  "source": "shiny_pokemon_gen_9_icon_sprites_3ds_style__by_ezerart_dfmhvfm.png",
+  "attribution": "Ezerart (as identified in the user-supplied filename)",
+  "sha256": "576a1a7028144f355ca1c220f269e4098e32490bd3b5cc094918215664aa9c28",
+  "cellSize": 32,
+  "entries": [
+    {
+      "file": "b_906s.png",
+      "species": 906,
+      "name": "Sprigatito",
+      "form": 0,
+      "row": 0,
+      "column": 0
+    },
+    {
+      "file": "b_907s.png",
+      "species": 907,
+      "name": "Floragato",
+      "form": 0,
+      "row": 0,
+      "column": 1
+    },
+    {
+      "file": "b_908s.png",
+      "species": 908,
+      "name": "Meowscarada",
+      "form": 0,
+      "row": 0,
+      "column": 2
+    },
+    {
+      "file": "b_909s.png",
+      "species": 909,
+      "name": "Fuecoco",
+      "form": 0,
+      "row": 0,
+      "column": 3
+    },
+    {
+      "file": "b_910s.png",
+      "species": 910,
+      "name": "Crocalor",
+      "form": 0,
+      "row": 0,
+      "column": 4
+    },
+    {
+      "file": "b_911s.png",
+      "species": 911,
+      "name": "Skeledirge",
+      "form": 0,
+      "row": 0,
+      "column": 5
+    },
+    {
+      "file": "b_912s.png",
+      "species": 912,
+      "name": "Quaxly",
+      "form": 0,
+      "row": 0,
+      "column": 6
+    },
+    {
+      "file": "b_913s.png",
+      "species": 913,
+      "name": "Quaxwell",
+      "form": 0,
+      "row": 0,
+      "column": 7
+    },
+    {
+      "file": "b_914s.png",
+      "species": 914,
+      "name": "Quaquaval",
+      "form": 0,
+      "row": 0,
+      "column": 8
+    },
+    {
+      "file": "b_915s.png",
+      "species": 915,
+      "name": "Lechonk",
+      "form": 0,
+      "row": 0,
+      "column": 9
+    },
+    {
+      "file": "b_916s.png",
+      "species": 916,
+      "name": "Oinkologne",
+      "form": 0,
+      "row": 0,
+      "column": 10
+    },
+    {
+      "file": "b_917s.png",
+      "species": 917,
+      "name": "Tarountula",
+      "form": 0,
+      "row": 0,
+      "column": 11
+    },
+    {
+      "file": "b_918s.png",
+      "species": 918,
+      "name": "Spidops",
+      "form": 0,
+      "row": 1,
+      "column": 0
+    },
+    {
+      "file": "b_919s.png",
+      "species": 919,
+      "name": "Nymble",
+      "form": 0,
+      "row": 1,
+      "column": 1
+    },
+    {
+      "file": "b_920s.png",
+      "species": 920,
+      "name": "Lokix",
+      "form": 0,
+      "row": 1,
+      "column": 2
+    },
+    {
+      "file": "b_921s.png",
+      "species": 921,
+      "name": "Pawmi",
+      "form": 0,
+      "row": 1,
+      "column": 3
+    },
+    {
+      "file": "b_922s.png",
+      "species": 922,
+      "name": "Pawmo",
+      "form": 0,
+      "row": 1,
+      "column": 4
+    },
+    {
+      "file": "b_923s.png",
+      "species": 923,
+      "name": "Pawmot",
+      "form": 0,
+      "row": 1,
+      "column": 5
+    },
+    {
+      "file": "b_924s.png",
+      "species": 924,
+      "name": "Tandemaus",
+      "form": 0,
+      "row": 1,
+      "column": 6
+    },
+    {
+      "file": "b_925-1s.png",
+      "species": 925,
+      "name": "Maushold",
+      "form": 1,
+      "row": 1,
+      "column": 7
+    },
+    {
+      "file": "b_926s.png",
+      "species": 926,
+      "name": "Fidough",
+      "form": 0,
+      "row": 1,
+      "column": 8
+    },
+    {
+      "file": "b_927s.png",
+      "species": 927,
+      "name": "Dachsbun",
+      "form": 0,
+      "row": 1,
+      "column": 9
+    },
+    {
+      "file": "b_928s.png",
+      "species": 928,
+      "name": "Smoliv",
+      "form": 0,
+      "row": 1,
+      "column": 10
+    },
+    {
+      "file": "b_929s.png",
+      "species": 929,
+      "name": "Dolliv",
+      "form": 0,
+      "row": 1,
+      "column": 11
+    },
+    {
+      "file": "b_930s.png",
+      "species": 930,
+      "name": "Arboliva",
+      "form": 0,
+      "row": 2,
+      "column": 0
+    },
+    {
+      "file": "b_931s.png",
+      "species": 931,
+      "name": "Squawkabilly",
+      "form": 0,
+      "row": 2,
+      "column": 1
+    },
+    {
+      "file": "b_932s.png",
+      "species": 932,
+      "name": "Nacli",
+      "form": 0,
+      "row": 2,
+      "column": 2
+    },
+    {
+      "file": "b_933s.png",
+      "species": 933,
+      "name": "Naclstack",
+      "form": 0,
+      "row": 2,
+      "column": 3
+    },
+    {
+      "file": "b_934s.png",
+      "species": 934,
+      "name": "Garganacl",
+      "form": 0,
+      "row": 2,
+      "column": 4
+    },
+    {
+      "file": "b_935s.png",
+      "species": 935,
+      "name": "Charcadet",
+      "form": 0,
+      "row": 2,
+      "column": 5
+    },
+    {
+      "file": "b_936s.png",
+      "species": 936,
+      "name": "Armarouge",
+      "form": 0,
+      "row": 2,
+      "column": 6
+    },
+    {
+      "file": "b_937s.png",
+      "species": 937,
+      "name": "Ceruledge",
+      "form": 0,
+      "row": 2,
+      "column": 7
+    },
+    {
+      "file": "b_938s.png",
+      "species": 938,
+      "name": "Tadbulb",
+      "form": 0,
+      "row": 2,
+      "column": 8
+    },
+    {
+      "file": "b_939s.png",
+      "species": 939,
+      "name": "Bellibolt",
+      "form": 0,
+      "row": 2,
+      "column": 9
+    },
+    {
+      "file": "b_940s.png",
+      "species": 940,
+      "name": "Wattrel",
+      "form": 0,
+      "row": 2,
+      "column": 10
+    },
+    {
+      "file": "b_941s.png",
+      "species": 941,
+      "name": "Kilowattrel",
+      "form": 0,
+      "row": 2,
+      "column": 11
+    },
+    {
+      "file": "b_942s.png",
+      "species": 942,
+      "name": "Maschiff",
+      "form": 0,
+      "row": 3,
+      "column": 0
+    },
+    {
+      "file": "b_943s.png",
+      "species": 943,
+      "name": "Mabosstiff",
+      "form": 0,
+      "row": 3,
+      "column": 1
+    },
+    {
+      "file": "b_944s.png",
+      "species": 944,
+      "name": "Shroodle",
+      "form": 0,
+      "row": 3,
+      "column": 2
+    },
+    {
+      "file": "b_945s.png",
+      "species": 945,
+      "name": "Grafaiai",
+      "form": 0,
+      "row": 3,
+      "column": 3
+    },
+    {
+      "file": "b_946s.png",
+      "species": 946,
+      "name": "Bramblin",
+      "form": 0,
+      "row": 3,
+      "column": 4
+    },
+    {
+      "file": "b_947s.png",
+      "species": 947,
+      "name": "Brambleghast",
+      "form": 0,
+      "row": 3,
+      "column": 5
+    },
+    {
+      "file": "b_948s.png",
+      "species": 948,
+      "name": "Toedscool",
+      "form": 0,
+      "row": 3,
+      "column": 6
+    },
+    {
+      "file": "b_949s.png",
+      "species": 949,
+      "name": "Toedscruel",
+      "form": 0,
+      "row": 3,
+      "column": 7
+    },
+    {
+      "file": "b_950s.png",
+      "species": 950,
+      "name": "Klawf",
+      "form": 0,
+      "row": 3,
+      "column": 8
+    },
+    {
+      "file": "b_951s.png",
+      "species": 951,
+      "name": "Capsakid",
+      "form": 0,
+      "row": 3,
+      "column": 9
+    },
+    {
+      "file": "b_952s.png",
+      "species": 952,
+      "name": "Scovillain",
+      "form": 0,
+      "row": 3,
+      "column": 10
+    },
+    {
+      "file": "b_953s.png",
+      "species": 953,
+      "name": "Rellor",
+      "form": 0,
+      "row": 3,
+      "column": 11
+    },
+    {
+      "file": "b_954s.png",
+      "species": 954,
+      "name": "Rabsca",
+      "form": 0,
+      "row": 4,
+      "column": 0
+    },
+    {
+      "file": "b_955s.png",
+      "species": 955,
+      "name": "Flittle",
+      "form": 0,
+      "row": 4,
+      "column": 1
+    },
+    {
+      "file": "b_956s.png",
+      "species": 956,
+      "name": "Espathra",
+      "form": 0,
+      "row": 4,
+      "column": 2
+    },
+    {
+      "file": "b_957s.png",
+      "species": 957,
+      "name": "Tinkatink",
+      "form": 0,
+      "row": 4,
+      "column": 3
+    },
+    {
+      "file": "b_958s.png",
+      "species": 958,
+      "name": "Tinkatuff",
+      "form": 0,
+      "row": 4,
+      "column": 4
+    },
+    {
+      "file": "b_959s.png",
+      "species": 959,
+      "name": "Tinkaton",
+      "form": 0,
+      "row": 4,
+      "column": 5
+    },
+    {
+      "file": "b_960s.png",
+      "species": 960,
+      "name": "Wiglett",
+      "form": 0,
+      "row": 4,
+      "column": 6
+    },
+    {
+      "file": "b_961s.png",
+      "species": 961,
+      "name": "Wugtrio",
+      "form": 0,
+      "row": 4,
+      "column": 7
+    },
+    {
+      "file": "b_962s.png",
+      "species": 962,
+      "name": "Bombirdier",
+      "form": 0,
+      "row": 4,
+      "column": 8
+    },
+    {
+      "file": "b_963s.png",
+      "species": 963,
+      "name": "Finizen",
+      "form": 0,
+      "row": 4,
+      "column": 9
+    },
+    {
+      "file": "b_964s.png",
+      "species": 964,
+      "name": "Palafin",
+      "form": 0,
+      "row": 4,
+      "column": 10
+    },
+    {
+      "file": "b_965s.png",
+      "species": 965,
+      "name": "Varoom",
+      "form": 0,
+      "row": 4,
+      "column": 11
+    },
+    {
+      "file": "b_966s.png",
+      "species": 966,
+      "name": "Revavroom",
+      "form": 0,
+      "row": 5,
+      "column": 0
+    },
+    {
+      "file": "b_967s.png",
+      "species": 967,
+      "name": "Cyclizar",
+      "form": 0,
+      "row": 5,
+      "column": 1
+    },
+    {
+      "file": "b_968s.png",
+      "species": 968,
+      "name": "Orthworm",
+      "form": 0,
+      "row": 5,
+      "column": 2
+    },
+    {
+      "file": "b_969s.png",
+      "species": 969,
+      "name": "Glimmet",
+      "form": 0,
+      "row": 5,
+      "column": 3
+    },
+    {
+      "file": "b_970s.png",
+      "species": 970,
+      "name": "Glimmora",
+      "form": 0,
+      "row": 5,
+      "column": 4
+    },
+    {
+      "file": "b_971s.png",
+      "species": 971,
+      "name": "Greavard",
+      "form": 0,
+      "row": 5,
+      "column": 5
+    },
+    {
+      "file": "b_972s.png",
+      "species": 972,
+      "name": "Houndstone",
+      "form": 0,
+      "row": 5,
+      "column": 6
+    },
+    {
+      "file": "b_973s.png",
+      "species": 973,
+      "name": "Flamigo",
+      "form": 0,
+      "row": 5,
+      "column": 7
+    },
+    {
+      "file": "b_974s.png",
+      "species": 974,
+      "name": "Cetoddle",
+      "form": 0,
+      "row": 5,
+      "column": 8
+    },
+    {
+      "file": "b_975s.png",
+      "species": 975,
+      "name": "Cetitan",
+      "form": 0,
+      "row": 5,
+      "column": 9
+    },
+    {
+      "file": "b_976s.png",
+      "species": 976,
+      "name": "Veluza",
+      "form": 0,
+      "row": 5,
+      "column": 10
+    },
+    {
+      "file": "b_977s.png",
+      "species": 977,
+      "name": "Dondozo",
+      "form": 0,
+      "row": 5,
+      "column": 11
+    },
+    {
+      "file": "b_978s.png",
+      "species": 978,
+      "name": "Tatsugiri",
+      "form": 0,
+      "row": 6,
+      "column": 0
+    },
+    {
+      "file": "b_979s.png",
+      "species": 979,
+      "name": "Annihilape",
+      "form": 0,
+      "row": 6,
+      "column": 1
+    },
+    {
+      "file": "b_980s.png",
+      "species": 980,
+      "name": "Clodsire",
+      "form": 0,
+      "row": 6,
+      "column": 2
+    },
+    {
+      "file": "b_981s.png",
+      "species": 981,
+      "name": "Farigiraf",
+      "form": 0,
+      "row": 6,
+      "column": 3
+    },
+    {
+      "file": "b_982s.png",
+      "species": 982,
+      "name": "Dudunsparce",
+      "form": 0,
+      "row": 6,
+      "column": 4
+    },
+    {
+      "file": "b_983s.png",
+      "species": 983,
+      "name": "Kingambit",
+      "form": 0,
+      "row": 6,
+      "column": 5
+    },
+    {
+      "file": "b_984s.png",
+      "species": 984,
+      "name": "Great Tusk",
+      "form": 0,
+      "row": 6,
+      "column": 6
+    },
+    {
+      "file": "b_985s.png",
+      "species": 985,
+      "name": "Scream Tail",
+      "form": 0,
+      "row": 6,
+      "column": 7
+    },
+    {
+      "file": "b_986s.png",
+      "species": 986,
+      "name": "Brute Bonnet",
+      "form": 0,
+      "row": 6,
+      "column": 8
+    },
+    {
+      "file": "b_987s.png",
+      "species": 987,
+      "name": "Flutter Mane",
+      "form": 0,
+      "row": 6,
+      "column": 9
+    },
+    {
+      "file": "b_988s.png",
+      "species": 988,
+      "name": "Slither Wing",
+      "form": 0,
+      "row": 6,
+      "column": 10
+    },
+    {
+      "file": "b_989s.png",
+      "species": 989,
+      "name": "Sandy Shocks",
+      "form": 0,
+      "row": 6,
+      "column": 11
+    },
+    {
+      "file": "b_990s.png",
+      "species": 990,
+      "name": "Iron Treads",
+      "form": 0,
+      "row": 7,
+      "column": 0
+    },
+    {
+      "file": "b_991s.png",
+      "species": 991,
+      "name": "Iron Bundle",
+      "form": 0,
+      "row": 7,
+      "column": 1
+    },
+    {
+      "file": "b_992s.png",
+      "species": 992,
+      "name": "Iron Hands",
+      "form": 0,
+      "row": 7,
+      "column": 2
+    },
+    {
+      "file": "b_993s.png",
+      "species": 993,
+      "name": "Iron Jugulis",
+      "form": 0,
+      "row": 7,
+      "column": 3
+    },
+    {
+      "file": "b_994s.png",
+      "species": 994,
+      "name": "Iron Moth",
+      "form": 0,
+      "row": 7,
+      "column": 4
+    },
+    {
+      "file": "b_995s.png",
+      "species": 995,
+      "name": "Iron Thorns",
+      "form": 0,
+      "row": 7,
+      "column": 5
+    },
+    {
+      "file": "b_996s.png",
+      "species": 996,
+      "name": "Frigibax",
+      "form": 0,
+      "row": 7,
+      "column": 6
+    },
+    {
+      "file": "b_997s.png",
+      "species": 997,
+      "name": "Arctibax",
+      "form": 0,
+      "row": 7,
+      "column": 7
+    },
+    {
+      "file": "b_998s.png",
+      "species": 998,
+      "name": "Baxcalibur",
+      "form": 0,
+      "row": 7,
+      "column": 8
+    },
+    {
+      "file": "b_999s.png",
+      "species": 999,
+      "name": "Gimmighoul",
+      "form": 0,
+      "row": 7,
+      "column": 9
+    },
+    {
+      "file": "b_1000s.png",
+      "species": 1000,
+      "name": "Gholdengo",
+      "form": 0,
+      "row": 7,
+      "column": 10
+    },
+    {
+      "file": "b_1001s.png",
+      "species": 1001,
+      "name": "Wo-Chien",
+      "form": 0,
+      "row": 7,
+      "column": 11
+    },
+    {
+      "file": "b_1002s.png",
+      "species": 1002,
+      "name": "Chien-Pao",
+      "form": 0,
+      "row": 8,
+      "column": 0
+    },
+    {
+      "file": "b_1003s.png",
+      "species": 1003,
+      "name": "Ting-Lu",
+      "form": 0,
+      "row": 8,
+      "column": 1
+    },
+    {
+      "file": "b_1004s.png",
+      "species": 1004,
+      "name": "Chi-Yu",
+      "form": 0,
+      "row": 8,
+      "column": 2
+    },
+    {
+      "file": "b_1005s.png",
+      "species": 1005,
+      "name": "Roaring Moon",
+      "form": 0,
+      "row": 8,
+      "column": 3
+    },
+    {
+      "file": "b_1006s.png",
+      "species": 1006,
+      "name": "Iron Valiant",
+      "form": 0,
+      "row": 8,
+      "column": 4
+    },
+    {
+      "file": "b_1007s.png",
+      "species": 1007,
+      "name": "Koraidon",
+      "form": 0,
+      "row": 8,
+      "column": 5
+    },
+    {
+      "file": "b_1008s.png",
+      "species": 1008,
+      "name": "Miraidon",
+      "form": 0,
+      "row": 8,
+      "column": 6
+    },
+    {
+      "file": "b_1009s.png",
+      "species": 1009,
+      "name": "Walking Wake",
+      "form": 0,
+      "row": 8,
+      "column": 7
+    },
+    {
+      "file": "b_1010s.png",
+      "species": 1010,
+      "name": "Iron Leaves",
+      "form": 0,
+      "row": 8,
+      "column": 8
+    },
+    {
+      "file": "b_1011s.png",
+      "species": 1011,
+      "name": "Dipplin",
+      "form": 0,
+      "row": 8,
+      "column": 9
+    },
+    {
+      "file": "b_1012s.png",
+      "species": 1012,
+      "name": "Poltchageist",
+      "form": 0,
+      "row": 8,
+      "column": 10
+    },
+    {
+      "file": "b_1013s.png",
+      "species": 1013,
+      "name": "Sinistcha",
+      "form": 0,
+      "row": 8,
+      "column": 11
+    },
+    {
+      "file": "b_1014s.png",
+      "species": 1014,
+      "name": "Okidogi",
+      "form": 0,
+      "row": 9,
+      "column": 0
+    },
+    {
+      "file": "b_1015s.png",
+      "species": 1015,
+      "name": "Munkidori",
+      "form": 0,
+      "row": 9,
+      "column": 1
+    },
+    {
+      "file": "b_1016s.png",
+      "species": 1016,
+      "name": "Fezandipiti",
+      "form": 0,
+      "row": 9,
+      "column": 2
+    },
+    {
+      "file": "b_1017s.png",
+      "species": 1017,
+      "name": "Ogerpon",
+      "form": 0,
+      "row": 9,
+      "column": 3
+    },
+    {
+      "file": "b_1018s.png",
+      "species": 1018,
+      "name": "Archaludon",
+      "form": 0,
+      "row": 9,
+      "column": 4
+    },
+    {
+      "file": "b_1019s.png",
+      "species": 1019,
+      "name": "Hydrapple",
+      "form": 0,
+      "row": 9,
+      "column": 5
+    },
+    {
+      "file": "b_1020s.png",
+      "species": 1020,
+      "name": "Gouging Fire",
+      "form": 0,
+      "row": 9,
+      "column": 6
+    },
+    {
+      "file": "b_1021s.png",
+      "species": 1021,
+      "name": "Raging Bolt",
+      "form": 0,
+      "row": 9,
+      "column": 7
+    },
+    {
+      "file": "b_1022s.png",
+      "species": 1022,
+      "name": "Iron Boulder",
+      "form": 0,
+      "row": 9,
+      "column": 8
+    },
+    {
+      "file": "b_1023s.png",
+      "species": 1023,
+      "name": "Iron Crown",
+      "form": 0,
+      "row": 9,
+      "column": 9
+    },
+    {
+      "file": "b_1024s.png",
+      "species": 1024,
+      "name": "Terapagos",
+      "form": 0,
+      "row": 9,
+      "column": 10
+    },
+    {
+      "file": "b_1025s.png",
+      "species": 1025,
+      "name": "Pecharunt",
+      "form": 0,
+      "row": 9,
+      "column": 11
+    },
+    {
+      "file": "b_128-1s.png",
+      "species": 128,
+      "name": "Tauros",
+      "form": 1,
+      "row": 11,
+      "column": 0
+    },
+    {
+      "file": "b_128-2s.png",
+      "species": 128,
+      "name": "Tauros",
+      "form": 2,
+      "row": 11,
+      "column": 1
+    },
+    {
+      "file": "b_128-3s.png",
+      "species": 128,
+      "name": "Tauros",
+      "form": 3,
+      "row": 11,
+      "column": 2
+    },
+    {
+      "file": "b_194-1s.png",
+      "species": 194,
+      "name": "Wooper",
+      "form": 1,
+      "row": 11,
+      "column": 3
+    },
+    {
+      "file": "b_901-1s.png",
+      "species": 901,
+      "name": "Ursaluna",
+      "form": 1,
+      "row": 11,
+      "column": 4
+    },
+    {
+      "file": "b_916-1s.png",
+      "species": 916,
+      "name": "Oinkologne",
+      "form": 1,
+      "row": 11,
+      "column": 5
+    },
+    {
+      "file": "b_925s.png",
+      "species": 925,
+      "name": "Maushold",
+      "form": 0,
+      "row": 11,
+      "column": 6
+    },
+    {
+      "file": "b_931-3s.png",
+      "species": 931,
+      "name": "Squawkabilly",
+      "form": 3,
+      "row": 11,
+      "column": 7
+    },
+    {
+      "file": "b_931-1s.png",
+      "species": 931,
+      "name": "Squawkabilly",
+      "form": 1,
+      "row": 11,
+      "column": 8
+    },
+    {
+      "file": "b_931-2s.png",
+      "species": 931,
+      "name": "Squawkabilly",
+      "form": 2,
+      "row": 11,
+      "column": 9
+    },
+    {
+      "file": "b_964-1s.png",
+      "species": 964,
+      "name": "Palafin",
+      "form": 1,
+      "row": 11,
+      "column": 10
+    },
+    {
+      "file": "b_978-1s.png",
+      "species": 978,
+      "name": "Tatsugiri",
+      "form": 1,
+      "row": 11,
+      "column": 11
+    },
+    {
+      "file": "b_978-2s.png",
+      "species": 978,
+      "name": "Tatsugiri",
+      "form": 2,
+      "row": 12,
+      "column": 0
+    },
+    {
+      "file": "b_982-1s.png",
+      "species": 982,
+      "name": "Dudunsparce",
+      "form": 1,
+      "row": 12,
+      "column": 1
+    },
+    {
+      "file": "b_999-1s.png",
+      "species": 999,
+      "name": "Gimmighoul",
+      "form": 1,
+      "row": 12,
+      "column": 2
+    },
+    {
+      "file": "b_1007-1s.png",
+      "species": 1007,
+      "name": "Koraidon",
+      "form": 1,
+      "row": 12,
+      "column": 3
+    },
+    {
+      "file": "b_1008-1s.png",
+      "species": 1008,
+      "name": "Miraidon",
+      "form": 1,
+      "row": 12,
+      "column": 4
+    },
+    {
+      "file": "b_1017-2s.png",
+      "species": 1017,
+      "name": "Ogerpon",
+      "form": 2,
+      "row": 12,
+      "column": 5
+    },
+    {
+      "file": "b_1017-1s.png",
+      "species": 1017,
+      "name": "Ogerpon",
+      "form": 1,
+      "row": 12,
+      "column": 6
+    },
+    {
+      "file": "b_1017-3s.png",
+      "species": 1017,
+      "name": "Ogerpon",
+      "form": 3,
+      "row": 12,
+      "column": 7
+    },
+    {
+      "file": "b_1024-1s.png",
+      "species": 1024,
+      "name": "Terapagos",
+      "form": 1,
+      "row": 12,
+      "column": 8
+    },
+    {
+      "file": "b_1024-2s.png",
+      "species": 1024,
+      "name": "Terapagos",
+      "form": 2,
+      "row": 12,
+      "column": 9
+    }
+  ],
+  "variant": "shiny"
+}

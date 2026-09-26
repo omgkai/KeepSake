@@ -1,0 +1,210 @@
+{
+  "commit": "08c27668d28a83ad4b04140436a384d4155ed134",
+  "files": [
+    {
+      "file": "donut_sour00.png",
+      "sha256": "40db7588a57bac9a2eeb57e283c2dfd105dcd51d8a62bf419563df9dbc8b31c8",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour00.png"
+    },
+    {
+      "file": "donut_sour01.png",
+      "sha256": "9e43f310548d128610568784b0897ebb817c233b2d04cb701edf19ea23577c09",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour01.png"
+    },
+    {
+      "file": "donut_sour03.png",
+      "sha256": "8d3effa63445742bdc1ac27ea92e1911e95ccaf49e17ad88ea2de518498a0291",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour03.png"
+    },
+    {
+      "file": "donut_sour02.png",
+      "sha256": "6e210da7359012733f595b3937f8ed2e7634890e8798738c2a894193fd8ce5da",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour02.png"
+    },
+    {
+      "file": "donut_sour05.png",
+      "sha256": "77f652dbd207d72aca3dbefabe789c85f78ca50a483eff768cbd83b1c7207b57",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour05.png"
+    },
+    {
+      "file": "donut_sour04.png",
+      "sha256": "ca822ab09e76b4269d3143c19e622085b95daf4d2e72a57f7b730577434e6e40",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sour04.png"
+    },
+    {
+      "file": "donut_fresh05.png",
+      "sha256": "52e90af8b8a5d69c2d37ee65186868f2e31dee64b3669f00571b3b1b7067ca6e",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh05.png"
+    },
+    {
+      "file": "donut_fresh04.png",
+      "sha256": "bc4fc3e47c6d65fcdce00857623116a776f9f1f42fcf8c330ab863c232944f77",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh04.png"
+    },
+    {
+      "file": "donut_fresh00.png",
+      "sha256": "37f1a96e385b530deb4333fe22058cf777bf22318bc1f9e9429d08636990b51c",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh00.png"
+    },
+    {
+      "file": "donut_fresh01.png",
+      "sha256": "14a2c15e7dc3f23cbe91b8a916d8dd55a71a74956ed0dad05f8f1866ccf3d2d3",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh01.png"
+    },
+    {
+      "file": "donut_fresh03.png",
+      "sha256": "58aa5f7aa7f58bd8ff139d5a06f89113ae96f251450432fa1bf2b35ae84d2e00",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh03.png"
+    },
+    {
+      "file": "donut_fresh02.png",
+      "sha256": "2bea77c372ccc5b702de4f0b245bc88ca1764bd797be1b6adc7c4eb2f936f2c9",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_fresh02.png"
+    },
+    {
+      "file": "donut_mix02.png",
+      "sha256": "005f48c4b7d8a7734217969aa6d0dcae7a2c6332c2844fd82e1b4e664dcfa108",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix02.png"
+    },
+    {
+      "file": "donut_spicy01.png",
+      "sha256": "aec38173a5276e37ec4d4ac819545de5d12f814fa3328bdef8a02699590378da",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy01.png"
+    },
+    {
+      "file": "donut_spicy00.png",
+      "sha256": "abf605e741e7471428a2dbf155775d87fc0dd27300f6a6725ce712df7fd357db",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy00.png"
+    },
+    {
+      "file": "donut_mix03.png",
+      "sha256": "fe0468aeb2b15ee485a6b9dfe9e69e2c98796429c629632e5135b603f44d3f71",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix03.png"
+    },
+    {
+      "file": "donut_uni491.png",
+      "sha256": "4c99a7aa63ccea95eee557a071c30c93601e65d80bded3dc8b3b37f464a7cfd9",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_uni491.png"
+    },
+    {
+      "file": "donut_mix01.png",
+      "sha256": "681036633fff006615d4e978ec589dde1654cc24be43c6dd83a25a191a254d3e",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix01.png"
+    },
+    {
+      "file": "donut_spicy02.png",
+      "sha256": "20d16845535cf554fe91e4e0f233c63febea9d0e4076db41359a2cb63eb57ca8",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy02.png"
+    },
+    {
+      "file": "donut_spicy03.png",
+      "sha256": "aa7f11995e1a566234c1e5250195f16c869b656c62bb136f345a6bbff9a99143",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy03.png"
+    },
+    {
+      "file": "donut_mix00.png",
+      "sha256": "cc2d387b5c576db84f173f0c47e510ccd6a24c710d8f05030e12340147bf1254",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix00.png"
+    },
+    {
+      "file": "donut_mix04.png",
+      "sha256": "c9f956638ec3c56c76c7b29cb5769b046d03420241a25f7cdf7f2c95bf5117fe",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix04.png"
+    },
+    {
+      "file": "donut_mix05.png",
+      "sha256": "64e5eff4babd1bbb85656b8e51088a10b1aad0dcc04ad5c0d96cb21cdf0f2acf",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_mix05.png"
+    },
+    {
+      "file": "donut_spicy04.png",
+      "sha256": "cb552b1a959e90d597f9fc75220a3233109af4d4e4496937dd58eac26ee0b3de",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy04.png"
+    },
+    {
+      "file": "donut_spicy05.png",
+      "sha256": "c3de429b59001196b3a2dd4492c890d75c858a20e9124e54582fd07de95f88a5",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_spicy05.png"
+    },
+    {
+      "file": "donut_sweet05.png",
+      "sha256": "949ff4c6cb0a007bff8580dec947c27d01778a4ed72adf225139695831ab679d",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet05.png"
+    },
+    {
+      "file": "donut_uni383.png",
+      "sha256": "6ac33a88ed68e151ec37680de8780aff673d7785ab3ab43e345de6420374077b",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_uni383.png"
+    },
+    {
+      "file": "donut_bitter03.png",
+      "sha256": "8af0fa90921d8e26831750e941575e619bec131acdfcdd895b84b926cb2634d2",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter03.png"
+    },
+    {
+      "file": "donut_bitter02.png",
+      "sha256": "33947fa64887f6505fe4f6799d7eb24418c763bee39042d1beef95576d158928",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter02.png"
+    },
+    {
+      "file": "donut_uni382.png",
+      "sha256": "15f7b52cf467349365f8133d8119109bc8da7bad01ae75b148a7e425f7cc9580",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_uni382.png"
+    },
+    {
+      "file": "donut_sweet04.png",
+      "sha256": "514cf48e8c82e44bd36171191220d5b48863865341e90c3335d0fc3bed7989fd",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet04.png"
+    },
+    {
+      "file": "donut_bitter00.png",
+      "sha256": "3d8db94e213f2aa46cc66895276b2cadf7a61f13246e2747fd11312c333a7bbb",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter00.png"
+    },
+    {
+      "file": "donut_bitter01.png",
+      "sha256": "7f6845f09ab0cf133d6275e23ac30b0f063c21d6ae47dea04c2199b5df519a33",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter01.png"
+    },
+    {
+      "file": "donut_sweet03.png",
+      "sha256": "4596d622ec878158729d7a173a8bf2f53a8647815236b88ff80dd432a0b11b7c",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet03.png"
+    },
+    {
+      "file": "donut_bitter05.png",
+      "sha256": "98f1d7dabfabb88fdb2b11f05d8f856f8f0ad9b53493a9e9a050aefe5ed56965",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter05.png"
+    },
+    {
+      "file": "donut_bitter04.png",
+      "sha256": "e03bec568a2238702e332a791c4c70d9965c98baef5b79827c2d8629ce0215e3",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_bitter04.png"
+    },
+    {
+      "file": "donut_sweet02.png",
+      "sha256": "638900784da1c10590d605c7e664470c88b0f3ef4e819021df22660d5a8509ab",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet02.png"
+    },
+    {
+      "file": "donut_uni384.png",
+      "sha256": "9bb251ced1b503b4de32b9b1ec9adef20578d9d6105e7a3887c4693ea586dcba",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_uni384.png"
+    },
+    {
+      "file": "donut_sweet00.png",
+      "sha256": "452851f3f926cd7e9ceb9d3c4eacff760692bdfc685024d2271ae080514208df",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet00.png"
+    },
+    {
+      "file": "donut_sweet01.png",
+      "sha256": "792f41fe23f3d654c598e533fbfe76efc6cba9eb9a479bb4cf67f029204b9d9d",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_sweet01.png"
+    },
+    {
+      "file": "donut_uni807.png",
+      "sha256": "33f881c600cfa22b4f501b13bc169cd8fdbb53c9473be881b750d0207c380394",
+      "source": "PKHeX.Drawing.Misc/Resources/img/donut/donut_uni807.png"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.DS_Store
+.build/
+bin/
+obj/
+.swiftpm/
+*.app/
+*.zip
+*.dmg
+.env*
+*.p12
+*.p8
+*.mobileprovision
