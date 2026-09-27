@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>KeepSake updates</title><item><title>KeepSake 0.38</title><pubDate>Sun, 27 Sep 2026 12:58:26 +0000</pubDate><sparkle:version>380</sparkle:version><sparkle:shortVersionString>0.38</sparkle:shortVersionString><sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion><description>A new KeepSake update is ready. Your journals and save files stay on this Mac. Export unsaved work before installing.</description><enclosure url="https://github.com/omgkai/KeepSake/releases/download/v0.38/KeepSake-0.38-macOS-x86_64.zip" length="509693991" type="application/octet-stream" sparkle:edSignature="1t9nwMnYcgtq9m/4Wiu4j5bfO97qtkB46Bg0fQLJb0C+HPKf8dPIpIsmCTBqE3Ng3nzEnbxRSA+DzfqOLF25Bw=="></enclosure></item></channel></rss><!-- sparkle-signatures:
+edSignature: UNCVuZHNTI936qZMVEwsQBNqLWv1EvI5FVBg6qPs+KOOeHdh2kqv++PKt01yLmTfBkkzn+CUogc88lXLoPjYAw==
+length: 1114
+-->
