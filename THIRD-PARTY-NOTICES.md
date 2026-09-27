@@ -10,7 +10,7 @@ Ribbon and mark icons are copied unchanged from PKHeX.Drawing.Misc/Resources/img
 
 Box wallpapers are copied unchanged from PKHeX.Drawing.Misc/Resources/img/box at the same pinned commit. The bridge adapts the upstream WallpaperUtil mapping to choose the game-specific image.
 
-The user-supplied regular and shiny Generation 9 icon sheets are attributed to Ezerart in its filename. Their 284 non-empty cells are extracted without recoloring, scaling, or transparency changes. The original sheets and species/form mappings are retained in Source/Assets/Gen9SpriteSheet. These supplied art assets are distinct from the GPL application code; no additional artwork license is asserted. They replace the Gen 9 artwork fallback and add supplied regional/form icons. The Shiny toggle selects the supplied shiny variants.
+The regular and shiny Generation 9 icon sheets are by **Ezerart**: [Pokémon Gen 9 Icon sprites (3DS Style)](https://www.deviantart.com/ezerart/art/Pokemon-Gen-9-Icon-sprites-3DS-Style-944211258) and [Shiny Pokémon Gen 9 Icon sprites (3DS Style)](https://www.deviantart.com/ezerart/art/Shiny-Pokemon-Gen-9-Icon-sprites-3DS-Style-944778082). Their 284 non-empty cells are extracted without recoloring, scaling, or transparency changes. The original sheets and species/form mappings are retained in Source/Assets/Gen9SpriteSheet. These supplied art assets are distinct from the GPL application code; no additional artwork license is asserted. They replace the Gen 9 artwork fallback and add supplied regional/form icons. The Shiny toggle selects the supplied shiny variants.
 
 The .NET runtime is by Microsoft and contributors. Its included LICENSE.txt and THIRD-PARTY-NOTICES.TXT accompany the bundled runtime in the app's Contents/Helpers directory. Runtime source and licensing are available at https://github.com/dotnet/runtime .
 
@@ -20,9 +20,9 @@ Move type icons are copied unchanged from PKHeX.Drawing.Misc/Resources/img/types
 
 KeepSake's item and Poké Ball icons are unchanged upstream assets from PKHeX.Drawing.PokeSprite/Resources/img/Big Items, Artwork Items and ball at the pinned commit. The four legal Gen 7 wardrobe payloads in Source/Engine/Fashion are copied unchanged from PKHeX.WinForms/Resources/byte. Their upstream GPL source is included in the source distribution. The navy journal icon is drawn by Source/Packaging/DrawIcon.swift; it is separate from the supplied Pokémon sprite sheets. KeepSake is an unofficial application, not an official Pokémon product.
 
-The 104 PNGs in Source/Assets/HisuiItems were supplied by the user in the hisui items folder. They are bundled byte-for-byte unchanged, with file hashes and item/ball mappings in manifest.json. No creator or additional artwork license was supplied. The accompanying items.txt is fan-game configuration data and was not used to set save rules, prices, or item legality. The app continues to use PKHeX.Core for those values. Unmapped artwork is retained in the source folder without being assigned to unrelated items.
+The 104 PNGs in Source/Assets/HisuiItems are from **lichen**’s [Legends: Arceus item sprites](https://eeveeexpo.com/resources/1287/), supplied in the hisui items folder. They are bundled byte-for-byte unchanged, with file hashes and item/ball mappings in manifest.json. These separate fan-art assets are credited to their creator and are not relicensed under the application’s GPL license. Original transparency and white outlines are preserved. The accompanying items.txt is fan-game configuration data and was not used to set save rules, prices, or item legality. The app continues to use PKHeX.Core for those values. Unmapped artwork is retained in the source folder without being assigned to unrelated items.
 
-The 68 PNGs in Source/Assets/PaldeaItems were supplied by the user in the paldea items folder and are retained unchanged with hashes in manifest.json. Matching Scarlet/Violet item IDs use these images; the supplied generic TM-material and legendary-treat artwork covers the corresponding groups. The alternate reduced-color Clear Amulet and unmatched artwork are retained without overriding the primary matching image. No creator or additional artwork license was supplied.
+The 68 PNGs in Source/Assets/PaldeaItems are from **lichen**’s [Scarlet and Violet item sprites](https://eeveeexpo.com/resources/1288/), supplied in the paldea items folder, and are retained unchanged with hashes in manifest.json. Matching Scarlet/Violet item IDs use these images; the supplied generic TM-material and legendary-treat artwork covers the corresponding groups. The alternate reduced-color Clear Amulet and unmatched artwork are retained without overriding the primary matching image. These separate fan-art assets are credited to their creator and are not relicensed under the application’s GPL license. Original transparency and white outlines are preserved.
 
 Fashion catalog labels and indices for Legends: Arceus and Sword/Shield are factual item-name data from foohyfooh/PKHeXPluginPile, commit fb76c3c52c6386e21ec75d9c5f702c6d38a27477, PluginPile.FashionEditor/Resources (https://github.com/foohyfooh/PKHeXPluginPile). The plugin executable and its editor source are not bundled. No additional license is asserted for its separate game-label data. `Source/Engine/Fashion/provenance.json` records source paths and hashes. Ownership adapters and category illustrations are new KeepSake code; these illustrations are not original in-game garment thumbnails.
 
@@ -32,7 +32,7 @@ Version 0.16 includes 41 unchanged donut images from PKHeX.Drawing.Misc/Resource
 
 ## Auto-Legality Mod
 
-Auto-Legality Mod from https://github.com/santacrab2/PKHeX-Plugins
+**Auto-Legality Mod** was created by **Archit Date (architdate)**, with Kaphotics and other contributors: [original project](https://github.com/architdate/PKHeX-Plugins). KeepSake bundles the [santacrab2-maintained fork](https://github.com/santacrab2/PKHeX-Plugins).
 Commit: 90410f2681a0a72680d12280a1e0f14715e67dff
 MIT License, Copyright (c) 2018 Archit Date; license included. Library sources unmodified; csproj uses the bundled PKHeX Core 26.8.26 project instead of NuGet, with upstream build properties embedded.
 
@@ -65,7 +65,7 @@ SOFTWARE.
 
 ## User-supplied trainer badge art (0.19)
 
-JcFerggy — *16x16 Pokemon Badge Sprites: Gen 1–6* (`d9006sy`), and ProfessorMorDBG — *Paldea Badges demake large* (`diwbwzy`). The original PNG sheets are retained unchanged in `Source/Assets/Badges`; the manifest identifies the 68 regions used by the native renderer. Supplied fan artwork is not relicensed by KeepSake’s GPL source license. Galar uses a native seal fallback, not artwork attributed to either sheet.
+**JcFerggy** — [16x16 Pokémon Badge Sprites: Gen 1–6](https://www.deviantart.com/jcferggy/art/16x16-Pokemon-Badge-Sprites-Gen-1-6-544204402) (`d9006sy`), and **ProfessorMorDBG** — [Paldea Badges demake large](https://www.deviantart.com/professormordbg/art/Paldea-Badges-demake-large-1142694862) (`diwbwzy`). The original PNG sheets are retained unchanged in `Source/Assets/Badges`; the manifest identifies the 68 regions used by the native renderer. Supplied fan artwork is not relicensed by KeepSake’s GPL source license. Galar uses a native seal fallback, not artwork attributed to either sheet.
 
 Festival Plaza phrase labels in Source/Engine/GameData/festivalPhrases.json are extracted from the pinned upstream PKHeX.WinForms SAV_FestivalPlaza.cs. The upstream GPL attribution and license apply. New typed Pokéathlon, Secret Base, Festival Plaza and Pokédex adapters use the unchanged pinned PKHeX.Core structures; the Windows dialog source supplied the field layout reference.
 

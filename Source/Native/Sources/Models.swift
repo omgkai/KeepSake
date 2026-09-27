@@ -368,10 +368,10 @@ final class Bridge: @unchecked Sendable {
             return true
         } catch { self.error = error.localizedDescription; return false }
     }
-    func updateInventory(pouch: Int, slot: Int, item: Int, count: Int) async {
+    func updateInventory(pouch: Int, slot: Int, item: Int, count: Int, giveMax: Bool = false) async {
         guard !busy else { return }; busy = true
         do {
-            inventory = try await bridge.send(["op":"inventorySet", "pouch":pouch, "slot":slot, "item":item, "count":count], as: InventoryData.self).pouches
+            inventory = try await bridge.send(["op":"inventorySet", "pouch":pouch, "slot":slot, "item":item, "count":count, "max":giveMax], as: InventoryData.self).pouches
             state = try await bridge.send(["op":"state"], as: EditorState.self); drafts.removeValue(forKey:"quantity:\(pouch):\(slot)"); status = "Updated inventory"
         } catch { self.error = error.localizedDescription }; busy = false
     }

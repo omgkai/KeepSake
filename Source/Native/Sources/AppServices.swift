@@ -84,13 +84,14 @@ struct AboutKeepSakeView:View {
     var body:some View {
         ScrollView {
             VStack(spacing:22) {
-                JournalMark().frame(width:94,height:94).shadow(color:theme.accent.opacity(0.25),radius:24,y:10)
+                Image(nsImage:NSImage(contentsOf:Bundle.main.url(forResource:"AppIcon",withExtension:"icns") ?? URL(fileURLWithPath:"")) ?? NSImage(named:NSImage.applicationIconName)!).resizable().scaledToFit().frame(width:94,height:94).shadow(color:theme.accent.opacity(0.25),radius:24,y:10)
                 VStack(spacing:7){Text("KeepSake").font(.system(size:38,weight:.bold,design:.rounded));Text("Every companion has a story.").font(.title3).foregroundStyle(.secondary);Text("Version \(KeepSakeRelease.version)").font(.caption.monospaced()).foregroundStyle(.secondary)}
                 Text("A personal home for your Pokémon adventures. Native editing, thoughtful details, and a journal for the memories that make each team yours.").multilineTextAlignment(.center).lineSpacing(4)
                 HStack(spacing:22){Label("Made for Mac",systemImage:"apple.logo");Label("Your own story",systemImage:"book.closed.fill")}.font(.caption).foregroundStyle(theme.accent)
                 UpdateSettingsView()
                 HStack {Link("Source & Credits",destination:KeepSakeRelease.home);Spacer();Button("Support"){openWindow(id:"support")}}
-                Text("Powered by PKHeX, by Kaphotics and contributors, and Auto-Legality Mod. KeepSake is an unofficial project distributed under GPL-3.0-or-later. Pokémon and related artwork belong to their respective owners.").font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                Text("Made with love by Kai White").font(.callout).foregroundStyle(.secondary)
+                Text("Powered by PKHeX, by Kaphotics and contributors, and Auto-Legality Mod by Archit Date and contributors (santacrab2 fork). KeepSake is an unofficial project distributed under GPL-3.0-or-later. Pokémon and related artwork belong to their respective owners.").font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 Button("Licenses & Artwork Notices") { if let url=Bundle.main.url(forResource:"THIRD-PARTY-NOTICES",withExtension:"md"){NSWorkspace.shared.open(url)} }.buttonStyle(.link)
             }.padding(36).frame(maxWidth:620)
                 .frame(maxWidth:.infinity)

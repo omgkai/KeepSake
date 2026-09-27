@@ -12,7 +12,7 @@ Published builds appear on the [Releases page](https://github.com/omgkai/KeepSak
 
 KeepSake 0.38 and later use Sparkle to download, verify, install and relaunch updates inside the app. Choose **KeepSake → Check for Updates**, then **Install Update**. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open save workspace can cancel quitting to protect unsaved edits. Updates use signed architecture-specific feeds and signed archives; no saves or trainer details are sent.
 
-**One-time migration:** 0.37 and earlier only open the release page. Download and replace the app once to install 0.38; subsequent updates install in-app. If macOS requests authorization to replace a copy in Applications, complete the system prompt.
+**One-time migration:** 0.37 and earlier only open the release page. Download and replace the app once to install the latest version; subsequent updates install in-app. If macOS requests authorization to replace a copy in Applications, complete the system prompt.
 
 ## Your adventures
 
@@ -49,4 +49,15 @@ Use distinct output paths. The build script writes app bundles and applies a loc
 
 ## Credits and license
 
-PKHeX is by Kaphotics and contributors. Auto-Legality Mod is by its respective contributors. KeepSake is an unofficial project distributed under GPL-3.0-or-later; see [LICENSE](LICENSE) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Pokémon and artwork belong to their respective owners. The source license does not relicense separate artwork.
+Made with love by **Kai White**.
+
+- **PKHeX:** [Kaphotics and contributors](https://github.com/kwsch/PKHeX).
+- **Auto-Legality Mod:** [Archit Date (architdate)](https://github.com/architdate/PKHeX-Plugins), Kaphotics and contributors; bundled [santacrab2 fork](https://github.com/santacrab2/PKHeX-Plugins), MIT license.
+- **Legends: Arceus and Scarlet/Violet item sprites:** **lichen**, via [Arceus collection](https://eeveeexpo.com/resources/1287/) and [Scarlet/Violet collection](https://eeveeexpo.com/resources/1288/).
+- **Paldea badges:** **ProfessorMorDBG**, [Paldea Badges demake large](https://www.deviantart.com/professormordbg/art/Paldea-Badges-demake-large-1142694862).
+- **Gen 1–6 badges:** **JcFerggy**, [16x16 Pokémon Badge Sprites](https://www.deviantart.com/jcferggy/art/16x16-Pokemon-Badge-Sprites-Gen-1-6-544204402).
+- **Gen 9 icon sprites:** **Ezerart**, [normal](https://www.deviantart.com/ezerart/art/Pokemon-Gen-9-Icon-sprites-3DS-Style-944211258) and [shiny](https://www.deviantart.com/ezerart/art/Shiny-Pokemon-Gen-9-Icon-sprites-3DS-Style-944778082).
+- **Portrait collections:** PKHeX contributors and [PokeAPI/sprites](https://github.com/PokeAPI/sprites); Pokémon artwork belongs to its respective rights holders.
+- **In-app updates:** [Sparkle contributors](https://github.com/sparkle-project/Sparkle), MIT license.
+
+ KeepSake is an unofficial project distributed under GPL-3.0-or-later; see [LICENSE](LICENSE) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Pokémon and artwork belong to their respective owners. The source license does not relicense separate artwork.

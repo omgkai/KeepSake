@@ -49,6 +49,7 @@ struct InventoryRow: View {
             Button { choose = true } label: { HStack { Text(item.item == 0 ? "Empty slot" : item.name); if !pouch.fixedItems { Image(systemName:"chevron.down").font(.caption2) } } }.buttonStyle(.plain).disabled(pouch.fixedItems)
             Spacer()
             TextField("Count",text:Binding(get:{count},set:{ v in if v == String(item.count) { model.drafts.removeValue(forKey:quantityKey) } else { model.drafts[quantityKey] = v } })).textFieldStyle(.roundedBorder).frame(width:80).onSubmit { commit(item.item) }
+            Button("Give Max") { Task { await model.updateInventory(pouch:pouch.id,slot:item.id,item:item.item,count:item.count,giveMax:true) } }.disabled(item.item == 0 || model.busy || model.fieldDrafts).help("Give the maximum quantity allowed for this item in this game")
             Button("Apply") { commit(item.item) }.disabled(Int(count) == nil || Int(count) == item.count)
             Button { details = true } label: { Image(systemName:"ellipsis.circle") }.help("Additional item flags")
         }.padding(.vertical,9).overlay(alignment:.bottom) { Divider().opacity(0.4) }

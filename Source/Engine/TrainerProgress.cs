@@ -3,8 +3,8 @@ sealed partial class EditorSession {
     static readonly (uint key,string name,int max)[] HisuiProgress=[
         (SaveBlockAccessor8LA.KMeritCurrent,"Current Merit Points",999999999),
         (SaveBlockAccessor8LA.KMeritEarnedTotal,"Lifetime Merit Points",999999999),
-        (SaveBlockAccessor8LA.KExpeditionTeamRank,"Survey Corps rank",999999999),
-        (SaveBlockAccessor8LA.KSatchelUpgrades,"Satchel upgrades",999999999)];
+        (SaveBlockAccessor8LA.KExpeditionTeamRank,"Survey Corps rank",10),
+        (SaveBlockAccessor8LA.KSatchelUpgrades,"Satchel upgrades",39)];
     static readonly (uint key,string name,int max)[] GalarProgress=[
         (SaveBlockAccessor8SWSH.KBattleTowerSinglesVictory,"Battle Tower · Singles wins",9999999),
         (SaveBlockAccessor8SWSH.KBattleTowerDoublesVictory,"Battle Tower · Doubles wins",9999999),
@@ -21,6 +21,9 @@ sealed partial class EditorSession {
     void EditTrainerProgress(string id,Dictionary<string,string> edits) {
         uint key=uint.Parse(id);int value=int.Parse(edits["Value"]);
         var accessor=save is SAV8LA la ? (SCBlockAccessor)la.Blocks:((SAV8SWSH)RequireSave()).Blocks;
+        var limits=save is SAV8LA?HisuiProgress:GalarProgress;
+        var limit=limits.FirstOrDefault(x=>x.key==key);
+        if(limit.key!=key || value<0 || value>limit.max)throw new Exception("Progress value is outside this field’s limits.");
         var block=accessor.GetBlock(key);block.SetValue(Convert.ChangeType(value,block.GetValue().GetType()));
         if(save is SAV8SWSH sw){if(key==SaveBlockAccessor8SWSH.KBattleTowerSinglesVictory)sw.SetRecord(RecordLists.G8BattleTowerSingleWin,value);if(key==SaveBlockAccessor8SWSH.KBattleTowerDoublesVictory)sw.SetRecord(RecordLists.G8BattleTowerDoubleWin,value);}
     }

@@ -1,10 +1,9 @@
-KeepSake 0.38 adds in-app downloads, installation and relaunch through Sparkle.
+KeepSake 0.39 adds research completion and faster inventory editing, with refreshed credits and About.
 
-- **KeepSake → Check for Updates** now downloads, verifies and installs the update instead of opening a web page.
-- Daily automatic checks and optional automatic download/install are available in **Settings → Updates & Backup**. Automatic downloads install when the app quits.
-- Unsaved work in every save window can cancel quitting. You can export your changes and retry the ready update later.
-- Separate Apple Silicon and Intel feeds use signed update metadata and signed archives, verified before extraction. Release apps and installer helpers are Developer ID signed and Apple notarized.
+- Legends: Arceus Research now offers **Complete Research** for the selected Pokémon and **Complete All** for the Hisui Pokédex. These complete task counters and required form/quest records, then report the results. Bulk completion asks for confirmation; Undo restores the previous state. Path of Solitude is unchanged.
+- **Give Max** fills an inventory item's quantity to PKHeX's limit for that game and item.
+- PLA Trainer Progress limits Survey Corps rank to 10 and satchel upgrades to 39. Merit-point fields retain PKHeX's editor limits; these are not a verified in-game cap.
+- About displays the KeepSake icon and “Made with love by Kai White”. Credits name the item, badge and sprite artists with original source links, and credit Auto-Legality creator Archit Date and the bundled santacrab2 fork.
+- Release builds omit debug symbol files and remap local Swift build paths. Third-party notices and licenses remain intact.
 
-**One-time upgrade:** 0.37 and earlier still use the old update checker. Download the matching 0.38 ZIP, quit KeepSake and replace your app once. Future releases can install directly in KeepSake.
-
-Requires macOS 14 or later. Journals, settings and saves are kept outside the app bundle and remain in place during updates.
+Apple Silicon and Intel builds require macOS 14 or later. KeepSake 0.38 can install this update through **Check for Updates**; earlier versions need one manual app replacement.

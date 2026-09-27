@@ -122,11 +122,55 @@ sealed partial class EditorSession
                     var counter=researchCounters[id]; dex.SetResearchTaskProgressByForce(species,counter.type,count,counter.index);
                 }
                 break;
+            case "complete": CompleteResearch(sav,species); dex.UpdateSpecificReportPoke(species); break;
+            case "completeAll":
+                for(ushort id=1;id<=PersonalTable.LA.MaxSpeciesID;id++)
+                    if(PokedexSave8a.GetDexIndex(PokedexType8a.Hisui,id)!=0) CompleteResearch(sav,id);
+                dex.UpdateAllReportPoke(); break;
             case "report": dex.UpdateSpecificReportPoke(species); break;
             case "solitude": dex.SetSolitudeComplete(species,B(r,"value")); break;
             default: throw new Exception("Unknown research action.");
         }
         dirty=true;
+    }
+    static void CompleteResearch(SAV8LA sav,ushort species)
+    {
+        var dex=sav.PokedexSave;
+        int index=PokedexSave8a.GetDexIndex(PokedexType8a.Hisui,species);
+        SetDexFlags(sav,species,true,true);
+        foreach(var task in PokedexConstants8a.ResearchTasks[index-1])
+        {
+            if(task.TaskThresholds.Length==0)continue;
+            int target=task.TaskThresholds.Max(x=>(int)x);
+            if(task.Task.CanSetCurrentValue())
+            {
+                dex.GetResearchTaskProgressByForce(species,task.Task,task.Index,out int current);
+                dex.SetResearchTaskProgressByForce(species,task,Math.Max(current,target));
+            }
+            else if(task.Task==PokedexResearchTaskType8a.ObtainForms)
+            {
+                for(byte form=0;form<PersonalTable.LA[species].FormCount;form++)
+                {
+                    int info=PokedexConstants8a.PokemonInfoIds.BinarySearch((ushort)(species|(form<<11)));
+                    if(info<0)continue;
+                    int genders=PokedexConstants8a.PokemonInfoGenders[info];
+                    byte flags=(byte)(((genders&13)!=0?1:0)|((genders&2)!=0?2:0));
+                    dex.SetPokeObtainFlags(species,form,(byte)(dex.GetPokeObtainFlags(species,form)|flags));
+                }
+            }
+            else if(task.Task==PokedexResearchTaskType8a.SpeciesQuest)
+            {
+                if(task.Hash_06 is 0xC0EA47549AB5F3D9 or 0xCBF29CE484222645)continue;
+                var block=sav.Blocks.GetBlock((uint)task.Hash_06);
+                block.Data[0]=0xFF;
+            }
+            else if(task.Task==PokedexResearchTaskType8a.PartOfArceus)
+            {
+                if(task.Hash_08==0xCBF29CE484222645)continue;
+                var block=sav.Blocks.GetBlock((uint)task.Hash_08);
+                block.SetValue(Math.Max((uint)block.GetValue(),(uint)target));
+            }
+        }
     }
     record StorageRow(string id,int box,int slot,bool party,string name,string nickname,int species,int level,bool shiny,bool alpha,string nature,string ability,string item,string trainer,string moves,string sprite);
     IEnumerable<(PKM pk,int b,int s,bool party)> StoredPokemon()

@@ -17,11 +17,12 @@ export DOTNET_CLI_HOME="$BUILD/dotnet-home"
 export CLANG_MODULE_CACHE_PATH="$BUILD/clang-module-cache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$BUILD/swift-module-cache"
 "$DOTNET_BIN" publish "$ROOT/Source/Engine" -c Release -r "$RUNTIME" --self-contained true \
-  -m:1 -p:UseSharedCompilation=false -nodeReuse:false \
+  -m:1 -p:UseSharedCompilation=false -nodeReuse:false -p:DebugType=None -p:DebugSymbols=false \
   -p:SourceRevisionId=08c27668d28a83ad4b04140436a384d4155ed134 \
   --artifacts-path "$BUILD/dotnet-artifacts" -o "$APP/Contents/Helpers" --nologo
+find "$APP/Contents/Helpers" -name '*.pdb' -delete
 cp "$ROOT/Source/Packaging/RuntimeNotices/"* "$APP/Contents/Helpers/"
-swift build --package-path "$ROOT/Source/Native" --scratch-path "$BUILD/swift" --triple "$ARCH-apple-macosx14.0" -c release --disable-sandbox --build-system "${PKHEX_SWIFT_BUILD_SYSTEM:-native}"
+swift build --package-path "$ROOT/Source/Native" --scratch-path "$BUILD/swift" --triple "$ARCH-apple-macosx14.0" -c release -Xswiftc -debug-prefix-map -Xswiftc "$ROOT=/KeepSake" -Xswiftc -file-prefix-map -Xswiftc "$ROOT=/KeepSake" --disable-sandbox --build-system "${PKHEX_SWIFT_BUILD_SYSTEM:-native}"
 mkdir -p "$APP/Contents/Frameworks"
 ditto "$BUILD/swift/release/Sparkle.framework" "$APP/Contents/Frameworks/Sparkle.framework"
 cp "$ROOT/Source/Packaging/Sparkle-LICENSE.txt" "$APP/Contents/Resources/"
@@ -43,6 +44,7 @@ cp -R "$ROOT/Source/Assets/GameLogos" "$APP/Contents/Resources/"
 cp -R "$ROOT/Source/Assets/Ribbons" "$APP/Contents/Resources/"
 cp -R "$ROOT/Source/Assets/Wallpapers" "$APP/Contents/Resources/"
 cp "$ROOT/LICENSE" "$ROOT/THIRD-PARTY-NOTICES.md" "$APP/Contents/Resources/"
+strip -S "$APP/Contents/MacOS/PKHeXSwift"
 codesign --force --deep --sign - "$APP"
 codesign --verify --deep --strict "$APP"
 printf '\nBuilt %s\n' "$APP"

@@ -56,6 +56,7 @@ struct ResearchView:View {
     @EnvironmentObject var model:EditorModel
     @State private var showUnused=false
     @State private var showDexDetails=false
+    @State private var completeAll=false
     var body:some View {
         if !model.state.canResearch { ContentUnavailableView("Arceus Research",systemImage:"list.clipboard",description:Text("Open a Legends: Arceus save to edit research task counts.")) }
         else if let data=model.research {
@@ -105,6 +106,15 @@ struct ResearchView:View {
                 HStack {
                     Text("Counts are saved in memory. Export Copy writes your save.").font(.caption).foregroundStyle(.secondary)
                     Spacer()
+                    Menu {
+                        Button("Complete Research") {Task{await model.changeResearch(["mode":"complete"])}}
+                        Button("Complete All…") {completeAll=true}
+                    } label: {Label("Complete Research",systemImage:"checkmark.seal.fill")}
+                    .disabled(model.fieldDrafts || model.busy)
+                    .help("Complete task counts and required form/quest records, then report research")
+                    .confirmationDialog("Complete research for every Hisui Pokémon?",isPresented:$completeAll,titleVisibility:.visible) {
+                        Button("Complete All Research") {Task{await model.changeResearch(["mode":"completeAll"])}}
+                    } message: {Text("Completes every research task, including required form and species quest records, and reports the results. Path of Solitude stays unchanged. Undo restores the previous save state.")}
                     Button("Report Research") {Task{await model.changeResearch(["mode":"report"])}}.disabled(model.fieldDrafts)
                     Button("Save Counts") {Task{await model.saveResearchCounts()}}.buttonStyle(.borderedProminent).disabled(!model.drafts.keys.contains{$0.hasPrefix("research|")})
                 }

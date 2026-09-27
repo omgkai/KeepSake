@@ -417,7 +417,8 @@ sealed partial class EditorSession
                 Mutate(() => {
                     var sav = RequireSave(); var bag = sav.Inventory;
                     var pouch = bag.Pouches[N(r, "pouch")]; var item = pouch.Items[N(r, "slot")];
-                    int id = N(r, "item"), count = N(r, "count");
+                    int id = N(r, "item");
+                    int count = B(r, "max") && id > 0 && id <= sav.MaxItemID ? bag.GetMaxCount(pouch.Type, id) : N(r, "count");
                     if (pouch is InventoryPouch9 or InventoryPouch9a && id != item.Index) throw new Exception("This game uses fixed item rows. Find the desired item's row and edit its quantity.");
                     if (id != 0 && id != item.Index && pouch.Items.Any(x=>x != item && x.Index == id)) throw new Exception("This item already has a row in the pouch. Edit that row's quantity instead.");
                     if (id != 0 && !bag.Info.GetItems(pouch.Type).Contains((ushort)id)) throw new Exception("This item does not belong in this pouch.");
