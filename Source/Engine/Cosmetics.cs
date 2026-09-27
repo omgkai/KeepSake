@@ -23,6 +23,10 @@ sealed partial class EditorSession {
             if(pk is PA8 pa && field is "Scale" or "HeightScalar")pa.Scale=pa.HeightScalar=value;
             if(B(r,"automatic")){if(pk is IScaledSizeValue sizes){sizes.ResetHeight();sizes.ResetWeight();}if(pk is ICombatPower cp)cp.ResetCP();}
         }
+        else if(mode is "autoHeight" or "autoWeight") {
+            if(pk is not IScaledSizeValue sizes)throw new Exception("This format does not store calculated height or weight.");
+            if(mode=="autoHeight") {sizes.ResetHeight();sizes.ResetWeight();} else sizes.ResetWeight();
+        }
         else if(mode=="recalculate") {if(pk is IScaledSizeValue sizes){sizes.ResetHeight();sizes.ResetWeight();}if(pk is ICombatPower cp)cp.ResetCP();if(pk is not IScaledSizeValue and not ICombatPower)throw new Exception("This format has no calculated size or CP.");}
         else if(mode=="leaves") {if(pk is not G4PKM leaves)throw new Exception("Shiny Leaves are stored only in Generation 4 formats.");int value=N(r,"value");if(value<0||value>63||(value&32)!=0&&(value&31)!=31)throw new Exception("The crown requires all five Shiny Leaves.");leaves.ShinyLeaf=value;}
         else if(mode=="contest") {if(pk is not IContestStats contest)throw new Exception("This format has no contest conditions.");byte value=B(r,"all")?(byte)255:(byte)0;contest.ContestCool=contest.ContestBeauty=contest.ContestCute=contest.ContestSmart=contest.ContestTough=contest.ContestSheen=value;}

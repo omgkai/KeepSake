@@ -40,8 +40,12 @@ struct CosmeticsView:View {
             if has("HeightScalar"){EditorCard(title:"Size & presence"){
                 HStack(spacing:12){sizeSummary("Height",model.state.cosmeticInfo?.height ?? "","ruler");sizeSummary("Weight",model.state.cosmeticInfo?.weight ?? "","scalemass");if has("Scale"){sizeSummary("Scale",model.state.cosmeticInfo?.scale ?? "","arrow.up.left.and.arrow.down.right")}}
                 ForEach([("HeightScalar","Height"),("WeightScalar","Weight"),("Scale","Scale")],id:\.0){id,title in if has(id){HStack{Button{sizeChoice=CosmeticSizeChoice(id:id,title:title,value:value(id))}label:{HStack{Text(title);Spacer();Text(value(id)).monospacedDigit();Image(systemName:"chevron.up.chevron.down").font(.caption2)}};Stepper(title,value:Binding(get:{Int(value(id)) ?? 0},set:{number in cosmetic(["mode":"size","field":id,"value":String(number),"automatic":autoSize])}),in:0...255).labelsHidden().fixedSize()}.disabled(model.fieldDrafts)}}
-                if model.state.cosmeticInfo?.canRecalculate==true {Toggle("Recalculate measured size & CP automatically",isOn:$autoSize).font(.caption);Button("Recalculate Now"){cosmetic(["mode":"recalculate"])}.disabled(model.fieldDrafts)}
-                DisclosureGroup("Measured values"){ForEach([("HeightAbsolute","Height (meters)"),("WeightAbsolute","Weight (kg)"),("Stat_CP","Combat Power")],id:\.0){id,title in SimpleField(id:id,title:title)}}
+                if model.state.cosmeticInfo?.canRecalculate==true {Toggle("Auto height, weight & CP",isOn:$autoSize).font(.caption).onChange(of:autoSize){_,enabled in if enabled{cosmetic(["mode":"recalculate"])}}.disabled(model.fieldDrafts);Button("Recalculate Now"){cosmetic(["mode":"recalculate"])}.disabled(model.fieldDrafts)}
+                ForEach([("HeightAbsolute","Height (meters)","autoHeight"),("WeightAbsolute","Weight (kg)","autoWeight")],id:\.0){id,title,mode in
+                    if has(id){HStack{SimpleField(id:id,title:title).disabled(autoSize);Button("Auto"){cosmetic(["mode":mode])}.disabled(model.fieldDrafts || model.busy).help("Calculate "+title+" from the Pokémon’s size scalars using PKHeX")}}
+                }
+                Text("Auto derives measured size from your scalars; it does not randomize them.").font(.caption).foregroundStyle(.secondary)
+                if has("Stat_CP"){SimpleField(id:"Stat_CP",title:"Combat Power").disabled(autoSize)}
             }}
             if has("ShinyLeaf"){EditorCard(title:"Shiny Leaves"){
                 let leaves=Int(value("ShinyLeaf")) ?? 0

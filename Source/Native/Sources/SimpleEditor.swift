@@ -43,10 +43,11 @@ struct SimplePokemonEditor: View {
                 }
             }
             if model.state.fields.contains(where:{["Nature","Ability","HeldItem"].contains($0.id) && $0.editable}) {EditorCard(title:"Details") {
-                SimpleField(id:"Nature", title:"Nature")
+                NatureSelector()
                 SimpleField(id:"Ability", title:"Ability", lookup:"entityAbilities")
                 if !model.state.abilityDescription.isEmpty {Text(model.state.abilityDescription).font(.callout).foregroundStyle(.secondary).fixedSize(horizontal:false,vertical:true)}
                 SimpleField(id:"HeldItem", title:"Held item")
+                if !model.state.heldItemDescription.isEmpty {Label {Text(model.state.heldItemDescription).fixedSize(horizontal:false,vertical:true)} icon:{Image(systemName:"info.circle")}.font(.callout).foregroundStyle(.secondary)}
 
             }
             }
@@ -119,8 +120,8 @@ struct SimplePokemonEditor: View {
                 if let raw=model.state.fields.first(where:{$0.id=="PID"})?.value,let pid=UInt32(raw){Text(String(format:"Hexadecimal · %08X",pid)).font(.caption.monospaced()).foregroundStyle(.secondary)}
             }}
             EditorCard(title:"Nature") {
-                SimpleField(id:"Nature", title:"Nature")
-                SimpleField(id:"StatAlignment", title:"Mint nature")
+                NatureSelector()
+                if model.state.natureInfo?.mint == true {NatureSelector(mint:true)}
                 if !model.state.characteristic.isEmpty {Text("Characteristic").font(.caption).foregroundStyle(.secondary);Label(model.state.characteristic,systemImage:"quote.bubble.fill").foregroundStyle(theme.accent).padding(.top,4)}
             }
             if model.state.fields.contains(where:{$0.id=="TeraTypeOriginal"}) {

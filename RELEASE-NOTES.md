@@ -1,9 +1,9 @@
-KeepSake 0.39 adds research completion and faster inventory editing, with refreshed credits and About.
+KeepSake 0.40 makes Pokémon details easier to understand and gives the project a new visual home.
 
-- Legends: Arceus Research now offers **Complete Research** for the selected Pokémon and **Complete All** for the Hisui Pokédex. These complete task counters and required form/quest records, then report the results. Bulk completion asks for confirmation; Undo restores the previous state. Path of Solitude is unchanged.
-- **Give Max** fills an inventory item's quantity to PKHeX's limit for that game and item.
-- PLA Trainer Progress limits Survey Corps rank to 10 and satchel upgrades to 39. Merit-point fields retain PKHeX's editor limits; these are not a verified in-game cap.
-- About displays the KeepSake icon and “Made with love by Kai White”. Credits name the item, badge and sprite artists with original source links, and credit Auto-Legality creator Archit Date and the bundled santacrab2 fork.
-- Release builds omit debug symbol files and remap local Swift build paths. Third-party notices and licenses remain intact.
+- A new Nature picker previews raised, lowered and neutral stats for every nature, with separate mint effects and clear +10% / −10% indicators.
+- Stat totals now correctly reflect nature and mint colors.
+- Height and weight have visible **Auto** buttons using PKHeX’s measured-size calculations. Enabling automatic recalculation applies it immediately; manual measured fields are disabled while Auto is on.
+- Held items now show offline English descriptions, preferring the current game. Unavailable game-specific descriptions are labeled as reference text.
+- GitHub has a new navy-and-gold presentation and a gallery of 13 screenshots supplied by Kai White.
 
-Apple Silicon and Intel builds require macOS 14 or later. KeepSake 0.38 can install this update through **Check for Updates**; earlier versions need one manual app replacement.
+Requires macOS 14 or later. Apple Silicon and Intel downloads are Developer ID signed and Apple notarized. Choose **KeepSake → Check for Updates** in 0.38 or later; older versions require a manual app replacement.

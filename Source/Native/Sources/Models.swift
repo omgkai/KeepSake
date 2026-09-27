@@ -24,7 +24,10 @@ struct Slot: Codable, Identifiable {
 struct TrainerJourney:Codable {let title:String,value:String,symbol:String}
 struct TrainerBadge:Codable,Identifiable {let id:Int,name:String,earned:Bool,group:String,artwork:String,symbol:String,recorded:Bool}
 struct GrowthInfo:Codable {let exp:Int,level:Int,floor:Int,next:Int,friendship:Int,egg:Bool,friendshipField:String,pokerus:Bool,pokerusState:String}
+struct NatureInfo:Codable {let nature,alignment:Int;let hasEffects,mint:Bool}
 struct EditorState: Codable {
+    var natureInfo:NatureInfo?
+    var heldItemDescription=""
     var growth:GrowthInfo?
     var abilityDescription=""
     var entityData=""

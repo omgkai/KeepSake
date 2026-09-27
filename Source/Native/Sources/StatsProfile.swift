@@ -10,7 +10,7 @@ struct StatsProfile:View {
     private var hyper:Bool{has("HT_HP")}
     private func has(_ id:String)->Bool{model.state.fields.contains{$0.id==id && $0.editable}}
     private func number(_ id:String)->Int{Int(model.state.fields.first{$0.id==id}?.value ?? "0") ?? 0}
-    private var nature:Int{number(has("StatAlignment") ? "StatAlignment":"Nature")}
+    private var nature:Int{model.state.natureInfo?.alignment ?? 0}
     private func natureColor(_ i:Int)->Color{if i==0 || nature/5==nature%5{return .primary};return i==nature/5+1 ? .red:i==nature%5+1 ? .blue:.primary}
     var body:some View {
         VStack(alignment:.leading,spacing:18){

@@ -88,3 +88,7 @@ Common interface translations in Source/Assets/Localization are adapted from PKH
 ## Sparkle 2.10.0
 
 In-app updates use Sparkle, https://github.com/sparkle-project/Sparkle/tree/2.10.0. Its MIT license and bundled third-party notices are reproduced in Source/Packaging/Sparkle-LICENSE.txt and shipped as Sparkle-LICENSE.txt. The Swift package binary is pinned to the upstream archive checksum.
+
+## Held-item descriptions
+
+English item flavor text and legacy item mappings are from [PokeAPI](https://github.com/PokeAPI/pokeapi/tree/master/data/v2/csv): item_flavor_text.csv, item_names.csv and item_game_indices.csv, retrieved September 27, 2026. The compact offline catalog is in Source/Engine/GameData/itemDescriptions.json. Descriptions prefer the loaded game, with an explicitly labeled reference fallback when unavailable. Pokémon game text belongs to its respective rights holders.

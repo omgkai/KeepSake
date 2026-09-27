@@ -1,28 +1,97 @@
-# KeepSake
+<p align="center">
+  <img src="docs/images/keepsake-banner.svg" width="100%" alt="KeepSake — Every companion has a story. Pokémon save editing and personal journals, made for Mac." />
+</p>
 
-**Every companion has a story.**
+<p align="center">
+  <strong>A home for the Pokémon you keep coming back to.</strong><br />
+  A native SwiftUI save editor with personal journals, saved teams, and a little room for nostalgia.
+</p>
 
-KeepSake is a native macOS Pokémon save editor and personal journal, powered by PKHeX.Core and offline Auto-Legality. It combines game-aware editing with customizable journals, teams, trainer cards, themes, and Pokémon artwork.
+<p align="center">
+  <a href="https://github.com/omgkai/KeepSake/releases/latest"><strong>↓ Download for Mac</strong></a> &nbsp; · &nbsp;
+  <a href="#a-look-inside">Take a look</a> &nbsp; · &nbsp;
+  <a href="#your-first-adventure">Get started</a> &nbsp; · &nbsp;
+  <a href="https://github.com/omgkai/KeepSake/issues">Support</a> &nbsp; · &nbsp;
+  <a href="#credits-and-license">Credits</a>
+</p>
 
-Requires macOS 14 or later. Apple Silicon and Intel builds include their own runtimes; Wine and a separate .NET installation are unnecessary.
+<p align="center"><sub>macOS 14+ &nbsp; / &nbsp; Apple Silicon + Intel &nbsp; / &nbsp; Apple notarized &nbsp; / &nbsp; GPL-3.0-or-later</sub></p>
 
-## Downloads and updates
+![KeepSake’s Pokémon editor with a Legends: Arceus save, box sprites, and party](docs/screenshots/editor.png)
 
-Published builds appear on the [Releases page](https://github.com/omgkai/KeepSake/releases). If no download is listed yet, the first signed build is still being prepared.
+## Made for your adventures
 
-KeepSake 0.38 and later use Sparkle to download, verify, install and relaunch updates inside the app. Choose **KeepSake → Check for Updates**, then **Install Update**. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open save workspace can cancel quitting to protect unsaved edits. Updates use signed architecture-specific feeds and signed archives; no saves or trainer details are sent.
+KeepSake brings PKHeX.Core and offline Auto-Legality to a native Mac interface. Edit your collection, find encounters, organize teams, and keep the memories that make those Pokémon yours.
 
-**One-time migration:** 0.37 and earlier only open the release page. Download and replace the app once to install the latest version; subsequent updates install in-app. If macOS requests authorization to replace a copy in Applications, complete the system prompt.
+| The editor | The keepsakes | Your Mac |
+| :--- | :--- | :--- |
+| Pokémon, boxes, stats, moves, trainer details and legality reports. | Companion journals, favorite Pokémon, team pages and custom covers. | Native SwiftUI, independent save windows, drag-and-drop and in-app updates. |
+| Inventory, Pokédex, Mystery Gifts and game-specific tools. | Local display names and stories, separate from exported game data. | Game colors, personal presets, pixel sprites and HD portraits. |
 
-## Your adventures
+## Download
 
-- Open a save or Pokémon file, or drop it into the editor. Explore game-specific sample workspaces without opening a personal file.
-- Edit Pokémon, boxes, trainer details, inventory, Pokédex, Mystery Gifts and game-specific collections. Available tools follow the loaded game and format.
-- Export an edited copy; your original save stays intact. Set pending Pokémon edits to a slot before exporting the save.
-- Capture your current party as a journal team. Add memories, favorites, custom names and covers without changing game data.
-- Choose sprites, HOME portraits or game portraits, plus themes and custom colors.
+| Your Mac | Choose this release asset |
+| :--- | :--- |
+| **Apple Silicon** · M-series | `KeepSake-<version>-macOS-arm64.zip` |
+| **Intel** | `KeepSake-<version>-macOS-x86_64.zip` |
 
-Choose **File → New KeepSake Window (⌘N)** to open another independent save workspace. Each window has its own save, editor and Undo history. Journals and appearance preferences are shared. Closing a window only closes that workspace; unsaved changes require confirmation. Dragging Pokémon between separate save windows is not supported; export and open a Pokémon file instead. About and Support also open separately.
+**[Get the latest signed release →](https://github.com/omgkai/KeepSake/releases/latest)**
+
+Unzip the download and move **KeepSake.app** to **Applications**. Both builds include their runtime; no separate .NET installation is required.
+
+Already using **0.38 or later**? Choose **KeepSake → Check for Updates** to download, verify, install and relaunch. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open workspace can cancel quitting to protect unsaved edits. Versions 0.37 and earlier need one manual app replacement.
+
+## A look inside
+
+### A journal worth keeping
+
+Give companions their own stories, save your favorite teams, and choose covers that feel like you. Journal names, memories and styles stay in KeepSake without changing Pokémon data.
+
+<table>
+<tr><td width="50%"><img src="docs/screenshots/journal.png" alt="Personal Pokémon journal with navy and gold companion cards" /><br /><strong>Your companions</strong><br />Names, favorites and memories in one place.</td><td width="50%"><img src="docs/screenshots/teams.png" alt="Two saved teams with different cover colors" /><br /><strong>Your teams</strong><br />Keep more than one adventure close.</td></tr>
+<tr><td width="50%"><img src="docs/screenshots/trainer.png" alt="Unova trainer passport displaying a party of six and eight badges" /><br /><strong>Your trainer passport</strong><br />A team, a region and the badges along the way.</td><td width="50%"><img src="docs/screenshots/journal-customization.png" alt="Companion journal customization with cover styles and a story editor" /><br /><strong>Your own details</strong><br />Custom covers and room to tell their story.</td></tr>
+</table>
+
+### The tools behind the adventure
+
+Search encounters and event gifts, inspect stats and legality, and use the tools available for your save’s game. Click a screenshot to see the full-size capture.
+
+<details>
+<summary><strong>Stats &amp; legality</strong> — understand your Pokémon</summary>
+
+![Stat profile showing base stats, IVs, grit and totals](docs/screenshots/stats.png)
+![Auto-Legality result awaiting review](docs/screenshots/auto-legality.png)
+![Expanded PKHeX legality report](docs/screenshots/legality-report.png)
+
+</details>
+
+<details>
+<summary><strong>Encounters &amp; Mystery Gifts</strong> — find the next companion</summary>
+
+![Encounter search with Legends: Arceus results](docs/screenshots/encounters.png)
+![Mystery Gift gallery with language and origin filters](docs/screenshots/mystery-gifts.png)
+
+</details>
+
+<details>
+<summary><strong>Fashion, Pokédex &amp; save tools</strong> — the rest of your world</summary>
+
+![Hisui wardrobe with clothing categories and ownership controls](docs/screenshots/fashion.png)
+![Pokédex cards displaying seen and caught status](docs/screenshots/pokedex.png)
+![Species guide with types, abilities and base stats](docs/screenshots/species-guide.png)
+
+</details>
+
+<sub>Screenshots supplied by Kai White, September 2026. Available controls depend on the loaded save; screenshots may show an earlier interface revision.</sub>
+
+## Your first adventure
+
+1. Open a save or Pokémon file, or drag it into the window. Sample workspaces are also available.
+2. Select a Pokémon, make your edits, then **Set to Slot** to keep the edited Pokémon in the save.
+3. Choose **Export Copy** to write the edited save while keeping your original file intact.
+4. Use **Save Party as Team** to add your current party to the journal, then make the cover and story yours.
+
+Choose **File → New KeepSake Window (⌘N)** for another independent save workspace. Journals and appearance preferences are shared. To move Pokémon between separate save windows, export and open a Pokémon file; direct cross-window Pokémon dragging is not supported.
 
 ## Backup and restore
 

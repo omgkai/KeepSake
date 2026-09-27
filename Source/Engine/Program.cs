@@ -534,7 +534,7 @@ sealed partial class EditorSession
             catch (Exception ex) { legality = "unknown"; report = "Legality analysis could not complete: " + ex.Message; }
         }
         return new {
-            growth = GrowthInfo(), abilityDescription = AbilityDescription(),
+            growth = GrowthInfo(), abilityDescription = AbilityDescription(), heldItemDescription = HeldItemDescription(), natureInfo = NatureInfo(),
             engineVersion = typeof(PKM).Assembly.GetName().Version?.ToString() ?? "unknown",
             loaded = save != null || entity != null, hasSave = save != null, demo, dirty, pending,
             sourceName = sourcePath != null ? Path.GetFileName(sourcePath) : entitySourcePath != null ? Path.GetFileName(entitySourcePath) : demo ? "Sample workspace" : "",
