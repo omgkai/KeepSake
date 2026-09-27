@@ -616,8 +616,19 @@ sealed partial class EditorSession
     static bool Scalar(Type t) { t = Nullable.GetUnderlyingType(t) ?? t; return t.IsPrimitive || t.IsEnum || t == typeof(string) || t == typeof(decimal) || t == typeof(DateOnly) || t == typeof(DateTime); }
     static string ValueText(object? value) => value switch { null => "", bool v => v ? "true" : "false", DateOnly d => d.ToString("yyyy-MM-dd"), DateTime d => d.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture), IFormattable f => f.ToString(null, CultureInfo.InvariantCulture) ?? "", _ => value.ToString() ?? "" };
     static int InheritanceDepth(Type? type) => type == null ? 0 : 1 + InheritanceDepth(type.BaseType);
-    static IEnumerable<PropertyInfo> Properties(object obj) => obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
-        .GroupBy(p=>p.Name).Select(g=>g.OrderByDescending(p=>InheritanceDepth(p.DeclaringType)).First()).OrderBy(p=>p.Name);
+    // Cache type metadata only. Values, edit state and legality always come from the current entity.
+    static readonly System.Collections.Concurrent.ConcurrentDictionary<Type, PropertyInfo[]> propertyCache = new();
+    static readonly System.Collections.Concurrent.ConcurrentDictionary<PropertyInfo, Field> fieldShapeCache = new();
+    static IEnumerable<PropertyInfo> Properties(object obj) => propertyCache.GetOrAdd(obj.GetType(), type => type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+        .GroupBy(p=>p.Name).Select(g=>g.OrderByDescending(p=>InheritanceDepth(p.DeclaringType)).First()).OrderBy(p=>p.Name).ToArray());
+    static Field FieldShape(PropertyInfo p) => fieldShapeCache.GetOrAdd(p, p => {
+        var t = Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType;
+        var choices = t.IsEnum ? Enum.GetNames(t).Select(n => new Choice(n,n)).ToArray() : Array.Empty<Choice>();
+        var setterBody = p.SetMethod?.GetMethodBody()?.GetILAsByteArray();
+        var noOpSetter = setterBody != null && setterBody.All(b => b is 0x00 or 0x2A);
+        return new Field(p.Name, Label(p.Name), "", "", t == typeof(bool) ? "bool" : t == typeof(string) ? "string" : t.IsEnum ? "enum" : t == typeof(DateTime) ? "datetime" : t == typeof(DateOnly) ? "date" : "number", p.SetMethod?.IsPublic == true && !noOpSetter,
+            p.GetCustomAttribute<DescriptionAttribute>()?.Description ?? "", null, choices);
+    });
     static PropertyInfo? Property(object obj, string name) => Properties(obj).FirstOrDefault(p=>p.Name == name);
     static Field[] Fields(object obj, string group, string prefix = "", int depth = 0)
     {
@@ -630,11 +641,8 @@ sealed partial class EditorSession
             var id = prefix + p.Name;
             if (Scalar(t))
             {
-                var choices = t.IsEnum ? Enum.GetNames(t).Select(n => new Choice(n,n)).ToArray() : [];
-                var setterBody = p.SetMethod?.GetMethodBody()?.GetILAsByteArray();
-                var noOpSetter = setterBody != null && setterBody.All(b => b is 0x00 or 0x2A);
-                result.Add(new(id, Label(p.Name), group, ValueText(value), t == typeof(bool) ? "bool" : t == typeof(string) ? "string" : t.IsEnum ? "enum" : t == typeof(DateTime) ? "datetime" : t == typeof(DateOnly) ? "date" : "number", p.SetMethod?.IsPublic == true && !noOpSetter,
-                    p.GetCustomAttribute<DescriptionAttribute>()?.Description ?? (value is DateTime date && date.Kind == DateTimeKind.Utc ? "UTC · YYYY-MM-DD HH:mm:ss" : ""), null, choices));
+                var shape = FieldShape(p);
+                result.Add(shape with { id=id, group=group, value=ValueText(value), help=shape.help.Length>0 ? shape.help : value is DateTime date && date.Kind==DateTimeKind.Utc ? "UTC · YYYY-MM-DD HH:mm:ss" : "" });
             }
             else if (depth > 0 && value != null && t.Namespace == "PKHeX.Core" && !t.IsValueType)
                 result.AddRange(Fields(value, prefix == "" ? Label(p.Name) : group + " / " + Label(p.Name), id + ".", depth - 1));

@@ -126,7 +126,15 @@ final class Bridge: @unchecked Sendable {
 
 @MainActor final class EditorModel: ObservableObject {
     @Published var state = EditorState()
-    @Published var busy = false
+    private var sectionLoadPending = false
+    @Published var busy = false {
+        didSet { if oldValue && !busy && sectionLoadPending {
+            sectionLoadPending=false
+            Task { await loadSection() }
+        } }
+    }
+    struct SelectionTarget: Equatable {let box:Int;let slot:Int;let party:Bool}
+    @Published private(set) var selectionTarget:SelectionTarget?
     @Published var error: String?
     @Published var section = "Pokémon"
     @Published var fields: [Field] = []
@@ -196,20 +204,22 @@ final class Bridge: @unchecked Sendable {
         busy = false
     }
     func loadSection() async {
-        guard !busy else { return }
+        guard !busy else { sectionLoadPending=true; return }
+        let requested=section
+        // These pages already use current state or manage their own data requests.
+        guard ["Mystery Gifts","Settings","Advanced Save","Event Flags","Inventory","Pokédex","Storage","Fashion","Research","Gift Album"].contains(requested) else {return}
         busy = true
         do {
-            if section == "Pokémon" { state = try await bridge.send(["op":"state"], as: EditorState.self) }
-            if section == "Mystery Gifts", gifts.isEmpty { gifts = try await bridge.send(["op":"gifts"],as:[GiftEntry].self) }
-            if section == "Settings" { fields = try await bridge.send(["op":"settings"], as: [Field].self) }
-            if section == "Advanced Save", state.hasSave { saveObject = try await bridge.send(["op":"saveObject", "path":saveObject?.path ?? ""], as: SaveObjectData.self) }
-            if section == "Event Flags", state.hasSave { events = try await bridge.send(["op":"events"], as: EventData.self).entries }
-            if section == "Inventory", state.canInventory { inventory = try await bridge.send(["op":"inventory"], as: InventoryData.self).pouches }
-            if section == "Pokédex", state.hasSave { dex = try await bridge.send(["op":"dex"], as: DexData.self).entries }
-            if section == "Storage", state.hasSave { storage = try await bridge.send(["op":"storage"],as:[StorageEntry].self) }
-            if section == "Fashion", state.canFashion {fashion=try await bridge.send(["op":"fashion"],as:FashionData.self)}
-            if section == "Research", state.canResearch { research = try await bridge.send(["op":"research","species":researchSpecies],as:ResearchData.self) }
-            if section == "Gift Album", state.canGiftAlbum {giftAlbum=try await bridge.send(["op":"giftAlbum"],as:AlbumData.self)}
+            if requested == "Mystery Gifts", gifts.isEmpty { gifts = try await bridge.send(["op":"gifts"],as:[GiftEntry].self) }
+            if requested == "Settings" { fields = try await bridge.send(["op":"settings"], as: [Field].self) }
+            if requested == "Advanced Save", state.hasSave { saveObject = try await bridge.send(["op":"saveObject", "path":saveObject?.path ?? ""], as: SaveObjectData.self) }
+            if requested == "Event Flags", state.hasSave { events = try await bridge.send(["op":"events"], as: EventData.self).entries }
+            if requested == "Inventory", state.canInventory { inventory = try await bridge.send(["op":"inventory"], as: InventoryData.self).pouches }
+            if requested == "Pokédex", state.hasSave { dex = try await bridge.send(["op":"dex"], as: DexData.self).entries }
+            if requested == "Storage", state.hasSave { storage = try await bridge.send(["op":"storage"],as:[StorageEntry].self) }
+            if requested == "Fashion", state.canFashion {fashion=try await bridge.send(["op":"fashion"],as:FashionData.self)}
+            if requested == "Research", state.canResearch { research = try await bridge.send(["op":"research","species":researchSpecies],as:ResearchData.self) }
+            if requested == "Gift Album", state.canGiftAlbum {giftAlbum=try await bridge.send(["op":"giftAlbum"],as:AlbumData.self)}
         } catch { self.error = error.localizedDescription }
         busy = false
     }
@@ -307,10 +317,30 @@ final class Bridge: @unchecked Sendable {
     func demo() { guard !busy else{return};showSamplePicker=true }
     func startSample(_ version:String) { guard !busy, confirmDiscard() else{return};showSamplePicker=false;Task { await command(["op":"demo","version":version],status:"Sample workspace — explore without a save file") } }
     func select(_ slot: Slot) {
-        guard confirmDiscard(all: false) else { return }
-        Task { await command(["op":"select", "box":state.box, "slot":slot.index, "party":slot.party]) }
+        guard !busy || selectionTarget != nil else {return}
+        if selectionTarget == nil {guard confirmDiscard(all:false) else{return}}
+        let target=SelectionTarget(box:state.box,slot:slot.index,party:slot.party)
+        if selectionTarget != nil {selectionTarget=target;return}
+        selectionTarget=target;busy=true
+        Task {
+            defer {selectionTarget=nil;busy=false}
+            do {
+                try await resolveLatestSelection(current: { self.selectionTarget }, load: { requested in
+                    try await self.bridge.send(["op":"select","box":requested.box,"slot":requested.slot,"party":requested.party],as:EditorState.self)
+                }, apply: { self.state=$0 })
+            } catch {
+                // Selection may have succeeded before a later request failed. Reconcile before unlocking edits.
+                if let current=try? await bridge.send(["op":"state"],as:EditorState.self) {state=current}
+                self.error=error.localizedDescription
+            }
+        }
+    }
+    func isSelected(_ slot:Slot)->Bool {
+        if let target=selectionTarget {return target.slot==slot.index && target.party==slot.party}
+        return state.slot==slot.index && state.party==slot.party
     }
     func chooseBox(_ box: Int) {
+        guard !busy else{return}
         guard confirmDiscard(all: false) else { return }
         Task { await command(["op":"select", "box":box, "slot":0, "party":false]) }
     }

@@ -75,7 +75,7 @@ struct ThemePicker:View {
                 }
                 ColorPresetsPicker(first:$accentHex,second:$companionHex,onSelect:{custom=true})
             }
-            AppearanceCard(title:"Inspired by your adventures",symbol:"map.fill") {
+            AppearanceCard(title:"Game themes",symbol:"map.fill") {
                 Text("Choose a palette, then fine-tune it with your own colors.").font(.callout).foregroundStyle(.secondary)
                 LazyVGrid(columns:[GridItem(.adaptive(minimum:170))],spacing:10) {
                     ForEach(GameTheme.all) { theme in
@@ -140,7 +140,7 @@ struct AppearancePreview:View {
     var body:some View {
         HStack(spacing:24) {
             VStack(alignment:.leading,spacing:7) {
-                Label("Made for your adventures",systemImage:"book.closed.fill").font(.headline)
+                Label("Appearance preview",systemImage:"book.closed.fill").font(.headline)
                 Text("A live look at your colors, artwork and box slots.").font(.callout).foregroundStyle(.secondary)
             }.frame(maxWidth:.infinity,alignment:.leading)
             HStack(spacing:8) {

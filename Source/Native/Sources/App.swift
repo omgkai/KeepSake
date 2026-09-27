@@ -167,6 +167,7 @@ struct ContentView: View {
                     else if model.section == "Inventory" { InventoryView() }
                     else { DexView() }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                .disabled(model.busy && !(model.selectionTarget != nil && model.section == "Pokémon"))
                 Divider()
                 HStack(spacing: 8) {
                     if model.busy { ProgressView().controlSize(.mini) } else { Circle().fill(.green).frame(width: 5, height: 5) }
@@ -188,13 +189,12 @@ struct ContentView: View {
                 }
                 ToolbarItemGroup(placement: .primaryAction) {
                     Button { showAppearance=true } label: { HStack(spacing:6) { Image(systemName:"paintpalette.fill"); Text("Appearance") } }.help("Game themes, custom colors, and light or dark appearance")
-                    Button { model.open() } label: { Label("Open", systemImage:"folder") }.help("Open save or Pokémon file (⌘O)")
-                    Button { Task { await model.command(["op":"undo"]) } } label: { Image(systemName:"arrow.uturn.backward") }.disabled(!model.state.canUndo || model.fieldDrafts).help("Undo")
-                    Button { model.exportSave() } label: { Label("Export Copy", systemImage:"square.and.arrow.up") }.disabled(!model.state.hasSave || model.state.demo)
+                    Button { model.open() } label: { Label("Open", systemImage:"folder") }.disabled(model.busy).help("Open save or Pokémon file (⌘O)")
+                    Button { Task { await model.command(["op":"undo"]) } } label: { Image(systemName:"arrow.uturn.backward") }.disabled(model.busy || !model.state.canUndo || model.fieldDrafts).help("Undo")
+                    Button { model.exportSave() } label: { Label("Export Copy", systemImage:"square.and.arrow.up") }.disabled(model.busy || !model.state.hasSave || model.state.demo)
                 }
             }
         }
-        .disabled(model.busy)
         .background(WindowCloseGuard())
         .dropDestination(for:FileDropItem.self) { files,_ in model.openFiles(files.map(\.url)) } isTargeted: { fileTargeted=$0 }
         .overlay {

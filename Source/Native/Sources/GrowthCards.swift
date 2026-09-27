@@ -18,7 +18,7 @@ struct GrowthCards:View {
                 if model.state.fields.contains(where:{$0.id==g.friendshipField && $0.editable}) {EditorCard(title:g.egg ? "Egg progress":"Friendship") {
                     HStack(spacing:14) {
                         Image(systemName:g.egg ? "oval.fill":"heart.fill").font(.system(size:28)).foregroundStyle(.pink).frame(width:48,height:48).background(.pink.opacity(0.1),in:RoundedRectangle(cornerRadius:14))
-                        VStack(alignment:.leading,spacing:5) {Text(g.egg ? "Hatch counter":"A bond that grows").font(.headline);Text(g.egg ? "This stored value tracks hatching instead of friendship." : "Friendship with the current trainer").font(.caption).foregroundStyle(.secondary)}
+                        VStack(alignment:.leading,spacing:5) {Text(g.egg ? "Hatch counter":"Friendship").font(.headline);Text(g.egg ? "This stored value tracks hatching instead of friendship." : "Friendship with the current trainer").font(.caption).foregroundStyle(.secondary)}
                         Spacer()
                         Text("\(g.friendship)").font(.system(.title2,design:.rounded).bold()).foregroundStyle(.pink)
                     }

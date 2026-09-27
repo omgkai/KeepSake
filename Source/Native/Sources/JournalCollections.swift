@@ -7,12 +7,12 @@ func journalColors(_ style:String,_ first:String?=nil,_ second:String?=nil)->[Co
 struct JournalCoverView:View {
     let cover:JournalCover
     let companions:Int,teams:Int
-    var body:some View {HStack(spacing:24){Image(systemName:cover.emblem).font(.system(size:38,weight:.light)).foregroundStyle(Color(hex:"E3C576")).frame(width:86,height:100).background(.white.opacity(0.06),in:RoundedRectangle(cornerRadius:16));VStack(alignment:.leading,spacing:10){Text("K E E P S A K E  /  V O L .  0 1").font(.system(size:10,weight:.semibold,design:.monospaced)).foregroundStyle(Color(hex:"E3C576"));Text(cover.title).font(.system(size:30,weight:.semibold,design:.serif)).lineLimit(2);Text(cover.subtitle).font(.callout).foregroundStyle(.white.opacity(0.75)).lineLimit(3);Text("\(companions) \(companions == 1 ? "companion":"companions")  ·  \(teams) \(teams == 1 ? "team":"teams")").font(.caption).foregroundStyle(.white.opacity(0.6))};Spacer(minLength:0)}.padding(26).foregroundStyle(.white).frame(maxWidth:.infinity,alignment:.leading).background(LinearGradient(colors:journalColors(cover.style,cover.accentHex,cover.companionHex),startPoint:.topLeading,endPoint:.bottomTrailing),in:RoundedRectangle(cornerRadius:24)).overlay(RoundedRectangle(cornerRadius:24).stroke(Color(hex:"E3C576").opacity(0.45),lineWidth:1))}
+    var body:some View {HStack(spacing:24){Image(systemName:cover.emblem).font(.system(size:38,weight:.light)).foregroundStyle(Color(hex:"E3C576")).frame(width:86,height:100).background(.white.opacity(0.06),in:RoundedRectangle(cornerRadius:16));VStack(alignment:.leading,spacing:10){Text("K E E P S A K E  /  V O L .  0 1").font(.system(size:10,weight:.semibold,design:.monospaced)).foregroundStyle(Color(hex:"E3C576"));Text(cover.title).font(.system(size:30,weight:.semibold,design:.serif)).lineLimit(2);if !cover.subtitle.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty {Text(cover.subtitle).font(.callout).foregroundStyle(.white.opacity(0.75)).lineLimit(3)};Text("\(companions) \(companions == 1 ? "companion":"companions")  ·  \(teams) \(teams == 1 ? "team":"teams")").font(.caption).foregroundStyle(.white.opacity(0.6))};Spacer(minLength:0)}.padding(26).foregroundStyle(.white).frame(maxWidth:.infinity,alignment:.leading).background(LinearGradient(colors:journalColors(cover.style,cover.accentHex,cover.companionHex),startPoint:.topLeading,endPoint:.bottomTrailing),in:RoundedRectangle(cornerRadius:24)).overlay(RoundedRectangle(cornerRadius:24).stroke(Color(hex:"E3C576").opacity(0.45),lineWidth:1))}
 }
 struct JournalTeamCard:View {
     @EnvironmentObject var journals:JournalStore
     let team:JournalTeam
-    var body:some View {VStack(alignment:.leading,spacing:16){HStack{Image(systemName:team.emblem).foregroundStyle(Color(hex:"E3C576"));Text(team.name).font(.title3.bold()).lineLimit(1);Spacer();Text("\(team.members.count)/6").font(.caption)};HStack(spacing:4){ForEach(0..<6,id:\.self){i in Group{if i<team.members.count,let e=journals.entries[team.members[i]]{PokemonSprite(name:e.sprite,portrait:e.portrait).accessibilityLabel(e.title)}else{Image(systemName:"plus").foregroundStyle(.white.opacity(0.3))}}.frame(maxWidth:.infinity).frame(height:48).background(.white.opacity(0.06),in:RoundedRectangle(cornerRadius:12))}};Text(team.notes.isEmpty ? "An adventure waiting to be written…" : team.notes).font(.callout).foregroundStyle(.white.opacity(0.7)).lineLimit(2).frame(height:36,alignment:.top)}.padding(20).foregroundStyle(.white).background(LinearGradient(colors:journalColors(team.style,team.accentHex,team.companionHex),startPoint:.topLeading,endPoint:.bottomTrailing),in:RoundedRectangle(cornerRadius:22))}
+    var body:some View {VStack(alignment:.leading,spacing:16){HStack{Image(systemName:team.emblem).foregroundStyle(Color(hex:"E3C576"));Text(team.name).font(.title3.bold()).lineLimit(1);Spacer();Text("\(team.members.count)/6").font(.caption)};HStack(spacing:4){ForEach(0..<6,id:\.self){i in Group{if i<team.members.count,let e=journals.entries[team.members[i]]{PokemonSprite(name:e.sprite,portrait:e.portrait).accessibilityLabel(e.title)}else{Image(systemName:"plus").foregroundStyle(.white.opacity(0.3))}}.frame(maxWidth:.infinity).frame(height:48).background(.white.opacity(0.06),in:RoundedRectangle(cornerRadius:12))}};Text(team.notes.isEmpty ? "Add team notes…" : team.notes).font(.callout).foregroundStyle(.white.opacity(0.7)).lineLimit(2).frame(height:36,alignment:.top)}.padding(20).foregroundStyle(.white).background(LinearGradient(colors:journalColors(team.style,team.accentHex,team.companionHex),startPoint:.topLeading,endPoint:.bottomTrailing),in:RoundedRectangle(cornerRadius:22))}
 }
 struct JournalStylePicker:View {
     @Binding var style:String
@@ -24,7 +24,38 @@ struct JournalCoverEditor:View {
     @Environment(\.dismiss) private var dismiss
     @State private var draft=JournalCover()
     @State private var error:String?
-    var body:some View {ScrollView{VStack(alignment:.leading,spacing:20){HStack{Text("Make it your journal").font(.title2.bold());Spacer();Button("Cancel"){dismiss()};Button("Save Cover"){do{try journals.saveCover(draft);dismiss()}catch{self.error=error.localizedDescription}}.buttonStyle(.borderedProminent)};JournalCoverView(cover:draft,companions:journals.entries.count,teams:journals.teams.count);TextField("Journal title",text:$draft.title).textFieldStyle(.roundedBorder);TextField("A motto or dedication",text:$draft.subtitle).textFieldStyle(.roundedBorder);JournalStylePicker(style:$draft.style,emblem:$draft.emblem);JournalCustomColors(first:$draft.accentHex,second:$draft.companionHex,style:draft.style);if let error{Text(error).foregroundStyle(.red)}}.padding(26)}.frame(width:670,height:710).onAppear{draft=journals.cover}}
+    var body:some View {
+        ScrollView {
+            VStack(alignment:.leading,spacing:20) {
+                HStack {
+                    Text("Customize Cover").font(.title2.bold())
+                    Spacer()
+                    Button("Cancel"){dismiss()}
+                    Button("Save Cover") {
+                        do {try journals.saveCover(draft);dismiss()}
+                        catch {self.error=error.localizedDescription}
+                    }.buttonStyle(.borderedProminent)
+                }
+                JournalCoverView(cover:draft,companions:journals.entries.count,teams:journals.teams.count)
+                VStack(alignment:.leading,spacing:8) {
+                    Text("Journal title").font(.headline)
+                    TextField("Journal title",text:$draft.title).textFieldStyle(.roundedBorder)
+                }
+                VStack(alignment:.leading,spacing:8) {
+                    HStack {
+                        Text("Subtitle (optional)").font(.headline)
+                        Spacer()
+                        Button("Clear"){draft.subtitle=""}.disabled(draft.subtitle.isEmpty)
+                    }
+                    TextField("Write your own motto or dedication",text:$draft.subtitle).textFieldStyle(.roundedBorder)
+                    Text("Leave blank for a title-only cover.").font(.caption).foregroundStyle(.secondary)
+                }
+                JournalStylePicker(style:$draft.style,emblem:$draft.emblem)
+                JournalCustomColors(first:$draft.accentHex,second:$draft.companionHex,style:draft.style)
+                if let error {Text(error).foregroundStyle(.red)}
+            }.padding(26)
+        }.frame(width:670,height:760).onAppear{draft=journals.cover}
+    }
 }
 struct JournalTeamEditor:View {
     @EnvironmentObject var journals:JournalStore

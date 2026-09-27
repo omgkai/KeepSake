@@ -20,7 +20,7 @@ struct JournalTeam:Codable,Equatable,Identifiable {
     var updated=Date()
 }
 struct JournalCover:Codable,Equatable {
-    var title="My Pokémon journal",subtitle="Every companion has a story.",style="Midnight",emblem="book.closed.fill"
+    var title="My Pokémon journal",subtitle="",style="Midnight",emblem="book.closed.fill"
     var accentHex:String?=nil,companionHex:String?=nil
     var updated=Date.distantPast
 }

@@ -25,7 +25,7 @@ struct GiftDatabaseView:View {
         VStack(alignment:.leading,spacing:16) {
             HStack(spacing:18) {
                 Image(systemName:"gift.fill").font(.system(size:32)).foregroundStyle(theme.accent).frame(width:68,height:68).background(theme.accent.opacity(0.12),in:RoundedRectangle(cornerRadius:20))
-                VStack(alignment:.leading,spacing:6){Text("A little mystery. A special memory.").font(.system(size:26,weight:.semibold,design:.rounded));Text("Discover event Pokémon and deliveries from every adventure.").font(.callout).foregroundStyle(.secondary)}
+                VStack(alignment:.leading,spacing:6){Text("Mystery Gifts").font(.system(size:26,weight:.semibold,design:.rounded));Text("Browse event Pokémon and gift cards.").font(.callout).foregroundStyle(.secondary)}
                 Spacer()
                 Menu {Button("Mystery Gift QR…"){showGiftQR=true};Button("Add Gift Folder…"){loadFolder()};Button("Export Filtered Cards…"){exportFiltered()}.disabled(filtered.filter(\.exportable).isEmpty);Divider();Button("Clear Folder Cards"){clearFolders()}.disabled(!model.gifts.contains{$0.source=="Folder"})} label:{Label("Library",systemImage:"folder.badge.plus")}.disabled(model.busy)
             }.padding(20).background(theme.accent.opacity(0.06),in:RoundedRectangle(cornerRadius:22))

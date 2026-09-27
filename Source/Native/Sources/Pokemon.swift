@@ -49,7 +49,7 @@ struct PokemonWorkspace: View {
                 else { SimplePokemonEditor(tab:tab).id(tab) }
                 Divider()
                 actions.padding(16)
-            }.frame(minWidth:500, idealWidth:560, maxWidth:.infinity)
+            }.frame(minWidth:500, idealWidth:560, maxWidth:.infinity).disabled(model.busy)
             if model.state.hasSave { BoxPanel().frame(minWidth:365, idealWidth:450, maxWidth:600) }
         }.sheet(isPresented:$summarySheet){PokemonSummaryView()}.sheet(isPresented:$qrSheet){PokemonQRView()}.sheet(isPresented:$teamImport){ShowdownTeamSheet()}.sheet(isPresented:$autoLegality){GenerationSheet(team:nil)}.sheet(item:$journal){JournalEditor(selection:$0)}.sheet(isPresented:$showImport) {
             VStack(alignment:.leading,spacing:16) {
@@ -120,10 +120,10 @@ struct BoxPanel: View {
                             ForEach(0..<model.state.boxCount,id:\.self) { i in Text("\(i+1) · \(model.state.boxNames[i])").tag(i) }
                         }.labelsHidden()
                         Button { model.chooseBox(min(model.state.boxCount-1,model.state.box+1)) } label: { Image(systemName:"chevron.right") }.disabled(model.state.box == model.state.boxCount-1)
-                    }.controlSize(.small)
-                    HStack {Button("Box Layout…"){showLayout=true}.disabled(model.fieldDrafts || model.state.pending);Button("Wallpaper…"){showWallpaper=true};Spacer();Text("Drag to move or swap").font(.caption2).foregroundStyle(.secondary)}
+                    }.controlSize(.small).disabled(model.busy)
+                    HStack {Button("Box Layout…"){showLayout=true}.disabled(model.fieldDrafts || model.state.pending);Button("Wallpaper…"){showWallpaper=true};Spacer();Text(model.selectionTarget != nil ? "Loading Pokémon…":"Drag to move or swap").font(.caption2).foregroundStyle(.secondary)}.disabled(model.busy)
                     LazyVGrid(columns:Array(repeating:GridItem(.flexible(),spacing:6),count:6),spacing:6) {
-                        ForEach(model.state.slots) { slot in slotButton(slot, selected:model.state.slot == slot.index && !model.state.party) }
+                        ForEach(model.state.slots) { slot in slotButton(slot, selected:model.isSelected(slot)) }
                     }.padding(10).background {
                         BoxWallpaperBackground(game:model.state.game,box:model.state.box,stored:model.state.boxLayout?.entries.first(where:{$0.id==model.state.box})?.sprite ?? "")
                     }.clipShape(RoundedRectangle(cornerRadius:14))
@@ -136,7 +136,7 @@ struct BoxPanel: View {
                         Button{partyCapture=model.state.journalParty}label:{Label("Save Party as Team",systemImage:"book.closed.fill")}.font(.caption).disabled(model.state.partySlots.allSatisfy{$0.empty} || model.busy)
                     }.padding(.top,8)
                     LazyVGrid(columns:Array(repeating:GridItem(.flexible(),spacing:6),count:6),spacing:6) {
-                        ForEach(model.state.partySlots) { slot in slotButton(slot, selected:model.state.slot == slot.index && model.state.party) }
+                        ForEach(model.state.partySlots) { slot in slotButton(slot, selected:model.isSelected(slot)) }
                     }
                 }
                 Text("Select a Pokémon • Edit • Set to Slot • Export Copy").font(.caption).foregroundStyle(.tertiary).lineSpacing(3)
@@ -149,7 +149,7 @@ struct BoxPanel: View {
     }
     private func viewButton(_ slot:Slot)->some View {
         Button { model.select(slot) } label: { Label("View",systemImage:"eye") }
-            .disabled(model.busy || slot.empty)
+            .disabled((model.busy && model.selectionTarget == nil) || slot.empty)
             .help("View this Pokémon in the editor")
     }
     private func setToSlotButton(_ slot:Slot)->some View {
@@ -160,7 +160,7 @@ struct BoxPanel: View {
     @ViewBuilder private func slotButton(_ slot:Slot,selected:Bool)->some View {
         let button=Button {model.select(slot)} label:{
             InteractiveSlotCell(slot:slot,selected:selected)
-                .onDrag {NSItemProvider(object:model.boxDragPayload(slot) as NSString)} preview:{PokemonDragPreview(slot:slot)}
+                .onDrag {model.busy ? NSItemProvider() : NSItemProvider(object:model.boxDragPayload(slot) as NSString)} preview:{PokemonDragPreview(slot:slot)}
         }
             .buttonStyle(PokemonSlotButtonStyle())
             .accessibilityLabel(slot.empty ? "Empty slot \(slot.index+1)" : "\(slot.name), level \(slot.level), slot \(slot.index+1)" + ((slot.heldItem ?? 0)>0 ? ", holding " + (slot.heldItemName ?? "an item") : ""))
@@ -169,7 +169,7 @@ struct BoxPanel: View {
                 .modifier(PokemonSlotDrop(slot:slot))
                 .contextMenu {
                     viewButton(slot);setToSlotButton(slot)
-                    Button("Move / Swap…"){transfer=SlotTransferRequest(payload:model.boxDragPayload(slot),name:slot.name,box:-1,slot:slot.index)}.disabled(slot.empty || model.state.pending || model.fieldDrafts)
+                    Button("Move / Swap…"){transfer=SlotTransferRequest(payload:model.boxDragPayload(slot),name:slot.name,box:-1,slot:slot.index)}.disabled(model.busy || slot.empty || model.state.pending || model.fieldDrafts)
                 }
                 .help("Drag to reorder your party or move to a box. Drop a box Pokémon here to swap, or use the next empty party slot to add it.")
         }
@@ -181,7 +181,7 @@ struct BoxPanel: View {
                     setToSlotButton(slot)
                     Divider()
                     Button("Move / Swap…") {transfer=SlotTransferRequest(payload:model.boxDragPayload(slot),name:slot.name,box:model.state.box,slot:slot.index)}
-                        .disabled(slot.empty || model.state.pending || model.fieldDrafts)
+                        .disabled(model.busy || slot.empty || model.state.pending || model.fieldDrafts)
                     Button("Box Layout…"){showLayout=true}.disabled(model.state.pending || model.fieldDrafts)
                 }
         }
