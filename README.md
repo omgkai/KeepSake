@@ -10,9 +10,7 @@ Requires macOS 14 or later. Apple Silicon and Intel builds include their own run
 
 Published builds appear on the [Releases page](https://github.com/omgkai/KeepSake/releases). If no download is listed yet, the first signed build is still being prepared.
 
-KeepSake 0.38 and later use Sparkle to download, verify, install and relaunch updates inside the app. Choose **KeepSake → Check for Updates**, then **Install Update**. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open save workspace can cancel quitting to protect unsaved edits. Updates use signed architecture-specific feeds and signed archives; no saves or trainer details are sent.
-
-**One-time migration:** 0.37 and earlier only open the release page. Download and replace the app once to install the latest version; subsequent updates install in-app. If macOS requests authorization to replace a copy in Applications, complete the system prompt.
+KeepSake 0.39 and later use Sparkle to download, verify, install and relaunch updates inside the app. Choose **KeepSake → Check for Updates**, then **Install Update**. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open save workspace can cancel quitting to protect unsaved edits. Updates use signed architecture-specific feeds and signed archives; no saves or trainer details are sent.
 
 ## Your adventures
 
