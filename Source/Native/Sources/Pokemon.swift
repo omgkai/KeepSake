@@ -5,7 +5,6 @@ struct PokemonWorkspace: View {
     @State private var journal:JournalSelection?
     @Environment(\.gameTheme) private var theme
     @EnvironmentObject var model: EditorModel
-    @State private var tab = "Main"
     @State private var report = false
     @State private var autoLegality=false
     @State private var showImport = false
@@ -14,7 +13,6 @@ struct PokemonWorkspace: View {
     @State private var teamImport=false
     @State private var qrSheet=false
     @State private var summarySheet=false
-    private let tabs = ["Main", "Met", "Stats", "Moves", "Trainer", "Cosmetics", "More"]
     var body: some View {
         HSplitView {
             VStack(spacing:0) {
@@ -38,15 +36,7 @@ struct PokemonWorkspace: View {
                             .foregroundStyle(model.state.legality == "valid" ? .green : .orange)
                     }.buttonStyle(.borderless).help(model.state.pkHaXMode ? "Automatic legality checks are disabled in Settings → Engine":"View full PKHeX legality report")
                 }.padding(22)
-                HStack(spacing:3) {
-                    ForEach(tabs,id:\.self) { name in
-                        Button { tab = name } label: { Text(LocalizedStringKey(name)).font(.system(size:11, weight:tab == name ? .semibold : .regular)).frame(maxWidth:.infinity,minHeight:36).contentShape(Rectangle()).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
-                    }
-                }.padding(.horizontal,16).padding(.bottom,10)
-                Divider()
-                if tab == "More" { MorePokemonView(openTab:{tab=$0}) }
-                else if tab == "Cosmetics" { CosmeticsView() }
-                else { SimplePokemonEditor(tab:tab).id(tab) }
+                PokemonEditorTabs()
                 Divider()
                 actions.padding(16)
             }.frame(minWidth:500, idealWidth:560, maxWidth:.infinity).disabled(model.busy)
@@ -98,6 +88,26 @@ struct PokemonWorkspace: View {
     }
     private func action(_ action: String) { Task { await model.command(["op":"entityAction", "action":action]) } }
 }
+// Keep tab-local state below the workspace so changing pages does not rebuild the box grid.
+private struct PokemonEditorTabs: View {
+    @Environment(\.gameTheme) private var theme
+    @State private var tab = "Main"
+    private let tabs = ["Main", "Met", "Stats", "Moves", "Trainer", "Cosmetics", "More"]
+    var body: some View {
+        VStack(spacing:0) {
+                HStack(spacing:3) {
+                    ForEach(tabs,id:\.self) { name in
+                        Button { tab = name } label: { Text(LocalizedStringKey(name)).font(.system(size:11, weight:tab == name ? .semibold : .regular)).frame(maxWidth:.infinity,minHeight:36).contentShape(Rectangle()).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
+                    }
+                }.padding(.horizontal,16).padding(.bottom,10)
+                Divider()
+                if tab == "More" { MorePokemonView(openTab:{tab=$0}) }
+                else if tab == "Cosmetics" { CosmeticsView() }
+                else { SimplePokemonEditor(tab:tab) }
+        }
+    }
+}
+
 struct BoxPanel: View {
     @State private var keyboardFocused=false
     @Environment(\.gameTheme) private var theme

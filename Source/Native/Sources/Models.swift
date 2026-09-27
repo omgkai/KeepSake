@@ -125,7 +125,11 @@ final class Bridge: @unchecked Sendable {
 }
 
 @MainActor final class EditorModel: ObservableObject {
-    @Published var state = EditorState()
+    private let choiceCache = ContextCache<[Choice]>()
+    private let sectionCache = ContextCache<Bool>()
+    @Published var state = EditorState() {
+        didSet { choiceCache.invalidate(); sectionCache.invalidate() }
+    }
     private var sectionLoadPending = false
     @Published var busy = false {
         didSet { if oldValue && !busy && sectionLoadPending {
@@ -160,7 +164,9 @@ final class Bridge: @unchecked Sendable {
     @Published var researchSpecies=25
     @Published var storage:[StorageEntry]=[]
     @Published var gifts:[GiftEntry]=[]
-    @Published var catalogs: [String: [Choice]] = [:]
+    @Published var catalogs: [String: [Choice]] = [:] {
+        didSet { choiceCache.invalidate(); sectionCache.invalidate() }
+    }
     let bridge = Bridge()
     var unsaved: Bool { state.dirty || state.pending || !drafts.isEmpty }
     var fieldDrafts: Bool { !drafts.isEmpty }
@@ -208,6 +214,9 @@ final class Bridge: @unchecked Sendable {
         let requested=section
         // These pages already use current state or manage their own data requests.
         guard ["Mystery Gifts","Settings","Advanced Save","Event Flags","Inventory","Pokédex","Storage","Fashion","Research","Gift Album"].contains(requested) else {return}
+        let cacheKey = requested + "|" + (saveObject?.path ?? "") + "|" + String(researchSpecies)
+        if sectionCache.value(for:cacheKey) != nil { return }
+        let generation = sectionCache.generation
         busy = true
         do {
             if requested == "Mystery Gifts", gifts.isEmpty { gifts = try await bridge.send(["op":"gifts"],as:[GiftEntry].self) }
@@ -220,6 +229,7 @@ final class Bridge: @unchecked Sendable {
             if requested == "Fashion", state.canFashion {fashion=try await bridge.send(["op":"fashion"],as:FashionData.self)}
             if requested == "Research", state.canResearch { research = try await bridge.send(["op":"research","species":researchSpecies],as:ResearchData.self) }
             if requested == "Gift Album", state.canGiftAlbum {giftAlbum=try await bridge.send(["op":"giftAlbum"],as:AlbumData.self)}
+            sectionCache.store(true, for:cacheKey, generation:generation)
         } catch { self.error = error.localizedDescription }
         busy = false
     }
@@ -281,7 +291,11 @@ final class Bridge: @unchecked Sendable {
     }
     func fetchChoices(_ kind: String) async throws -> [Choice] {
         if let saved = catalogs[kind] { return saved }
-        return try await bridge.send(["op":"lookup", "kind":kind], as: [Choice].self)
+        if let saved = choiceCache.value(for:kind) { return saved }
+        let generation = choiceCache.generation
+        let result = try await bridge.send(["op":"lookup", "kind":kind], as: [Choice].self)
+        choiceCache.store(result, for:kind, generation:generation)
+        return result
     }
     func choices(_ kind: String) async -> [Choice] {
         do { return try await fetchChoices(kind) }

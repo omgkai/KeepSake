@@ -40,7 +40,7 @@ struct JournalCard:View {
             Text(entry.displayName.isEmpty ? (entry.nickname.isEmpty ? entry.species : entry.nickname) : entry.displayName).font(.system(size:29,weight:.bold,design:.rounded)).lineLimit(2)
             Text(entry.game=="Personal journal" ? entry.species:entry.species+" · Lv. \(entry.level)").font(.callout).foregroundStyle(.white.opacity(0.8))
             Text(entry.game).font(.caption).foregroundStyle(.white.opacity(0.7))
-        }
+        }.frame(maxWidth:.infinity,alignment:.leading)
     }.padding(24).foregroundStyle(.white).background(LinearGradient(colors:colors,startPoint:.topLeading,endPoint:.bottomTrailing),in:RoundedRectangle(cornerRadius:26)).overlay(RoundedRectangle(cornerRadius:26).stroke(Color(hex:"DFC480").opacity(0.6),lineWidth:1))}
 }
 struct JournalLibrary:View {
