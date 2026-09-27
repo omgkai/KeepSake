@@ -4,10 +4,6 @@ Current release differences: independent save windows (⌘N), separate engine an
 
 The following inventory and dated notes describe earlier implementation milestones. They are not a claim that every Windows dialog has identical native behavior. Public builds since 0.36 have Developer ID signing and Apple notarization; real-save/game-load testing remains user-owned, and physical Intel testing remains open.
 
-# Historical inventory — 0.35 RC1
-
-The request is a SwiftUI Mac app with all the settings of Windows PKHeX. **That full-parity goal is still open.** RC1 is an offline test candidate. It is not a claim of exact Windows UI/settings equivalence or a notarized public release.
-
 ## Current implementation
 
 | Area | Coverage |
