@@ -34,9 +34,9 @@ struct PokemonWorkspace: View {
                     Spacer()
                     Button {journal=model.state.journalSelection} label:{Image(systemName:"heart.text.square").font(.title2)}.buttonStyle(.borderless).help("Personal journal — kept only in KeepSake").disabled(model.state.entityJournalKey.isEmpty)
                     Button { report = true } label: {
-                        Label(model.state.legality == "valid" ? "Legal" : model.state.legality == "invalid" ? "Review" : "Report", systemImage:model.state.legality == "valid" ? "checkmark.shield.fill" : "exclamationmark.shield")
+                        Label(model.state.pkHaXMode ? "PKHaX · Unchecked" : model.state.legality == "valid" ? "Legal" : model.state.legality == "invalid" ? "Review" : "Report", systemImage:model.state.legality == "valid" ? "checkmark.shield.fill" : "exclamationmark.shield")
                             .foregroundStyle(model.state.legality == "valid" ? .green : .orange)
-                    }.buttonStyle(.borderless).help("View full PKHeX legality report")
+                    }.buttonStyle(.borderless).help(model.state.pkHaXMode ? "Automatic legality checks are disabled in Settings → Engine":"View full PKHeX legality report")
                 }.padding(22)
                 HStack(spacing:3) {
                     ForEach(tabs,id:\.self) { name in

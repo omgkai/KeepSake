@@ -6,6 +6,7 @@ sealed partial class EditorSession
     Choice[] AbilityChoices(PKM? pk)
     {
         if (pk is null || pk.Format < 3 || pk.Species == 0) return [];
+        if(settings.PKHaXMode && pk.Format>=4) return Enumerable.Range(1,pk.MaxAbilityID).Select(id=>new Choice($"{id}:0",MoveLabel(strings.abilitylist,id))).ToArray();
         var pi = pk.PersonalInfo;
         var result = new List<Choice>();
         for (int slot = 0; slot < pi.AbilityCount; slot++)

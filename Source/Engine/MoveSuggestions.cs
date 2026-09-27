@@ -16,8 +16,8 @@ sealed partial class EditorSession
             for (int i = 0; i < 4; i++)
             {
                 var check = analysis == null ? default : (group == 0 ? analysis.Info.Moves[i] : analysis.Info.Relearn[i]);
-                var status = analysis?.Parsed != true || !check.IsParsed ? "unknown" : !check.Valid ? "illegal" : moves[i] == 0 ? "empty" : "legal";
-                var detail = status == "unknown" ? "PKHeX could not evaluate this move. Check the full legality report." : check.Summary(LegalityLocalizationContext.Create(analysis!));
+                var status = settings.PKHaXMode ? "unchecked" : analysis?.Parsed != true || !check.IsParsed ? "unknown" : !check.Valid ? "illegal" : moves[i] == 0 ? "empty" : "legal";
+                var detail = settings.PKHaXMode ? "PKHaX mode: move legality is not checked." : status == "unknown" ? "PKHeX could not evaluate this move. Check the full legality report." : check.Summary(LegalityLocalizationContext.Create(analysis!));
                 var type=MoveInfo.GetType(moves[i],pk.Context);
                 rows.Add(new(i + 1, group != 0, moves[i], status, detail,type,MoveLabel(strings.Types,type)));
             }
@@ -44,7 +44,7 @@ sealed partial class EditorSession
         var pk=RequireEntity().Clone();
         if(r.TryGetProperty("edits",out var edits))ApplyPokemonEdits(pk,edits);
         var info=new LegalMoveInfo();bool evaluated=false;
-        if(pk.Species>0) {
+        if(pk.Species>0 && !settings.PKHaXMode) {
             try {
                 var analysis=new LegalityAnalysis(pk);
                 if(analysis.Parsed) {info.ReloadMoves(analysis);evaluated=Enumerable.Range(1,pk.MaxMoveID).Any(i=>info.CanLearn((ushort)i));}
@@ -52,7 +52,7 @@ sealed partial class EditorSession
         }
         var entries=Enumerable.Range(0,Math.Min(pk.MaxMoveID+1,strings.movelist.Length)).Select(i=> {
             var move=(ushort)i;var type=MoveInfo.GetType(move,pk.Context);
-            return new MoveOption(i,i==0 ? "No move" : strings.movelist[i],type,MoveLabel(strings.Types,type),MoveInfo.GetPP(pk.Context,move),i==0 ? "empty" : !evaluated ? "unknown" : info.CanLearn(move) ? "learnable" : "unavailable",info.GetMoveSources(move).ToString());
+            return new MoveOption(i,i==0 ? "No move" : strings.movelist[i],type,MoveLabel(strings.Types,type),MoveInfo.GetPP(pk.Context,move),i==0 ? "empty" : settings.PKHaXMode ? "unchecked" : !evaluated ? "unknown" : info.CanLearn(move) ? "learnable" : "unavailable",info.GetMoveSources(move).ToString());
         }).OrderBy(m=>m.id==0 ? 0 : m.status=="learnable" ? 1 : 2).ThenBy(m=>m.name).ToArray();
         return new {revision,species=Species(pk.Species),entries};
     }

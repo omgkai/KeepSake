@@ -118,20 +118,20 @@ sealed partial class EditorSession
         if(N(r,"revision")!=revision)throw new Exception("The slot changed. Hover again to refresh.");
         if(isParty ? s<0 || s>=sav.PartyCount : b<0 || b>=sav.BoxCount || s<0 || s>=sav.BoxSlotCount)throw new Exception("Invalid slot.");
         var pk=isParty?sav.GetPartySlotAtIndex(s):sav.GetBoxSlotAtIndex(b,s);
-        var analysis=new LegalityAnalysis(pk);Span<ushort> moveIDs=stackalloc ushort[4];pk.GetMoves(moveIDs);
+        var analysis=settings.PKHaXMode?null:new LegalityAnalysis(pk);Span<ushort> moveIDs=stackalloc ushort[4];pk.GetMoves(moveIDs);
         var moves=moveIDs.ToArray().Select((m,i)=> {
             byte type=MoveInfo.GetType(m,pk.Context);var name=MoveLabel(strings.movelist,m);
             if(m==(ushort)Move.HiddenPower && pk.Context!=EntityContext.Gen8a && HiddenPower.TryGetTypeIndex(pk.HPType,out type))name+=$" ({MoveLabel(strings.Types,type)}) [{pk.HPPower}]";
-            return new {name,type,typeName=MoveLabel(strings.Types,type),legal=analysis.Parsed&&analysis.Info.Moves[i].Valid};
+            return new {name,type,typeName=MoveLabel(strings.Types,type),legal=analysis?.Parsed==true&&analysis.Info.Moves[i].Valid};
         }).ToArray();
         var order=BattleTemplateConfig.CommunityStandard.ToArray().Where(t=>t is not (BattleTemplateToken.FirstLine or BattleTemplateToken.Moves)).ToArray();
         var config=new BattleTemplateExportSettings(order,"en");
-        var encounterLines=new List<string>();LegalityFormatting.AddEncounterInfo(LegalityLocalizationContext.Create(analysis),encounterLines);
+        var encounterLines=new List<string>();if(analysis!=null)LegalityFormatting.AddEncounterInfo(LegalityLocalizationContext.Create(analysis),encounterLines);
         var previewText=ShowdownParsing.GetLocalizedPreviewText(pk,config);
         if(pk is IGanbaru grit) {Span<byte> values=stackalloc byte[6];grit.GetGVs(values);previewText+="\nGrit (HP/Atk/Def/Spe/SpA/SpD): "+string.Join(" / ",values.ToArray());}
         if(pk is IAwakened awakened) {Span<byte> values=stackalloc byte[6];awakened.GetAVs(values);previewText+="\nAVs (HP/Atk/Def/Spe/SpA/SpD): "+string.Join(" / ",values.ToArray());}
         return new {name=pk.Nickname,species=Species(pk.Species),sprite=Sprite(pk),portrait=Portrait(pk),gender=pk.Gender,ball=pk.Ball,item=ItemIcon(pk.HeldItem,pk.Context),itemName=MoveLabel(strings.GetItemStrings(pk.Context,pk.Version),pk.HeldItem),shiny=pk.IsShiny,egg=pk.IsEgg,alpha=pk is IAlphaReadOnly {IsAlpha:true},level=pk.CurrentLevel,
-            text=previewText,encounter=string.Join("\n",encounterLines),moves,legal=analysis.Valid,report=analysis.Report(),origin=GameInfo.GetVersionName(pk.Version),trainer=pk.OriginalTrainerName};
+            text=previewText,encounter=string.Join("\n",encounterLines),moves,uncheckedLegality=settings.PKHaXMode,legal=analysis?.Valid==true,report=analysis?.Report()??"PKHaX mode: automatic legality checks are disabled.",origin=GameInfo.GetVersionName(pk.Version),trainer=pk.OriginalTrainerName};
     }
     bool FashionSupported()=>save is SAV6XY or SAV7SM or SAV7USUM or SAV7b or SAV8SWSH or SAV8BS or SAV8LA or SAV9SV or SAV9ZA;
     object? FashionObject()=>save switch {SAV9SV s=>s.PlayerFashion,SAV9ZA s=>s.PlayerFashion,SAV8LA s=>s.Blocks.FashionPlayer,_=>null};

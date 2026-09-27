@@ -11,12 +11,12 @@ struct MoveStatusView: View {
     private var check: MoveCheck? { model.state.moveChecks.first { $0.slot == slot && $0.relearn == relearn } }
     private var status: String { model.fieldDrafts ? "pending" : check?.status ?? "unknown" }
     private var color: Color { status == "legal" ? .green : status == "illegal" ? .red : .secondary }
-    private var label: String { switch status { case "legal": "Legal"; case "illegal": "Illegal"; case "empty": "Empty"; case "pending": "Edits pending"; default: "Not evaluated" } }
+    private var label: String { switch status { case "legal": "Legal"; case "illegal": "Illegal"; case "empty": "Empty"; case "unchecked": "Unchecked"; case "pending": "Edits pending"; default: "Not evaluated" } }
     private var icon: String { status == "legal" ? "checkmark.seal.fill" : status == "illegal" ? "exclamationmark.triangle.fill" : "minus.circle" }
     var body: some View {
         HStack(alignment:.top,spacing:8) {
             Label(label,systemImage:icon).font(.caption.weight(.semibold)).fixedSize()
-            Text(model.fieldDrafts ? "Press Return to check your edits." : check?.detail ?? "Select a Pokémon to check its moves.")
+            Text(model.fieldDrafts ? "Press Return to apply your edits." : check?.detail ?? "Select a Pokémon to check its moves.")
                 .font(.caption).foregroundStyle(Color.primary.opacity(0.8)).frame(maxWidth:.infinity,alignment:.leading)
         }.foregroundStyle(color).padding(.horizontal,10).padding(.vertical,7)
             .background(color.opacity(0.09),in:RoundedRectangle(cornerRadius:7))

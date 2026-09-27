@@ -32,6 +32,7 @@ sealed class EditorSettings
     public BoxExportSettings BoxExport { get; set; } = new() { FolderCreation=BoxExportFolderMode.FolderEachBox, FolderPrefix=BoxExportFolderNaming.IndexBoxName, FileIndexPrefix=BoxExportIndexPrefix.InBoxAndSlot };
     public int EncounterResultLimit { get; set; } = 2000;
     public bool BackupOnOpen { get; set; } = true;
+    public bool PKHaXMode { get; set; }
     public string CatalogLanguage { get; set; } = "en";
     public string ExportLanguage { get; set; } = "en";
     public bool ExportCommunityFormat { get; set; }
@@ -303,7 +304,7 @@ sealed partial class EditorSession
                         case "clearIV": pk.IV_HP = pk.IV_ATK = pk.IV_DEF = pk.IV_SPA = pk.IV_SPD = pk.IV_SPE = 0; break;
                         case "maxEV":
                             if(pk is IGanbaru or IAwakened) throw new Exception("This game uses grit or awakened values instead of EVs.");
-                            Span<int> maximumEVs=stackalloc int[6]; EffortValues.SetMax(maximumEVs,pk); pk.SetEVs(maximumEVs); break;
+                            Span<int> maximumEVs=stackalloc int[6]; if(settings.PKHaXMode)maximumEVs.Fill(pk.MaxEV);else EffortValues.SetMax(maximumEVs,pk); pk.SetEVs(maximumEVs); break;
                         case "rerollPID":
                             if(pk.Format<3) throw new Exception("This format has no personality ID.");
                             pk.SetPIDGender(pk.Gender); break;
@@ -528,13 +529,14 @@ sealed partial class EditorSession
         }
         string report = "", legality = "empty";
         LegalityAnalysis? moveAnalysis = null;
-        if (entity is { Species: > 0 })
+        if (entity is { Species: > 0 } && settings.PKHaXMode) {legality="unchecked";report="PKHaX mode: automatic legality checks are disabled. Turn off PKHaX in Settings → Engine to check this Pokémon. Auto-Legality remains an explicit manual tool.";}
+        else if (entity is { Species: > 0 })
         {
             try { var analysis = new LegalityAnalysis(entity); moveAnalysis = analysis; report = analysis.Report(settings.CatalogLanguage,true); legality = analysis.Valid ? "valid" : "invalid"; }
             catch (Exception ex) { legality = "unknown"; report = "Legality analysis could not complete: " + ex.Message; }
         }
         return new {
-            growth = GrowthInfo(), abilityDescription = AbilityDescription(), heldItemDescription = HeldItemDescription(), natureInfo = NatureInfo(),
+            pkHaXMode = settings.PKHaXMode, growth = GrowthInfo(), abilityDescription = AbilityDescription(), heldItemDescription = HeldItemDescription(), natureInfo = NatureInfo(),
             engineVersion = typeof(PKM).Assembly.GetName().Version?.ToString() ?? "unknown",
             loaded = save != null || entity != null, hasSave = save != null, demo, dirty, pending,
             sourceName = sourcePath != null ? Path.GetFileName(sourcePath) : entitySourcePath != null ? Path.GetFileName(entitySourcePath) : demo ? "Sample workspace" : "",
@@ -572,6 +574,7 @@ sealed partial class EditorSession
 
     Field[] SettingsFields() => Fields(settings, "Preferences", depth: 3).Where(f => f.id != "SlotWrite.ModifyUnset" && f.id is not ("BoxExport.Scope" or "BoxExport.Notify" or "BoxExport.EmptySlots")).Select(f => f.id switch {
         "CatalogLanguage" or "ExportLanguage" => f with { label = f.id == "CatalogLanguage" ? "Game data language" : "Battle template language", kind = "enum", choices = new[] { ("en","English"),("ja","日本語"),("fr","Français"),("it","Italiano"),("de","Deutsch"),("es","Español"),("es-419","Español (Latinoamérica)"),("ko","한국어"),("zh-Hans","简体中文"),("zh-Hant","繁體中文") }.Select(x => new Choice(x.Item1,x.Item2)).ToArray(), help = f.id == "CatalogLanguage" ? "Names of Pokémon, moves, items, games and locations. Choose the interface language separately in Settings." : "Language used when copying a battle template." },
+        "PKHaXMode" => f with {label="PKHaX mode",help="Disable automatic Pokémon and move legality checks. Allow unrestricted ability choices, raw form IDs and stored party stats. Format limits still apply. This preference persists; existing other windows keep their current mode until reopened."},
         "BackupOnOpen" => f with { label = "Back up saves when opening", help = "Keep original snapshots in Settings → Files & Startup." },
         "ExportCommunityFormat" => f with { label = "Use community battle template format", help = "Uses PKHeX’s community ordering when copying a set. Turn off for standard Showdown format." },
         _ => f
@@ -666,7 +669,7 @@ sealed partial class EditorSession
         {
             if (hiddenEntity.Contains(path)) throw new Exception("This field is managed by the engine.");
             double? n = value is IConvertible && t != typeof(string) && t != typeof(bool) ? Convert.ToDouble(value) : null;
-            double? max = path switch { "Species" => pk.MaxSpeciesID, "HeldItem" => pk.MaxItemID, "Ability" => pk.MaxAbilityID, "CurrentLevel" => 100, "Gender" => 2, "Form" => 255, "Ball" => pk.MaxBallID, _ when path.StartsWith("GV_") => 10, _ when path.EndsWith("_PPUps") => 3, _ when path.EndsWith("_PP") => 255, _ when path.StartsWith("IV_") => pk.MaxIV, _ when path.StartsWith("EV_") => pk.MaxEV, _ when Regex.IsMatch(path, "^(Move|RelearnMove)[1-4]$") => pk.MaxMoveID, _ => null };
+            double? max = path switch { "Species" => pk.MaxSpeciesID, "HeldItem" => pk.MaxItemID, "Ability" => pk.MaxAbilityID, "CurrentLevel" => 100, "Stat_Level" => 255, _ when path.StartsWith("Stat_") && path != "StatAlignment" && path != "StatNature" => 65535, "Gender" => 2, "Form" => 255, "Ball" => pk.MaxBallID, _ when path.StartsWith("GV_") => 10, _ when path.EndsWith("_PPUps") => 3, _ when path.EndsWith("_PP") => 255, _ when path.StartsWith("IV_") => pk.MaxIV, _ when path.StartsWith("EV_") => pk.MaxEV, _ when Regex.IsMatch(path, "^(Move|RelearnMove)[1-4]$") => pk.MaxMoveID, _ => null };
             if (max != null && (n < 0 || n > max) || path == "CurrentLevel" && n < 1) throw new Exception($"{Label(path)} is outside the supported range.");
             if (path == "Nickname" && input.Length > pk.MaxStringLengthNickname) throw new Exception("Nickname is too long for this format.");
             if (path == "OriginalTrainerName" && input.Length > pk.MaxStringLengthTrainer) throw new Exception("Trainer name is too long for this format.");

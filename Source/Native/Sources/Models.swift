@@ -26,6 +26,7 @@ struct TrainerBadge:Codable,Identifiable {let id:Int,name:String,earned:Bool,gro
 struct GrowthInfo:Codable {let exp:Int,level:Int,floor:Int,next:Int,friendship:Int,egg:Bool,friendshipField:String,pokerus:Bool,pokerusState:String}
 struct NatureInfo:Codable {let nature,alignment:Int;let hasEffects,mint:Bool}
 struct EditorState: Codable {
+    var pkHaXMode=false
     var natureInfo:NatureInfo?
     var heldItemDescription=""
     var growth:GrowthInfo?
@@ -235,6 +236,7 @@ final class Bridge: @unchecked Sendable {
             else if target == "fashion" {fashion=try await bridge.send(request,as:FashionData.self);state=try await bridge.send(["op":"state"],as:EditorState.self)}
             else if target == "settings" {
                 fields = try await bridge.send(request, as: [Field].self)
+                if field.id == "PKHaXMode" {state=try await bridge.send(["op":"state"],as:EditorState.self)}
                 if field.id == "CatalogLanguage" {
                     catalogs.removeAll(); gifts.removeAll(); encounters = nil; library = nil
                     state = try await bridge.send(["op":"state"], as: EditorState.self)

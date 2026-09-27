@@ -79,7 +79,7 @@ struct MoveChoicePopover:View {
             TextField("Search move name or number",text:$search).textFieldStyle(.roundedBorder)
                 .onSubmit {if filtered.count==1 {choose(filtered[0])}}
             HStack {
-                Toggle("Learnable only",isOn:$learnableOnly).toggleStyle(.checkbox)
+                Toggle("Learnable only",isOn:$learnableOnly).toggleStyle(.checkbox).disabled(data.entries.contains{$0.status=="unchecked"})
                 Spacer()
                 Picker("Type",selection:$typeFilter) {
                     Text("All types").tag(-1)
@@ -112,9 +112,9 @@ struct MoveChoicePopover:View {
                     if filtered.isEmpty {Text("No matching moves").foregroundStyle(.secondary).padding(25)}
                 }
             }
-            Text("\(filtered.count) moves · Green marks PKHeX's learnable moves. The complete set is checked after selection.").font(.caption).foregroundStyle(.secondary)
+            Text(data.entries.contains{$0.status=="unchecked"} ? "\(filtered.count) moves · PKHaX mode: legality unchecked.":"\(filtered.count) moves · Green marks PKHeX's learnable moves. The complete set is checked after selection.").font(.caption).foregroundStyle(.secondary)
         }.padding(14).frame(width:450,height:460)
     }
-    private func statusLabel(_ m:MoveOption)->String {switch m.status {case "learnable":"Learnable";case "unavailable":"Not learnable";case "empty":"Clear";default:"Not evaluated"}}
+    private func statusLabel(_ m:MoveOption)->String {switch m.status {case "learnable":"Learnable";case "unavailable":"Not learnable";case "empty":"Clear";case "unchecked":"Unchecked";default:"Not evaluated"}}
     private func statusColor(_ m:MoveOption)->Color {m.status=="learnable" ? .green : m.status=="unavailable" ? .red : .secondary}
 }

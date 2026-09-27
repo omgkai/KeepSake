@@ -119,6 +119,11 @@ struct SimplePokemonEditor: View {
                 HStack {SimpleField(id:"PID",title:"Personality ID (PID)");Button {action("rerollPID")} label:{Image(systemName:"arrow.trianglehead.2.clockwise.rotate.90")}.help("Reroll PID using PKHeX. Produces a non-shiny PID; review legality afterward.").accessibilityLabel("Reroll PID").disabled(model.fieldDrafts)}
                 if let raw=model.state.fields.first(where:{$0.id=="PID"})?.value,let pid=UInt32(raw){Text(String(format:"Hexadecimal · %08X",pid)).font(.caption.monospaced()).foregroundStyle(.secondary)}
             }}
+            if model.state.pkHaXMode {EditorCard(title:"PKHaX · Raw values") {
+                Text("Stored party values can be recalculated by the game. Box formats may not store party stats. These edits do not change the calculated stat profile above.").font(.caption).foregroundStyle(.secondary)
+                HStack{Text("Form ID").font(.callout);StatInput(id:"Form",title:"Raw form ID")}
+                ForEach([("Stat_Level","Stored level"),("Stat_HPCurrent","Current HP"),("Stat_HPMax","Max HP"),("Stat_ATK","Attack"),("Stat_DEF","Defense"),("Stat_SPA","Sp. Atk"),("Stat_SPD","Sp. Def"),("Stat_SPE","Speed")],id:\.0){id,title in HStack{Text(title).font(.callout);StatInput(id:id,title:title)}}
+            }}
             EditorCard(title:"Nature") {
                 NatureSelector()
                 if model.state.natureInfo?.mint == true {NatureSelector(mint:true)}
@@ -143,7 +148,7 @@ struct SimplePokemonEditor: View {
                     Label(model.state.suggestionMessage,systemImage:"info.circle.fill").font(.callout).foregroundStyle(theme.accent)
                         .padding(10).frame(maxWidth:.infinity,alignment:.leading).background(theme.accent.opacity(0.09),in:RoundedRectangle(cornerRadius:9))
                 }
-                Text("Type colors identify moves. Green means legal; red explains a problem.").font(.caption).foregroundStyle(.secondary)
+                Text(model.state.pkHaXMode ? "PKHaX mode · Type colors remain visible; move legality is unchecked.":"Type colors identify moves. Green means legal; red explains a problem.").font(.caption).foregroundStyle(.secondary)
                 HStack { Text("Move"); Spacer(); Text("PP").frame(width:48); Text("PP Ups").frame(width:48) }.font(.caption).foregroundStyle(.secondary)
                 ForEach(1...4, id:\.self) { i in
                     HStack(spacing:10) {
@@ -234,7 +239,7 @@ struct SimpleField:View {
         let species = model.state.fields.first { $0.id == "Species" }?.value ?? ""
         let version = model.state.fields.first { $0.id == "Version" }?.value ?? ""
         let form = model.state.fields.first { $0.id == "Form" }?.value ?? ""
-        return species + "|" + form + "|" + version + "|" + model.state.entityExtension
+        return species + "|" + form + "|" + version + "|" + model.state.entityExtension + "|" + String(model.state.pkHaXMode)
     }
     var body:some View {
         if let field {

@@ -93,6 +93,8 @@ Choose **File → New KeepSake Window (⌘N)** for another independent save work
 
 ## Backup and restore
 
+**Settings → Engine → PKHaX mode** disables automatic legality checks and enables unrestricted ability choices, raw form IDs and stored party stats. The editor shows **Unchecked** while active. File-format limits remain; Auto-Legality stays available as a manual tool.
+
 **Settings → Files & Startup** manages original-save backups and save discovery. **Updates & Backup** lets you choose a destination, including a folder in iCloud Drive, and create a dated backup containing journal pages, teams, basic appearance preferences and existing original-save backups.
 
 Cloud transfer is managed by macOS. KeepSake confirms that files were written locally, not that they have finished uploading. Keychain is for credentials, not save storage. Backups do not include unsaved editor changes or arbitrary files elsewhere on your Mac.

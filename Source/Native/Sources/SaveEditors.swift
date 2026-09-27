@@ -120,7 +120,15 @@ struct PreferencesView: View {
             if page == "Themes" { ScrollView { ThemePicker().padding(26) } }
             else if page == "Files" { SaveResourcesView() }
             else if page == "Services" { ScrollView { VStack(spacing:20) { UpdateSettingsView(); PersonalBackupView() }.padding(26) } }
-            else { FieldList(fields:model.fields,target:"settings",grouped:true) }
+            else { VStack(alignment:.leading,spacing:12){
+                if let field=model.fields.first(where:{$0.id=="PKHaXMode"}) {
+                    VStack(alignment:.leading,spacing:10){Toggle(isOn:Binding(get:{field.value=="true"},set:{enabled in Task{await model.commit(field,target:"settings",value:enabled ? "true":"false")}})){Label("PKHaX mode",systemImage:"lock.open.fill").font(.headline)}.disabled(model.busy || model.fieldDrafts)
+                        Text(field.help).font(.caption).foregroundStyle(.secondary)
+                        Text(field.value=="true" ? "Unrestricted editing · automatic checks off":"Standard editing · automatic checks on").font(.caption.bold()).foregroundStyle(field.value=="true" ? Color.orange:theme.accent)
+                    }.padding(18).background(theme.accent.opacity(0.07),in:RoundedRectangle(cornerRadius:16)).padding(.horizontal,26)
+                }
+                FieldList(fields:model.fields.filter{$0.id != "PKHaXMode"},target:"settings",grouped:true)
+            }}
         }.frame(maxWidth:850)
     }
 }

@@ -1,9 +1,17 @@
-KeepSake 0.40 makes Pokémon details easier to understand and gives the project a new visual home.
+# KeepSake 0.41
 
-- A new Nature picker previews raised, lowered and neutral stats for every nature, with separate mint effects and clear +10% / −10% indicators.
-- Stat totals now correctly reflect nature and mint colors.
-- Height and weight have visible **Auto** buttons using PKHeX’s measured-size calculations. Enabling automatic recalculation applies it immediately; manual measured fields are disabled while Auto is on.
-- Held items now show offline English descriptions, preferring the current game. Unavailable game-specific descriptions are labeled as reference text.
-- GitHub has a new navy-and-gold presentation and a gallery of 13 screenshots supplied by Kai White.
+## PKHaX mode
 
-Requires macOS 14 or later. Apple Silicon and Intel downloads are Developer ID signed and Apple notarized. Choose **KeepSake → Check for Updates** in 0.38 or later; older versions require a manual app replacement.
+Enable **Settings → Engine → PKHaX mode** for unrestricted editing. Automatic Pokémon, move-picker and hover legality checks are disabled and shown as **Unchecked**. Auto-Legality and move suggestions remain available as deliberate manual actions.
+
+- Choose any ability supported by the file format in Generation 4 and later.
+- Edit raw form IDs and stored party levels/stats under **Stats → PKHaX · Raw values**.
+- Max EVs fills every stat to its individual maximum in PKHaX mode, without enforcing the standard total.
+- Format limits still apply. The game can recalculate party stats; box formats may not retain them.
+- The preference is saved. Other already-open KeepSake windows keep their mode until reopened. Turn PKHaX off to resume automatic checks.
+
+## Keeping the engine current
+
+A daily GitHub workflow now checks official stable PKHeX releases and proposes Core updates as draft pull requests, with separate compatibility checks. It does not merge changes or publish an app update automatically. Auto-Legality and the native interface are reviewed before a new release.
+
+Apple silicon and Intel downloads include the runtime. Install in Applications; existing Sparkle updates remain supported.

@@ -3,6 +3,7 @@ import SwiftUI
 struct HoverMove:Codable {let name:String,type:Int,typeName:String,legal:Bool}
 struct SlotPreviewData:Codable {
     var portrait:String?=nil
+    var uncheckedLegality=false
     let name:String,species:String,sprite:String,gender:Int,ball:Int,item:String,itemName:String,shiny:Bool,egg:Bool,alpha:Bool,level:Int,text:String,moves:[HoverMove],legal:Bool,report:String,origin:String,trainer:String,encounter:String
 }
 private struct HoverCardPresentation:Identifiable {
@@ -53,10 +54,10 @@ struct PokemonHoverCard:View {
     let data:SlotPreviewData
     var body:some View {ScrollView {VStack(alignment:.leading,spacing:12) {
         HStack(spacing:12) {PokemonSprite(name:data.sprite,portrait:data.portrait).frame(width:60,height:60);VStack(alignment:.leading,spacing:5){Text(data.name.isEmpty ? data.species : data.name).font(.title2.bold());Text("\(data.species) · Lv. \(data.level)").font(.caption).foregroundStyle(.secondary);GenderBadge(value:data.gender)};Spacer();GameAsset(folder:"Balls",name:"_ball\(data.ball)").frame(width:26,height:26)}
-        HStack {if data.shiny{PokemonEmblem(kind:"IsShiny")};if data.egg{PokemonEmblem(kind:"IsEgg")};if data.alpha{PokemonEmblem(kind:"IsAlpha")};Spacer();Label(data.legal ? "Legal" : "Needs review",systemImage:data.legal ? "checkmark.shield.fill" : "exclamationmark.shield.fill").font(.caption).foregroundStyle(data.legal ? Color.green : .orange)}
+        HStack {if data.shiny{PokemonEmblem(kind:"IsShiny")};if data.egg{PokemonEmblem(kind:"IsEgg")};if data.alpha{PokemonEmblem(kind:"IsAlpha")};Spacer();Label(data.uncheckedLegality ? "PKHaX · Unchecked" : data.legal ? "Legal" : "Needs review",systemImage:data.legal ? "checkmark.shield.fill" : "exclamationmark.shield.fill").font(.caption).foregroundStyle(data.legal ? Color.green : .orange)}
         Text(data.text).font(.system(size:11,design:.monospaced)).textSelection(.enabled).fixedSize(horizontal:false,vertical:true)
         Divider()
-        ForEach(Array(data.moves.enumerated()),id:\.offset){_,move in if move.name != "—" && move.name != "(None)" {HStack {MoveTypeBadge(type:move.type,name:move.typeName,compact:true);Text(move.name).font(.callout);Spacer();Image(systemName:move.legal ? "checkmark.circle.fill" : "xmark.circle.fill").foregroundStyle(move.legal ? Color.green : .red)}}}
+        ForEach(Array(data.moves.enumerated()),id:\.offset){_,move in if move.name != "—" && move.name != "(None)" {HStack {MoveTypeBadge(type:move.type,name:move.typeName,compact:true);Text(move.name).font(.callout);Spacer();Image(systemName:data.uncheckedLegality ? "minus.circle":move.legal ? "checkmark.circle.fill" : "xmark.circle.fill").foregroundStyle(data.uncheckedLegality ? Color.secondary:move.legal ? Color.green : .red)}}}
         HStack {GameAsset(folder:"Items",name:data.item).frame(width:26,height:26);Text(data.itemName).font(.caption)}
         Label(data.origin,systemImage:"map.fill").font(.caption).foregroundStyle(.secondary)
         Label("OT · "+data.trainer,systemImage:"person.crop.circle").font(.caption).foregroundStyle(.secondary)
