@@ -65,7 +65,7 @@ SOFTWARE.
 
 ```
 
-## User-supplied trainer badge art (0.19)
+## Trainer badge art (0.19)
 
 **JcFerggy** — [16x16 Pokémon Badge Sprites: Gen 1–6](https://www.deviantart.com/jcferggy/art/16x16-Pokemon-Badge-Sprites-Gen-1-6-544204402) (`d9006sy`), and **ProfessorMorDBG** — [Paldea Badges demake large](https://www.deviantart.com/professormordbg/art/Paldea-Badges-demake-large-1142694862) (`diwbwzy`). The original PNG sheets are retained unchanged in `Source/Assets/Badges`; the manifest identifies the 68 regions used by the native renderer. Supplied fan artwork is not relicensed by KeepSake’s GPL source license. Galar uses a native seal fallback, not artwork attributed to either sheet.
 
