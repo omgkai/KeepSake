@@ -211,7 +211,9 @@ sealed partial class EditorSession
                 var info = new FileInfo(path);
                 if (info.Length > 64 * 1024 * 1024) throw new Exception("This file is too large to be a supported save or Pokémon file.");
                 var bytes = File.ReadAllBytes(path);
-                var loadedSave = r.TryGetProperty("saveType",out _) ? OpenWithHandler(bytes,path,r) : SaveUtil.GetSaveFile(bytes, path);
+                // Recognition can decrypt in-place; automatic backups must retain the original bytes.
+                var recognitionBytes = bytes.ToArray();
+                var loadedSave = r.TryGetProperty("saveType",out _) ? OpenWithHandler(recognitionBytes,path,r) : SaveUtil.GetSaveFile(recognitionBytes, path);
                 PKM? loadedEntity = null;
                 if (loadedSave == null) loadedEntity = EntityFormat.GetFromBytes(bytes, EntityFileExtension.GetContextFromExtension(Path.GetExtension(path)));
                 if (loadedSave == null && loadedEntity == null) throw new Exception("PKHeX could not recognize this file. Open an exported, decrypted game save or an individual Pokémon file.");
@@ -351,9 +353,11 @@ sealed partial class EditorSession
                 if (pending) throw new Exception("Apply the Pokémon edits to a slot before exporting the save.");
                 if (demo) throw new Exception("The sample is for exploring the editor and cannot be exported as a game save. Open your own save to export changes.");
                 var path = ExportPath(S(r, "path"), sourcePath);
-                var data = RequireSave().Clone().Write().ToArray();
-                var verified = SaveUtil.GetSaveFile(data);
-                if (verified == null || !verified.ChecksumsValid) throw new Exception("The edited save could not be reopened with valid checksums. Undo the last edit and try again.");
+                var exportSave = RequireSave().Clone();
+                var data = exportSave.Write(exportSave.Metadata.GetSuggestedFlags(Path.GetExtension(path))).ToArray();
+                // Save recognition decrypts Switch data in-place; preserve the bytes being exported.
+                var verified = SaveUtil.GetSaveFile(data.ToArray());
+                if (verified == null || verified.GetType() != exportSave.GetType() || !verified.ChecksumsValid) throw new Exception("The edited save could not be reopened with valid checksums. Undo the last edit and try again.");
                 AtomicWrite(path, data); dirty = false; undo.Clear(); redo.Clear(); return State();
             }
             case "exportEntity":
@@ -506,7 +510,7 @@ sealed partial class EditorSession
     static string ExportPath(string path, string? original)
     {
         path = Path.GetFullPath(path);
-        if (original != null && string.Equals(path, original, StringComparison.OrdinalIgnoreCase)) throw new Exception("Choose a new filename. This preview keeps the opened original unchanged.");
+        if (original != null && string.Equals(path, original, StringComparison.OrdinalIgnoreCase)) throw new Exception("Choose a different folder or filename. KeepSake keeps the opened original unchanged.");
         if (File.Exists(path) && new FileInfo(path).LinkTarget != null) throw new Exception("Export to a regular file, not a symbolic link.");
         return path;
     }
@@ -536,6 +540,7 @@ sealed partial class EditorSession
             catch (Exception ex) { legality = "unknown"; report = "Legality analysis could not complete: " + ex.Message; }
         }
         return new {
+            saveExportName = save is SAV8LA ? "main" : save?.Metadata.FileName ?? (sourcePath == null ? "save.sav" : Path.GetFileName(sourcePath)),
             pkHaXMode = settings.PKHaXMode, growth = GrowthInfo(), abilityDescription = AbilityDescription(), heldItemDescription = HeldItemDescription(), natureInfo = NatureInfo(),
             engineVersion = typeof(PKM).Assembly.GetName().Version?.ToString() ?? "unknown",
             loaded = save != null || entity != null, hasSave = save != null, demo, dirty, pending,

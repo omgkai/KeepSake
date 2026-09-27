@@ -26,6 +26,7 @@ struct TrainerBadge:Codable,Identifiable {let id:Int,name:String,earned:Bool,gro
 struct GrowthInfo:Codable {let exp:Int,level:Int,floor:Int,next:Int,friendship:Int,egg:Bool,friendshipField:String,pokerus:Bool,pokerusState:String}
 struct NatureInfo:Codable {let nature,alignment:Int;let hasEffects,mint:Bool}
 struct EditorState: Codable {
+    var saveExportName=""
     var pkHaXMode=false
     var natureInfo:NatureInfo?
     var heldItemDescription=""
@@ -317,7 +318,12 @@ final class Bridge: @unchecked Sendable {
         guard !busy else { return }
         guard drafts.isEmpty else { error = "Commit your typed edits with Return or Set to Slot before exporting."; return }
         guard !state.pending else { error = "Click Set to Slot to store the Pokémon edits before exporting the save."; return }
-        let panel = NSSavePanel(); panel.title = "Export an edited copy"; panel.nameFieldStringValue = state.sourceName + ".edited"
+        let panel = NSSavePanel(); panel.title = "Export an edited save"
+        panel.nameFieldStringValue = state.saveExportName.isEmpty ? state.sourceName : state.saveExportName
+        panel.isExtensionHidden = false
+        panel.message = state.gameVersion == "PLA"
+            ? "Legends: Arceus uses a file named main with no extension. Export into a separate folder, then restore it with your save manager."
+            : "Keep the save’s filename and extension when restoring it to your game. Choose a separate folder to keep the opened original unchanged."
         guard panel.runModal() == .OK, let url = panel.url else { return }
         Task { await command(["op":"exportSave", "path":url.path], status:"Exported \(url.lastPathComponent)") }
     }
