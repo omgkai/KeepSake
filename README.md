@@ -39,7 +39,7 @@ KeepSake brings PKHeX.Core and offline Auto-Legality to a native Mac interface. 
 
 Unzip the download and move **KeepSake.app** to **Applications**. Both builds include their runtime; no separate .NET installation is required.
 
-Already using **0.38 or later**? Choose **KeepSake → Check for Updates** to download, verify, install and relaunch. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open workspace can cancel quitting to protect unsaved edits. Versions 0.37 and earlier need one manual app replacement.
+Already using **0.39 or later**? Choose **KeepSake → Check for Updates** to download, verify, install and relaunch. Settings → Updates & Backup offers daily automatic checks and optional automatic download/install on quit. Every open workspace can cancel quitting to protect unsaved edits.
 
 ## A look inside
 
