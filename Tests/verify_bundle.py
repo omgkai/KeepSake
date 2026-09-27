@@ -17,6 +17,15 @@ assert info['CFBundleLocalizations'] == expected['CFBundleLocalizations']
 for language in expected['CFBundleLocalizations']:
     resource = pathlib.Path(language + '.lproj') / 'Localizable.strings'
     assert (app / 'Contents/Resources' / resource).read_bytes() == (root / 'Source/Assets/Localization' / resource).read_bytes()
+for key in ['SUPublicEDKey','SURequireSignedFeed','SUVerifyUpdateBeforeExtraction']:
+    assert info[key] == expected[key], key
+framework=app/'Contents/Frameworks/Sparkle.framework'
+assert (framework/'Sparkle').is_file()
+assert (framework/'Updater.app').is_dir()
+assert (app/'Contents/Resources/Sparkle-LICENSE.txt').read_bytes() == (root/'Source/Packaging/Sparkle-LICENSE.txt').read_bytes()
+links=subprocess.check_output(['otool','-L',str(app/'Contents/MacOS/PKHeXSwift')],text=True)
+assert '@rpath/Sparkle.framework' in links
+assert b'io.keepsake.updater-test' not in (app/'Contents/MacOS/PKHeXSwift').read_bytes(), 'QA updater override leaked'
 count = 0
 for name in ['GamePortraits', 'Portraits', 'Badges', 'Donuts', 'Sprites', 'PaldeaItems', 'HisuiItems', 'Items', 'Balls', 'MoveTypes', 'GameLogos', 'Ribbons', 'Wallpapers']:
     for asset in (root / 'Source/Assets' / name).rglob('*'):

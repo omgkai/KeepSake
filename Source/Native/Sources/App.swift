@@ -18,12 +18,13 @@ import AppKit
 struct WorkspaceCommands:Commands {
     @FocusedObject private var model:EditorModel?
     @Environment(\.openWindow) private var openWindow
+    @ObservedObject private var updater=UpdateChecker.shared
     @AppStorage("interfaceLanguage") private var interfaceLanguage="system"
     var body:some Commands {
         let _ = interfaceLanguage
         CommandGroup(replacing:.appInfo) {
             Button(L("About KeepSake")){openWindow(id:"about")}
-            Button(L("Check for Updates…")){openWindow(id:"about");Task{await UpdateChecker.shared.check()}}
+            Button(L("Check for Updates…")){updater.check()}.disabled(!updater.canCheck)
         }
         CommandGroup(replacing:.help){Button(L("KeepSake Support")){openWindow(id:"support")}}
         CommandGroup(replacing:.newItem){
@@ -44,7 +45,6 @@ struct WorkspaceCommands:Commands {
 }
 struct SaveWorkspace:View {
     @StateObject private var model=EditorModel()
-    @ObservedObject private var updater=UpdateChecker.shared
     @AppStorage("appearance") private var appearance="System"
     @AppStorage("gameTheme") private var themeID="classic"
     @AppStorage("matchGameTheme") private var matchGame=true
@@ -64,8 +64,6 @@ struct SaveWorkspace:View {
             .navigationTitle(model.state.loaded ? "KeepSake · \(model.state.sourceName) · \(model.state.game)":"KeepSake")
             .task {let reopen=WorkspaceRegistry.shared.register(model);await model.start(reopenLast:reopen)}
             .onOpenURL{model.openURL($0)}
-            .task {while !Task.isCancelled{await updater.check(automatic:true);do{try await Task.sleep(for:.seconds(3600))}catch{break}}}
-            .alert("A new chapter is ready",isPresented:Binding(get:{updater.showAnnouncement && WorkspaceRegistry.shared.isActive(model)},set:{updater.showAnnouncement=$0})){Button("View Update"){updater.openRelease()};Button("Later",role:.cancel){}} message:{Text(updater.message)}
     }
 }
 @MainActor final class WorkspaceRegistry {
@@ -92,6 +90,7 @@ struct SaveWorkspace:View {
     }
 }
 @MainActor final class AppDelegate:NSObject,NSApplicationDelegate {
+    func applicationDidFinishLaunching(_ notification:Notification){UpdateChecker.shared.start()}
     func applicationShouldTerminate(_ sender:NSApplication)->NSApplication.TerminateReply {WorkspaceRegistry.shared.canQuit() ? .terminateNow:.terminateCancel}
     func applicationShouldTerminateAfterLastWindowClosed(_ sender:NSApplication)->Bool{true}
 }

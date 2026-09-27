@@ -18,3 +18,11 @@ This signs a copy, uses hardened runtime, grants JIT only to the .NET engine, up
 Distribute the corresponding source ZIP and third-party notices alongside the app. Follow the asset provenance decisions in THIRD-PARTY-NOTICES.md before public hosting.
 
 References: [Microsoft's macOS deployment guidance](https://learn.microsoft.com/en-us/dotnet/core/deploying/macos) and [Apple's notarization workflow](https://developer.apple.com/documentation/security/customizing-the-notarization-workflow).
+
+## Sparkle updates (0.38+)
+
+Sparkle 2.10.0 is pinned by the official SPM archive checksum. build.sh embeds Sparkle.framework; release_macos.py signs its nested helpers and bundles before the app. Keep the update private key in Keychain (account `KeepSake`); never put it in source or release files. SUPublicEDKey is public.
+
+After notarization, name the archives KeepSake-VERSION-macOS-arm64.zip and KeepSake-VERSION-macOS-x86_64.zip. Run create_appcast.py for each with --architecture, --sign-update pointing to Sparkle’s sign_update tool, and --output updates/appcast-ARCH.xml. The tool signs and verifies both the archive and feed. Upload archives and publish the release before committing the new feeds, so clients never see missing downloads. Preserve the signing key in Keychain or your secure credential backup.
+
+The feed URLs use raw.githubusercontent.com/omgkai/KeepSake/main/updates/. Feed and archive signatures are required before extraction. Build numbers must increase with every release. Old 0.37 installations need one manual upgrade to gain Sparkle.

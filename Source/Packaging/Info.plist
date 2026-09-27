@@ -30,9 +30,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.37</string>
+	<string>0.38</string>
 	<key>CFBundleVersion</key>
-	<string>370</string>
+	<string>380</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
 	<key>NSHighResolutionCapable</key>
@@ -41,5 +41,21 @@
 	<string>PKHeX by Kaphotics and contributors. Unofficial SwiftUI port. GPL-3.0-or-later.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUEnableSystemProfiling</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/omgkai/KeepSake/main/updates/appcast-arm64.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>t20mlZunOPDq/zUu3FoFTFv5W7NUYzuR4K2c2EAmHlg=</string>
+	<key>SURequireSignedFeed</key>
+	<true/>
+	<key>SUSignedFeedFailureExpirationInterval</key>
+	<integer>0</integer>
+	<key>SUVerifyUpdateBeforeExtraction</key>
+	<true/>
 </dict>
 </plist>

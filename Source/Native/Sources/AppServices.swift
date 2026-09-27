@@ -1,60 +1,17 @@
 import SwiftUI
 import AppKit
 
-@MainActor final class UpdateChecker: ObservableObject {
-    static let shared = UpdateChecker()
-    @Published var checking = false
-    @Published var message = "Check for the latest chapter of KeepSake."
-    @Published var available: String?
-    @Published var showAnnouncement = false
-    private var releaseURL: URL?
-    private struct Release: Decodable { let tag_name: String; let html_url: String; let draft: Bool; let prerelease: Bool }
-    func check(automatic: Bool = false) async {
-        guard !checking else { return }
-        let defaults = UserDefaults.standard
-        if automatic {
-            guard defaults.object(forKey:"automaticUpdateChecks") as? Bool ?? true else { return }
-            guard Date().timeIntervalSince1970-defaults.double(forKey:"lastUpdateAttempt") >= 86400 else { return }
-        }
-        checking = true; defer { checking = false }
-        defaults.set(Date().timeIntervalSince1970,forKey:"lastUpdateAttempt")
-        do {
-            var request = URLRequest(url: URL(string:"https://api.github.com/repos/\(KeepSakeRelease.repository)/releases/latest")!)
-            request.timeoutInterval=20
-            request.setValue("application/vnd.github+json",forHTTPHeaderField:"Accept")
-            request.setValue("KeepSake/\(KeepSakeRelease.version)",forHTTPHeaderField:"User-Agent")
-            let (data,response) = try await URLSession.shared.data(for:request)
-            guard let response = response as? HTTPURLResponse else { throw URLError(.badServerResponse) }
-            if response.statusCode == 404 { message="No published release is available yet."; return }
-            guard response.statusCode == 200, data.count<2_000_000 else { throw URLError(.badServerResponse) }
-            let release = try JSONDecoder().decode(Release.self,from:data)
-            guard !release.draft, !release.prerelease, KeepSakeRelease.numericVersion(release.tag_name) != nil,
-                  let url=URL(string:release.html_url),url.scheme=="https",url.host=="github.com",
-                  url.path.hasPrefix("/\(KeepSakeRelease.repository)/releases/tag/") else { throw URLError(.badServerResponse) }
-            defaults.set(Date().timeIntervalSince1970,forKey:"lastSuccessfulUpdateCheck")
-            if KeepSakeRelease.isNewer(release.tag_name,than:KeepSakeRelease.version) {
-                available=release.tag_name;releaseURL=url;message="KeepSake \(release.tag_name) is available."
-                if !automatic || defaults.string(forKey:"announcedUpdateVersion") != release.tag_name {
-                    showAnnouncement=true;defaults.set(release.tag_name,forKey:"announcedUpdateVersion")
-                }
-            } else { available=nil;releaseURL=nil;message="You’re up to date — KeepSake \(KeepSakeRelease.version)." }
-        } catch { message="Couldn’t check for updates. Check your connection and try again." }
-    }
-    func openRelease() { NSWorkspace.shared.open(releaseURL ?? KeepSakeRelease.releases) }
-}
-
 struct UpdateSettingsView: View {
     @ObservedObject private var updater=UpdateChecker.shared
-    @AppStorage("automaticUpdateChecks") private var automatic=true
     var body: some View {
         VStack(alignment:.leading,spacing:14) {
             Label("A new chapter, always within reach",systemImage:"arrow.triangle.2.circlepath").font(.headline)
-            Toggle("Automatically check for updates",isOn:$automatic)
-            Text("Checks public GitHub releases once a day while KeepSake is open. Downloads open in your browser; your running app and unsaved edits are never replaced automatically.").font(.caption).foregroundStyle(.secondary)
-            HStack { Button(updater.checking ? "Checking…":"Check for Updates") { Task { await updater.check() } }.disabled(updater.checking)
-                if updater.available != nil { Button("View Update") { updater.openRelease() }.buttonStyle(.borderedProminent) }
-            }
-            Text(updater.message).font(.callout).foregroundStyle(.secondary).accessibilityLabel(updater.message)
+            Toggle("Automatically check for updates",isOn:Binding(get:{updater.automaticChecks},set:{updater.setAutomaticChecks($0)}))
+            Toggle("Download and install updates automatically",isOn:Binding(get:{updater.automaticDownloads},set:{updater.setAutomaticDownloads($0)}))
+                .disabled(!updater.automaticChecks)
+            Text("KeepSake downloads, verifies and installs updates for this Mac. Choose Install and Relaunch when ready. Automatic downloads install when you quit. Unsaved work in every open window is checked before quitting.").font(.caption).foregroundStyle(.secondary)
+            Button("Check for Updates") {updater.check()}.disabled(!updater.canCheck).buttonStyle(.borderedProminent)
+            Text(updater.message).font(.callout).foregroundStyle(.secondary)
         }.padding(22).frame(maxWidth:.infinity,alignment:.leading).background(.quaternary.opacity(0.4),in:RoundedRectangle(cornerRadius:20))
     }
 }

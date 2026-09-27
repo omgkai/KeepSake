@@ -1,12 +1,10 @@
-KeepSake 0.37 adds independent save windows and initial interface language support.
+KeepSake 0.38 adds in-app downloads, installation and relaunch through Sparkle.
 
-- **File → New KeepSake Window (⌘N)** opens a fresh workspace. Each window has its own save, editor and Undo history; journals and appearance remain shared.
-- Closing or quitting checks unsaved work. Concurrent preference changes preserve unrelated settings from other windows.
-- **Noble** now sits beside Alpha in Stats for Legends: Arceus Pokémon. PKHeX legality still flags Noble Pokémon as invalid for ordinary player ownership.
-- Settings now offers all ten PKHeX interface languages. Common editor labels and navigation use translated strings; specialized guidance and some KeepSake screens still fall back to English. Game-data catalog language remains separately configurable.
-- Removed the Port Coverage page. Developer coverage notes remain in the source repository.
-- Includes 0.36.1’s encounter-filter layout and Alpha-generation fixes.
+- **KeepSake → Check for Updates** now downloads, verifies and installs the update instead of opening a web page.
+- Daily automatic checks and optional automatic download/install are available in **Settings → Updates & Backup**. Automatic downloads install when the app quits.
+- Unsaved work in every save window can cancel quitting. You can export your changes and retry the ready update later.
+- Separate Apple Silicon and Intel feeds use signed update metadata and signed archives, verified before extraction. Release apps and installer helpers are Developer ID signed and Apple notarized.
 
-Requires macOS 14 or later. Choose arm64 for Apple Silicon or x86_64 for Intel. Both builds are signed and notarized. Updates open the download page; install the downloaded app to replace your previous copy.
+**One-time upgrade:** 0.37 and earlier still use the old update checker. Download the matching 0.38 ZIP, quit KeepSake and replace your app once. Future releases can install directly in KeepSake.
 
-Cross-window Pokémon dragging is not supported; export and open Pokémon files to transfer between saves.
+Requires macOS 14 or later. Journals, settings and saves are kept outside the app bundle and remain in place during updates.

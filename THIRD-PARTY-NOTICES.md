@@ -84,3 +84,7 @@ English game flavor text is bundled from the PokeAPI data project: https://githu
 ## Interface translations
 
 Common interface translations in Source/Assets/Localization are adapted from PKHeX.WinForms Resources/text/lang_*.txt at the bundled PKHeX revision, under GPL-3.0-or-later. Additional KeepSake navigation translations are in keepSake.tsv. Untranslated interface text falls back to English.
+
+## Sparkle 2.10.0
+
+In-app updates use Sparkle, https://github.com/sparkle-project/Sparkle/tree/2.10.0. Its MIT license and bundled third-party notices are reproduced in Source/Packaging/Sparkle-LICENSE.txt and shipped as Sparkle-LICENSE.txt. The Swift package binary is pinned to the upstream archive checksum.

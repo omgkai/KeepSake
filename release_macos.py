@@ -29,9 +29,13 @@ def main():
    if file.is_symlink() or not file.is_file():continue
    with file.open('rb') as stream:is_native=stream.read(4) in magic
    if not is_native:continue
-   flags=['codesign','--force','--timestamp','--options','runtime','--sign',args.identity]
+   flags=['codesign','--force','--timestamp','--options','runtime','--preserve-metadata=entitlements','--sign',args.identity]
    if file.name=='PKHeXBridge':flags+=['--entitlements',entitlements]
    run(*flags,file)
+  # Seal nested Sparkle app/XPC bundles before their enclosing framework and app.
+  bundles=[p for p in target.rglob('*') if p.is_dir() and not p.is_symlink() and p.suffix in {'.app','.xpc','.framework'}]
+  for bundle in sorted(bundles,key=lambda p:len(p.parts),reverse=True):
+   run('codesign','--force','--timestamp','--options','runtime','--preserve-metadata=entitlements','--sign',args.identity,bundle)
   run('codesign','--force','--timestamp','--options','runtime','--sign',args.identity,target)
   run('codesign','--verify','--deep','--strict',target)
   archive=tmp/'submission.zip';run('ditto','-c','-k','--sequesterRsrc','--keepParent',target,archive)
