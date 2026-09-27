@@ -40,7 +40,7 @@ struct PokemonWorkspace: View {
                 }.padding(22)
                 HStack(spacing:3) {
                     ForEach(tabs,id:\.self) { name in
-                        Button { tab = name } label: { Text(LocalizedStringKey(name)).font(.system(size:11, weight:tab == name ? .semibold : .regular)).padding(.horizontal,9).padding(.vertical,8).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
+                        Button { tab = name } label: { Text(LocalizedStringKey(name)).font(.system(size:11, weight:tab == name ? .semibold : .regular)).frame(maxWidth:.infinity,minHeight:36).contentShape(Rectangle()).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
                     }
                 }.padding(.horizontal,16).padding(.bottom,10)
                 Divider()
@@ -99,6 +99,7 @@ struct PokemonWorkspace: View {
     private func action(_ action: String) { Task { await model.command(["op":"entityAction", "action":action]) } }
 }
 struct BoxPanel: View {
+    @State private var keyboardFocused=false
     @Environment(\.gameTheme) private var theme
     @EnvironmentObject var model: EditorModel
     @State private var showLayout = false
@@ -139,9 +140,12 @@ struct BoxPanel: View {
                         ForEach(model.state.partySlots) { slot in slotButton(slot, selected:model.isSelected(slot)) }
                     }
                 }
-                Text("Select a Pokémon • Edit • Set to Slot • Export Copy").font(.caption).foregroundStyle(.tertiary).lineSpacing(3)
+                Text("Arrow keys: move selection · Option ←/→: change box").font(.caption).foregroundStyle(.tertiary).lineSpacing(3)
             }.padding(18)
         }.background(ThemeBackdrop())
+        .background(BoxKeyboardCapture(active:$keyboardFocused) {delta,box,repeating in
+            model.navigateSlots(delta:model.state.party && abs(delta)==6 ? delta/6:delta,changeBox:box,repeating:repeating)
+        })
         .sheet(isPresented:$showLayout){BoxLayoutView()}
         .sheet(isPresented:$showWallpaper){BoxAppearanceView(game:model.state.game,box:model.state.box,stored:model.state.boxLayout?.entries.first(where:{$0.id==model.state.box})?.sprite ?? "")}
         .sheet(item:$transfer){SlotTransferView(source:$0)}
@@ -158,7 +162,7 @@ struct BoxPanel: View {
             .help("Copy the Pokémon in the editor here, replacing the current occupant. Undo restores the previous slot.")
     }
     @ViewBuilder private func slotButton(_ slot:Slot,selected:Bool)->some View {
-        let button=Button {model.select(slot)} label:{
+        let button=Button {keyboardFocused=true;model.select(slot)} label:{
             InteractiveSlotCell(slot:slot,selected:selected)
                 .onDrag {model.busy ? NSItemProvider() : NSItemProvider(object:model.boxDragPayload(slot) as NSString)} preview:{PokemonDragPreview(slot:slot)}
         }

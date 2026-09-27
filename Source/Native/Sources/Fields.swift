@@ -61,9 +61,7 @@ struct FieldRow: View {
                 Toggle(field.label, isOn:Binding(get:{ value == "true" }, set:{ v in Task { await model.commit(field, target:target, value:v ? "true" : "false") } })).labelsHidden().toggleStyle(.switch).controlSize(.mini)
             } else {
                 HStack(spacing:5) {
-                    TextField(field.kind == "datetime" ? "yyyy-mm-dd HH:mm:ss" : field.kind == "date" ? "yyyy-mm-dd" : field.label, text:Binding(get:{value}, set:{ model.draft($0, field:field, target:target) }))
-                        .textFieldStyle(.roundedBorder).font(.system(size:12, design:field.kind == "number" ? .monospaced : .default))
-                        .onSubmit { Task { await model.commit(field, target:target) } }
+                    DraftTextField(title:field.kind == "datetime" ? "yyyy-mm-dd HH:mm:ss" : field.kind == "date" ? "yyyy-mm-dd" : field.label,text:Binding(get:{value},set:{model.draft($0,field:field,target:target)}),monospaced:field.kind == "number") {Task {await model.commit(field,target:target)}}.frame(height:24)
                     if field.lookup != nil || !field.choices.isEmpty {
                         Button { Task {
                             do {

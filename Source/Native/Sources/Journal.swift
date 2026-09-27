@@ -16,6 +16,11 @@ struct JournalEditor:View {
         HStack{Label("A little more yours",systemImage:"book.closed.fill").font(.title2.bold());Spacer();Button("Cancel"){dismiss()}.keyboardShortcut(.cancelAction);Button("Save Journal"){do{try journals.save(draft,for:selection.id);dismiss()}catch{self.error=error.localizedDescription}}.buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction)}
         JournalCard(entry:draft)
         HStack {TextField("KeepSake display name",text:$draft.displayName).textFieldStyle(.roundedBorder);Toggle("Favorite",isOn:$draft.favorite).toggleStyle(.button)}
+        VStack(alignment:.leading,spacing:8) {
+            HStack {Text("Tagline (optional)").font(.headline);Spacer();Button("Clear"){draft.tagline=nil}.disabled((draft.tagline ?? "").isEmpty)}
+            TextField("Your own companion tagline",text:Binding(get:{draft.tagline ?? ""},set:{draft.tagline=$0})).textFieldStyle(.roundedBorder)
+            Text("Leave blank to hide the tagline.").font(.caption).foregroundStyle(.secondary)
+        }
         Picker("Card style",selection:$draft.style){ForEach(["Midnight","Meadow","Sunset","Aurora"],id:\.self){Text($0)}}.pickerStyle(.segmented)
         JournalCustomColors(first:$draft.accentHex,second:$draft.companionHex,style:draft.style)
         HStack{Text("Our story").font(.headline);Spacer();Text("Started "+draft.created.formatted(date:.abbreviated,time:.omitted)).font(.caption).foregroundStyle(.secondary)}
@@ -29,7 +34,9 @@ struct JournalCard:View {
     private var colors:[Color] {journalColors(entry.style,entry.accentHex,entry.companionHex)}
     var body:some View {HStack(spacing:20) {
         PokemonSprite(name:entry.sprite,portrait:entry.portrait).frame(width:100,height:100).padding(14).background(.white.opacity(0.09),in:RoundedRectangle(cornerRadius:24))
-        VStack(alignment:.leading,spacing:10){HStack{Text("KEEPSAKE · MY COMPANION").font(.system(size:10,weight:.bold,design:.rounded)).tracking(2);Spacer();if entry.favorite{Image(systemName:"star.fill").foregroundStyle(Color(hex:"E3C576"))}}
+        VStack(alignment:.leading,spacing:10){if !(entry.tagline ?? "").trimmingCharacters(in:.whitespacesAndNewlines).isEmpty || entry.favorite {
+                HStack{if let tagline=entry.tagline,!tagline.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty {Text(tagline).font(.system(size:10,weight:.bold,design:.rounded)).tracking(1).lineLimit(3)};Spacer();if entry.favorite{Image(systemName:"star.fill").foregroundStyle(Color(hex:"E3C576"))}}
+            }
             Text(entry.displayName.isEmpty ? (entry.nickname.isEmpty ? entry.species : entry.nickname) : entry.displayName).font(.system(size:29,weight:.bold,design:.rounded)).lineLimit(2)
             Text(entry.game=="Personal journal" ? entry.species:entry.species+" · Lv. \(entry.level)").font(.callout).foregroundStyle(.white.opacity(0.8))
             Text(entry.game).font(.caption).foregroundStyle(.white.opacity(0.7))

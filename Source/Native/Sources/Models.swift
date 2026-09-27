@@ -316,10 +316,10 @@ final class Bridge: @unchecked Sendable {
     @Published var showSamplePicker=false
     func demo() { guard !busy else{return};showSamplePicker=true }
     func startSample(_ version:String) { guard !busy, confirmDiscard() else{return};showSamplePicker=false;Task { await command(["op":"demo","version":version],status:"Sample workspace — explore without a save file") } }
-    func select(_ slot: Slot) {
+    func select(_ slot: Slot) {select(SelectionTarget(box:state.box,slot:slot.index,party:slot.party))}
+    private func select(_ target:SelectionTarget) {
         guard !busy || selectionTarget != nil else {return}
         if selectionTarget == nil {guard confirmDiscard(all:false) else{return}}
-        let target=SelectionTarget(box:state.box,slot:slot.index,party:slot.party)
         if selectionTarget != nil {selectionTarget=target;return}
         selectionTarget=target;busy=true
         Task {
@@ -336,8 +336,21 @@ final class Bridge: @unchecked Sendable {
         }
     }
     func isSelected(_ slot:Slot)->Bool {
-        if let target=selectionTarget {return target.slot==slot.index && target.party==slot.party}
+        if let target=selectionTarget {return (target.party || target.box==state.box) && target.slot==slot.index && target.party==slot.party}
         return state.slot==slot.index && state.party==slot.party
+    }
+    func navigateSlots(delta:Int,changeBox:Bool,repeating:Bool) {
+        guard state.hasSave,!busy || selectionTarget != nil else{return}
+        if repeating && (state.pending || fieldDrafts) {return}
+        let current=selectionTarget ?? SelectionTarget(box:state.box,slot:state.slot,party:state.party)
+        if current.party && !changeBox {
+            let slot=min(max(0,current.slot+delta),max(0,state.partySlots.count-1))
+            if slot != current.slot {select(SelectionTarget(box:current.box,slot:slot,party:true))}
+        } else {
+            let position=BoxKeyboardPosition(box:current.box,slot:max(0,current.slot))
+            let next=position.moving(delta:delta,boxes:state.boxCount,slots:state.slots.count,changeBox:changeBox)
+            if next != position || current.party {select(SelectionTarget(box:next.box,slot:next.slot,party:false))}
+        }
     }
     func chooseBox(_ box: Int) {
         guard !busy else{return}

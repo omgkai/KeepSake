@@ -9,6 +9,7 @@ struct PokemonJournal:Codable,Equatable {
     var pokemonData:String?=nil,pokemonExtension:String?=nil
     var accentHex:String?=nil,companionHex:String?=nil
     var portrait:String?=nil
+    var tagline:String?=nil
     var created=Date(),updated=Date()
     var title:String {displayName.isEmpty ? (nickname.isEmpty ? species : nickname) : displayName}
 }
@@ -20,6 +21,7 @@ struct JournalTeam:Codable,Equatable,Identifiable {
     var updated=Date()
 }
 struct JournalCover:Codable,Equatable {
+    var tagline:String?=nil
     var title="My Pokémon journal",subtitle="",style="Midnight",emblem="book.closed.fill"
     var accentHex:String?=nil,companionHex:String?=nil
     var updated=Date.distantPast
@@ -51,12 +53,12 @@ struct JournalDocument:Codable {var version=3;var entries:[String:PokemonJournal
         func validColors(_ a:String?,_ b:String?)->Bool { [a,b].allSatisfy{value in value==nil || (value!.count==6 && value!.allSatisfy{$0.isHexDigit})} }
         for (key,entry) in document.entries {
             guard (entry.portrait?.count ?? 0)<=100,validColors(entry.accentHex,entry.companionHex),(entry.pokemonData?.count ?? 0)<=4096,(entry.pokemonData==nil || Data(base64Encoded:entry.pokemonData!) != nil),(entry.pokemonExtension==nil || entry.pokemonExtension!.range(of:"^[a-z]{2}[1-9]$",options:.regularExpression) != nil) else{throw JournalError("Invalid companion colors or Pokémon snapshot.")}
-            guard key.count==64,key.allSatisfy({$0.isHexDigit}),entry.displayName.count<=80,entry.notes.count<=20000,entry.species.count<=100,entry.nickname.count<=100,entry.game.count<=100,(0...100).contains(entry.level),journalStyles.contains(entry.style),entry.sprite.range(of:"^[ab]_[0-9]+(?:-[0-9]+[cp]?)*f?s?$",options:.regularExpression) != nil else {throw JournalError("The backup contains an invalid journal entry.")}
+            guard key.count==64,key.allSatisfy({$0.isHexDigit}),entry.displayName.count<=80,(entry.tagline?.count ?? 0)<=200,entry.notes.count<=20000,entry.species.count<=100,entry.nickname.count<=100,entry.game.count<=100,(0...100).contains(entry.level),journalStyles.contains(entry.style),entry.sprite.range(of:"^[ab]_[0-9]+(?:-[0-9]+[cp]?)*f?s?$",options:.regularExpression) != nil else {throw JournalError("The backup contains an invalid journal entry.")}
         }
         for (key,team) in document.teams ?? [:] {
             guard validColors(team.accentHex,team.companionHex),key==team.id,UUID(uuidString:key) != nil,!team.name.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty,team.name.count<=80,team.notes.count<=20000,journalStyles.contains(team.style),journalEmblems.contains(team.emblem),team.members.count<=6,Set(team.members).count==team.members.count,team.members.allSatisfy({document.entries[$0] != nil}) else {throw JournalError("Use a team name up to 80 characters, a story up to 20,000 characters, and at most six different journal companions.")}
         }
-        if let c=document.cover {guard validColors(c.accentHex,c.companionHex),!c.title.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty,c.title.count<=80,c.subtitle.count<=200,journalStyles.contains(c.style),journalEmblems.contains(c.emblem) else{throw JournalError("Choose a journal title, cover style and emblem.")}}
+        if let c=document.cover {guard validColors(c.accentHex,c.companionHex),!c.title.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty,c.title.count<=80,c.subtitle.count<=200,(c.tagline?.count ?? 0)<=200,journalStyles.contains(c.style),journalEmblems.contains(c.emblem) else{throw JournalError("Choose a journal title, cover style and emblem.")}}
         return document
     }
     func save(_ entry:PokemonJournal,for key:String)throws {var next=entries;var value=entry;value.updated=Date();next[key]=value;try persist(next,teams,cover)}

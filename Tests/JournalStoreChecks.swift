@@ -5,9 +5,16 @@ import Foundation
         let file=root.appendingPathComponent(UUID().uuidString+".json"), key=String(repeating:"a",count:64), key2=String(repeating:"b",count:64)
         let store=JournalStore(url:file)
         var entry=PokemonJournal(displayName:"Sparky",notes:"Our first adventure 🌿",favorite:true,style:"Meadow",species:"Pikachu",nickname:"Pika",sprite:"b_25s",game:"Scarlet",level:42,portrait:"Gen9:25:0:1:0:1")
+        entry.tagline="Our Kanto champion"
         try store.save(entry,for:key)
         let reopened=JournalStore(url:file);assert(reopened.entries[key]?.displayName=="Sparky" && reopened.entries[key]?.notes==entry.notes && reopened.entries[key]?.favorite==true && reopened.entries[key]?.style=="Meadow")
         assert(reopened.entries[key]?.portrait=="Gen9:25:0:1:0:1")
+        assert(reopened.entries[key]?.tagline=="Our Kanto champion")
+        var legacyJSON=try JSONSerialization.jsonObject(with:store.exportData()) as! [String:Any]
+        var legacyEntries=legacyJSON["entries"] as! [String:[String:Any]]
+        legacyEntries[key]?.removeValue(forKey:"tagline");legacyJSON["entries"]=legacyEntries
+        let legacyDocument=try JournalStore.decodeDocument(JSONSerialization.data(withJSONObject:legacyJSON))
+        assert(legacyDocument.entries[key]?.tagline==nil)
         let snapshot=try Data(contentsOf:file)
         entry.notes=String(repeating:"x",count:20001)
         do {try store.save(entry,for:key);fatalError("oversized note accepted")}catch{}

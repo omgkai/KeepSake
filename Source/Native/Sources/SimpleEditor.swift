@@ -218,9 +218,7 @@ struct StatInput:View {
     let id:String, title:String
     var body:some View {
         if let field = model.state.fields.first(where:{$0.id == id && $0.editable}) {
-            TextField(title,text:Binding(get:{model.value(field,target:"entity")},set:{model.draft($0,field:field,target:"entity")}))
-                .textFieldStyle(.roundedBorder).multilineTextAlignment(.trailing).font(.system(.body,design:.monospaced))
-                .accessibilityLabel(title).onSubmit { Task { await model.editPokemon() } }
+            DraftTextField(title:title,text:Binding(get:{model.value(field,target:"entity")},set:{model.draft($0,field:field,target:"entity")}),monospaced:true,trailing:true) { Task { await model.editPokemon() } }.frame(height:24)
         } else { Text("—").foregroundStyle(.tertiary) }
     }
 }
@@ -278,9 +276,7 @@ struct SimpleField:View {
                     Toggle(title,isOn:Binding(get:{value == "true"},set:{new in Task { await model.editPokemon(id,value:new ? "true" : "false") } })).labelsHidden().toggleStyle(.switch).controlSize(.small)
                     Spacer()
                 } else {
-                    TextField(field.kind == "date" ? "yyyy-mm-dd" : title,text:Binding(get:{value},set:{model.draft($0,field:field,target:"entity")}))
-                        .textFieldStyle(.roundedBorder).accessibilityLabel(title)
-                        .onSubmit { Task { await model.editPokemon() } }
+                    DraftTextField(title:field.kind == "date" ? "yyyy-mm-dd" : title,text:Binding(get:{value},set:{model.draft($0,field:field,target:"entity")})) { Task { await model.editPokemon() } }.frame(height:24)
                 }
             }.frame(minHeight:25)
         }

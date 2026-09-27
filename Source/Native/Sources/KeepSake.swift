@@ -46,7 +46,8 @@ struct TrainerCardView:View {
     @EnvironmentObject var model:EditorModel
     @Environment(\.gameTheme) private var theme
     @AppStorage("trainerCardStyle") private var style="Midnight"
-    @AppStorage("trainerCardTitle") private var title="A new adventure"
+    @AppStorage("trainerCardTitle") private var title=""
+    @AppStorage("trainerCardTagline") private var tagline=""
     @AppStorage("trainerCardPartner") private var partner="25"
     @AppStorage("trainerCardAccent") private var accent="D9B665"
     @State private var customize=false
@@ -59,10 +60,10 @@ struct TrainerCardView:View {
             VStack(alignment:.leading,spacing:24) {
                 HStack {VStack(alignment:.leading){Text("Trainer card").font(.largeTitle.bold());Text("Your adventure, your signature.").foregroundStyle(.secondary)};Spacer();Button {customize.toggle()} label:{Label("Customize Card",systemImage:"paintbrush.pointed.fill")}}
                 VStack(alignment:.leading,spacing:24) {
-                    HStack {Label("KEEPSAKE · TRAINER PASSPORT",systemImage:"book.closed.fill").font(.caption.weight(.bold)).tracking(2);Spacer();SaveGameLogo(version:model.state.gameLogoVersion,name:model.state.game)}
+                    HStack {if !tagline.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty {Label(tagline,systemImage:"book.closed.fill").font(.caption.weight(.bold)).tracking(1)};Spacer();SaveGameLogo(version:model.state.gameLogoVersion,name:model.state.game)}
                     HStack(alignment:.center,spacing:24) {
                         PokemonSprite(name:"b_"+partner).frame(width:110,height:110).padding(14).background(.white.opacity(0.08),in:RoundedRectangle(cornerRadius:28))
-                        VStack(alignment:.leading,spacing:8) {Text(value("OT")).font(.system(size:38,weight:.bold,design:.rounded));GenderBadge(value:Int(value("Gender")) ?? 2);Text(title).font(.title3).foregroundStyle(.white.opacity(0.8))}
+                        VStack(alignment:.leading,spacing:8) {Text(value("OT")).font(.system(size:38,weight:.bold,design:.rounded));GenderBadge(value:Int(value("Gender")) ?? 2);if !title.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty {Text(title).font(.title3).foregroundStyle(.white.opacity(0.8))}}
                         Spacer()
                     }
                     TrainerTeamDisplay(ink:ink)
@@ -72,7 +73,8 @@ struct TrainerCardView:View {
                     .overlay(RoundedRectangle(cornerRadius:24).stroke(ink.opacity(0.65),lineWidth:1)).shadow(color:.black.opacity(0.12),radius:14,y:7)
                 if customize {EditorCard(title:"Make it yours") {
                     Picker("Card style",selection:$style){ForEach(["Midnight","Game Colors","Twilight"],id:\.self){Text($0)}}.pickerStyle(.segmented)
-                    TextField("Card motto",text:$title).textFieldStyle(.roundedBorder)
+                    TextField("Tagline (optional)",text:$tagline).textFieldStyle(.roundedBorder)
+                    TextField("Card motto (optional)",text:$title).textFieldStyle(.roundedBorder)
                     CatalogChoiceButton(title:"Partner",options:(model.catalogs["species"] ?? []).filter{$0.value != "0"},value:$partner)
                     ColorPicker("Foil color",selection:Binding(get:{ink},set:{accent=NSColor($0).usingColorSpace(.deviceRGB).map{String(format:"%02X%02X%02X",Int(max(0,min(1,$0.redComponent))*255),Int(max(0,min(1,$0.greenComponent))*255),Int(max(0,min(1,$0.blueComponent))*255))} ?? "D9B665"}),supportsOpacity:false)
                     Text("Card styling is saved on this Mac. It does not change your game's trainer appearance.").font(.caption).foregroundStyle(.secondary)
