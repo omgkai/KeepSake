@@ -82,8 +82,6 @@ Search encounters and event gifts, inspect stats and legality, and use the tools
 
 </details>
 
-<sub>Screenshots supplied by Kai White, September 2026. Available controls depend on the loaded save; screenshots may show an earlier interface revision.</sub>
-
 ## Your first adventure
 
 1. Open a save or Pokémon file, or drag it into the window. Sample workspaces are also available.
