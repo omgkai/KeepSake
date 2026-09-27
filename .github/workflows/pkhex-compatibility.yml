@@ -1,0 +1,67 @@
+name: PKHeX compatibility
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: true
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'Source/Engine/**'
+      - 'Source/Vendor/**'
+      - 'Tests/**'
+      - '.github/workflows/pkhex-compatibility.yml'
+permissions:
+  contents: read
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    outputs:
+      sha: ${{ steps.head.outputs.sha }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+          persist-credentials: false
+      - id: head
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: '10.0.x'
+      - name: Compile Core, Auto-Legality and KeepSake bridge
+        run: dotnet publish Source/Engine -c Release --self-contained false -o "$RUNNER_TEMP/keepsake-engine" -p:DebugType=None -p:DebugSymbols=false
+      - name: Ability compatibility across Pokémon formats
+        run: dotnet run --project Tests/Ability026Checks -c Release
+      - name: Pokédex save round trips and undo
+        run: dotnet run --project Tests/DexAdapterChecks -c Release
+      - name: Party and box operations across generations
+        run: dotnet run --project Tests/Parity033Checks -c Release
+      - name: Growth and training across generations
+        run: python3 Tests/editor_growth.py "$RUNNER_TEMP/keepsake-engine/PKHeXBridge"
+      - name: Alpha encounter and Auto-Legality compatibility
+        run: python3 Tests/alpha_generation.py "$RUNNER_TEMP/keepsake-engine/PKHeXBridge"
+  report:
+    needs: engine
+    if: always() && needs.engine.outputs.sha != '' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      statuses: write
+    steps:
+      - name: Attach result to the checked commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ needs.engine.outputs.sha }}
+          RESULT: ${{ needs.engine.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          state=failure
+          if [ "$RESULT" = success ]; then state=success; fi
+          gh api --method POST "repos/$REPOSITORY/statuses/$SHA" \
+            -f "state=$state" -f 'context=PKHeX compatibility' \
+            -f "description=Engine and synthetic-save checks: $RESULT" -f "target_url=$RUN_URL"

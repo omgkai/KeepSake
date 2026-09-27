@@ -2,7 +2,9 @@
 
 This unofficial native interface is not affiliated with or endorsed by the PKHeX project, Nintendo, GAME FREAK, or The Pokémon Company.
 
-PKHeX.Core and the SpriteName utility are by Kaphotics and the PKHeX contributors, licensed GPL-3.0-or-later. Upstream: https://github.com/kwsch/PKHeX . Commit: 08c27668d28a83ad4b04140436a384d4155ed134. The library source is included unchanged under Source/Vendor; its license is in LICENSE. The new SwiftUI interface and bridge are provided under GPL-3.0-or-later as part of this derivative project.
+PKHeX.Core is by Kaphotics and contributors, licensed GPL-3.0-or-later. Its bundled release and exact source revision are recorded in [Source/Vendor/PKHeX-UPSTREAM.json](Source/Vendor/PKHeX-UPSTREAM.json); its source is under Source/Vendor/PKHeX.Core and its license under Source/Vendor/LICENSE. Core update proposals do not update separate artwork or extracted game data.
+
+The SpriteName utility and the original asset/data baseline are from PKHeX commit 08c27668d28a83ad4b04140436a384d4155ed134, https://github.com/kwsch/PKHeX. References below to the pinned upstream asset commit refer to this original revision. The SwiftUI interface and bridge are provided under GPL-3.0-or-later as part of this derivative project; see LICENSE.
 
 The regular Pokémon sprites and artwork are copied unchanged from PKHeX.Drawing.PokeSprite/Resources/img/Big Pokemon Sprites and Artwork Pokemon Sprites at the same upstream commit. Their source collection and attribution are retained in Source/Vendor/UPSTREAM-README.md. Pokémon characters and related artwork belong to their respective rights holders. Version 0.12 additionally includes 1,777 unchanged images from Big Shiny Sprites and Artwork Shiny Sprites at the same commit. Source/Assets/shiny-sources.json records their paths. The separate Legends: Arceus sprite collections are not bundled; the user-supplied Gen 9 sheets take precedence as described below.
 

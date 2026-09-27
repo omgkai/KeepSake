@@ -1,0 +1,43 @@
+name: PKHeX upstream updates
+on:
+  schedule:
+    - cron: '23 12 * * *'
+  workflow_dispatch:
+    inputs:
+      check_current:
+        description: Run compatibility checks even when the bundled release is current
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: pkhex-upstream
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'omgkai/KeepSake' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      check: ${{ steps.update.outputs.check }}
+      ref: ${{ steps.update.outputs.ref }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - id: update
+        name: Prepare a draft update PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECK_CURRENT: ${{ inputs.check_current }}
+        run: python3 scripts/update_pkhex.py
+  compatibility:
+    needs: prepare
+    if: needs.prepare.outputs.check == 'true'
+    permissions:
+      contents: read
+      statuses: write
+    uses: ./.github/workflows/pkhex-compatibility.yml
+    with:
+      ref: ${{ needs.prepare.outputs.ref }}

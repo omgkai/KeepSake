@@ -1,0 +1,7 @@
+{
+  "repository": "kwsch/PKHeX",
+  "tag": "26.08.26",
+  "commit": "08c27668d28a83ad4b04140436a384d4155ed134",
+  "release_url": "https://github.com/kwsch/PKHeX/releases/tag/26.08.26",
+  "scope": "PKHeX.Core and its build metadata only; artwork and extracted game data retain their separate provenance."
+}

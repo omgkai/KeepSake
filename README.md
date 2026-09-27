@@ -128,3 +128,7 @@ Made with love by **Kai White**.
 - **In-app updates:** [Sparkle contributors](https://github.com/sparkle-project/Sparkle), MIT license.
 
  KeepSake is an unofficial project distributed under GPL-3.0-or-later; see [LICENSE](LICENSE) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). Pokémon and artwork belong to their respective owners. The source license does not relicense separate artwork.
+
+## Keeping the engine current
+
+KeepSake checks official PKHeX releases daily and opens draft Core update PRs with compatibility results. Updates are reviewed before a separately signed and notarized KeepSake release. [How upstream updates work →](docs/UPSTREAM-UPDATES.md)
