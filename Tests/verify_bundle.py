@@ -13,6 +13,10 @@ expected = plistlib.loads((root / 'Source/Packaging/Info.plist').read_bytes())
 for key in ['CFBundleIdentifier', 'CFBundleShortVersionString', 'CFBundleVersion']:
     assert info[key] == expected[key], key
 assert 'LSEnvironment' not in info, 'QA environment leaked into release bundle'
+assert info['CFBundleLocalizations'] == expected['CFBundleLocalizations']
+for language in expected['CFBundleLocalizations']:
+    resource = pathlib.Path(language + '.lproj') / 'Localizable.strings'
+    assert (app / 'Contents/Resources' / resource).read_bytes() == (root / 'Source/Assets/Localization' / resource).read_bytes()
 count = 0
 for name in ['GamePortraits', 'Portraits', 'Badges', 'Donuts', 'Sprites', 'PaldeaItems', 'HisuiItems', 'Items', 'Balls', 'MoveTypes', 'GameLogos', 'Ribbons', 'Wallpapers']:
     for asset in (root / 'Source/Assets' / name).rglob('*'):
@@ -45,4 +49,4 @@ assert len(replies[14]['data']['groups']) == 15 and replies[14]['data']['entries
 assert replies[15]['data']['text'] == 'Pikachu' and replies[15]['data']['capacity'] == 26
 print(f'PASS {info["CFBundleShortVersionString"]}: local signature, {count} resources, notices, clean environment, content/Link/Underground/Chatter/Training tools and isolated shiny Auto-Legality generation')
 print('Native executable SHA256:', hashlib.sha256((app / 'Contents/MacOS/PKHeXSwift').read_bytes()).hexdigest())
-print('Ad-hoc integrity verification is not Developer ID signing, notarization, or full Windows parity.')
+print('Bundle integrity verification does not establish notarization or full Windows parity.')

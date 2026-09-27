@@ -20,7 +20,7 @@ KeepSake checks public GitHub releases daily while open. Choose **KeepSake → C
 - Capture your current party as a journal team. Add memories, favorites, custom names and covers without changing game data.
 - Choose sprites, HOME portraits or game portraits, plus themes and custom colors.
 
-The editor uses one save workspace. About and Support open in separate windows so help can stay beside your work. Independent simultaneous save workspaces are not supported.
+Choose **File → New KeepSake Window (⌘N)** to open another independent save workspace. Each window has its own save, editor and Undo history. Journals and appearance preferences are shared. Closing a window only closes that workspace; unsaved changes require confirmation. Dragging Pokémon between separate save windows is not supported; export and open a Pokémon file instead. About and Support also open separately.
 
 ## Backup and restore
 
@@ -43,7 +43,7 @@ KEEPSAKE_ARCH=arm64 KEEPSAKE_APP_PATH="$PWD/KeepSake-AppleSilicon.app" bash buil
 KEEPSAKE_ARCH=x86_64 KEEPSAKE_APP_PATH="$PWD/KeepSake-Intel.app" bash build.sh
 ```
 
-Use distinct output paths. The build script writes app bundles and applies a local ad-hoc signature. [SIGNING.md](SIGNING.md) explains Developer ID signing and notarization; credentials belong in Keychain. [FEATURE-COVERAGE.md](FEATURE-COVERAGE.md) documents implementation coverage and native differences. Windows UI layout equivalence, LiveHeX and Windows plugins are outside this release's scope. The interface is English with ten-language game-data catalogs.
+Use distinct output paths. The build script writes app bundles and applies a local ad-hoc signature. [SIGNING.md](SIGNING.md) explains Developer ID signing and notarization; credentials belong in Keychain. [FEATURE-COVERAGE.md](FEATURE-COVERAGE.md) documents implementation coverage and native differences. Windows UI layout equivalence, LiveHeX and Windows plugins are outside this release's scope. Settings includes all ten PKHeX interface languages, independently of the game-data catalog language. Common editor labels and navigation reuse PKHeX translations; untranslated specialized tools and guidance fall back to English.
 
 ## Credits and license
 

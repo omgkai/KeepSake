@@ -1,7 +1,12 @@
-# KeepSake 0.36.1
+KeepSake 0.37 adds independent save windows and initial interface language support.
 
-- More Filters in Encounters now opens a dedicated scrolling panel, keeping the result table accessible at smaller window sizes. Filters persist when the panel closes.
-- Fixed Auto-Legality losing the requested Alpha status. Searches now require an Alpha encounter and reject any non-Alpha result without changing your Pokémon.
-- Added Alpha-only and non-Alpha encounter filters, with Alpha indicators in results.
+- **File → New KeepSake Window (⌘N)** opens a fresh workspace. Each window has its own save, editor and Undo history; journals and appearance remain shared.
+- Closing or quitting checks unsaved work. Concurrent preference changes preserve unrelated settings from other windows.
+- **Noble** now sits beside Alpha in Stats for Legends: Arceus Pokémon. PKHeX legality still flags Noble Pokémon as invalid for ordinary player ownership.
+- Settings now offers all ten PKHeX interface languages. Common editor labels and navigation use translated strings; specialized guidance and some KeepSake screens still fall back to English. Game-data catalog language remains separately configurable.
+- Removed the Port Coverage page. Developer coverage notes remain in the source repository.
+- Includes 0.36.1’s encounter-filter layout and Alpha-generation fixes.
 
-Alpha encounters can impose their own levels, moves and IV requirements. If your requested details cannot form a legal Alpha, KeepSake reports the failure and preserves the draft.
+Requires macOS 14 or later. Choose arm64 for Apple Silicon or x86_64 for Intel. Both builds are signed and notarized. Updates open the download page; install the downloaded app to replace your previous copy.
+
+Cross-window Pokémon dragging is not supported; export and open Pokémon files to transfer between saves.

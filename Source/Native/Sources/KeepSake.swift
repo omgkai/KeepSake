@@ -32,13 +32,13 @@ struct GenderBadge:View {
 }
 struct PokemonEmblem:View {
     let kind:String
-    var color:Color {kind=="IsShiny" ? .orange : kind=="IsAlpha" ? .red : .mint}
+    var color:Color {kind=="IsShiny" ? .orange : kind=="IsAlpha" ? .red : kind=="IsNoble" ? .yellow:.mint}
     var body:some View {
         ZStack {
             RoundedRectangle(cornerRadius:8).fill(color.opacity(0.15))
             if kind=="IsEgg" {
                 ZStack {Ellipse().fill(Color(.controlBackgroundColor)).overlay(Ellipse().stroke(color,lineWidth:1.5));Ellipse().fill(color).frame(width:5,height:7).offset(x:-3,y:2);Circle().fill(color).frame(width:4).offset(x:3,y:-4)}.frame(width:15,height:20)
-            } else {Image(systemName:kind=="IsAlpha" ? "eye.fill" : "sparkles").font(.system(size:17,weight:.semibold)).foregroundStyle(color)}
+            } else {Image(systemName:kind=="IsAlpha" ? "eye.fill" : kind=="IsNoble" ? "crown.fill":"sparkles").font(.system(size:17,weight:.semibold)).foregroundStyle(color)}
         }.frame(width:30,height:30)
     }
 }

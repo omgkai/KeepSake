@@ -80,3 +80,7 @@ English game flavor text is bundled from the PokeAPI data project: https://githu
 `Source/Assets/GamePortraits/SV` contains 933 unchanged Scarlet/Violet images from PokeAPI/sprites at pinned commit a13b1f4ccd77f35fd1370d2db5f0051221e9683f, directory sprites/pokemon/versions/generation-ix/scarlet-violet. `SOURCE.json` records original paths, sizes and Git blob hashes, verified at download. `LICENCE.txt` preserves the repository artwork notice. This collection has no shiny assets: KeepSake falls back to the matching shiny HOME portrait, then the shiny pixel sprite.
 
 `Source/Assets/GamePortraits/PLA` contains 632 unchanged Arceus normal/shiny assets from PKHeX.Drawing.PokeSprite at pinned commit 08c27668d28a83ad4b04140436a384d4155ed134. Its SOURCE.json records original paths and SHA-256 hashes. Transparent margins are trimmed only while rendering. Character artwork remains the property of its respective rights holders; this is not a new redistribution license. Missing exact-form or gender artwork falls back to HOME. The Game portraits option uses Arceus art for PLA saves/standalone PA8 and Scarlet/Violet art otherwise.
+
+## Interface translations
+
+Common interface translations in Source/Assets/Localization are adapted from PKHeX.WinForms Resources/text/lang_*.txt at the bundled PKHeX revision, under GPL-3.0-or-later. Additional KeepSake navigation translations are in keepSake.tsv. Untranslated interface text falls back to English.

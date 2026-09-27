@@ -4,93 +4,110 @@ import AppKit
 @main struct PKHeXSwiftApp: App {
     init() {
         let defaults=UserDefaults.standard
-        if defaults.object(forKey:"pokemonArtworkStyle") == nil {
-            defaults.set(defaults.object(forKey:"showPokemonSprites") as? Bool == false ? "HD Portraits":"Sprites",forKey:"pokemonArtworkStyle")
-        }
+        if defaults.object(forKey:"pokemonArtworkStyle") == nil { defaults.set(defaults.object(forKey:"showPokemonSprites") as? Bool == false ? "HD Portraits":"Sprites",forKey:"pokemonArtworkStyle") }
     }
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var model = EditorModel()
-    @StateObject private var journals = JournalStore()
-    @StateObject private var updater = UpdateChecker.shared
+    @StateObject private var journals=JournalStore()
+    var body:some Scene {
+        WindowGroup("KeepSake",id:"main") { SaveWorkspace().environmentObject(journals) }
+            .defaultSize(width:1280,height:850).commands { WorkspaceCommands() }
+        Window("About KeepSake",id:"about") { AboutKeepSakeView().modifier(InterfaceLocale()).frame(minWidth:520,minHeight:600) }.defaultSize(width:580,height:700)
+        Window("KeepSake Support",id:"support") { KeepSakeSupportView().environmentObject(journals).modifier(InterfaceLocale()).frame(minWidth:600,minHeight:600) }.defaultSize(width:680,height:800)
+    }
+}
+struct WorkspaceCommands:Commands {
+    @FocusedObject private var model:EditorModel?
     @Environment(\.openWindow) private var openWindow
-    @AppStorage("appearance") private var appearance = "System"
-    @AppStorage("gameTheme") private var themeID = "classic"
+    @AppStorage("interfaceLanguage") private var interfaceLanguage="system"
+    var body:some Commands {
+        let _ = interfaceLanguage
+        CommandGroup(replacing:.appInfo) {
+            Button(L("About KeepSake")){openWindow(id:"about")}
+            Button(L("Check for Updates…")){openWindow(id:"about");Task{await UpdateChecker.shared.check()}}
+        }
+        CommandGroup(replacing:.help){Button(L("KeepSake Support")){openWindow(id:"support")}}
+        CommandGroup(replacing:.newItem){
+            Button(L("New KeepSake Window")){openWindow(id:"main")}.keyboardShortcut("n")
+            Button(L("Open Save or Pokémon…")){model?.open()}.keyboardShortcut("o").disabled(model == nil || model?.busy == true)
+            Button(L("Explore Sample Workspace")){model?.demo()}.disabled(model == nil || model?.busy == true)
+        }
+        CommandGroup(replacing:.saveItem){
+            Button(L("Export Edited Save…")){model?.exportSave()}.keyboardShortcut("s",modifiers:[.command,.shift]).disabled(model?.state.hasSave != true || model?.state.demo == true || model?.busy == true)
+            Button(L("Export Pokémon…")){model?.exportEntity()}.disabled(model == nil || model?.state.fields.isEmpty == true || model?.busy == true)
+        }
+        CommandGroup(replacing:.undoRedo){
+            Button(L("Undo")){guard let model else{return};Task{await model.command(["op":"undo"])}}.keyboardShortcut("z").disabled(model?.state.canUndo != true || model?.busy == true || model?.fieldDrafts == true)
+            Button(L("Redo")){guard let model else{return};Task{await model.command(["op":"redo"])}}.keyboardShortcut("z",modifiers:[.command,.shift]).disabled(model?.state.canRedo != true || model?.busy == true || model?.fieldDrafts == true)
+        }
+        CommandGroup(replacing:.appSettings){Button(L("Settings…")){model?.section="Settings"}.keyboardShortcut(",").disabled(model == nil)}
+    }
+}
+struct SaveWorkspace:View {
+    @StateObject private var model=EditorModel()
+    @ObservedObject private var updater=UpdateChecker.shared
+    @AppStorage("appearance") private var appearance="System"
+    @AppStorage("gameTheme") private var themeID="classic"
     @AppStorage("matchGameTheme") private var matchGame=true
     @AppStorage("customThemeColors") private var customColors=false
     @AppStorage("themeAccentHex") private var accentHex="6750A4"
     @AppStorage("themeCompanionHex") private var companionHex="E99A70"
     private var theme:GameTheme {
-        var value=matchGame && model.state.hasSave ? GameTheme.forGame(model.state.gameVersion) : GameTheme.named(themeID)
-        if customColors {value.accentOverride=Color(hex:accentHex);value.companionOverride=Color(hex:companionHex)}
+        var value=matchGame && model.state.hasSave ? GameTheme.forGame(model.state.gameVersion):GameTheme.named(themeID)
+        if customColors{value.accentOverride=Color(hex:accentHex);value.companionOverride=Color(hex:companionHex)}
         return value
     }
-    var body: some Scene {
-        Window("KeepSake", id: "main") {
-            ContentView().environmentObject(model).environmentObject(journals)
-                .environment(\.gameTheme,theme)
-                .environment(\.pokemonArtworkGame,model.state.gameVersion)
-                .tint(theme.accent).accentColor(theme.accent)
-                .preferredColorScheme(appearance == "Dark" ? .dark : appearance == "Light" ? .light : nil)
-                .frame(minWidth: 1050, minHeight: 700)
-                .task { delegate.model = model; await model.start() }
-                .onOpenURL { model.openURL($0) }
-                .task { while !Task.isCancelled { await updater.check(automatic:true); do { try await Task.sleep(for:.seconds(3600)) } catch { break } } }
-                .alert("A new chapter is ready",isPresented:$updater.showAnnouncement) { Button("View Update") { updater.openRelease() }; Button("Later",role:.cancel) {} } message: { Text(updater.message) }
-        }
-        .defaultSize(width: 1280, height: 850)
-        .commands {
-            CommandGroup(replacing: .appInfo) {
-                Button("About KeepSake") { openWindow(id:"about") }
-                Button("Check for Updates…") { openWindow(id:"about"); Task { await updater.check() } }.disabled(updater.checking)
-            }
-            CommandGroup(replacing: .help) { Button("KeepSake Support") { openWindow(id:"support") } }
-            CommandGroup(replacing: .newItem) {
-                Button("Open Save or Pokémon…") { model.open() }.keyboardShortcut("o").disabled(model.busy)
-                Button("Explore Sample Workspace") { model.demo() }.disabled(model.busy)
-            }
-            CommandGroup(replacing: .saveItem) {
-                Button("Export Edited Save…") { model.exportSave() }.keyboardShortcut("s", modifiers: [.command, .shift]).disabled(!model.state.hasSave || model.state.demo || model.busy)
-                Button("Export Pokémon…") { model.exportEntity() }.disabled(model.state.fields.isEmpty || model.busy)
-            }
-            CommandGroup(replacing: .undoRedo) {
-                Button("Undo") { Task { await model.command(["op":"undo"]) } }.keyboardShortcut("z").disabled(!model.state.canUndo || model.busy || model.fieldDrafts)
-                Button("Redo") { Task { await model.command(["op":"redo"]) } }.keyboardShortcut("z", modifiers: [.command, .shift]).disabled(!model.state.canRedo || model.busy || model.fieldDrafts)
-            }
-            CommandGroup(replacing: .appSettings) {
-                Button("Settings…") { model.section = "Settings" }.keyboardShortcut(",")
-            }
-        }
-        Window("About KeepSake",id:"about") { AboutKeepSakeView().environment(\.gameTheme,theme).preferredColorScheme(appearance == "Dark" ? .dark : appearance == "Light" ? .light : nil).frame(minWidth:520,minHeight:600) }.defaultSize(width:580,height:700)
-        Window("KeepSake Support",id:"support") { KeepSakeSupportView().environmentObject(journals).environment(\.gameTheme,theme).preferredColorScheme(appearance == "Dark" ? .dark : appearance == "Light" ? .light : nil).frame(minWidth:600,minHeight:600) }.defaultSize(width:680,height:800)
+    var body:some View {
+        ContentView().modifier(InterfaceLocale()).environmentObject(model).focusedSceneObject(model)
+            .environment(\.gameTheme,theme).environment(\.pokemonArtworkGame,model.state.gameVersion)
+            .tint(theme.accent).preferredColorScheme(appearance == "Dark" ? .dark:appearance == "Light" ? .light:nil)
+            .frame(minWidth:1050,minHeight:700)
+            .navigationTitle(model.state.loaded ? "KeepSake · \(model.state.sourceName) · \(model.state.game)":"KeepSake")
+            .task {let reopen=WorkspaceRegistry.shared.register(model);await model.start(reopenLast:reopen)}
+            .onOpenURL{model.openURL($0)}
+            .task {while !Task.isCancelled{await updater.check(automatic:true);do{try await Task.sleep(for:.seconds(3600))}catch{break}}}
+            .alert("A new chapter is ready",isPresented:Binding(get:{updater.showAnnouncement && WorkspaceRegistry.shared.isActive(model)},set:{updater.showAnnouncement=$0})){Button("View Update"){updater.openRelease()};Button("Later",role:.cancel){}} message:{Text(updater.message)}
     }
 }
-@MainActor final class AppDelegate: NSObject, NSApplicationDelegate {
-    weak var model: EditorModel?
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        if model?.busy == true { return .terminateCancel }
-        if model?.approvedClose != true && model?.confirmDiscard() == false { return .terminateCancel }
-        model?.bridge.stop(); return .terminateNow
+@MainActor final class WorkspaceRegistry {
+    static let shared=WorkspaceRegistry()
+    final class Entry {weak var model:EditorModel?;weak var window:NSWindow?;init(_ model:EditorModel){self.model=model}}
+    private var entries:[Entry]=[]
+    private var started=false
+    func register(_ model:EditorModel)->Bool {
+        entries.removeAll{$0.model == nil}
+        if !entries.contains(where:{$0.model === model}){entries.append(Entry(model))}
+        let first = !started;started=true;return first
     }
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
+    func attach(_ model:EditorModel,to window:NSWindow){
+        if let entry=entries.first(where:{$0.model === model}){entry.window=window}
+        else {let entry=Entry(model);entry.window=window;entries.append(entry)}
+    }
+    func isActive(_ model:EditorModel)->Bool{entries.contains{$0.model === model && $0.window?.isKeyWindow == true}}
+    func remove(_ model:EditorModel){entries.removeAll{$0.model === model || $0.model == nil};model.bridge.stop()}
+    func canQuit()->Bool {
+        let active=entries.compactMap{entry -> (EditorModel,NSWindow?)? in guard let model=entry.model else{return nil};return(model,entry.window)}
+        guard !active.contains(where:{$0.0.busy}) else{return false}
+        for (model,window) in active where model.unsaved {window?.makeKeyAndOrderFront(nil);if !model.confirmDiscard(clearDrafts:false){return false}}
+        for (model,_) in active{model.bridge.stop()};return true
+    }
 }
-struct WindowCloseGuard: NSViewRepresentable {
-    @EnvironmentObject var model: EditorModel
-    func makeNSView(context: Context) -> NSView {
-        let view = NSView()
-        DispatchQueue.main.async { if let window = view.window { context.coordinator.original = window.delegate; window.delegate = context.coordinator } }
-        return view
-    }
-    func updateNSView(_ nsView: NSView, context: Context) {}
-    func makeCoordinator() -> Coordinator { Coordinator(model: model) }
-    @MainActor class Coordinator: NSObject, NSWindowDelegate {
-        let model: EditorModel
-        weak var original: NSWindowDelegate?
-        init(model: EditorModel) { self.model = model }
-        func windowShouldClose(_ sender: NSWindow) -> Bool {
-            let close = !model.busy && model.confirmDiscard()
-            model.approvedClose = close
-            return close
-        }
+@MainActor final class AppDelegate:NSObject,NSApplicationDelegate {
+    func applicationShouldTerminate(_ sender:NSApplication)->NSApplication.TerminateReply {WorkspaceRegistry.shared.canQuit() ? .terminateNow:.terminateCancel}
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender:NSApplication)->Bool{true}
+}
+struct WindowCloseGuard:NSViewRepresentable {
+    @EnvironmentObject var model:EditorModel
+    func makeCoordinator()->Coordinator{Coordinator(model:model)}
+    func makeNSView(context:Context)->NSView{let view=NSView();attach(view,context.coordinator);return view}
+    func updateNSView(_ view:NSView,context:Context){attach(view,context.coordinator)}
+    private func attach(_ view:NSView,_ coordinator:Coordinator){DispatchQueue.main.async{guard let window=view.window else{return};WorkspaceRegistry.shared.attach(model,to:window);if window.delegate !== coordinator{coordinator.original=window.delegate;window.delegate=coordinator}}}
+    @MainActor final class Coordinator:NSObject,NSWindowDelegate {
+        let model:EditorModel;weak var original:NSWindowDelegate?
+        init(model:EditorModel){self.model=model}
+        override func responds(to selector:Selector!)->Bool{super.responds(to:selector) || original?.responds(to:selector) == true}
+        override func forwardingTarget(for selector:Selector!)->Any?{original?.responds(to:selector) == true ? original:super.forwardingTarget(for:selector)}
+        func windowShouldClose(_ sender:NSWindow)->Bool{!model.busy && model.confirmDiscard(clearDrafts:false)}
+        func windowWillClose(_ notification:Notification){WorkspaceRegistry.shared.remove(model);original?.windowWillClose?(notification)}
     }
 }
 
@@ -114,11 +131,10 @@ struct ContentView: View {
                 }.padding(20)
                 List(selection: $model.section) {
                     Section("Workspace") {
-                        ForEach(sections, id: \.0) { name, icon in Label(name, systemImage: icon).tag(name).padding(.vertical, 5) }
+                        ForEach(sections, id: \.0) { name, icon in Label(LocalizedStringKey(name), systemImage: icon).tag(name).padding(.vertical, 5) }
                     }
                     Section("Application") {
                         Label("Settings", systemImage:"gearshape").tag("Settings").padding(.vertical, 5)
-                        Label("Port Coverage", systemImage:"checklist").tag("Port Coverage").padding(.vertical, 5)
                     }
                 }.listStyle(.sidebar)
                 VStack(alignment: .leading, spacing: 6) {
@@ -129,11 +145,10 @@ struct ContentView: View {
             }.navigationSplitViewColumnWidth(min: 190, ideal: 205, max: 250)
         } detail: {
             VStack(spacing: 0) {
-                if model.state.loaded && model.section != "Settings" && model.section != "Port Coverage" { documentHeader }
+                if model.state.loaded && model.section != "Settings" { documentHeader }
                 Group {
                     if model.section == "Settings" { PreferencesView() }
                     else if model.section == "My Journal" { JournalLibrary() }
-                    else if model.section == "Port Coverage" { CoverageView() }
                     else if model.section == "Mystery Gifts" { GiftDatabaseView() }
                     else if model.section == "Gift Album" { GiftAlbumView() }
                     else if model.section == "File Library" { PokemonLibraryView() }
@@ -156,7 +171,7 @@ struct ContentView: View {
                 Divider()
                 HStack(spacing: 8) {
                     if model.busy { ProgressView().controlSize(.mini) } else { Circle().fill(.green).frame(width: 5, height: 5) }
-                    Text(model.busy ? "Working…" : model.status).lineLimit(1)
+                    Text(LocalizedStringKey(model.busy ? "Working…" : model.status)).lineLimit(1)
                     Spacer()
                     if !model.drafts.isEmpty { Text("Uncommitted fields").foregroundStyle(.orange) }
                     else if model.state.pending { Text("Pokémon edits pending").foregroundStyle(.orange) }
@@ -166,11 +181,10 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigation) {
                     Menu {
-                        ForEach(sections, id:\.0) { name, icon in Button { model.section=name } label: { Label(name,systemImage:icon) } }
+                        ForEach(sections, id:\.0) { name, icon in Button { model.section=name } label: { Label(LocalizedStringKey(name),systemImage:icon) } }
                         Button {model.section="Settings"} label:{Label("Settings",systemImage:"gearshape")}
-                        Button {model.section="Port Coverage"} label:{Label("Port Coverage",systemImage:"checklist")}
                     } label: {
-                        HStack(spacing:8) {Image(systemName:sections.first{$0.0==model.section}?.1 ?? "book.closed");Text(model.section).font(.headline).lineLimit(1)}.frame(minWidth:160,alignment:.leading)
+                        HStack(spacing:8) {Image(systemName:sections.first{$0.0==model.section}?.1 ?? "book.closed");Text(LocalizedStringKey(model.section)).font(.headline).lineLimit(1)}.frame(minWidth:160,alignment:.leading)
                     }.menuStyle(.borderlessButton).fixedSize().help("Current page: "+model.section)
                 }
                 ToolbarItemGroup(placement: .primaryAction) {
@@ -200,7 +214,7 @@ struct ContentView: View {
         }
         .sheet(isPresented:$model.showSamplePicker) { SampleWorkspacePicker() }
         .sheet(isPresented:$showAppearance) { AppearanceSheet() }
-        .onChange(of: model.state.gameVersion) { _,_ in if !sections.contains(where:{$0.0==model.section}) && !["Settings","Port Coverage"].contains(model.section) {model.section="Pokémon"} }
+        .onChange(of: model.state.gameVersion) { _,_ in if !sections.contains(where:{$0.0==model.section}) && !["Settings"].contains(model.section) {model.section="Pokémon"} }
         .onChange(of: model.section) { _, _ in Task { await model.loadSection() } }
         .alert("Couldn’t complete that action", isPresented: Binding(get:{ model.error != nil }, set:{ if !$0 { model.error = nil } })) { Button("OK") { model.error = nil } } message: { Text(model.error ?? "") }
     }
@@ -264,7 +278,6 @@ struct WelcomeView: View {
             }.font(.caption).foregroundStyle(.secondary).padding(.top, 18)
             Text("Your companions. Your memories. Your KeepSake.")
                 .font(.caption).foregroundStyle(.tertiary).padding(.top, 28)
-            Button("View feature coverage") { model.section = "Port Coverage" }.buttonStyle(.link).font(.caption)
         }.padding(40)
     }
 }

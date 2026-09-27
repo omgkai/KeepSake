@@ -40,7 +40,7 @@ struct PokemonWorkspace: View {
                 }.padding(22)
                 HStack(spacing:3) {
                     ForEach(tabs,id:\.self) { name in
-                        Button { tab = name } label: { Text(name).font(.system(size:11, weight:tab == name ? .semibold : .regular)).padding(.horizontal,9).padding(.vertical,8).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
+                        Button { tab = name } label: { Text(LocalizedStringKey(name)).font(.system(size:11, weight:tab == name ? .semibold : .regular)).padding(.horizontal,9).padding(.vertical,8).background(tab == name ? theme.accent.opacity(0.12) : .clear, in:RoundedRectangle(cornerRadius:6)).foregroundStyle(tab == name ? theme.accent : .secondary) }.buttonStyle(.plain)
                     }
                 }.padding(.horizontal,16).padding(.bottom,10)
                 Divider()

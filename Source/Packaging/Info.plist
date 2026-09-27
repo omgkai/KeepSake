@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>KeepSake</string>
 	<key>CFBundleExecutable</key>
@@ -10,14 +12,27 @@
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>io.keepsake.app</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ja</string>
+		<string>fr</string>
+		<string>it</string>
+		<string>de</string>
+		<string>es</string>
+		<string>es-419</string>
+		<string>ko</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>KeepSake</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.36.1</string>
+	<string>0.37</string>
 	<key>CFBundleVersion</key>
-	<string>361</string>
+	<string>370</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
 	<key>NSHighResolutionCapable</key>

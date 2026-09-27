@@ -469,9 +469,11 @@ sealed partial class EditorSession
             case "settings": return SettingsFields();
             case "settingsSet":
             {
-                var clone = JsonSerializer.Deserialize<EditorSettings>(JsonSerializer.Serialize(settings))!;
+                using var settingsLock=AcquireSettingsLock();
+                var latest=settingsPath != null && File.Exists(settingsPath) ? JsonSerializer.Deserialize<EditorSettings>(File.ReadAllText(settingsPath)) ?? settings:settings;
+                var clone = JsonSerializer.Deserialize<EditorSettings>(JsonSerializer.Serialize(latest))!;
                 SetProperty(clone, S(r, "field"), S(r, "value"));
-                if (settingsPath != null) { Directory.CreateDirectory(Path.GetDirectoryName(settingsPath)!); AtomicWrite(settingsPath, System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(clone, jsonOptions))); }
+                if (settingsPath != null) AtomicWrite(settingsPath, System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(clone, jsonOptions)));
                 settings = clone; settings.Apply(); strings = GameInfo.GetStrings(settings.CatalogLanguage); GameInfo.Strings = strings; GameInfo.CurrentLanguage = settings.CatalogLanguage; return SettingsFields();
             }
             default: throw new Exception("Unknown command.");
@@ -527,7 +529,7 @@ sealed partial class EditorSession
         LegalityAnalysis? moveAnalysis = null;
         if (entity is { Species: > 0 })
         {
-            try { var analysis = new LegalityAnalysis(entity); moveAnalysis = analysis; report = analysis.Report(true); legality = analysis.Valid ? "valid" : "invalid"; }
+            try { var analysis = new LegalityAnalysis(entity); moveAnalysis = analysis; report = analysis.Report(settings.CatalogLanguage,true); legality = analysis.Valid ? "valid" : "invalid"; }
             catch (Exception ex) { legality = "unknown"; report = "Legality analysis could not complete: " + ex.Message; }
         }
         return new {
@@ -568,7 +570,7 @@ sealed partial class EditorSession
     }
 
     Field[] SettingsFields() => Fields(settings, "Preferences", depth: 3).Where(f => f.id != "SlotWrite.ModifyUnset" && f.id is not ("BoxExport.Scope" or "BoxExport.Notify" or "BoxExport.EmptySlots")).Select(f => f.id switch {
-        "CatalogLanguage" or "ExportLanguage" => f with { label = f.id == "CatalogLanguage" ? "Game data language" : "Battle template language", kind = "enum", choices = new[] { ("en","English"),("ja","日本語"),("fr","Français"),("it","Italiano"),("de","Deutsch"),("es","Español"),("es-419","Español (Latinoamérica)"),("ko","한국어"),("zh-Hans","简体中文"),("zh-Hant","繁體中文") }.Select(x => new Choice(x.Item1,x.Item2)).ToArray(), help = f.id == "CatalogLanguage" ? "Names of Pokémon, moves, items, games and locations. KeepSake’s interface remains English." : "Language used when copying a battle template." },
+        "CatalogLanguage" or "ExportLanguage" => f with { label = f.id == "CatalogLanguage" ? "Game data language" : "Battle template language", kind = "enum", choices = new[] { ("en","English"),("ja","日本語"),("fr","Français"),("it","Italiano"),("de","Deutsch"),("es","Español"),("es-419","Español (Latinoamérica)"),("ko","한국어"),("zh-Hans","简体中文"),("zh-Hant","繁體中文") }.Select(x => new Choice(x.Item1,x.Item2)).ToArray(), help = f.id == "CatalogLanguage" ? "Names of Pokémon, moves, items, games and locations. Choose the interface language separately in Settings." : "Language used when copying a battle template." },
         "BackupOnOpen" => f with { label = "Back up saves when opening", help = "Keep original snapshots in Settings → Files & Startup." },
         "ExportCommunityFormat" => f with { label = "Use community battle template format", help = "Uses PKHeX’s community ordering when copying a set. Turn off for standard Showdown format." },
         _ => f

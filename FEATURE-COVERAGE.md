@@ -1,4 +1,10 @@
-# Feature coverage — 0.35 RC1
+# Feature coverage — 0.37
+
+Current release differences: independent save windows (⌘N), separate engine and Undo state per window, shared journals and appearance, per-window close protection and multi-window quit protection; Noble beside Alpha in Stats for PA8; all ten PKHeX language choices with common labels/navigation translated and English fallback for specialized guidance. Port Coverage was removed from the app; this developer inventory remains. Windows-only plugins and LiveHeX are outside the agreed release scope.
+
+The following inventory and dated notes describe earlier implementation milestones. They are not a claim that every Windows dialog has identical native behavior. Public builds since 0.36 have Developer ID signing and Apple notarization; real-save/game-load testing remains user-owned, and physical Intel testing remains open.
+
+# Historical inventory — 0.35 RC1
 
 The request is a SwiftUI Mac app with all the settings of Windows PKHeX. **That full-parity goal is still open.** RC1 is an offline test candidate. It is not a claim of exact Windows UI/settings equivalence or a notarized public release.
 

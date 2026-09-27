@@ -104,6 +104,9 @@ struct SimplePokemonEditor: View {
                 HStack {Text("Training history").font(.caption).foregroundStyle(.secondary);Spacer();Button("Super Training…"){showTraining=true}.disabled(model.fieldDrafts)}
             }
             StatsProfile()
+            if model.state.fields.contains(where:{$0.id=="IsAlpha" && $0.editable}) {
+                HStack {QuickFlag(id:"IsAlpha",title:"Alpha",icon:"eye.fill");if model.state.fields.contains(where:{$0.id=="IsNoble" && $0.editable}){QuickFlag(id:"IsNoble",title:"Noble",icon:"crown.fill")};Spacer()}
+            }
             EditorCard(title:"Training") {
                 ViewThatFits(in:.horizontal) {
                     HStack(spacing:12) {trainingButtons("IVs",suffix:"IV");Divider().frame(height:20);if !hasGrit && !hasAV {trainingButtons("EVs",suffix:"EV")} else if hasGrit {Button("Max Grit"){action("maxGrit")}}}
@@ -173,7 +176,7 @@ struct SimplePokemonEditor: View {
             }
         }
     }
-    private func trainingButtons(_ title:String,suffix:String)->some View {HStack(spacing:5){Text(title).font(.caption.bold());ForEach(["Max","Random","Clear"],id:\.self){label in Button(label){action(label.lowercased()+suffix)}.help(label+" "+title)}}}
+    private func trainingButtons(_ title:String,suffix:String)->some View {HStack(spacing:5){Text(LocalizedStringKey(title)).font(.caption.bold());ForEach(["Max","Random","Clear"],id:\.self){label in Button(LocalizedStringKey(label)){action(label.lowercased()+suffix)}.help(label+" "+title)}}}
     private func action(_ name:String) { Task { await model.command(["op":"entityAction", "action":name]) } }
 }
 
@@ -183,7 +186,7 @@ struct EditorCard<Content:View>: View {
     @ViewBuilder let content:Content
     var body: some View {
         VStack(alignment:.leading,spacing:12) {
-            Text(title.uppercased()).font(.system(size:10,weight:.semibold)).tracking(1).foregroundStyle(.secondary)
+            Text(LocalizedStringKey(title)).textCase(.uppercase).font(.system(size:10,weight:.semibold)).tracking(1).foregroundStyle(.secondary)
             content
         }.padding(16).frame(maxWidth:.infinity,alignment:.leading)
             .background(Color(nsColor:.controlBackgroundColor),in:RoundedRectangle(cornerRadius:12))
@@ -197,9 +200,9 @@ struct QuickFlag: View {
     var body: some View {
         if let field = model.state.fields.first(where:{$0.id == id}), field.editable || id == "IsShiny" {
             Toggle(isOn:Binding(get:{field.value == "true"},set:{new in Task { await model.editPokemon(id,value:new ? "true" : "false") } })) {
-                HStack(spacing:6){PokemonEmblem(kind:id);Text(title).font(.system(size:12,weight:.medium))}
+                HStack(spacing:6){PokemonEmblem(kind:id);Text(LocalizedStringKey(title)).font(.system(size:12,weight:.medium))}
             }.toggleStyle(.switch).controlSize(.small).fixedSize()
-                .accessibilityLabel(title).help(id == "IsAlpha" ? "Alpha Pokémon — the same Alpha flag used by PKHeX" : title)
+                .accessibilityLabel(title).help(id == "IsAlpha" ? "Alpha Pokémon — the same Alpha flag used by PKHeX" : id == "IsNoble" ? "Noble encounter flag. PKHeX marks Noble Pokémon as invalid for normal player ownership." : title)
         }
     }
 }
@@ -235,7 +238,7 @@ struct SimpleField:View {
     var body:some View {
         if let field {
             HStack(spacing:12) {
-                if !hideLabel { Text(title).font(.callout).foregroundStyle(.secondary).frame(width:compact ? 40 : 94,alignment:.leading) }
+                if !hideLabel { Text(LocalizedStringKey(title)).font(.callout).foregroundStyle(.secondary).frame(width:compact ? 40 : 94,alignment:.leading) }
                 let kind = lookup ?? field.lookup
                 let choices = !options.isEmpty ? options : kind.flatMap { model.catalogs[$0] } ?? (!loaded.isEmpty ? loaded : field.choices)
                 let storedValue = model.value(field,target:"entity")

@@ -49,7 +49,7 @@ struct FieldRow: View {
     var body: some View {
         HStack(spacing: 12) {
             VStack(alignment:.leading, spacing:3) {
-                Text(field.label).font(.system(size:12, weight:.medium)).foregroundStyle(field.editable ? .primary : .secondary)
+                Text(LocalizedStringKey(field.label)).font(.system(size:12, weight:.medium)).foregroundStyle(field.editable ? .primary : .secondary)
                 if let lookup = field.lookup, let name = model.catalogs[lookup]?.first(where: { $0.value == value })?.label { Text(name).font(.system(size:10)).foregroundStyle(.secondary).lineLimit(1) }
                 if !field.help.isEmpty { Text(field.help).font(.system(size:11)).foregroundStyle(.secondary).fixedSize(horizontal:false,vertical:true) }
             }.frame(maxWidth:.infinity, alignment:.leading)
@@ -154,7 +154,7 @@ struct SaveFieldsView: View {
             VStack(alignment:.leading, spacing:0) {
                 VStack(alignment:.leading, spacing:8) {
                     Text(advanced ? "Advanced save fields" : "Trainer & progress").font(.title2.bold())
-                    Text(advanced ? "Scalar fields exposed by this game's save format. Specialized game editors are listed under Port Coverage." : "Edit the trainer identity, play time, and currencies supported by this game.").foregroundStyle(.secondary).font(.callout)
+                    Text(advanced ? "Scalar fields exposed by this game's save format. Specialized game editors are available in Game Extras." : "Edit the trainer identity, play time, and currencies supported by this game.").foregroundStyle(.secondary).font(.callout)
                 }.padding(24)
                 FieldList(fields:model.state.saveFields.filter { advanced ? $0.group != "Trainer" : $0.group == "Trainer" }, target:"save")
             }.frame(maxWidth:800)

@@ -1,0 +1,1 @@
+Common editor translations are mapped from PKHeX.WinForms Resources/text/lang_*.txt at the vendored PKHeX revision. GPL-3.0-or-later. KeepSake-specific navigation translations are in keepSake.tsv. Advanced prose without a translation falls back to English; this is not a claim of complete interface translation.

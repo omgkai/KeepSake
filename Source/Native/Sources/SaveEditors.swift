@@ -112,6 +112,7 @@ struct PreferencesView: View {
         VStack(alignment:.leading,spacing:0) {
             VStack(alignment:.leading,spacing:14) {
                 Text("Settings").font(.title2.bold())
+                InterfaceLanguageView()
                 HStack { Text("Appearance"); Spacer(); Picker("Appearance",selection:$appearance) { ForEach(["System","Light","Dark"],id:\.self) { Text($0) } }.labelsHidden().pickerStyle(.segmented).frame(width:240) }
                 Picker("Settings section",selection:$page) { Text("Themes").tag("Themes"); Text("Files & Startup").tag("Files"); Text("Engine").tag("Engine"); Text("Updates & Backup").tag("Services") }.pickerStyle(.segmented)
             }.padding(26)
@@ -120,100 +121,5 @@ struct PreferencesView: View {
             else if page == "Services" { ScrollView { VStack(spacing:20) { UpdateSettingsView(); PersonalBackupView() }.padding(26) } }
             else { FieldList(fields:model.fields,target:"settings",grouped:true) }
         }.frame(maxWidth:850)
-    }
-}
-struct CoverageView: View {
-    @Environment(\.gameTheme) private var theme
-    private let ready = [
-        "Hoenn/Kanto, Sinnoh/Johto and Unova adventure collections: Frontier, Pokétch art, Pokéwalker, Entrée Forest, Funfest, Subway and props",
-        "Gen 2–5 and Stadium 2 mailbox: authors, stationery, phrases, portraits, party links, clear and reorder",
-        "Game-aware Pokédex bulk actions with shiny/language options; older-game dex availability and Details navigation fixed",
-        "Battle Revolution wardrobe and BDSP encounter, destination, fashion and trainer unlocks",
-        "Finder file drops with unsaved-change protection, party-to-journal team capture and refined badge details",
-        "Pokémon Link rewards, Unova Global Link records, downloaded content and C-Gear PNG customization",
-        "Gen 4 battle-video files and Battle Revolution passes, appearance, messages and teams",
-        "Auto-Legality encounter generation with change/report preview, guarded apply and Undo",
-        "Journal team Pokémon snapshots, game-format conversion/generation, file export and empty-box-slot placement",
-        "Personal welcome name, journal emblem, custom cover colors and shared named color presets",
-        "Trainer party and mapped gym badges; PID in Stats; separate Scarlet/Violet themes",
-        "Game Extras: badges, Hall of Fame, Join Avenue, raids, contacts, Gen 4/8 Underground, Chatter and collections",
-        "Catch counts, Ball Stickers and Z-A donuts with artwork, flavor charts and individual files",
-        "Personal Pokémon pages, six-companion teams, memories, cover customization and complete JSON backups",
-        "Visual wardrobe catalog, individual ownership and category Give All; named Hisui, Galar, Paldea and Sinnoh entries",
-        "Species/base-stat guide, typed event variables, Switch block comparison and reviewed folder/ZIP imports",
-        "Pokéblocks, Poffins, Poké Puffs and Poké Beans in game-specific treat cases",
-        "Customizable trainer card, item and ball icons, nickname-first names and gender colors",
-        "Rich Pokémon hover cards, optional click/drag animations, game-aware sidebar and Fashion actions",
-        "Pokédex card grid, SV/BDSP/SWSH/ZA basic flags, Give All and Undo",
-        "Tera controls and characteristic in Stats, random IVs and EVs",
-        "Native SwiftUI window, native file panels, 15 game-inspired themes, custom colors, automatic game palettes, light/dark appearance",
-        "Move-shop purchases and mastery, TM/TR records, Arceus research counters and reporting",
-        "Storage search, folder Pokémon library, box export, CSV reports, staged bulk box actions",
-        "Encounter search by species/origin/type/move, result preparation, and legality review",
-        "Z-A move-plus records, upgrade suggestions, box unlock counts and advanced flags",
-        "Pixel sprites, HOME portraits or game portraits; Scarlet/Violet and Arceus art with exact-form and shiny fallbacks",
-        "Current/relearn suggestions, alternate sets, move type icons, learnability filters and legality explanations",
-        "Gen 4–9 Pokédex form/language/display records, DexNav counters, size records and unlocks",
-        "Game identity artwork across all sample games and supported side games; separate sequel logos",
-        "Arceus form variants, Pokédex appearance, and recorded size ranges",
-        "Hoenn Secret Bases, ORAS Super-Secret Bases and files, HGSS Pokéathlon, Festival Plaza and Battle Agency",
-        "Ribbon artwork, count controls, equipped titles, legality hints, and shape markings",
-        "Super Training medals plus Gen 6 save records, stage unlocks and training bags",
-        "Mystery Gift albums: card import/export, received history, deletion and status",
-        "Read-only gift expressions and filtered bulk export; bundled and session-folder Mystery Gift libraries; language, origin, generation, species, moves, item, shiny and egg filters; card export and restricted-language preparation",
-        "PKHeX.Core 26.08.26: save recognition, binary data, checksums, legality",
-        "Box and party selection; Pokémon import, conversion, edit, apply, clear, export",
-        "Box-slot move/swap, right-click View and Set to Slot, box names, game/Mac wallpapers, box order and undo",
-        "Main, stats, moves, met, trainer, ribbons, and searchable scalar Pokémon fields",
-        "Trainer identity, currencies, play time, and exposed scalar save properties",
-        "Searchable Add Items, stack top-up, quantities, extra flags; basic Pokédex seen/caught flags",
-        "Navigable save structures, Scarlet/Violet raid properties, named event flags and variables",
-        "Read-only event comparison between saves or the workspace, with copy/export reports",
-        "Z-A keyed event editing across all 15 collections, key-name files and change reports",
-        "Pokémon and Hall of Fame name bytes, encoding, special characters, hidden-byte clearing and species-name layers",
-        "Multiple remembered library folders; storage property filters, result navigation and configurable CSV reports",
-        "Reviewed Showdown team import, four-move/form/advanced encounter search and current-editor criteria",
-        "Pokédex group shortcuts, custom Z-A donut ranges/flavor pools and guarded file-to-box-slot import",
-        "Batch editing with a changes preview, protected-slot handling, and undo",
-        "Full legality report, Showdown set import/export, shiny/IV/EV/heal actions",
-        "25-step in-memory undo/redo; export copies; unsaved-change prompts",
-        "Persistent legality, conversion, import, slot-write, and save-language settings",
-        "Independent encounter generation preferences and remembered/imported original-trainer profiles",
-        "Folder batch previews and atomic export of edited copies, with source-change checks",
-        "Pokémon QR image export/import, including binary Gen 7 payloads",
-        "Apple Silicon and Intel macOS builds; Intel engine protocol checks under Rosetta",
-        "Party reorder and box/party transfers, guarded party composition and byte-exact Game Boy rollback",
-        "Original-save snapshots, backup export, bounded folder save discovery and optional last-document reopening",
-        "Game-data language choices and localized community/Showdown template export",
-        "Game-specific trainer details, full timestamp editing, saved SV/Z-A photos and PNG export",
-        "Hisui research task panels with reported/unreported milestones and game-derived tasks",
-        "Mystery Gift QR import/export, staged album card drops, guided search rules and Pokémon summary images",
-        "Trainer name bytes, named trainer records, linked league-card controls and Poffin cooking records",
-        "Persistent box-export naming, encounter result limits and report column presets",
-        "League-card/title-screen teams, Battle Maison/Tree, named Alola destinations and game-specific trainer unlocks",
-        "Stadium registered teams, Gen 4–7 adventure dates, facing directions, trainer progress and compatible edition changes",
-        "Batch source/box/slot filters, medal multi-selection, donut clipboard/drop and Hall of Fame summaries",
-        "Explicit save-format opening, rival/Secret Base name bytes, nested model collections and configurable report previews"
-    ]
-    private let waiting = [
-        "Cross-window and Finder drag gesture verification",
-        "Distribution signing and notarization"
-    ]
-    var body: some View {
-        ScrollView {
-            VStack(alignment:.leading,spacing:18) {
-                Pill(text:"NATIVE · MAC",color:theme.accent)
-                Text("Made for your adventures").font(.system(size:28,weight:.bold,design:.rounded))
-                Text("Native editing powered by PKHeX’s core, with a personal journal and a Mac-first interface. Available tools depend on your game and file format.").font(.body).foregroundStyle(.secondary).lineSpacing(4)
-                Text("Implemented").font(.headline).padding(.top,8)
-                ForEach(ready,id:\.self) { Label($0,systemImage:"checkmark.circle.fill").foregroundStyle(.primary).font(.callout) }
-                Text("Remaining verification & release work").font(.headline).padding(.top,12)
-                ForEach(waiting,id:\.self) { Label($0,systemImage:"circle.dashed").foregroundStyle(.secondary).font(.callout) }
-                Text("RC scope: offline editing with Auto-Legality and an English interface. Ten-language game-data catalogs are included. Other Windows plugins, LiveHeX and interface translations are outside this RC.").font(.callout).foregroundStyle(.secondary).padding(.top,12)
-                Divider().padding(.vertical,12)
-                Text("PKHeX is by Kaphotics and contributors. This unofficial SwiftUI port is distributed with its source under GPL-3.0-or-later. Pokémon and related names belong to their respective owners.").font(.caption).foregroundStyle(.tertiary)
-                Link("Upstream PKHeX source",destination:URL(string:"https://github.com/kwsch/PKHeX")!).font(.caption)
-            }.padding(36).frame(maxWidth:850,alignment:.leading)
-        }
     }
 }

@@ -148,16 +148,15 @@ final class Bridge: @unchecked Sendable {
     @Published var storage:[StorageEntry]=[]
     @Published var gifts:[GiftEntry]=[]
     @Published var catalogs: [String: [Choice]] = [:]
-    var approvedClose = false
     let bridge = Bridge()
     var unsaved: Bool { state.dirty || state.pending || !drafts.isEmpty }
     var fieldDrafts: Bool { !drafts.isEmpty }
     private var didStart = false
-    func start() async {
+    func start(reopenLast:Bool=true) async {
         guard !didStart else { return }; didStart = true
         await command(["op":"state"])
         if ProcessInfo.processInfo.arguments.contains("--demo") { await command(["op":"demo"]) }
-        else if !state.loaded, UserDefaults.standard.bool(forKey:"reopenLastDocument"), let path = UserDefaults.standard.string(forKey:"lastOpenedDocument"), FileManager.default.fileExists(atPath:path) { await command(["op":"open", "path":path]) }
+        else if reopenLast, !state.loaded, UserDefaults.standard.bool(forKey:"reopenLastDocument"), let path = UserDefaults.standard.string(forKey:"lastOpenedDocument"), FileManager.default.fileExists(atPath:path) { await command(["op":"open", "path":path]) }
     }
     func command(_ payload: [String: Any], status message: String? = nil) async {
         guard !busy else { return }
@@ -275,9 +274,9 @@ final class Bridge: @unchecked Sendable {
     func confirmDiscard(all: Bool = true, clearDrafts: Bool = true) -> Bool {
         guard all ? unsaved : state.pending || !drafts.isEmpty else { return true }
         let alert = NSAlert()
-        alert.messageText = all ? "Discard unsaved changes?" : "Discard uncommitted edits?"
+        alert.messageText = L(all ? "Discard unsaved changes?" : "Discard uncommitted edits?")
         alert.informativeText = all ? "Export a copy first to keep your changes. The original file has not been changed." : "Apply the edited Pokémon to its slot before choosing another slot, or discard these edits."
-        alert.addButton(withTitle: "Cancel"); alert.addButton(withTitle: "Discard")
+        alert.addButton(withTitle: L("Cancel")); alert.addButton(withTitle: L("Discard"))
         let discard = alert.runModal() == .alertSecondButtonReturn
         if discard && clearDrafts { drafts.removeAll() }
         return discard
