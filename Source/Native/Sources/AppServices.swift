@@ -5,11 +5,11 @@ struct UpdateSettingsView: View {
     @ObservedObject private var updater=UpdateChecker.shared
     var body: some View {
         VStack(alignment:.leading,spacing:14) {
-            Label("A new chapter, always within reach",systemImage:"arrow.triangle.2.circlepath").font(.headline)
+            Label("Updates",systemImage:"arrow.triangle.2.circlepath").font(.headline)
             Toggle("Automatically check for updates",isOn:Binding(get:{updater.automaticChecks},set:{updater.setAutomaticChecks($0)}))
             Toggle("Download and install updates automatically",isOn:Binding(get:{updater.automaticDownloads},set:{updater.setAutomaticDownloads($0)}))
                 .disabled(!updater.automaticChecks)
-            Text("KeepSake downloads, verifies and installs updates for this Mac. Choose Install and Relaunch when ready. Automatic downloads install when you quit. Unsaved work in every open window is checked before quitting.").font(.caption).foregroundStyle(.secondary)
+            Text("Automatic downloads install when you quit. Unsaved edits are checked before closing.").font(.caption).foregroundStyle(.secondary)
             Button("Check for Updates") {updater.check()}.disabled(!updater.canCheck).buttonStyle(.borderedProminent)
             Text(updater.message).font(.callout).foregroundStyle(.secondary)
         }.padding(22).frame(maxWidth:.infinity,alignment:.leading).background(.quaternary.opacity(0.4),in:RoundedRectangle(cornerRadius:20))
@@ -86,10 +86,10 @@ struct AboutKeepSakeView:View {
             VStack(spacing:22) {
                 Image(nsImage:NSImage(contentsOf:Bundle.main.url(forResource:"AppIcon",withExtension:"icns") ?? URL(fileURLWithPath:"")) ?? NSImage(named:NSImage.applicationIconName)!).resizable().scaledToFit().frame(width:94,height:94).shadow(color:theme.accent.opacity(0.25),radius:24,y:10)
                 VStack(spacing:7){Text("KeepSake").font(.system(size:38,weight:.bold,design:.rounded));Text("Every companion has a story.").font(.title3).foregroundStyle(.secondary);Text("Version \(KeepSakeRelease.version)").font(.caption.monospaced()).foregroundStyle(.secondary)}
-                Text("A personal home for your Pokémon adventures. Native editing, thoughtful details, and a journal for the memories that make each team yours.").multilineTextAlignment(.center).lineSpacing(4)
-                HStack(spacing:22){Label("Made for Mac",systemImage:"apple.logo");Label("Your own story",systemImage:"book.closed.fill")}.font(.caption).foregroundStyle(theme.accent)
+                Text("Pokémon save editing and a personal journal for macOS.").multilineTextAlignment(.center).lineSpacing(4)
+                HStack(spacing:22){Label("Made for Mac",systemImage:"apple.logo");Label("Personal journal",systemImage:"book.closed.fill")}.font(.caption).foregroundStyle(theme.accent)
                 UpdateSettingsView()
-                HStack {Link("Source & Credits",destination:KeepSakeRelease.home);Spacer();Button("Support"){openWindow(id:"support")}}
+                HStack {Link("Source & Credits",destination:KeepSakeRelease.home).foregroundStyle(theme.accent);Spacer();Button("Support"){openWindow(id:"support")}}
                 Text("Made with love by Kai White").font(.callout).foregroundStyle(.secondary)
                 Text("Powered by PKHeX, by Kaphotics and contributors, and Auto-Legality Mod by Archit Date and contributors (santacrab2 fork). KeepSake is an unofficial project distributed under GPL-3.0-or-later. Pokémon and related artwork belong to their respective owners.").font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 Button("Licenses & Artwork Notices") { if let url=Bundle.main.url(forResource:"THIRD-PARTY-NOTICES",withExtension:"md"){NSWorkspace.shared.open(url)} }.buttonStyle(.link)
@@ -105,10 +105,10 @@ struct KeepSakeSupportView:View {
     var body:some View {
         ScrollView {
             VStack(alignment:.leading,spacing:24) {
-                HStack(spacing:18){Image(systemName:"heart.text.clipboard.fill").font(.system(size:40)).foregroundStyle(theme.accent);VStack(alignment:.leading,spacing:5){Text("Here for your next chapter").font(.system(size:27,weight:.bold,design:.rounded));Text("Help, updates, and a safe place for your memories.").foregroundStyle(.secondary)}}
-                GroupBox {VStack(alignment:.leading,spacing:12){Text("Something not quite right?").font(.headline);Text("Describe the game, what you expected, and what happened. Keep personal saves and trainer details out of public reports.").foregroundStyle(.secondary);HStack {Link("Report an Issue",destination:KeepSakeRelease.issues.appendingPathComponent("new"));Spacer();Button(copied ? "Copied":"Copy App Details"){let text="KeepSake \(KeepSakeRelease.version)\nmacOS \(ProcessInfo.processInfo.operatingSystemVersionString)\nArchitecture: \(architecture)";NSPasteboard.general.clearContents();NSPasteboard.general.setString(text,forType:.string);copied=true}}}.padding(12).frame(maxWidth:.infinity,alignment:.leading)}
+                HStack(spacing:18){Image(systemName:"heart.text.clipboard.fill").font(.system(size:40)).foregroundStyle(theme.accent);VStack(alignment:.leading,spacing:5){Text("Support").font(.system(size:27,weight:.bold,design:.rounded));Text("Help, backups, and updates.").foregroundStyle(.secondary)}}
+                GroupBox {VStack(alignment:.leading,spacing:12){Text("Report a problem").font(.headline);Text("Describe the game, what you expected, and what happened. Keep personal saves and trainer details out of public reports.").foregroundStyle(.secondary);HStack {Link("Report an Issue",destination:KeepSakeRelease.issues.appendingPathComponent("new")).foregroundStyle(theme.accent);Spacer();Button(copied ? "Copied":"Copy App Details"){let text="KeepSake \(KeepSakeRelease.version)\nmacOS \(ProcessInfo.processInfo.operatingSystemVersionString)\nArchitecture: \(architecture)";NSPasteboard.general.clearContents();NSPasteboard.general.setString(text,forType:.string);copied=true}}}.padding(12).frame(maxWidth:.infinity,alignment:.leading)}
                 PersonalBackupView()
-                GroupBox {VStack(alignment:.leading,spacing:12){Label("Start with a copy",systemImage:"doc.on.doc").font(.headline);Text("Open a save or drop it into the editor. Export Copy writes a separate edited save. Journal backups can be imported from My Journal to merge memories and teams.");Link("Read the Guide",destination:KeepSakeRelease.home.appendingPathComponent("blob/main/README.md"))}.padding(12).frame(maxWidth:.infinity,alignment:.leading)}
+                GroupBox {VStack(alignment:.leading,spacing:12){Label("Start with a copy",systemImage:"doc.on.doc").font(.headline);Text("Open a save or drop it into the editor. Export Copy writes a separate edited save. Journal backups can be imported from My Journal to merge memories and teams.");Link("Read the Guide",destination:KeepSakeRelease.home.appendingPathComponent("blob/main/README.md")).foregroundStyle(theme.accent)}.padding(12).frame(maxWidth:.infinity,alignment:.leading)}
                 UpdateSettingsView()
             }.padding(32).frame(maxWidth:700).frame(maxWidth:.infinity)
         }.background(LinearGradient(colors:[theme.accent.opacity(0.08),Color(nsColor:.windowBackgroundColor)],startPoint:.top,endPoint:.bottom))

@@ -77,7 +77,7 @@ struct GiftDatabaseView:View {
                 HStack {Image(systemName:"giftcard.fill").foregroundStyle(theme.accent);VStack(alignment:.leading,spacing:4){Text(gift.title).font(.headline);Text("Card \(gift.card) · \(gift.origin) · \(gift.languageText)").font(.caption).foregroundStyle(.secondary).help(gift.languageDetails)};Spacer();if !gift.trainer.isEmpty{Text("OT · "+gift.trainer).font(.caption)}}
             }
             HStack {Text("\(filtered.count.formatted()) of \(model.gifts.count.formatted()) gifts").font(.caption).foregroundStyle(.secondary);Spacer();Button("Add to Album…"){if let chosen{model.pendingAlbumGift=chosen;model.section="Gift Album"}}.disabled(chosen?.exportable != true || !model.state.canGiftAlbum || model.busy);Button("Export Card…"){if let chosen{model.exportGift(chosen)}}.disabled(chosen?.exportable != true || model.busy);Button("Prepare Pokémon"){if let chosen{model.prepareGift(chosen)}}.buttonStyle(.borderedProminent).disabled(chosen?.entity != true || !model.state.hasSave || model.busy)}
-            Text("Prepare with your save’s trainer, review legality, then Set to Slot. Folder libraries remain available for this session; original files stay unchanged.").font(.caption).foregroundStyle(.secondary)
+            Text("Prepare Pokémon opens the editor. Set to Slot adds it to your save.").font(.caption).foregroundStyle(.secondary)
         }.padding(16).background(.quaternary.opacity(0.22),in:RoundedRectangle(cornerRadius:16))
     }
     private func applyExpressions() {

@@ -8,11 +8,11 @@ struct GameTheme: Identifiable {
     var accent:Color { accentOverride ?? Color(hue:hue,saturation:0.63,brightness:0.78) }
     var companion:Color { companionOverride ?? Color(hue:companionHue,saturation:0.55,brightness:0.92) }
     static let all:[GameTheme] = [
-        .init(id:"classic",name:"Classic",region:"A little of every adventure",mascot:"b_25",symbol:"sparkles",hue:0.66,companionHue:0.77),
+        .init(id:"classic",name:"Classic",region:"Default palette",mascot:"b_25",symbol:"sparkles",hue:0.66,companionHue:0.77),
         .init(id:"kanto",name:"Red & Blue",region:"Kanto",mascot:"b_1",symbol:"leaf.fill",hue:0.99,companionHue:0.59),
         .init(id:"johto",name:"Gold & Silver",region:"Johto",mascot:"b_155",symbol:"sun.max.fill",hue:0.105,companionHue:0.60),
         .init(id:"hoenn",name:"Ruby & Sapphire",region:"Hoenn",mascot:"b_258",symbol:"drop.fill",hue:0.57,companionHue:0.97),
-        .init(id:"emerald",name:"Emerald",region:"Hoenn's green skies",mascot:"b_252",symbol:"leaf.fill",hue:0.40,companionHue:0.14),
+        .init(id:"emerald",name:"Emerald",region:"Hoenn",mascot:"b_252",symbol:"leaf.fill",hue:0.40,companionHue:0.14),
         .init(id:"sinnoh",name:"Diamond & Pearl",region:"Sinnoh",mascot:"b_393",symbol:"snowflake",hue:0.61,companionHue:0.89),
         .init(id:"unova",name:"Black & White",region:"Unova",mascot:"b_501",symbol:"circle.lefthalf.filled",hue:0.54,companionHue:0.68),
         .init(id:"kalos",name:"X & Y",region:"Kalos",mascot:"b_653",symbol:"sparkle",hue:0.59,companionHue:0.97),
@@ -32,6 +32,43 @@ struct GameTheme: Identifiable {
 }
 private struct GameThemeKey:EnvironmentKey { static let defaultValue=GameTheme.all[0] }
 extension EnvironmentValues { var gameTheme:GameTheme {get{self[GameThemeKey.self]} set{self[GameThemeKey.self]=newValue}} }
+
+// Apply the same palette to SwiftUI tint, native control accents and auxiliary windows.
+struct ApplicationTheme: ViewModifier {
+    var gameVersion: String? = nil
+    var rememberGame = false
+    @AppStorage("appearance") private var appearance = "System"
+    @AppStorage("gameTheme") private var themeID = "classic"
+    @AppStorage("matchGameTheme") private var matchGame = true
+    @AppStorage("customThemeColors") private var customColors = false
+    @AppStorage("themeAccentHex") private var accentHex = "6750A4"
+    @AppStorage("themeCompanionHex") private var companionHex = "E99A70"
+    @AppStorage("appearanceGameVersion") private var rememberedGame = ""
+    private var theme: GameTheme {
+        let version = gameVersion ?? (rememberGame ? "" : rememberedGame)
+        var value = matchGame && !version.isEmpty ? GameTheme.forGame(version) : GameTheme.named(themeID)
+        if customColors { value.accentOverride = Color(hex:accentHex); value.companionOverride = Color(hex:companionHex) }
+        return value
+    }
+    func body(content: Content) -> some View {
+        content.environment(\.gameTheme,theme)
+            .tint(theme.accent).accentColor(theme.accent)
+            .preferredColorScheme(appearance == "Dark" ? .dark : appearance == "Light" ? .light : nil)
+            .onChange(of:gameVersion,initial:true) { _,version in
+                if rememberGame,let version,!version.isEmpty { rememberedGame = version }
+            }
+    }
+}
+
+struct ThemeCanvas: View {
+    @Environment(\.gameTheme) private var theme
+    @AppStorage("themeTintStrength") private var strength = 1.0
+    var body: some View {
+        Color(nsColor:.windowBackgroundColor).overlay {
+            LinearGradient(colors:[theme.accent.opacity(0.07 * strength),theme.companion.opacity(0.04 * strength)],startPoint:.topLeading,endPoint:.bottomTrailing)
+        }.allowsHitTesting(false).accessibilityHidden(true)
+    }
+}
 
 struct ThemePicker:View {
     @EnvironmentObject var model:EditorModel
@@ -58,14 +95,14 @@ struct ThemePicker:View {
             }.pickerStyle(.segmented).labelsHidden()
             if section == "Colors" { colors }
             else if section == "Display" { display }
-            else { AppearanceCard(title:"A little personality",symbol:"hand.draw.fill") { MotionPreferences() } }
+            else { AppearanceCard(title:"Motion & hover",symbol:"hand.draw.fill") { MotionPreferences() } }
             Label("Saved on this Mac. Your Pokémon and save files stay unchanged.",systemImage:"lock.shield")
                 .font(.caption).foregroundStyle(.secondary)
         }.frame(maxWidth:820).frame(maxWidth:.infinity)
     }
     private var colors:some View {
         VStack(spacing:18) {
-            AppearanceCard(title:"Your palette",symbol:"paintpalette.fill") {
+            AppearanceCard(title:"Palette",symbol:"paintpalette.fill") {
                 Picker("Appearance",selection:$appearance) { ForEach(["System","Light","Dark"],id:\.self) {Text($0)} }.pickerStyle(.segmented)
                 Toggle("Follow the loaded game’s palette",isOn:$matchGame).toggleStyle(.switch)
                 Toggle("Use my custom colors",isOn:$custom).toggleStyle(.switch)
@@ -76,7 +113,6 @@ struct ThemePicker:View {
                 ColorPresetsPicker(first:$accentHex,second:$companionHex,onSelect:{custom=true})
             }
             AppearanceCard(title:"Game themes",symbol:"map.fill") {
-                Text("Choose a palette, then fine-tune it with your own colors.").font(.callout).foregroundStyle(.secondary)
                 LazyVGrid(columns:[GridItem(.adaptive(minimum:170))],spacing:10) {
                     ForEach(GameTheme.all) { theme in
                         Button { selected=theme.id; matchGame=false; custom=false } label: {
@@ -141,7 +177,6 @@ struct AppearancePreview:View {
         HStack(spacing:24) {
             VStack(alignment:.leading,spacing:7) {
                 Label("Appearance preview",systemImage:"book.closed.fill").font(.headline)
-                Text("A live look at your colors, artwork and box slots.").font(.callout).foregroundStyle(.secondary)
             }.frame(maxWidth:.infinity,alignment:.leading)
             HStack(spacing:8) {
                 preview("b_25","Pikachu",selected:true)

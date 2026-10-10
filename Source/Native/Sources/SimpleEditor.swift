@@ -52,7 +52,7 @@ struct SimplePokemonEditor: View {
             }
             }
             GrowthCards()
-            Text("Type freely, then press Return or Set to Slot. Use More for every detailed field.").font(.caption).foregroundStyle(.secondary)
+            Text("Return commits edits. Set to Slot writes them to the save.").font(.caption).foregroundStyle(.secondary)
         }
     }
     private var genders: [Choice] { [Choice(value:"0",label:"Male ♂"),Choice(value:"1",label:"Female ♀"),Choice(value:"2",label:"Genderless")] }
@@ -137,7 +137,7 @@ struct SimplePokemonEditor: View {
                 }
             }
             if hasGrit { Text("Grit is the stored value, as in PKHeX. The IV bonus also contributes to effort levels.").font(.caption).foregroundStyle(.secondary) }
-            Text("Totals refresh when you commit edits. More has extra game settings and the full technical field list.").font(.caption).foregroundStyle(.secondary)
+            Text("Totals refresh after committing edits.").font(.caption).foregroundStyle(.secondary)
         }
     }
     private var moves: some View {
@@ -195,8 +195,9 @@ struct EditorCard<Content:View>: View {
             Text(LocalizedStringKey(title)).textCase(.uppercase).font(.system(size:10,weight:.semibold)).tracking(1).foregroundStyle(.secondary)
             content
         }.padding(16).frame(maxWidth:.infinity,alignment:.leading)
+            .background(theme.accent.opacity(0.035),in:RoundedRectangle(cornerRadius:12))
             .background(Color(nsColor:.controlBackgroundColor),in:RoundedRectangle(cornerRadius:12))
-            .overlay(RoundedRectangle(cornerRadius:12).strokeBorder(.primary.opacity(0.045)))
+            .overlay(RoundedRectangle(cornerRadius:12).strokeBorder(theme.accent.opacity(0.18)))
     }
 }
 struct QuickFlag: View {

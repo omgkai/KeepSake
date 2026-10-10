@@ -11,8 +11,8 @@ import AppKit
     var body:some Scene {
         WindowGroup("KeepSake",id:"main") { SaveWorkspace().environmentObject(journals) }
             .defaultSize(width:1280,height:850).commands { WorkspaceCommands() }
-        Window("About KeepSake",id:"about") { AboutKeepSakeView().modifier(InterfaceLocale()).frame(minWidth:520,minHeight:600) }.defaultSize(width:580,height:700)
-        Window("KeepSake Support",id:"support") { KeepSakeSupportView().environmentObject(journals).modifier(InterfaceLocale()).frame(minWidth:600,minHeight:600) }.defaultSize(width:680,height:800)
+        Window("About KeepSake",id:"about") { AboutKeepSakeView().modifier(InterfaceLocale()).modifier(ApplicationTheme()).frame(minWidth:520,minHeight:600) }.defaultSize(width:580,height:700)
+        Window("KeepSake Support",id:"support") { KeepSakeSupportView().environmentObject(journals).modifier(InterfaceLocale()).modifier(ApplicationTheme()).frame(minWidth:600,minHeight:600) }.defaultSize(width:680,height:800)
     }
 }
 struct WorkspaceCommands:Commands {
@@ -45,21 +45,10 @@ struct WorkspaceCommands:Commands {
 }
 struct SaveWorkspace:View {
     @StateObject private var model=EditorModel()
-    @AppStorage("appearance") private var appearance="System"
-    @AppStorage("gameTheme") private var themeID="classic"
-    @AppStorage("matchGameTheme") private var matchGame=true
-    @AppStorage("customThemeColors") private var customColors=false
-    @AppStorage("themeAccentHex") private var accentHex="6750A4"
-    @AppStorage("themeCompanionHex") private var companionHex="E99A70"
-    private var theme:GameTheme {
-        var value=matchGame && model.state.hasSave ? GameTheme.forGame(model.state.gameVersion):GameTheme.named(themeID)
-        if customColors{value.accentOverride=Color(hex:accentHex);value.companionOverride=Color(hex:companionHex)}
-        return value
-    }
     var body:some View {
         ContentView().modifier(InterfaceLocale()).environmentObject(model).focusedSceneObject(model)
-            .environment(\.gameTheme,theme).environment(\.pokemonArtworkGame,model.state.gameVersion)
-            .tint(theme.accent).preferredColorScheme(appearance == "Dark" ? .dark:appearance == "Light" ? .light:nil)
+            .environment(\.pokemonArtworkGame,model.state.gameVersion)
+            .modifier(ApplicationTheme(gameVersion:model.state.hasSave ? model.state.gameVersion:nil,rememberGame:true))
             .frame(minWidth:1050,minHeight:700)
             .navigationTitle(model.state.loaded ? "KeepSake · \(model.state.sourceName) · \(model.state.game)":"KeepSake")
             .task {let reopen=WorkspaceRegistry.shared.register(model);await model.start(reopenLast:reopen)}
@@ -135,13 +124,13 @@ struct ContentView: View {
                     Section("Application") {
                         Label("Settings", systemImage:"gearshape").tag("Settings").padding(.vertical, 5)
                     }
-                }.listStyle(.sidebar)
+                }.listStyle(.sidebar).scrollContentBackground(.hidden)
                 VStack(alignment: .leading, spacing: 6) {
                     Label("Native SwiftUI", systemImage: "apple.logo").font(.caption.weight(.medium))
                     Text("PKHeX engine \(model.state.engineVersion)").font(.caption2).foregroundStyle(.secondary)
                     Text("Local files · Offline editing").font(.caption2).foregroundStyle(.tertiary)
                 }.padding(18)
-            }.navigationSplitViewColumnWidth(min: 190, ideal: 205, max: 250)
+            }.background(ThemeCanvas()).navigationSplitViewColumnWidth(min: 190, ideal: 205, max: 250)
         } detail: {
             VStack(spacing: 0) {
                 if model.state.loaded && model.section != "Settings" { documentHeader }
@@ -177,7 +166,7 @@ struct ContentView: View {
                     else if model.state.pending { Text("Pokémon edits pending").foregroundStyle(.orange) }
                     else if model.state.dirty { Text("Save has unexported edits").foregroundStyle(.orange) }
                 }.font(.caption).foregroundStyle(.secondary).padding(.horizontal, 18).frame(height: 30)
-            }.background(Color(nsColor: .windowBackgroundColor))
+            }.background(ThemeCanvas())
             .toolbar {
                 ToolbarItem(placement: .navigation) {
                     Menu {

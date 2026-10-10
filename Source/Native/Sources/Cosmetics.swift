@@ -24,7 +24,7 @@ struct CosmeticsView:View {
                 else if page=="Contests" {contests}
                 else {MemoriesAndCareView();if history.contains(where:{["Country","Region","ConsoleRegion"].contains($0.id)}) {EditorCard(title:"Region of origin"){ForEach(history.filter{["Country","Region","ConsoleRegion"].contains($0.id)}){f in SimpleField(id:f.id,title:f.label)}}}}
 
-                Text("These are Pokémon data fields. Use Set to Slot to keep changes in your save; personal journal styling stays separate.").font(.caption).foregroundStyle(.secondary)
+                Text("Set to Slot saves these changes to your Pokémon.").font(.caption).foregroundStyle(.secondary)
             }.padding(18)}}
         }.sheet(item:$sizeChoice){choice in ChoiceSheet(title:choice.title+" scalar · 0–255",options:(0...255).map{Choice(value:String($0),label:String($0))},selected:choice.value){value in sizeChoice=nil;cosmetic(["mode":"size","field":choice.id,"value":value.value,"automatic":autoSize])}}.sheet(isPresented:$training){SuperTrainingView()}.onChange(of:model.state.entityExtension){_,_ in if !pages.contains(page){page="Appearance"}}
     }

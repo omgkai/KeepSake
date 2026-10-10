@@ -43,7 +43,7 @@ struct EncountersView:View {
         else {
             VStack(alignment:.leading,spacing:16) {
                 Text("Encounter search").font(.title2.bold())
-                Text("Find wild encounters, eggs, trades, and gifts in PKHeX’s database. Prepare one in the editor, review its legality, then Set to Slot.").foregroundStyle(.secondary)
+                Text("Search wild encounters, eggs, trades, and gifts.").foregroundStyle(.secondary)
                 HStack {
                     CatalogChoiceButton(title:"Pokémon",options:(model.catalogs["species"] ?? []).filter{$0.value != "0"},value:$species)
                     CatalogChoiceButton(title:"Origin",options:[Choice(value:"Any",label:"Any compatible origin")]+(model.catalogs["games"] ?? []),value:$version)
