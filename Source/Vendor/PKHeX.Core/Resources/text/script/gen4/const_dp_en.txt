@@ -9,6 +9,7 @@
 0068	e	Oak's Letter (Unreleased)	0:Not Activated,4370:Activated
 0069	e	Azure Flute (Unreleased)	0:Not Activated,4387:Activated
 0062	r	Current Players Met Underground (Spiritomb)	32:Spiritomb Appeared
+0064	+	Game Corner Bonus Rounds Streak (Non-Korean)
 0138	e	Hallowed Tower	0:Inactive,1:Active
 0248	e	Harbor Inn Event (Unreleased)	0:Not Completed,2:Darkrai Capture Pending,3:Sailor outside Inn (Darkrai Caught),4:Completed (Caught Darkrai during nightmare)
 0280	e	Hall of Origin Event (Unreleased)	0:Inactive,1:Active
@@ -17,3 +18,6 @@
 0071	+	Fossils Obtained Underground (Mr. Goods)
 0072	+	Players Trapped Underground (Mr. Goods)
 0073	+	Players Met Underground (Mr. Goods)
+0065	*	Route 221 House Wanted Level
+0229	*	Pokémon News Press Wanted Pokémon
+0279	*	Pokémon News Press Reward Available	1:x3 Master Balls (Illegal),2:x3 Ultra Balls,3:x3 Great Balls,4:x3 Poké Balls,6:x3 Net Balls,7:x3 Dive Balls,8:x3 Nest Balls,9:x3 Repeat Balls,10:x3 Timer Balls,11:x3 Luxury Balls,12:x3 Premier Balls,13:x3 Dusk Balls,14:x3 Heal Balls,15:x3 Quick Balls

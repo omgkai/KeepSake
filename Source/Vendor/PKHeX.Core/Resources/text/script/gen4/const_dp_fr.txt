@@ -9,6 +9,7 @@
 0068	e	Lettre Chen (Jamais Sortie)	0:Pas activée,4370:Activée
 0069	e	Flûte Azur (Jamais Sortie)	0:Pas activée,4387:Activée
 0062	r	Joueurs Rencontrés dans le Souterrain (Spiritomb)	32:Spiritomb est apparu
+0064	+	Niveaux bonus d’affilée au Casino (Non coréen)
 0138	e	Tour Sacrée (Route 209)	0:Inactive,1:Active
 0248	e	Évènement de l'Auberge du Port (Jamais Sorti)	0:Pas encore complété,2:Capture de Darkrai en attente,3:Marin devant l'auberge (Darkrai capturé),4:Terminé (Darkrai capturé pendant le cauchemar)
 0280	e	Évènement de la Salle Originelle (Jamais Sorti)	0:Inactif,1:Actif
@@ -17,3 +18,6 @@
 0071	+	Fossiles Obtenus en Souterrain (Rico Lexion)
 0072	+	Joueurs piégés en Souterrain (Rico Lexion)
 0073	+	Joueurs rencontrés en Souterrain (Rico Lexion)
+0065	*	Niveau recherché - Maison de la Route 221
+0229	*	Pokémon recherché - La Dépêche Pokémon
+0279	*	Récompense disponible - La Dépêche Pokémon	1:x3 Master Balls (Illégal),2:x3 Hyper Balls,3:x3 Super Balls,4:x3 Poké Balls,6:x3 Filet Balls,7:x3 Scuba Balls,8:x3 Faiblo Balls,9:x3 Bis Balls,10:x3 Chrono Balls,11:x3 Luxe Balls,12:x3 Honor Balls,13:x3 Sombre Balls,14:x3 Soin Balls,15:x3 Rapide Balls
