@@ -7,18 +7,22 @@ namespace PKHeX.Core;
 /// Encounter Slot representing data transferred to HOME.
 /// <inheritdoc cref="PogoSlotExtensions" />
 /// </summary>
-public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species, byte Form, byte LevelMin, byte LevelMax, Shiny Shiny, Gender Gender, PogoType Type, PogoImportFormat OriginFormat)
+public sealed record EncounterSlot8GO(ushort DayStart, ushort DayEnd, ushort Species, byte Form, byte LevelMin, byte MinimumIV, Shiny Shiny, Gender Gender, PogoType Type, PogoBallRestriction BallRestrict, PogoImportFormat OriginFormat, PogoFlags Flags)
     : IEncounterable, IEncounterMatch, IEncounterConvertible<PKM>, IPogoSlot, IFixedOTFriendship, IEncounterServerDate
 {
     public byte Generation => 8;
     public bool IsDateRestricted => true;
     public bool IsShiny => Shiny.IsShiny();
-    public Ball FixedBall => Type.GetValidBall();
+    public Ball FixedBall => BallRestrict.GetFixedBall();
     public bool IsEgg => false;
     public AbilityPermission Ability => AbilityPermission.Any12;
     ushort ILocation.EggLocation => 0;
     public GameVersion Version => GameVersion.GO;
     public ushort Location => Locations.GO8;
+    public byte LevelMax => EncountersGO.MAX_LEVEL;
+    public bool IsLocalDayStart => Flags.HasFlag(PogoFlags.LocalDateStart);
+    public bool IsLocalDayEnd => Flags.HasFlag(PogoFlags.LocalDateEnd);
+    public bool IsAlwaysSpecialTrade => Flags.HasFlag(PogoFlags.AlwaysSpecialTrade);
 
     public string Name => $"GO Encounter ({Version})";
     public string LongName
@@ -26,10 +30,8 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
         get
         {
             var init = $"{Name} ({Type})";
-            if (StartDate == 0 && EndDate == 0)
-                return init;
-            var start = PogoDateRangeExtensions.GetDateString(StartDate);
-            var end = PogoDateRangeExtensions.GetDateString(EndDate);
+            var start = PogoDateRangeExtensions.GetDateString(DayStart, IsLocalDayStart ? 1 : 0, true);
+            var end = PogoDateRangeExtensions.GetDateString(DayEnd, IsLocalDayEnd ? -1 : 0);
             return $"{init}: {start}-{end}";
         }
     }
@@ -57,10 +59,25 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
         // GO does not natively produce Shedinja when evolving Nincada, and thus must be evolved in future games.
         if (currentSpecies == (int)Shedinja && currentSpecies != Species)
             return ball == Ball.Poke;
-        if (ball == Ball.Master)
-            return Type.IsMasterBallUsable && pk.MetDate >= new DateOnly(2023, 5, 21);
-        return Type.IsBallValid(ball);
+        if (ball == Ball.Master && pk.MetDate < new DateOnly(2023, 5, 21))
+            return false;
+        if (ball == Ball.Strange && Type == PogoType.SpecialResearch && SpeciesCategory.IsSpecialPokemon(currentSpecies))
+            return false;
+        if (ball == Ball.Strange && !IsValidWildAreaDate(pk.MetDate))
+            return false;
+        return BallRestrict.IsValidBall(ball, Type, Flags);
     }
+
+    private static bool IsValidWildAreaDate(DateOnly? date) => date?.DayNumber switch
+    {
+        >= 739204 and <= 739207 => true, // Pokémon GO Wild Area 2024: Fukuoka
+        >= 739211 and <= 739214 => true, // Pokémon GO Wild Area 2024: Global
+        >= 739560 and <= 739564 => true, // Pokémon GO Wild Area 2025: Nagasaki
+        >= 739568 and <= 739571 => true, // Pokémon GO Wild Area 2025: Global
+        >= 739924 and <= 739928 => true, // Pokémon GO Wild Area 2026: Sendai • Tohoku / Mexico City
+        >= 739932 and <= 739935 => true, // Pokémon GO Wild Area 2026: Global
+        _ => false,
+    };
 
     private PKM GetBlank() => OriginFormat switch
     {
@@ -180,7 +197,7 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
         if ((uint)ability < pi.AbilityCount)
             pk.Ability = pi.GetAbilityAtIndex(ability);
 
-        criteria.SetRandomIVsGO(pk, Type.MinimumIV);
+        criteria.SetRandomIVsGO(pk, MinimumIV);
 
         switch (Shiny)
         {
@@ -200,6 +217,8 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
     {
         Span<ushort> moves = stackalloc ushort[4];
         GetInitialMoves(level, moves);
+        // HOME does not set current PP for the moves it just applied; they're left 0.
+        // Since we're creating an in-game PKM rather than PKH, just let the PP heal to max.
         pk.SetMoves(moves);
     }
 
@@ -233,8 +252,6 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
             return EncounterMatchRating.DeferredErrors;
         if (pk is ITeraType ro && IsTeraTypeMismatch(ro.TeraTypeOriginal, PersonalTable.SV[Species, Form]))
             return EncounterMatchRating.DeferredErrors;
-        if (!this.GetIVsValid(pk))
-            return EncounterMatchRating.Deferred;
         return EncounterMatchRating.Match;
     }
 
@@ -278,7 +295,7 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
     {
         if (!IsWithinDistributionWindow(pk))
             return true;
-        if (!this.GetIVsAboveMinimum(pk))
+        if (!this.GetIVsValid(pk))
             return true;
 
         // Eevee & Glaceon have different base friendships. Make sure if it is invalid that we yield the other encounter before.
@@ -294,11 +311,7 @@ public sealed record EncounterSlot8GO(int StartDate, int EndDate, ushort Species
         return IsWithinDistributionWindow(date);
     }
 
-    public bool IsWithinDistributionWindow(DateOnly date)
-    {
-        var stamp = PogoDateRangeExtensions.GetTimeStamp(date.Year, date.Month, date.Day);
-        return this.IsWithinStartEnd(stamp);
-    }
+    public bool IsWithinDistributionWindow(DateOnly date) => this.IsWithinStartEnd(date);
 
     private bool IsFormArgIncorrect<T>(T pk) where T : ISpeciesForm => Species switch
     {

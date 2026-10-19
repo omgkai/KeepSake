@@ -18,7 +18,7 @@ export CLANG_MODULE_CACHE_PATH="$BUILD/clang-module-cache"
 export SWIFTPM_MODULECACHE_OVERRIDE="$BUILD/swift-module-cache"
 "$DOTNET_BIN" publish "$ROOT/Source/Engine" -c Release -r "$RUNTIME" --self-contained true \
   -m:1 -p:UseSharedCompilation=false -nodeReuse:false -p:DebugType=None -p:DebugSymbols=false \
-  -p:SourceRevisionId=08c27668d28a83ad4b04140436a384d4155ed134 \
+  -p:SourceRevisionId=bfe89c74a3f5265805e364b79bc04ad38ebbc5ea \
   --artifacts-path "$BUILD/dotnet-artifacts" -o "$APP/Contents/Helpers" --nologo
 find "$APP/Contents/Helpers" -name '*.pdb' -delete
 cp "$ROOT/Source/Packaging/RuntimeNotices/"* "$APP/Contents/Helpers/"
